@@ -15,7 +15,7 @@ import {
 import { motion } from "framer-motion";
 
 export default function SmartAffiliateLinkCloakerPage() {
-  const [billingCycle, setBillingCycle] = useState<"yearly" | "lifetime">("yearly");
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly" | "lifetime">("yearly");
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -248,9 +248,17 @@ export default function SmartAffiliateLinkCloakerPage() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-lg text-muted-foreground mb-8">Choose the license that fits your business. Upgrade or downgrade at any time.</p>
+            <p className="text-lg text-muted-foreground mb-4">Choose the license that fits your business. Upgrade or downgrade at any time.</p>
+            <p className="text-sm text-green-600 dark:text-green-400 font-semibold mb-8">All Pro plans include a 7-day free trial. No credit card or PayPal required upfront.</p>
             
             <div className="inline-flex bg-muted p-1 rounded-lg">
+              <Button 
+                variant={billingCycle === "monthly" ? "default" : "ghost"} 
+                onClick={() => setBillingCycle("monthly")}
+                className="rounded-md"
+              >
+                Monthly Billing
+              </Button>
               <Button 
                 variant={billingCycle === "yearly" ? "default" : "ghost"} 
                 onClick={() => setBillingCycle("yearly")}
@@ -292,15 +300,24 @@ export default function SmartAffiliateLinkCloakerPage() {
               </CardFooter>
             </Card>
 
-            {/* Pro Single */}
+            {/* Single Site */}
             <Card className="flex flex-col border-primary shadow-lg relative">
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
               <CardHeader>
-                <CardTitle className="text-xl">Pro Single Site</CardTitle>
+                <CardTitle className="text-xl">Single Site</CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">${billingCycle === "yearly" ? "49" : "149"}</span>
-                  <span className="text-muted-foreground ml-1">{billingCycle === "yearly" ? "/year" : "lifetime"}</span>
+                  <span className="text-4xl font-bold">
+                    ${billingCycle === "monthly" ? "2.99" : billingCycle === "yearly" ? "19.99" : "59.99"}
+                  </span>
+                  <span className="text-muted-foreground ml-1">
+                    {billingCycle === "monthly" ? "/month" : billingCycle === "yearly" ? "/year" : " lifetime"}
+                  </span>
                 </div>
+                {billingCycle !== "lifetime" && (
+                  <div className="text-xs text-green-600 dark:text-green-400 font-semibold mt-1">
+                    7-Day Free Trial Included
+                  </div>
+                )}
               </CardHeader>
               <CardContent className="flex-1">
                 <ul className="space-y-3">
@@ -311,18 +328,34 @@ export default function SmartAffiliateLinkCloakerPage() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full">Get Single Site</Button>
+                <Button className="w-full" asChild>
+                  <Link 
+                    href={`https://checkout.freemius.com/checkout/hosted/?plan=83865&billing_cycle=${billingCycle === "yearly" ? "annual" : billingCycle}`}
+                    target="_blank"
+                  >
+                    Get Single Site
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
 
-            {/* Pro Multi */}
+            {/* 5 Sites */}
             <Card className="flex flex-col">
               <CardHeader>
-                <CardTitle className="text-xl">Pro Multi-Site</CardTitle>
+                <CardTitle className="text-xl">5 Sites</CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">${billingCycle === "yearly" ? "99" : "299"}</span>
-                  <span className="text-muted-foreground ml-1">{billingCycle === "yearly" ? "/year" : "lifetime"}</span>
+                  <span className="text-4xl font-bold">
+                    ${billingCycle === "monthly" ? "7.99" : billingCycle === "yearly" ? "79.99" : "239.99"}
+                  </span>
+                  <span className="text-muted-foreground ml-1">
+                    {billingCycle === "monthly" ? "/month" : billingCycle === "yearly" ? "/year" : " lifetime"}
+                  </span>
                 </div>
+                {billingCycle !== "lifetime" && (
+                  <div className="text-xs text-green-600 dark:text-green-400 font-semibold mt-1">
+                    7-Day Free Trial Included
+                  </div>
+                )}
               </CardHeader>
               <CardContent className="flex-1">
                 <ul className="space-y-3">
@@ -333,18 +366,34 @@ export default function SmartAffiliateLinkCloakerPage() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">Get Multi-Site</Button>
+                <Button variant="outline" className="w-full" asChild>
+                  <Link 
+                    href={`https://checkout.freemius.com/checkout/hosted/?plan=83866&billing_cycle=${billingCycle === "yearly" ? "annual" : billingCycle}`}
+                    target="_blank"
+                  >
+                    Get 5 Sites
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
 
-            {/* Developer */}
+            {/* Unlimited Sites */}
             <Card className="flex flex-col">
               <CardHeader>
-                <CardTitle className="text-xl">Developer / Agency</CardTitle>
+                <CardTitle className="text-xl">Unlimited Sites</CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">${billingCycle === "yearly" ? "199" : "499"}</span>
-                  <span className="text-muted-foreground ml-1">{billingCycle === "yearly" ? "/year" : "lifetime"}</span>
+                  <span className="text-4xl font-bold">
+                    ${billingCycle === "monthly" ? "19.99" : billingCycle === "yearly" ? "191.88" : "499.99"}
+                  </span>
+                  <span className="text-muted-foreground ml-1">
+                    {billingCycle === "monthly" ? "/month" : billingCycle === "yearly" ? "/year" : " lifetime"}
+                  </span>
                 </div>
+                {billingCycle !== "lifetime" && (
+                  <div className="text-xs text-green-600 dark:text-green-400 font-semibold mt-1">
+                    7-Day Free Trial Included
+                  </div>
+                )}
               </CardHeader>
               <CardContent className="flex-1">
                 <ul className="space-y-3">
@@ -355,7 +404,14 @@ export default function SmartAffiliateLinkCloakerPage() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button variant="outline" className="w-full">Get Unlimited</Button>
+                <Button variant="outline" className="w-full" asChild>
+                  <Link 
+                    href={`https://checkout.freemius.com/checkout/hosted/?plan=83867&billing_cycle=${billingCycle === "yearly" ? "annual" : billingCycle}`}
+                    target="_blank"
+                  >
+                    Get Unlimited
+                  </Link>
+                </Button>
               </CardFooter>
             </Card>
           </div>

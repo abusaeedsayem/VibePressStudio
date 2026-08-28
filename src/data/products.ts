@@ -59,6 +59,7 @@ export const products: Product[] = [
     pricingTiers: [
       {
         planName: "Free",
+        priceMonthly: 0,
         priceYearly: 0,
         priceLifetime: null,
         features: [
@@ -71,31 +72,45 @@ export const products: Product[] = [
         isFeatured: false
       },
       {
-        planName: "Pro (Yearly)",
-        priceYearly: 49,
-        priceLifetime: null,
+        planName: "Single Site",
+        priceMonthly: 2.99,
+        priceYearly: 19.99,
+        priceLifetime: 59.99,
         features: [
           "Everything in Free",
-          "A/B Split Testing",
-          "Geo-Routing",
-          "Keyword Auto-linking",
-          "Advanced Analytics",
-          "Priority Support"
+          "Geo-Targeting",
+          "Auto-Linker",
+          "1 Site License"
         ],
-        checkoutUrl: "https://checkout.freemius.com/smart-affiliate-link-cloaker/pro-yearly",
+        checkoutUrl: "https://checkout.freemius.com/checkout/hosted/?plan=83865",
         isFeatured: true
       },
       {
-        planName: "Pro (Lifetime)",
-        priceYearly: null,
-        priceLifetime: 149,
+        planName: "5 Sites",
+        priceMonthly: 7.99,
+        priceYearly: 79.99,
+        priceLifetime: 239.99,
         features: [
-          "Everything in Pro",
-          "Lifetime Updates",
-          "Lifetime Support",
+          "All Pro Features",
+          "A/B Split Testing",
+          "404 Scanner",
+          "5 Site Licenses"
+        ],
+        checkoutUrl: "https://checkout.freemius.com/checkout/hosted/?plan=83866",
+        isFeatured: false
+      },
+      {
+        planName: "Unlimited Sites",
+        priceMonthly: 19.99,
+        priceYearly: 191.88,
+        priceLifetime: 499.99,
+        features: [
+          "All Pro Features",
+          "Priority Support",
+          "White Labeling",
           "Unlimited Sites"
         ],
-        checkoutUrl: "https://checkout.freemius.com/smart-affiliate-link-cloaker/pro-lifetime",
+        checkoutUrl: "https://checkout.freemius.com/checkout/hosted/?plan=83867",
         isFeatured: false
       }
     ],

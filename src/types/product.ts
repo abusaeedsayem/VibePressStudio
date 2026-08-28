@@ -9,6 +9,7 @@ export interface KeyFeature {
 
 export interface PricingTier {
   planName: string;
+  priceMonthly?: number | null;
   priceYearly: number | null;
   priceLifetime: number | null;
   features: string[];
