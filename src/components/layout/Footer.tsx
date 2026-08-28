@@ -1,98 +1,90 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ShieldCheck, Code, BadgeCheck } from "lucide-react";
-import { products } from "@/data/products";
+
+const footerLinks = [
+  {
+    items: [
+      { label: "Smart Affiliate Link Cloaker", href: "/products/smart-affiliate-link-cloaker" },
+      { label: "ShelfMaster (LibrisCore Desktop)", href: "/products/shelfmaster" },
+      { label: "Documentation", href: "/docs" },
+      { label: "Changelog", href: "/changelog" },
+    ],
+  },
+  {
+    items: [
+      { label: "About the Studio", href: "/about" },
+      { label: "Support Center", href: "/contact" },
+      { label: "Privacy Policy", href: "/legal/privacy" },
+      { label: "Terms of Use", href: "/legal/terms" },
+    ],
+  },
+  {
+    items: [
+      { label: "GPLv2 License Notice", href: "/legal/license" },
+      { label: "Affiliate Disclosure", href: "/legal/affiliate-disclosure" },
+      { label: "Pricing & Marketplace", href: "/pricing" },
+    ],
+  },
+];
 
 export function Footer() {
   return (
-    <footer className="w-full border-t bg-muted/40 pb-8 pt-16">
-      <div className="container px-4 md:px-6">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4 lg:grid-cols-5">
-          {/* Mission & Identity */}
-          <div className="md:col-span-1 lg:col-span-2 space-y-4">
-            <h3 className="text-xl font-bold tracking-tight">VibePress Studio</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Building high-performance, robust software solutions for modern creators and businesses. From powerful WordPress plugins to offline-first desktop systems.
+    <footer className="bg-surface-dim border-t border-border-subtle mt-auto">
+      <div className="w-full px-4 md:px-6 max-w-[1280px] mx-auto py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Brand Column */}
+          <div className="md:col-span-1 flex flex-col gap-4">
+            <Link href="/" className="text-headline-md font-bold text-on-background">
+              VibePress Studio
+            </Link>
+            <p className="text-body-md text-on-surface-variant leading-relaxed">
+              High-performance software solutions for modern creators and businesses.
             </p>
-            <div className="pt-2">
-              <p className="text-sm font-medium text-foreground">Lead Architect</p>
-              <a 
-                href="https://abusaeedsayem.netlify.app" 
-                target="_blank" 
-                rel="noreferrer"
-                className="text-sm text-primary hover:underline font-semibold flex items-center gap-1 mt-1"
-              >
-                Abu Saeed Sayem
-              </a>
-            </div>
+            <p className="text-sm text-on-surface-variant">
+              © 2026 VibePress Studio. All rights reserved.
+              <br />
+              <span className="font-medium">Developed by Abu Saeed Sayem</span>
+            </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Products</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {products.map(p => (
-                <li key={p.id}>
-                  <Link href={`/products/${p.slug}`} className="hover:text-primary transition-colors">
-                    {p.name}
-                  </Link>
-                </li>
+          {/* Link Columns */}
+          {footerLinks.map((col, colIdx) => (
+            <div key={colIdx} className="flex flex-col gap-3">
+              {col.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-body-md text-on-surface-variant hover:text-primary-container transition-colors duration-200"
+                >
+                  {item.label}
+                </Link>
               ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Resources</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/docs" className="hover:text-primary transition-colors">Documentation</Link></li>
-              <li><Link href="/changelog" className="hover:text-primary transition-colors">Changelog</Link></li>
-              <li><Link href="/support" className="hover:text-primary transition-colors">Support Center</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">About the Studio</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground">Legal</h4>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link href="/legal/terms" className="hover:text-primary transition-colors">Terms of Use</Link></li>
-              <li><Link href="/legal/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/legal/license" className="hover:text-primary transition-colors">GPLv2 License Notice</Link></li>
-              <li><Link href="/legal/affiliate-disclosure" className="hover:text-primary transition-colors">Affiliate Disclosure</Link></li>
-            </ul>
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Newsletter & Badges */}
-        <div className="mt-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border-t pt-8">
-          <div className="flex-1 w-full max-w-md space-y-2">
-            <h4 className="text-sm font-semibold text-foreground">Subscribe to new releases</h4>
-            <p className="text-xs text-muted-foreground">Get notified about new plugins, apps, and major updates. No spam.</p>
-            <form className="flex w-full items-center space-x-2">
-              <Input type="email" placeholder="Email address" className="max-w-xs" />
-              <Button type="submit">Subscribe</Button>
-            </form>
+        {/* Bottom Tagline */}
+        <div className="mt-10 pt-6 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-on-surface-variant">
+            Engineered for Performance. Built for Growth.
+          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://abusaeedsayem.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-on-surface-variant hover:text-primary-container transition-colors"
+            >
+              Developer Portfolio ↗
+            </a>
+            <a
+              href="https://github.com/abusaeedsayem"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-on-surface-variant hover:text-primary-container transition-colors"
+            >
+              GitHub ↗
+            </a>
           </div>
-          
-          <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
-            <div className="flex items-center gap-1.5 text-xs font-medium bg-background px-3 py-1.5 rounded-full border shadow-sm">
-              <ShieldCheck className="h-4 w-4 text-green-500" />
-              <span>Freemius Verified</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-xs font-medium bg-background px-3 py-1.5 rounded-full border shadow-sm">
-              <Code className="h-4 w-4 text-blue-500" />
-              <span>WordPress.org Open Source</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-xs font-medium bg-background px-3 py-1.5 rounded-full border shadow-sm">
-              <BadgeCheck className="h-4 w-4 text-yellow-500" />
-              <span>AppSumo Partner</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center text-xs text-muted-foreground flex flex-col items-center justify-center space-y-1">
-          <p>&copy; {new Date().getFullYear()} VibePress Studio. All rights reserved.</p>
-          <p>Developed by <a href="https://abusaeedsayem.netlify.app" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors font-medium">Abu Saeed Sayem</a></p>
         </div>
       </div>
     </footer>

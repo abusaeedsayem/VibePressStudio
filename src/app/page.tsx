@@ -1,260 +1,245 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
 import { products } from "@/data/products";
-import { 
-  ArrowRight, Download, Server, ShieldCheck, Zap,
-  Link as LinkIcon, Library, Code2, CheckCircle2, Star, ExternalLink, Trophy
-} from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight, Package, Monitor, CheckCircle2, Zap, Database, CloudOff, Shield } from "lucide-react";
 
-export default function Home() {
-  const [filter, setFilter] = useState<string>("All Solutions");
-  
-  const filteredProducts = products.filter(p => {
-    if (filter === "All Solutions") return true;
-    if (filter === "WordPress Plugins") return p.category === "wordpress-plugin";
-    if (filter === "Desktop Software") return p.category === "desktop-app";
-    return true;
-  });
+const stats = [
+  { icon: Zap, label: "<1s Startup Time", desc: "Desktop app cold boot" },
+  { icon: Database, label: "Zero DB Bloat", desc: "Custom table architecture" },
+  { icon: CloudOff, label: "100% Offline", desc: "No cloud dependency" },
+  { icon: Shield, label: "FTC Compliant", desc: "Auto-disclosure injector" },
+];
+
+export default function HomePage() {
+  const [filter, setFilter] = useState<"all" | "wordpress-plugin" | "desktop-app">("all");
+
+  const filtered = filter === "all" ? products : products.filter(p => p.category === filter);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b">
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px]" />
-        <div className="container relative z-10 px-4 md:px-6 mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight"
-          >
-            Engineered for <span className="text-primary">Performance</span>.<br className="hidden md:block" /> Built for <span className="text-primary">Growth</span>.
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-          >
-            High-performance WordPress Plugins, Offline-First Desktop Systems, and Creator Tools crafted by Abu Saeed Sayem.
-          </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Button size="lg" className="h-12 px-8 text-base font-semibold" onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}>
-              Explore Products <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8 text-base font-semibold" asChild>
-              <Link href="https://appsumo.com" target="_blank">
-                View on AppSumo / Freemius <ExternalLink className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t pt-10"
-          >
-            <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold">100k+</div>
-              <div className="text-sm text-muted-foreground mt-2 font-medium">Active Installs</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary">3x</div>
-              <div className="text-sm text-muted-foreground mt-2 font-medium">Database Speedup</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-500">100%</div>
-              <div className="text-sm text-muted-foreground mt-2 font-medium">Offline Resilience</div>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-500">0%</div>
-              <div className="text-sm text-muted-foreground mt-2 font-medium">Bloat</div>
-            </div>
-          </motion.div>
+    <div className="flex flex-col min-h-screen bg-background">
+
+      {/* ── Hero Section ── */}
+      <section className="bg-primary text-on-primary py-20 md:py-28 px-4 md:px-6 overflow-hidden relative">
+        {/* Subtle grid overlay */}
+        <div className="absolute inset-0 opacity-[0.04]" style={{
+          backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
+          backgroundSize: "40px 40px"
+        }} />
+        <div className="relative z-10 text-center max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8 text-label-caps text-white/80">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+            Now available — ShelfMaster v1.2 released
+          </div>
+
+          <h1 className="text-headline-lg-mobile md:text-headline-xl mb-6 leading-tight text-white">
+            Engineered for Performance.{" "}
+            <br className="hidden md:block" />
+            Built for Growth.
+          </h1>
+
+          <p className="text-body-lg text-primary-fixed mb-10 max-w-2xl mx-auto leading-relaxed">
+            High-performance WordPress Plugins, Offline-First Desktop Systems, and Creator Tools crafted by{" "}
+            <span className="font-semibold text-white">Abu Saeed Sayem</span>.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="#products"
+              className="bg-white text-primary text-label-caps py-4 px-8 rounded-full hover:bg-surface-container-lowest transition-colors w-full sm:w-auto text-center shadow-lg font-bold flex items-center justify-center gap-2"
+            >
+              Explore Products <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a
+              href="https://appsumo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/30 text-white text-label-caps py-4 px-8 rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto text-center flex items-center justify-center gap-2"
+            >
+              View on AppSumo / Freemius
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Flagship Products Section */}
-      <section id="products" className="py-24 bg-muted/30">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight">Flagship Solutions</h2>
-              <p className="text-muted-foreground mt-2">Discover our ecosystem of robust software products.</p>
+      {/* ── Stats Bar ── */}
+      <section className="bg-inverse-surface text-inverse-on-surface py-8 px-4 md:px-6">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
+          {stats.map(({ icon: Icon, label, desc }) => (
+            <div key={label} className="flex flex-col items-center text-center py-4 md:py-0 px-4 gap-2">
+              <Icon className="h-5 w-5 text-primary-fixed-dim mb-1" />
+              <span className="font-bold text-base text-white">{label}</span>
+              <span className="text-xs text-inverse-on-surface/60">{desc}</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {["All Solutions", "WordPress Plugins", "Desktop Software"].map(f => (
-                <Button 
-                  key={f} 
-                  variant={filter === f ? "default" : "outline"}
-                  onClick={() => setFilter(f)}
-                  className="rounded-full"
-                >
-                  {f}
-                </Button>
-              ))}
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {filteredProducts.map((product) => (
-              <Card key={product.id} className="flex flex-col h-full overflow-hidden transition-all hover:shadow-lg border-muted">
-                <CardHeader className="pb-4">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="p-3 bg-primary/10 rounded-xl">
-                      {product.icon === "Link" ? <LinkIcon className="h-6 w-6 text-primary" /> : <Library className="h-6 w-6 text-primary" />}
-                    </div>
-                    <Badge variant="secondary" className="font-medium">
-                      {product.category === "wordpress-plugin" ? "WordPress Plugin" : "Desktop App"}
-                    </Badge>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Products Section ── */}
+      <section id="products" className="px-4 md:px-6 max-w-[1280px] mx-auto py-20 w-full">
+        <div className="text-center mb-12">
+          <p className="text-label-caps text-primary mb-3">Our Products</p>
+          <h2 className="text-headline-lg text-on-background mb-4">
+            Flagship Software Solutions
+          </h2>
+          <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Discover tools designed to elevate your workflow and boost your online presence.
+          </p>
+        </div>
+
+        {/* Filter Tabs */}
+        <div className="flex items-center justify-center gap-2 mb-10">
+          {[
+            { key: "all", label: "All Solutions" },
+            { key: "wordpress-plugin", label: "WordPress Plugins" },
+            { key: "desktop-app", label: "Desktop Software" },
+          ].map(tab => (
+            <button
+              key={tab.key}
+              onClick={() => setFilter(tab.key as typeof filter)}
+              className={`text-label-caps px-5 py-2.5 rounded-full transition-all duration-200 ${
+                filter === tab.key
+                  ? "bg-primary text-on-primary shadow-sm"
+                  : "bg-surface-container text-on-surface-variant hover:bg-surface-container-high"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {filtered.map((product) => (
+            <div
+              key={product.id}
+              className="bg-surface border border-border-subtle rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300 premium-glow flex flex-col"
+            >
+              {/* Image / Visual area */}
+              <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-high">
+                {/* Gradient placeholder — replace with actual screenshots */}
+                <div className={`absolute inset-0 flex items-center justify-center ${
+                  product.category === "wordpress-plugin"
+                    ? "bg-gradient-to-br from-blue-600 to-indigo-800"
+                    : "bg-gradient-to-br from-slate-700 to-indigo-900"
+                }`}>
+                  {product.category === "wordpress-plugin" ? (
+                    <Package className="h-20 w-20 text-white/20" />
+                  ) : (
+                    <Monitor className="h-20 w-20 text-white/20" />
+                  )}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent">
+                    <p className="text-white font-bold text-lg">{product.name}</p>
+                    <p className="text-white/70 text-sm">{product.tagline}</p>
                   </div>
-                  <CardTitle className="text-2xl">{product.name}</CardTitle>
-                  <p className="text-muted-foreground mt-2">{product.tagline}</p>
-                </CardHeader>
-                <CardContent className="flex-1 space-y-6">
-                  <div>
-                    <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider text-muted-foreground">Core Architecture</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {product.techStack.map(tech => (
-                        <Badge key={tech} variant="outline" className="bg-background">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
+                </div>
+              </div>
+
+              {/* Card Body */}
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h3 className="text-headline-md text-on-background">{product.name}</h3>
+                  <span className={`text-label-caps px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0 ${
+                    product.category === "wordpress-plugin"
+                      ? "bg-success/10 text-success"
+                      : "bg-primary-container/10 text-primary-container"
+                  }`}>
+                    {product.category === "wordpress-plugin" ? "WordPress Plugin" : "Desktop Software"}
+                  </span>
+                </div>
+
+                <p className="text-body-md text-on-surface-variant mb-5">{product.description.slice(0, 140)}...</p>
+
+                {/* Key highlights */}
+                {product.keyFeatures.slice(0, 3).map(f => (
+                  <div key={f.title} className="flex items-center gap-2 text-sm text-on-surface-variant mb-1.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
+                    {f.title}
                   </div>
-                  <div>
-                    <h4 className="text-sm font-semibold mb-3 uppercase tracking-wider text-muted-foreground">Key Highlights</h4>
-                    <ul className="space-y-2">
-                      {product.keyFeatures.slice(0, 3).map(feature => (
-                        <li key={feature.title} className="flex items-start text-sm">
-                          <CheckCircle2 className="h-4 w-4 mr-2 text-primary shrink-0 mt-0.5" />
-                          <span><span className="font-medium">{feature.title}:</span> {feature.description}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-                <CardFooter className="flex flex-col sm:flex-row items-center justify-between border-t bg-muted/20 p-6 gap-4">
-                  <div className="flex flex-col">
-                    <span className="text-sm text-muted-foreground">Starting from</span>
-                    <span className="font-bold text-lg">
-                      {product.pricingTiers[0].priceYearly === 0 ? "Free" : `$${product.pricingTiers[0].priceYearly || product.pricingTiers[0].priceLifetime}`}
+                ))}
+
+                {/* Tech Stack badges */}
+                <div className="flex flex-wrap gap-2 mt-5 mb-6">
+                  {product.techStack.slice(0, 4).map(tech => (
+                    <span key={tech} className="text-[11px] font-mono bg-surface-container-low text-on-surface-variant px-2.5 py-1 rounded border border-border-subtle">
+                      {tech}
                     </span>
-                  </div>
-                  <Button asChild className="w-full sm:w-auto">
-                    <Link href={`/products/${product.slug}`}>
-                      Explore Product & Demo <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div className="mt-auto flex gap-3">
+                  <Link
+                    href={`/products/${product.slug}`}
+                    className="flex-1 bg-primary text-on-primary text-label-caps py-3 px-6 rounded hover:bg-primary-container transition-colors text-center flex items-center justify-center gap-2"
+                  >
+                    Explore Product <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                  <Link
+                    href={`/products/${product.slug}#pricing`}
+                    className="border border-border-strong text-on-surface text-label-caps py-3 px-6 rounded hover:bg-surface-container-low transition-colors text-center"
+                  >
+                    Pricing
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Distribution Channels ── */}
+      <section className="bg-surface-container-low px-4 md:px-6 py-20 border-y border-border-subtle">
+        <div className="max-w-[1280px] mx-auto text-center">
+          <p className="text-label-caps text-primary mb-3">Where to Get It</p>
+          <h2 className="text-headline-lg text-on-background mb-4">Distribution Channels</h2>
+          <p className="text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
+            Available across all major marketplaces and direct download portals.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { name: "WordPress.org", sub: "Free plugin directory", color: "from-blue-500 to-blue-600" },
+              { name: "Freemius", sub: "Pro license & billing", color: "from-indigo-500 to-purple-600" },
+              { name: "AppSumo", sub: "Lifetime deal offers", color: "from-amber-500 to-orange-600" },
+              { name: "Direct Download", sub: "Get it from our site", color: "from-slate-600 to-slate-800" },
+            ].map(ch => (
+              <div key={ch.name} className="bg-surface rounded-xl border border-border-subtle p-6 hover:shadow-md hover:border-primary/20 transition-all text-left">
+                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${ch.color} mb-4`} />
+                <h3 className="font-semibold text-on-background text-sm">{ch.name}</h3>
+                <p className="text-xs text-on-surface-variant mt-1">{ch.sub}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Distribution Channels Section */}
-      <section className="py-24 border-y">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold tracking-tight">Available Everywhere</h2>
-            <p className="text-muted-foreground mt-4 text-lg">
-              We distribute our software through trusted platforms to ensure you get seamless updates, verified security, and top-tier support.
+      {/* ── Architect Spotlight ── */}
+      <section className="px-4 md:px-6 max-w-[1280px] mx-auto py-20 w-full">
+        <div className="bg-surface border border-border-subtle rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-10 premium-glow">
+          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-3xl font-extrabold text-white flex-shrink-0">
+            AS
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <p className="text-label-caps text-primary mb-2">Lead Architect</p>
+            <h3 className="text-headline-md text-on-background mb-3">Abu Saeed Sayem</h3>
+            <p className="text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
+              Building high-performance, offline-first systems and WordPress plugins with zero bloat. Every product at VibePress Studio is engineered with a relentless focus on speed, reliability, and the end user.
             </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-muted/30">
-              <Download className="h-10 w-10 text-blue-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">WordPress.org</h3>
-              <p className="text-muted-foreground">Free core versions hosted on the official repository. Open source and community reviewed.</p>
-            </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-muted/30">
-              <ShieldCheck className="h-10 w-10 text-green-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Freemius</h3>
-              <p className="text-muted-foreground">Secure Pro subscriptions, instant activation, and hassle-free license management.</p>
-            </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-muted/30">
-              <Trophy className="h-10 w-10 text-yellow-500 mb-4" />
-              <h3 className="text-xl font-bold mb-2">AppSumo</h3>
-              <p className="text-muted-foreground">Exclusive lifetime deals for early adopters and growing startups. Partner verified.</p>
+            <div className="mt-5 flex flex-wrap gap-3 justify-center md:justify-start">
+              <a href="https://abusaeedsayem.netlify.app" target="_blank" rel="noopener noreferrer"
+                className="text-label-caps border border-border-strong text-on-surface px-5 py-2.5 rounded hover:bg-surface-container-low transition-colors">
+                Developer Portfolio ↗
+              </a>
+              <a href="https://github.com/abusaeedsayem" target="_blank" rel="noopener noreferrer"
+                className="text-label-caps border border-border-strong text-on-surface px-5 py-2.5 rounded hover:bg-surface-container-low transition-colors">
+                GitHub ↗
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Engineering Standards */}
-      <section className="py-24 bg-muted/10">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold tracking-tight">Uncompromising Engineering Standards</h2>
-              <p className="text-lg text-muted-foreground">
-                We do not cut corners. Our software is built to scale from day one, adhering to the strictest coding guidelines and performance benchmarks in the industry.
-              </p>
-              <ul className="space-y-4 pt-4">
-                <li className="flex items-center gap-3">
-                  <div className="bg-primary/10 p-2 rounded-full"><Zap className="h-5 w-5 text-primary" /></div>
-                  <span className="font-medium text-lg">WordPress VIP Coding Standards</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="bg-primary/10 p-2 rounded-full"><Code2 className="h-5 w-5 text-primary" /></div>
-                  <span className="font-medium text-lg">Strict PSR-4 & PSR-12 Compliance</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="bg-primary/10 p-2 rounded-full"><Server className="h-5 w-5 text-primary" /></div>
-                  <span className="font-medium text-lg">Zero Database Bloat Architecture</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="bg-primary/10 p-2 rounded-full"><ShieldCheck className="h-5 w-5 text-primary" /></div>
-                  <span className="font-medium text-lg">Rust-Powered Native Memory Safety</span>
-                </li>
-              </ul>
-            </div>
-            <div className="relative rounded-2xl overflow-hidden border bg-background shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
-              <pre className="p-8 text-sm overflow-x-auto text-muted-foreground font-mono">
-                <code className="text-green-500">{"// Zero-bloat query optimization"}</code>{"\n"}
-                <code className="text-blue-400">const</code> <code className="text-yellow-300">getOptimizedData</code> = <code className="text-blue-400">async</code> () =&gt; {"{\n"}
-                {"  "}try {"{\n"}
-                {"    "}<code className="text-blue-400">const</code> db = <code className="text-blue-400">await</code> initSQLite();{"\n"}
-                {"    "}<code className="text-blue-400">return</code> db.execute(<code className="text-orange-300">{`\n      SELECT id, title \n      FROM cache \n      WHERE expires_at > ?\n    `}</code>, [Date.now()]);{"\n"}
-                {"  "} {"}"} catch (e) {"{\n"}
-                {"    "}panic(e);{"\n"}
-                {"  "}{"}\n"}
-                {"}"}
-              </pre>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About the Architect */}
-      <section className="py-24 border-t">
-        <div className="container px-4 md:px-6 mx-auto text-center max-w-3xl">
-          <Badge variant="outline" className="mb-6 px-4 py-1.5 text-sm">The Architect Behind The Code</Badge>
-          <h2 className="text-3xl font-bold tracking-tight mb-6">Abu Saeed Sayem</h2>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Lead Software Architect dedicated to solving complex problems through elegant code. With years of experience engineering scalable WordPress plugins and high-performance cross-platform desktop applications, I founded VibePress Studio to empower creators and businesses with robust software they can rely on.
-          </p>
-          <Button variant="default" size="lg" asChild>
-            <Link href="https://abusaeedsayem.netlify.app" target="_blank">
-              View Developer Portfolio <ExternalLink className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </section>
     </div>
   );
 }
