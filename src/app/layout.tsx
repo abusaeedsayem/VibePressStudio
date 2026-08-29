@@ -21,21 +21,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vibepress.studio"),
+  metadataBase: new URL("https://vibepressstudio.vercel.app"),
   title: {
     template: "%s | VibePress Studio",
-    default: "VibePress Studio | Engineered for Performance. Built for Growth.",
+    default: "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
   },
-  description: "High-performance WordPress Plugins, Offline-First Desktop Systems, and Creator Tools crafted by Abu Saeed Sayem.",
-  keywords: ["WordPress plugins", "desktop apps", "Tauri", "Next.js", "software studio", "library management", "affiliate cloaker"],
-  authors: [{ name: "Abu Saeed Sayem", url: "https://abusaeedsayem.netlify.app" }],
-  creator: "Abu Saeed Sayem",
+  description: "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
+  keywords: ["WordPress plugins", "desktop apps", "Tauri v2", "Rust", "Next.js", "software studio", "library management", "affiliate cloaker"],
+  authors: [{ name: "VibePress Studio", url: "https://vibepressstudio.vercel.app" }],
+  creator: "VibePress Studio",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://vibepress.studio",
-    title: "VibePress Studio | Engineered for Performance. Built for Growth.",
-    description: "High-performance WordPress Plugins, Offline-First Desktop Systems, and Creator Tools crafted by Abu Saeed Sayem.",
+    url: "https://vibepressstudio.vercel.app",
+    title: "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
+    description: "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
     siteName: "VibePress Studio",
     images: [
       {
@@ -48,10 +48,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VibePress Studio | Engineered for Performance. Built for Growth.",
-    description: "High-performance WordPress Plugins, Offline-First Desktop Systems, and Creator Tools crafted by Abu Saeed Sayem.",
+    title: "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
+    description: "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
     images: ["/images/og-image.jpg"],
-    creator: "@asaeedmsayem",
+    creator: "@VibePressStudio",
   },
 };
 
@@ -64,7 +64,7 @@ export default function RootLayout({
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-full flex flex-col bg-background text-on-background",
+          "min-h-full flex flex-col bg-background text-foreground",
           inter.variable,
           jetbrainsMono.variable
         )}
@@ -77,9 +77,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1 flex flex-col">
-            {children}
-          </main>
+          <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>

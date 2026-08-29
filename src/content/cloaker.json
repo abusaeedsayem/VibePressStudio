@@ -1,0 +1,218 @@
+{
+  "eyebrow": "WordPress Link Management & Compliance Architecture",
+  "hero": {
+    "title": "Branded Link Cloaking, Automated Legal Compliance, and Zero Database Bloat",
+    "subtitle": "Transform complicated affiliate URLs into high-converting branded links while automating FTC disclosures, dynamic geolocation, and conversion split testing.",
+    "ctaPrimary": "Download Free from WordPress.org",
+    "ctaPrimaryHref": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/",
+    "ctaSecondary": "Buy Pro License via Freemius",
+    "ctaSecondaryHref": "#pricing",
+    "ctaTertiary": "Grab AppSumo Lifetime Deal",
+    "ctaTertiaryHref": "https://appsumo.com/products/smart-affiliate-link-cloaker/",
+    "badges": [
+      { "label": "Sub-Millisecond HTTP Routing", "icon": "Zap" },
+      { "label": "Zero Database Bloat", "icon": "Database" },
+      { "label": "Automated FTC Compliance", "icon": "ShieldCheck" }
+    ]
+  },
+  "bottlenecks": {
+    "title": "Core Operational Bottlenecks Solved",
+    "subtitle": "Eliminate commission loss, compliance risks, and database degradation with a modern link management architecture.",
+    "items": [
+      {
+        "title": "Commission Theft & Link Hijacking",
+        "desc": "Unbranded URLs reveal raw affiliate IDs that browser extensions hijack; our custom slugs protect your brand and commission earnings.",
+        "icon": "ShieldAlert"
+      },
+      {
+        "title": "Regulatory Fines & Inconvenience",
+        "desc": "FTC guidelines mandate conspicuous disclosures on referral links; our engine automatically detects links and programmatically injects accessible notices.",
+        "icon": "Scale"
+      },
+      {
+        "title": "Database Slowdowns",
+        "desc": "Traditional plugins generate millions of custom database rows that degrade server queries; we run on native WordPress Custom Post Types with sub-millisecond template routing.",
+        "icon": "Database"
+      }
+    ]
+  },
+  "features": {
+    "title": "Comprehensive Feature Breakdown",
+    "subtitle": "Modular, high-performance link cloaking engineered for serious WordPress publishers.",
+    "coreEngine": [
+      {
+        "title": "Custom Cloaked Slug Architecture",
+        "desc": "Convert long referral URLs into clean links using custom prefixes such as /go/, /recommends/, or /deal/.",
+        "icon": "LinkIcon"
+      },
+      {
+        "title": "High-Speed HTTP Status Handling",
+        "desc": "Full support for native 301 permanent, 302 temporary, and 307 dynamic redirections with cache-control headers.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Automatic SEO Attribute Enforcement",
+        "desc": "Automatically append rel=\"nofollow sponsored\" and rel=\"noopener noreferrer\" across all cloaked links.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Administrative Dashboard",
+        "desc": "Clean link manager with instant search, merchant category grouping, and one-click copy-to-clipboard actions.",
+        "icon": "Search"
+      }
+    ],
+    "legalCompliance": [
+      {
+        "title": "Dynamic FTC Auto-Disclosure Injector",
+        "desc": "Automatically identifies cloaked URLs inside content and inserts compliant legal disclosures.",
+        "icon": "Scale"
+      },
+      {
+        "title": "Flexible Positioning",
+        "desc": "Insert disclosures at the top of content, at the bottom, or immediately preceding the first commercial link.",
+        "icon": "Layout"
+      },
+      {
+        "title": "Semantic & Accessible Markup",
+        "desc": "Built with accessible semantic HTML elements designed to blend smoothly with any WordPress theme.",
+        "icon": "CheckCircle2"
+      }
+    ],
+    "proModules": [
+      {
+        "title": "Dynamic Geolocation Routing",
+        "desc": "Automatically routes traffic to country-specific merchant storefronts based on real-time visitor IP geolocation.",
+        "icon": "Globe"
+      },
+      {
+        "title": "A/B Split Testing & Traffic Rotation",
+        "desc": "Distribute inbound clicks across multiple target URLs with percentage weights to identify top-converting vendor landing pages.",
+        "icon": "ArrowRightLeft"
+      },
+      {
+        "title": "Dynamic UTM Forwarding",
+        "desc": "Intercepts inbound UTM query parameters and automatically attaches them to the destination link.",
+        "icon": "Share2"
+      },
+      {
+        "title": "Automated Deal Expiration & Fallbacks",
+        "desc": "Establish calendar expiration dates or click thresholds that route visitors to evergreen fallback deals instead of dead 404 pages.",
+        "icon": "Clock"
+      },
+      {
+        "title": "DOM-Safe Keyword Auto-Linker",
+        "desc": "Automatically transforms target keywords in existing posts into cloaked links without breaking headings, existing hyperlinks, or code blocks.",
+        "icon": "Highlighter"
+      },
+      {
+        "title": "Automated 404 Link Health Scanner",
+        "desc": "Background health checks that alert you when affiliate destination links go offline or change.",
+        "icon": "Search"
+      }
+    ]
+  },
+  "userGuide": {
+    "title": "Practical Step-by-Step User Guide",
+    "subtitle": "Get up and running in minutes with our straightforward configuration workflow.",
+    "steps": [
+      {
+        "num": "1",
+        "title": "Configure Prefixes & Redirection",
+        "desc": "Configure Cloaking Prefixes and default redirection HTTP status codes in Settings."
+      },
+      {
+        "num": "2",
+        "title": "Set FTC Disclosures",
+        "desc": "Set your FTC Auto-Disclosure rules and choose your preferred post placement."
+      },
+      {
+        "num": "3",
+        "title": "Add Destination URLs",
+        "desc": "Add a New Link with your destination URL and generate a clean, one-click cloaked slug."
+      },
+      {
+        "num": "4",
+        "title": "Setup Geolocation",
+        "desc": "Configure Pro Geolocation rules to divert international traffic to local Amazon or merchant stores."
+      },
+      {
+        "num": "5",
+        "title": "Activate Auto-Linking",
+        "desc": "Activate Keyword Auto-Linking rules to monetize your archive of published articles automatically."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Pricing and Licensing Tiers",
+    "subtitle": "Choose the tier that fits your publishing workflow. All Pro plans are backed by our 14-day 100% money-back guarantee.",
+    "guarantee": "All Pro plans come backed by a 14-day 100% money-back guarantee.",
+    "tiers": [
+      {
+        "name": "Free Core Tier",
+        "price": "$0",
+        "period": "Forever Free",
+        "desc": "Essential link cloaking and automated FTC compliance for single site owners.",
+        "features": [
+          "Unlimited link cloaking",
+          "FTC auto-disclosures",
+          "Basic click tracking",
+          "Community support on WordPress.org"
+        ],
+        "cta": "Download Free",
+        "href": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/",
+        "isFeatured": false
+      },
+      {
+        "name": "Pro Single Site",
+        "priceYearly": "$49",
+        "priceLifetime": "$149",
+        "periodYearly": "/ Year",
+        "periodLifetime": "One-Time",
+        "desc": "Ideal for professional bloggers and niche site owners.",
+        "features": [
+          "1 production site license",
+          "All advanced Pro modules",
+          "Automated updates",
+          "Priority email support"
+        ],
+        "cta": "Buy Pro License",
+        "href": "https://freemius.com",
+        "isFeatured": true
+      },
+      {
+        "name": "Pro Multi-Site Agency",
+        "priceYearly": "$99",
+        "priceLifetime": "$299",
+        "periodYearly": "/ Year",
+        "periodLifetime": "One-Time",
+        "desc": "Designed for growing agencies and multi-site networks.",
+        "features": [
+          "Up to 5 production domains",
+          "Centralized Freemius license dashboard",
+          "All Pro modules",
+          "24-hour response SLA"
+        ],
+        "cta": "Buy Agency License",
+        "href": "https://freemius.com",
+        "isFeatured": false
+      },
+      {
+        "name": "Pro Unlimited Developer",
+        "priceYearly": "$199",
+        "priceLifetime": "$499",
+        "periodYearly": "/ Year",
+        "periodLifetime": "One-Time",
+        "desc": "Full freedom for large publishers and client developers.",
+        "features": [
+          "Unlimited personal and client domains",
+          "REST API analytics access",
+          "VIP engineering support",
+          "White-label options"
+        ],
+        "cta": "Buy Developer License",
+        "href": "https://freemius.com",
+        "isFeatured": false
+      }
+    ]
+  }
+}

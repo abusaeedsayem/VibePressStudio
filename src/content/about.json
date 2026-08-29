@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "badge": "Studio Engineering Standards",
+    "title": "Engineered for Substance, Not Software Bloat",
+    "subtitle": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in two primary domains: modular, high-performance WordPress infrastructure and offline-first, native desktop operating systems."
+  },
+  "vision": {
+    "headline": "Engineered for Substance, Not Software Bloat",
+    "narrative": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in two primary domains: modular, high-performance WordPress infrastructure and offline-first, native desktop operating systems.",
+    "philosophy": "We avoid bloated architectures, unnecessary database tables, and unneeded cloud dependencies. Whether operating on an enterprise WordPress site or a local desktop workstation, our tools deliver deterministic, rock-solid performance."
+  },
+  "pillars": [
+    {
+      "num": "1",
+      "title": "Modular, Standards-Based WordPress Code",
+      "desc": "Engineered strictly according to WordPress Core Coding Standards, PSR-4 class auto-loading, and PSR-12 conventions."
+    },
+    {
+      "num": "2",
+      "title": "Modern Desktop Architecture",
+      "desc": "Leveraging Rust and Tauri v2 to deliver native binaries that run with fractional memory usage compared to Electron applications."
+    },
+    {
+      "num": "3",
+      "title": "Local-First Data Sovereignty",
+      "desc": "User data belongs to the user; our desktop software runs fully isolated on local ACID-compliant SQLite databases."
+    },
+    {
+      "num": "4",
+      "title": "Multi-Channel Distribution",
+      "desc": "We deliver our software through WordPress.org, Freemius, and AppSumo to provide accessible, flexible licensing for creators and businesses."
+    }
+  ]
+}

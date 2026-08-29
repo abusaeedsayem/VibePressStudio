@@ -1,0 +1,11 @@
+{
+  "title": "Privacy Policy & Cookie-Less Architecture",
+  "updated": "Last updated: August 2026",
+  "sections": [
+    { "heading": "1. Information We Collect", "body": "We collect information that you provide directly to us, such as when you purchase a license or contact technical support. This includes your name, professional email address, and transaction identifiers." },
+    { "heading": "2. How We Use Your Information", "body": "We use the information we collect strictly to provide, maintain, and support our products, process transactions, and respond to technical inquiry tickets." },
+    { "heading": "3. Desktop Software Telemetry", "body": "ShelfMaster operates 100% offline. We collect zero telemetry, zero usage analytics, and zero Personally Identifiable Information (PII) from your desktop installation. All data remains isolated on your local SQLite database." },
+    { "heading": "4. WordPress Plugin Telemetry", "body": "Smart Affiliate Link Cloaker uses a cookie-less link redirection engine. If you opt-in via Freemius, basic environmental diagnostic metrics (WordPress version, PHP version) are transmitted to deliver automated software updates." },
+    { "heading": "5. Contact Us", "body": "If you have any questions about this Privacy Policy, please contact our engineering helpdesk at vibepress.studio@proton.me." }
+  ]
+}

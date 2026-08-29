@@ -1,0 +1,17 @@
+{
+  "name": "VibePress Studio",
+  "title": "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
+  "titleTemplate": "%s | VibePress Studio",
+  "description": "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
+  "keywords": ["WordPress plugins", "desktop apps", "Tauri v2", "Rust", "Next.js", "software studio", "library management", "affiliate link cloaker"],
+  "author": {
+    "name": "VibePress Studio",
+    "url": "https://vibepressstudio.vercel.app"
+  },
+  "url": "https://vibepressstudio.vercel.app",
+  "ogImage": "/images/og-image.jpg",
+  "tagline": "High-Performance Digital Tools & Desktop Applications",
+  "footerTagline": "High-performance software engineering studio crafting bloat-free WordPress plugins and offline-first desktop management tools.",
+  "copyright": "© 2026 VibePress Studio. All rights reserved. Built for performance and data privacy.",
+  "accreditation": "Designed & Engineered by Lead Software Architect Abu Saeed Sayem."
+}

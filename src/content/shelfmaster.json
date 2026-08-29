@@ -1,0 +1,136 @@
+{
+  "eyebrow": "Next-Gen Library Operation & Management System",
+  "hero": {
+    "title": "Lightning-Fast, 100% Offline Desktop Application Powered by Tauri v2 and SQLite",
+    "subtitle": "An all-in-one local desktop application replacing fragile spreadsheets and costly cloud services with ultra-fast cataloging, circulation, payroll, and financial tracking.",
+    "ctaPrimary": "Get ShelfMaster on AppSumo",
+    "ctaPrimaryHref": "https://appsumo.com/products/shelfmaster/",
+    "ctaSecondary": "Download Commercial Desktop Package",
+    "ctaSecondaryHref": "/pricing",
+    "coreMetrics": [
+      "Starts in under 1 second",
+      "Consumes under 40MB of RAM",
+      "Zero Monthly Cloud Fees",
+      "True Offline Reliability"
+    ]
+  },
+  "problems": {
+    "title": "The Problem with Legacy Spreadsheets & Web SaaS",
+    "subtitle": "Why modern institutions are switching from fragile sheets and expensive SaaS to native desktop software.",
+    "items": [
+      {
+        "title": "The Spreadsheet Risk",
+        "desc": "Excel sheets lack relational integrity, corrupt easily with larger inventories, and provide zero security for sensitive member data.",
+        "icon": "FileSpreadsheet"
+      },
+      {
+        "title": "The Cloud SaaS Bottleneck",
+        "desc": "Web applications incur ongoing monthly server costs and become completely unusable when internet connectivity drops.",
+        "icon": "CloudOff"
+      },
+      {
+        "title": "The ShelfMaster Advantage",
+        "desc": "Rust-powered desktop native performance, zero hosting fees, full hardware peripheral compatibility, and complete data privacy.",
+        "icon": "Zap"
+      }
+    ]
+  },
+  "modules": {
+    "title": "Nine Core Integrated Modules",
+    "subtitle": "A complete operational operating system built into a single lightweight desktop binary.",
+    "items": [
+      {
+        "title": "Master Cataloging & Copy Tracking",
+        "desc": "Catalog book editions, multi-author data, and ISBNs while managing physical shelf locations and accession barcodes.",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "3-Second POS Circulation Desk",
+        "desc": "Scan member IDs and book barcodes to execute checkouts in seconds, complete with automated overdue fine calculation.",
+        "icon": "ShoppingCart"
+      },
+      {
+        "title": "Donors & Gift Registry",
+        "desc": "Record donor profiles, track donated inventory with distinct tags, and print professional donation certificates.",
+        "icon": "Gift"
+      },
+      {
+        "title": "Dual Membership KYC System",
+        "desc": "Register standard paying members or authorize waived special privilege memberships with built-in photo and ID card printing.",
+        "icon": "Users"
+      },
+      {
+        "title": "Staff HR & Weekly Duty Roster",
+        "desc": "Maintain complete staff directories and assign shift schedules and departmental duties through a visual calendar.",
+        "icon": "Calendar"
+      },
+      {
+        "title": "Automated Payroll Engine",
+        "desc": "Calculate net monthly salaries, manage deductions and overtime bonuses, and export official printable pay-slips.",
+        "icon": "Banknote"
+      },
+      {
+        "title": "Institutional Expense Management",
+        "desc": "Record day-to-day operating expenditures with voucher tracking, vendor notes, and category budgets.",
+        "icon": "Receipt"
+      },
+      {
+        "title": "Unified Cash-Flow Ledger & Audits",
+        "desc": "Automatically reconcile membership fees, late fines, staff payroll, and operational expenses into unified balance sheets.",
+        "icon": "BarChart"
+      },
+      {
+        "title": "Hardware & Multi-Format Printing",
+        "desc": "Full support for USB barcode scanners, 58mm/80mm thermal receipts, and full A4 administrative document printers.",
+        "icon": "Printer"
+      }
+    ]
+  },
+  "deployments": {
+    "title": "Real-World Deployments",
+    "subtitle": "Trusted across municipal libraries, educational campuses, and research collections.",
+    "items": [
+      {
+        "title": "Municipal and Community Libraries",
+        "desc": "Fast member checkouts, reliable late-fine auditing, and uninterrupted offline daily operations.",
+        "icon": "Building2"
+      },
+      {
+        "title": "Academic Schools and Colleges",
+        "desc": "Rapid semester-start cataloging, student duty scheduling, and instant scholarship member authorization.",
+        "icon": "GraduationCap"
+      },
+      {
+        "title": "Research Centers and Private Collections",
+        "desc": "Detailed acquisition tracking, donation provenance, and printable financial audit reports.",
+        "icon": "Landmark"
+      }
+    ]
+  },
+  "architecture": {
+    "title": "Technical Architecture & Platform Compatibility",
+    "description": "Engineered for rock-solid local execution with fractional system footprint.",
+    "frontend": "React 18, TypeScript, Tailwind CSS, shadcn/ui",
+    "kernel": "Tauri v2, Rust native system APIs, SQLite3 with WAL persistence",
+    "platforms": "Windows (.msi and .exe), macOS (.dmg), and Linux (.deb and .AppImage)"
+  },
+  "pricing": {
+    "title": "AppSumo Lifetime Deal & Direct Licensing",
+    "subtitle": "Pay once and own your library operating system forever. Zero subscription fees.",
+    "planName": "AppSumo Founder Lifetime Deal",
+    "price": "$79",
+    "originalPrice": "$199",
+    "desc": "Get complete lifetime access to ShelfMaster with all 9 core operational modules included.",
+    "cta": "Claim AppSumo Lifetime Deal",
+    "ctaHref": "https://appsumo.com/products/shelfmaster/",
+    "guarantee": "60-Day Money-Back Guarantee backed by AppSumo",
+    "features": [
+      "Lifetime desktop software license",
+      "Complete 9-module offline engine",
+      "Unlimited member & catalog records",
+      "USB barcode scanner & thermal printer support",
+      "A4 document & certificate printing",
+      "100% offline data privacy"
+    ]
+  }
+}

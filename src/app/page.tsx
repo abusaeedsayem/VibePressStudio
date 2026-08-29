@@ -3,239 +3,328 @@
 import Link from "next/link";
 import { useState } from "react";
 import { products } from "@/data/products";
-import { ArrowRight, Package, Monitor, CheckCircle2, Zap, Database, CloudOff, Shield } from "lucide-react";
-
-const stats = [
-  { icon: Zap, label: "<1s Startup Time", desc: "Desktop app cold boot" },
-  { icon: Database, label: "Zero DB Bloat", desc: "Custom table architecture" },
-  { icon: CloudOff, label: "100% Offline", desc: "No cloud dependency" },
-  { icon: Shield, label: "FTC Compliant", desc: "Auto-disclosure injector" },
-];
+import { 
+  ArrowRight, Package, Monitor, CheckCircle2, Zap, Database, 
+  CloudOff, ShieldCheck, Download, Code2, Lock, Scale
+} from "lucide-react";
+import homeData from "@/content/home.json";
 
 export default function HomePage() {
   const [filter, setFilter] = useState<"all" | "wordpress-plugin" | "desktop-app">("all");
 
-  const filtered = filter === "all" ? products : products.filter(p => p.category === filter);
+  const filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter);
+  const { hero, valueProps, flagship, standards, globalCta } = homeData;
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
 
-      {/* ── Hero Section ── */}
-      <section className="bg-primary text-on-primary py-20 md:py-28 px-4 md:px-6 overflow-hidden relative">
-        {/* Subtle grid overlay */}
-        <div className="absolute inset-0 opacity-[0.04]" style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)",
-          backgroundSize: "40px 40px"
-        }} />
-        <div className="relative z-10 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8 text-label-caps text-white/80">
-            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-            Now available — ShelfMaster v1.2 released
+      {/* ── 1. Hero Section ── */}
+      <section className="relative bg-gradient-to-b from-primary/10 via-background to-background py-20 md:py-28 px-4 md:px-6 overflow-hidden border-b border-border">
+        <div className="max-w-[1280px] mx-auto text-center relative z-10">
+          
+          {/* Eyebrow Badge */}
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+            <span className="text-xs md:text-sm font-semibold text-primary">
+              {hero.eyebrow}
+            </span>
           </div>
 
-          <h1 className="text-headline-lg-mobile md:text-headline-xl mb-6 leading-tight text-white">
-            Engineered for Performance.{" "}
-            <br className="hidden md:block" />
-            Built for Growth.
+          {/* Main Headline */}
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight text-foreground mb-6">
+            {hero.title}
           </h1>
 
-          <p className="text-body-lg text-primary-fixed mb-10 max-w-2xl mx-auto leading-relaxed">
-            High-performance WordPress Plugins, Offline-First Desktop Systems, and Creator Tools crafted by{" "}
-            <span className="font-semibold text-white">Abu Saeed Sayem</span>.
+          {/* Supporting Subheadline */}
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
+            {hero.subtitle}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Action CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link
               href="#products"
-              className="bg-white text-primary text-label-caps py-4 px-8 rounded-full hover:bg-surface-container-lowest transition-colors w-full sm:w-auto text-center shadow-lg font-bold flex items-center justify-center gap-2"
+              className="w-full sm:w-auto bg-primary text-primary-foreground text-sm font-bold py-4 px-8 rounded-full hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
             >
-              Explore Products <ArrowRight className="h-4 w-4" />
+              {hero.ctaPrimary} <ArrowRight className="h-4 w-4" />
             </Link>
-            <a
-              href="https://appsumo.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-white/30 text-white text-label-caps py-4 px-8 rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto text-center flex items-center justify-center gap-2"
+            <Link
+              href="/pricing"
+              className="w-full sm:w-auto bg-background text-foreground border border-input text-sm font-bold py-4 px-8 rounded-full hover:bg-muted transition-all flex items-center justify-center gap-2"
             >
-              View on AppSumo / Freemius
-            </a>
+              {hero.ctaSecondary}
+            </Link>
+          </div>
+
+          {/* Trust Proof Bar */}
+          <div className="pt-8 border-t border-border/60 max-w-4xl mx-auto">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-xs md:text-sm font-medium text-muted-foreground">
+              {hero.trustBar.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── 2. Studio Value Proposition Block ── */}
+      <section className="py-20 px-4 md:px-6 bg-muted/20 border-b border-border">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground mb-4">
+              {valueProps.title}
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg">
+              Our engineering principles prioritize speed, offline reliability, and zero unnecessary dependencies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {valueProps.pillars.map((pillar, idx) => {
+              return (
+                <div 
+                  key={idx} 
+                  className="bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-primary/30 transition-all flex flex-col"
+                >
+                  <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4 text-primary">
+                    {idx === 0 ? <Database className="h-6 w-6" /> : idx === 1 ? <CloudOff className="h-6 w-6" /> : idx === 2 ? <ShieldCheck className="h-6 w-6" /> : <Zap className="h-6 w-6" />}
+                  </div>
+                  <h3 className="font-bold text-lg text-foreground mb-2">
+                    Core Pillar {idx + 1}: {pillar.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                    {pillar.desc}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* ── Stats Bar ── */}
-      <section className="bg-inverse-surface text-inverse-on-surface py-8 px-4 md:px-6">
-        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
-          {stats.map(({ icon: Icon, label, desc }) => (
-            <div key={label} className="flex flex-col items-center text-center py-4 md:py-0 px-4 gap-2">
-              <Icon className="h-5 w-5 text-primary-fixed-dim mb-1" />
-              <span className="font-bold text-base text-white">{label}</span>
-              <span className="text-xs text-inverse-on-surface/60">{desc}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Products Section ── */}
-      <section id="products" className="px-4 md:px-6 max-w-[1280px] mx-auto py-20 w-full">
-        <div className="text-center mb-12">
-          <p className="text-label-caps text-primary mb-3">Our Products</p>
-          <h2 className="text-headline-lg text-on-background mb-4">
-            Flagship Software Solutions
+      {/* ── 3. Featured Flagship Products Showcase ── */}
+      <section id="products" className="py-20 px-4 md:px-6 max-w-[1280px] mx-auto w-full">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">
+            {flagship.eyebrow}
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+            {flagship.title}
           </h2>
-          <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Discover tools designed to elevate your workflow and boost your online presence.
+          <p className="text-muted-foreground text-base md:text-lg">
+            {flagship.subtitle}
           </p>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex items-center justify-center gap-2 mb-10">
-          {[
-            { key: "all", label: "All Solutions" },
-            { key: "wordpress-plugin", label: "WordPress Plugins" },
-            { key: "desktop-app", label: "Desktop Software" },
-          ].map(tab => (
-            <button
-              key={tab.key}
-              onClick={() => setFilter(tab.key as typeof filter)}
-              className={`text-label-caps px-5 py-2.5 rounded-full transition-all duration-200 ${
-                filter === tab.key
-                  ? "bg-primary text-on-primary shadow-sm"
-                  : "bg-surface-container text-on-surface-variant hover:bg-surface-container-high"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Category Toggles */}
+        <div className="flex items-center justify-center gap-2 mb-12">
+          <button
+            onClick={() => setFilter("all")}
+            className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
+              filter === "all"
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
+            }`}
+          >
+            All Software
+          </button>
+          <button
+            onClick={() => setFilter("wordpress-plugin")}
+            className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
+              filter === "wordpress-plugin"
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
+            }`}
+          >
+            WordPress Plugins
+          </button>
+          <button
+            onClick={() => setFilter("desktop-app")}
+            className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
+              filter === "desktop-app"
+                ? "bg-primary text-primary-foreground shadow-sm"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
+            }`}
+          >
+            Desktop Applications
+          </button>
         </div>
 
-        {/* Product Grid */}
+        {/* Product Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {filtered.map((product) => (
+          {filteredProducts.map((p) => (
             <div
-              key={product.id}
-              className="bg-surface border border-border-subtle rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary/20 transition-all duration-300 premium-glow flex flex-col"
+              key={p.id}
+              className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary/30 transition-all flex flex-col"
             >
-              {/* Image / Visual area */}
-              <div className="aspect-[16/9] relative overflow-hidden bg-surface-container-high">
-                {/* Gradient placeholder — replace with actual screenshots */}
-                <div className={`absolute inset-0 flex items-center justify-center ${
-                  product.category === "wordpress-plugin"
-                    ? "bg-gradient-to-br from-blue-600 to-indigo-800"
-                    : "bg-gradient-to-br from-slate-700 to-indigo-900"
-                }`}>
-                  {product.category === "wordpress-plugin" ? (
-                    <Package className="h-20 w-20 text-white/20" />
-                  ) : (
-                    <Monitor className="h-20 w-20 text-white/20" />
-                  )}
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent">
-                    <p className="text-white font-bold text-lg">{product.name}</p>
-                    <p className="text-white/70 text-sm">{product.tagline}</p>
-                  </div>
+              {/* Top Banner */}
+              <div className={`p-8 ${
+                p.category === "wordpress-plugin" 
+                  ? "bg-gradient-to-r from-blue-600 to-indigo-700 text-white" 
+                  : "bg-gradient-to-r from-slate-800 to-indigo-950 text-white"
+              }`}>
+                <div className="flex items-center justify-between gap-4 mb-4">
+                  <span className="text-xs font-extrabold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
+                    {p.category === "wordpress-plugin" ? "WordPress Performance Plugin" : "Native Desktop Application (Win/macOS/Linux)"}
+                  </span>
+                  <span className="text-xs font-mono font-medium opacity-80">
+                    {p.version}
+                  </span>
                 </div>
+                <h3 className="text-2xl font-bold mb-2">
+                  {p.name}
+                </h3>
+                <p className="text-sm opacity-90 leading-snug">
+                  {p.tagline}
+                </p>
               </div>
 
               {/* Card Body */}
               <div className="p-8 flex flex-col flex-1">
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <h3 className="text-headline-md text-on-background">{product.name}</h3>
-                  <span className={`text-label-caps px-3 py-1 rounded-full whitespace-nowrap flex-shrink-0 ${
-                    product.category === "wordpress-plugin"
-                      ? "bg-success/10 text-success"
-                      : "bg-primary-container/10 text-primary-container"
-                  }`}>
-                    {product.category === "wordpress-plugin" ? "WordPress Plugin" : "Desktop Software"}
-                  </span>
-                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                  {p.description}
+                </p>
 
-                <p className="text-body-md text-on-surface-variant mb-5">{product.description.slice(0, 140)}...</p>
-
-                {/* Key highlights */}
-                {product.keyFeatures.slice(0, 3).map(f => (
-                  <div key={f.title} className="flex items-center gap-2 text-sm text-on-surface-variant mb-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
-                    {f.title}
+                {/* Key Architecture Highlights */}
+                <div className="mb-6">
+                  <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-3">
+                    Key Architecture Highlights:
+                  </h4>
+                  <div className="space-y-2">
+                    {p.keyFeatures.slice(0, 3).map((feat, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                        <span><strong>{feat.title}:</strong> {feat.description}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-
-                {/* Tech Stack badges */}
-                <div className="flex flex-wrap gap-2 mt-5 mb-6">
-                  {product.techStack.slice(0, 4).map(tech => (
-                    <span key={tech} className="text-[11px] font-mono bg-surface-container-low text-on-surface-variant px-2.5 py-1 rounded border border-border-subtle">
-                      {tech}
-                    </span>
-                  ))}
                 </div>
 
-                {/* CTA */}
-                <div className="mt-auto flex gap-3">
+                {/* Distribution Channels */}
+                <div className="mb-8">
+                  <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-2">
+                    Distribution Channels:
+                  </h4>
+                  <div className="flex flex-wrap gap-2 text-xs font-medium text-muted-foreground">
+                    {p.category === "wordpress-plugin" ? (
+                      <>
+                        <span className="bg-muted px-2.5 py-1 rounded border">Free on WordPress.org</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">Pro on Freemius</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">Lifetime on AppSumo</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="bg-muted px-2.5 py-1 rounded border">AppSumo Lifetime Deal</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">Direct Studio License</span>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* Action Links */}
+                <div className="mt-auto flex flex-col sm:flex-row gap-3">
                   <Link
-                    href={`/products/${product.slug}`}
-                    className="flex-1 bg-primary text-on-primary text-label-caps py-3 px-6 rounded hover:bg-primary-container transition-colors text-center flex items-center justify-center gap-2"
+                    href={`/products/${p.slug}`}
+                    className="flex-1 bg-primary text-primary-foreground text-xs font-bold py-3 px-5 rounded-lg hover:bg-primary/90 transition-colors text-center flex items-center justify-center gap-1.5"
                   >
-                    Explore Product <ArrowRight className="h-3.5 w-3.5" />
+                    {p.category === "wordpress-plugin" ? "Learn More & Live Demo" : "Explore Modules"} <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                   <Link
-                    href={`/products/${product.slug}#pricing`}
-                    className="border border-border-strong text-on-surface text-label-caps py-3 px-6 rounded hover:bg-surface-container-low transition-colors text-center"
+                    href={p.category === "wordpress-plugin" ? "/pricing" : "/pricing"}
+                    className="flex-1 bg-muted text-foreground border border-input text-xs font-bold py-3 px-5 rounded-lg hover:bg-muted/80 transition-colors text-center flex items-center justify-center gap-1.5"
                   >
-                    Pricing
+                    {p.category === "wordpress-plugin" ? "Get Pro License" : "Download Desktop Edition"}
                   </Link>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── Distribution Channels ── */}
-      <section className="bg-surface-container-low px-4 md:px-6 py-20 border-y border-border-subtle">
-        <div className="max-w-[1280px] mx-auto text-center">
-          <p className="text-label-caps text-primary mb-3">Where to Get It</p>
-          <h2 className="text-headline-lg text-on-background mb-4">Distribution Channels</h2>
-          <p className="text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
-            Available across all major marketplaces and direct download portals.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { name: "WordPress.org", sub: "Free plugin directory", color: "from-blue-500 to-blue-600" },
-              { name: "Freemius", sub: "Pro license & billing", color: "from-indigo-500 to-purple-600" },
-              { name: "AppSumo", sub: "Lifetime deal offers", color: "from-amber-500 to-orange-600" },
-              { name: "Direct Download", sub: "Get it from our site", color: "from-slate-600 to-slate-800" },
-            ].map(ch => (
-              <div key={ch.name} className="bg-surface rounded-xl border border-border-subtle p-6 hover:shadow-md hover:border-primary/20 transition-all text-left">
-                <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${ch.color} mb-4`} />
-                <h3 className="font-semibold text-on-background text-sm">{ch.name}</h3>
-                <p className="text-xs text-on-surface-variant mt-1">{ch.sub}</p>
+      {/* ── 4. Engineering Standards & Code Quality Section ── */}
+      <section className="py-20 px-4 md:px-6 bg-muted/30 border-y border-border">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+              {standards.title}
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg">
+              We adhere strictly to official coding standards, security specs, and zero telemetry privacy requirements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
+              <div className="p-3 bg-blue-500/10 text-blue-500 rounded-lg w-fit mb-4">
+                <Code2 className="h-6 w-6" />
               </div>
-            ))}
+              <h3 className="font-bold text-lg text-foreground mb-3">
+                {standards.items[0].heading}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {standards.items[0].body}
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
+              <div className="p-3 bg-amber-500/10 text-amber-500 rounded-lg w-fit mb-4">
+                <Lock className="h-6 w-6" />
+              </div>
+              <h3 className="font-bold text-lg text-foreground mb-3">
+                {standards.items[1].heading}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {standards.items[1].body}
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
+              <div className="p-3 bg-emerald-500/10 text-emerald-500 rounded-lg w-fit mb-4">
+                <ShieldCheck className="h-6 w-6" />
+              </div>
+              <h3 className="font-bold text-lg text-foreground mb-3">
+                {standards.items[2].heading}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {standards.items[2].body}
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Architect Spotlight ── */}
-      <section className="px-4 md:px-6 max-w-[1280px] mx-auto py-20 w-full">
-        <div className="bg-surface border border-border-subtle rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center gap-10 premium-glow">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-3xl font-extrabold text-white flex-shrink-0">
-            AS
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <p className="text-label-caps text-primary mb-2">Lead Architect</p>
-            <h3 className="text-headline-md text-on-background mb-3">Abu Saeed Sayem</h3>
-            <p className="text-body-md text-on-surface-variant leading-relaxed max-w-2xl">
-              Building high-performance, offline-first systems and WordPress plugins with zero bloat. Every product at VibePress Studio is engineered with a relentless focus on speed, reliability, and the end user.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3 justify-center md:justify-start">
-              <a href="https://abusaeedsayem.netlify.app" target="_blank" rel="noopener noreferrer"
-                className="text-label-caps border border-border-strong text-on-surface px-5 py-2.5 rounded hover:bg-surface-container-low transition-colors">
-                Developer Portfolio ↗
-              </a>
-              <a href="https://github.com/abusaeedsayem" target="_blank" rel="noopener noreferrer"
-                className="text-label-caps border border-border-strong text-on-surface px-5 py-2.5 rounded hover:bg-surface-container-low transition-colors">
-                GitHub ↗
-              </a>
-            </div>
+      {/* ── 5. Global Call to Action Section ── */}
+      <section className="py-20 px-4 md:px-6 bg-primary text-primary-foreground text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
+            {globalCta.title}
+          </h2>
+          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-10 leading-relaxed">
+            {globalCta.subtitle}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href={globalCta.cta1Href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-background text-foreground text-sm font-bold py-4 px-8 rounded-full hover:bg-muted transition-all flex items-center justify-center gap-2 shadow-lg"
+            >
+              <Download className="h-4 w-4" /> {globalCta.cta1Label}
+            </a>
+            <a
+              href={globalCta.cta2Href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-white/10 text-white border border-white/20 text-sm font-bold py-4 px-8 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+            >
+              {globalCta.cta2Label}
+            </a>
           </div>
         </div>
       </section>

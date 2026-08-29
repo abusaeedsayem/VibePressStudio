@@ -1,45 +1,17 @@
-import { Badge } from "@/components/ui/badge";
-
-const changelogs = [
-  {
-    date: "August 2026",
-    version: "v1.2.0 (ShelfMaster)",
-    changes: [
-      "Added dual membership KYC feature for waived privilege accounts.",
-      "Optimized SQLite query execution reducing RAM usage by 15%.",
-      "Fixed an issue with 58mm thermal printer alignment on Linux."
-    ]
-  },
-  {
-    date: "July 2026",
-    version: "v2.1.4 (Link Cloaker)",
-    changes: [
-      "Implemented strict FTC auto-disclosure injector.",
-      "Added support for 307 temporary redirects.",
-      "Fixed compatibility issue with WordPress 6.6."
-    ]
-  },
-  {
-    date: "June 2026",
-    version: "v1.0.0 (VibePress Studio Launch)",
-    changes: [
-      "Official launch of the VibePress Studio platform.",
-      "Initial release of Smart Affiliate Link Cloaker Pro.",
-      "Initial release of ShelfMaster Desktop."
-    ]
-  }
-];
+import changelogData from "@/content/changelog.json";
 
 export default function ChangelogPage() {
+  const { title, subtitle, entries } = changelogData;
+
   return (
     <div className="container px-4 md:px-6 py-16 mx-auto max-w-4xl min-h-screen">
-      <h1 className="text-4xl font-bold tracking-tight mb-4">Changelog & Updates</h1>
+      <h1 className="text-4xl font-bold tracking-tight mb-4">{title}</h1>
       <p className="text-lg text-muted-foreground mb-12">
-        Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.
+        {subtitle}
       </p>
 
       <div className="space-y-12">
-        {changelogs.map((log, index) => (
+        {entries.map((log, index) => (
           <div key={index} className="relative pl-8 md:pl-0">
             <div className="md:grid md:grid-cols-4 gap-6 items-baseline">
               <div className="mb-4 md:mb-0 md:text-right">

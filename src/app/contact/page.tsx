@@ -8,8 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Clock, Send, CheckCircle2, LifeBuoy, AlertCircle } from "lucide-react";
+import { Mail, Clock, Send, CheckCircle2, LifeBuoy, ShieldCheck, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import contactData from "@/content/contact.json";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -18,77 +19,108 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 1500);
+    }, 1200);
   };
 
+  const { hero, channels, directEmail, sla, form } = contactData;
+
   return (
-    <div className="flex flex-col min-h-screen bg-muted/10">
-      <div className="border-b bg-background">
-        <div className="container px-4 md:px-6 py-16 md:py-24 mx-auto max-w-5xl text-center">
-          <Badge variant="outline" className="mb-4">Support & Contact Center</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">How can we help you?</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Whether you need technical assistance, have a billing question, or want to report a bug, we're here to help.
+    <div className="flex flex-col min-h-screen bg-background">
+      
+      {/* Support Hero Block */}
+      <section className="bg-gradient-to-b from-primary/10 via-background to-background py-16 md:py-24 border-b border-border text-center">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+          <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1">
+            {hero.badge}
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-6 max-w-4xl mx-auto">
+            {hero.title}
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            {hero.subtitle}
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="container px-4 md:px-6 py-12 mx-auto max-w-5xl">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Sidebar Info */}
-          <div className="md:col-span-1 space-y-6">
-            <Card className="border-primary/20 shadow-sm">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Mail className="h-5 w-5 text-primary" /> Direct Email
+      {/* Main Support Grid */}
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-16 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          
+          {/* Sidebar: Channels & SLA Info */}
+          <div className="lg:col-span-1 space-y-6">
+            
+            {/* Primary Support Email */}
+            <Card className="border-primary/30 shadow-sm bg-card">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base font-bold flex items-center gap-2">
+                  <Mail className="h-5 w-5 text-primary" /> {directEmail.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-2">For general inquiries, email the lead developer directly at:</p>
-                <a href="mailto:asaeedmsayem@gmail.com" className="font-medium text-primary hover:underline">
-                  asaeedmsayem@gmail.com
+              <CardContent className="space-y-2">
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {directEmail.description}
+                </p>
+                <a 
+                  href={`mailto:${directEmail.email}`} 
+                  className="inline-block font-mono text-sm font-bold text-primary hover:underline bg-primary/10 px-3 py-1.5 rounded border border-primary/20"
+                >
+                  {directEmail.email}
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="shadow-sm">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Clock className="h-5 w-5 text-blue-500" /> SLA Commitment
+            {/* Operating Hours & SLA */}
+            <Card className="border-border shadow-sm bg-card">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base font-bold flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-blue-500" /> {sla.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Our official response time for active Pro License holders is <strong className="text-foreground">24-48 business hours</strong> (Monday-Friday).
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {sla.description}
                 </p>
               </CardContent>
             </Card>
-            
-            <Card className="bg-amber-500/10 border-amber-500/20">
-              <CardContent className="pt-6">
-                <div className="flex gap-3">
-                  <AlertCircle className="h-5 w-5 text-amber-600 shrink-0" />
-                  <p className="text-sm text-amber-800 dark:text-amber-400">
-                    <strong>Before submitting:</strong> Please ensure you have checked the <a href="/docs" className="underline font-medium hover:text-amber-900">Documentation Knowledgebase</a> as 90% of configuration issues are solved there.
-                  </p>
-                </div>
+
+            {/* Support Channels & Helpdesk */}
+            <Card className="border-border shadow-sm bg-card">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base font-bold flex items-center gap-2">
+                  <LifeBuoy className="h-5 w-5 text-emerald-500" /> Support Channels
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {channels.map((ch, idx) => (
+                  <div key={idx} className="border-b border-border/60 pb-3 last:border-0 last:pb-0 space-y-1">
+                    <div className="flex items-center justify-between text-xs font-bold text-foreground">
+                      <span>{ch.name}</span>
+                      {ch.href.startsWith("http") && (
+                        <a href={ch.href} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      )}
+                    </div>
+                    <p className="text-xs text-muted-foreground">{ch.desc}</p>
+                  </div>
+                ))}
               </CardContent>
             </Card>
+
           </div>
 
-          {/* Contact Form */}
-          <div className="md:col-span-2">
-            <Card className="shadow-md">
+          {/* Interactive Support Form */}
+          <div className="lg:col-span-2" id="contact-form">
+            <Card className="border-border shadow-md bg-card">
               <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
-                  <LifeBuoy className="h-6 w-6" /> Open a Support Ticket
+                <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                  <ShieldCheck className="h-6 w-6 text-primary" /> {form.title}
                 </CardTitle>
-                <CardDescription>
-                  Please provide as much detail as possible so we can route your request efficiently.
+                <CardDescription className="text-xs">
+                  {form.description}
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -98,82 +130,84 @@ export default function ContactPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex flex-col items-center justify-center py-12 text-center space-y-4"
                   >
-                    <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center">
-                      <CheckCircle2 className="h-8 w-8 text-green-600" />
+                    <div className="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                      <CheckCircle2 className="h-8 w-8 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <h3 className="text-2xl font-bold">Ticket Submitted Successfully</h3>
-                    <p className="text-muted-foreground max-w-md">
-                      Thank you for reaching out. We have received your request and will get back to you at your provided email address within our SLA timeframe.
+                    <h3 className="text-2xl font-bold">{form.successTitle}</h3>
+                    <p className="text-xs text-muted-foreground max-w-md">
+                      {form.successDesc}
                     </p>
-                    <Button onClick={() => setIsSuccess(false)} variant="outline" className="mt-4">
-                      Submit Another Ticket
+                    <Button onClick={() => setIsSuccess(false)} variant="outline" className="mt-4 text-xs font-bold">
+                      {form.submitAnother}
                     </Button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Inputs 1 & 2 */}
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input id="name" required placeholder="John Doe" />
+                        <Label htmlFor="name" className="text-xs font-semibold">{form.inputs.name}</Label>
+                        <Input id="name" required placeholder="Jane Doe" className="text-xs bg-background" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input id="email" type="email" required placeholder="john@company.com" />
+                        <Label htmlFor="email" className="text-xs font-semibold">{form.inputs.email}</Label>
+                        <Input id="email" type="email" required placeholder="jane@organization.com" className="text-xs bg-background" />
                       </div>
                     </div>
 
+                    {/* Inputs 3 & 4 */}
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="product">Related Product</Label>
-                        <Select defaultValue="cloaker">
-                          <SelectTrigger id="product">
+                        <Label htmlFor="product" className="text-xs font-semibold">{form.inputs.product}</Label>
+                        <Select defaultValue="smart-affiliate-link-cloaker">
+                          <SelectTrigger id="product" className="text-xs bg-background">
                             <SelectValue placeholder="Select Product" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="cloaker">Smart Affiliate Link Cloaker</SelectItem>
-                            <SelectItem value="shelfmaster">ShelfMaster Desktop</SelectItem>
-                            <SelectItem value="other">General / Other</SelectItem>
+                            {form.productOptions.map(p => (
+                              <SelectItem key={p.value} value={p.value} className="text-xs">{p.label}</SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="category">Support Category *</Label>
-                        <Select required>
-                          <SelectTrigger id="category">
-                            <SelectValue placeholder="Select Category" />
+                        <Label htmlFor="category" className="text-xs font-semibold">{form.inputs.category}</Label>
+                        <Select defaultValue="general-inquiry">
+                          <SelectTrigger id="category" className="text-xs bg-background">
+                            <SelectValue placeholder="Select Support Category" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="wp-org">Free Plugin Community Support (WordPress.org)</SelectItem>
-                            <SelectItem value="pro-billing">Pro License Billing & Activation (Freemius)</SelectItem>
-                            <SelectItem value="appsumo">AppSumo Code Redemption</SelectItem>
-                            <SelectItem value="bug">Technical Bug Report</SelectItem>
-                            <SelectItem value="feature">Custom Feature Inquiry</SelectItem>
+                            {form.categoryOptions.map(c => (
+                              <SelectItem key={c.value} value={c.value} className="text-xs">{c.label}</SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                       </div>
                     </div>
 
+                    {/* Input 5 */}
                     <div className="space-y-2">
-                      <Label htmlFor="license">License Key / AppSumo Code</Label>
-                      <Input id="license" placeholder="sk_live_xxxxxxxx or AppSumo code (Optional for Free users)" />
-                      <p className="text-xs text-muted-foreground">Required for priority Pro support routing.</p>
+                      <Label htmlFor="license" className="text-xs font-semibold">{form.inputs.license}</Label>
+                      <Input id="license" placeholder="e.g. FM-123456789 or AppSumo Redemption Code" className="text-xs bg-background" />
                     </div>
 
+                    {/* Input 6 */}
                     <div className="space-y-2">
-                      <Label htmlFor="message">Message / Description *</Label>
+                      <Label htmlFor="message" className="text-xs font-semibold">{form.inputs.message}</Label>
                       <Textarea 
                         id="message" 
                         required 
-                        placeholder="Please describe your issue in detail. If reporting a bug, include steps to reproduce..." 
-                        className="min-h-[150px]"
+                        placeholder="Please describe your technical issue, licensing query, or AppSumo code details..." 
+                        className="min-h-[140px] text-xs bg-background"
                       />
                     </div>
 
-                    <Button type="submit" className="w-full h-12 text-base" disabled={isSubmitting}>
+                    {/* Submit Button */}
+                    <Button type="submit" className="w-full text-xs font-bold h-12" disabled={isSubmitting}>
                       {isSubmitting ? (
-                        <span className="flex items-center">Processing...</span>
+                        <span>{form.processing}</span>
                       ) : (
-                        <span className="flex items-center">Submit Ticket <Send className="ml-2 h-4 w-4" /></span>
+                        <span className="flex items-center gap-2">{form.submitButton} <Send className="h-4 w-4" /></span>
                       )}
                     </Button>
                   </form>
@@ -181,8 +215,10 @@ export default function ContactPage() {
               </CardContent>
             </Card>
           </div>
+
         </div>
       </div>
+
     </div>
   );
 }

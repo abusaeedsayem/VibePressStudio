@@ -1,0 +1,70 @@
+{
+  "hero": {
+    "eyebrow": "Engineered for Uncompromising Speed, Security, and Scalability",
+    "title": "High-Performance Software Crafted for Creators, Publishers, and Institutions",
+    "subtitle": "VibePress Studio engineers ultra-fast, bloat-free WordPress plugins and offline-first native desktop applications. Designed to replace sluggish systems with rock-solid, production-grade tools.",
+    "ctaPrimary": "Browse Our Products",
+    "ctaSecondary": "Claim AppSumo Lifetime Deals",
+    "trustBar": [
+      "Native WordPress VIP Standards Compliant",
+      "Built on Rust & Tauri v2",
+      "Zero Cloud Dependency",
+      "100% Privacy-First Architecture"
+    ]
+  },
+  "valueProps": {
+    "title": "Why VibePress Studio Builds Differently",
+    "pillars": [
+      {
+        "title": "Zero Database Bloat",
+        "desc": "WordPress plugins that never clog your database with custom tables or runaway background queries, preserving sub-millisecond execution speeds.",
+        "icon": "Database"
+      },
+      {
+        "title": "Offline-First Desktop Engineering",
+        "desc": "Native desktop applications that eliminate monthly SaaS subscriptions and run entirely offline with encrypted local SQLite engines for local and small organizations.",
+        "icon": "CloudOff"
+      },
+      {
+        "title": "Regulatory Compliance by Default",
+        "desc": "Built-in, automated compliance engines that protect your commercial operations without requiring manual configuration.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "Flexible Multi-Channel Distribution",
+        "desc": "Try core editions for free on WordPress.org, scale with Freemius pro licensing, or unlock exclusive lifetime deals on AppSumo.",
+        "icon": "Zap"
+      }
+    ]
+  },
+  "flagship": {
+    "eyebrow": "Flagship Software Showcase",
+    "title": "Production-Grade Engineering Solutions",
+    "subtitle": "Explore our flagship software designed for reliability, performance, and complete data privacy."
+  },
+  "standards": {
+    "title": "Built to Highest Industry Engineering Standards",
+    "items": [
+      {
+        "heading": "WordPress Core Standards",
+        "body": "Engineered in strict adherence to WordPress Core Coding Standards (WPCS), PSR-4 object-oriented modular patterns, and PSR-12 formatting rules."
+      },
+      {
+        "heading": "Native Rust Security",
+        "body": "Powered by Tauri v2 with native system-level memory safety, zero Electron bloat, and offline data sovereignty."
+      },
+      {
+        "heading": "Data Privacy Guarantee",
+        "body": "Zero telemetry, zero tracking of Personally Identifiable Information (PII), and strict adherence to global GDPR guidelines."
+      }
+    ]
+  },
+  "globalCta": {
+    "title": "Supercharge Your Publishing and Institutional Operations Today",
+    "subtitle": "Join thousands of publishers, system administrators, and organizations choosing lightweight, resilient, professional tools.",
+    "cta1Label": "Download Free Tools on WordPress.org",
+    "cta1Href": "https://wordpress.org",
+    "cta2Label": "Explore Premium Software on AppSumo",
+    "cta2Href": "https://appsumo.com"
+  }
+}

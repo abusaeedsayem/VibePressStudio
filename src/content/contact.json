@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Technical Helpdesk & Licensing",
+    "title": "Direct Technical Support & Licensing Inquiries",
+    "subtitle": "Have a technical inquiry, need license activation assistance, or want to redeem an AppSumo code? Our engineering team is ready to assist."
+  },
+  "channels": [
+    {
+      "name": "Free Plugin Community Channel",
+      "desc": "Hosted directly on the official WordPress.org support repository.",
+      "href": "https://wordpress.org/support/plugin/smart-affiliate-link-cloaker/"
+    },
+    {
+      "name": "Pro License Ticketing",
+      "desc": "Priority ticketing assistance for active Freemius license holders.",
+      "href": "https://freemius.com"
+    },
+    {
+      "name": "AppSumo Redemption Support",
+      "desc": "Dedicated support for lifetime deal code redemptions and tier activations.",
+      "href": "#contact-form"
+    }
+  ],
+  "directEmail": {
+    "title": "Primary Support Email",
+    "email": "vibepress.studio@proton.me",
+    "description": "Send direct inquiries directly to our lead engineering helpdesk."
+  },
+  "sla": {
+    "title": "Operating Hours & SLA",
+    "description": "Monday through Friday, 24 to 48 business hours response window."
+  },
+  "form": {
+    "title": "Send Support Request",
+    "description": "Fill out the fields below and our engineering team will respond within 24-48 business hours.",
+    "inputs": {
+      "name": "Full Name",
+      "email": "Professional Email Address",
+      "product": "Product Name",
+      "category": "Support Category",
+      "license": "License Key or AppSumo Redemption Code (Optional)",
+      "message": "Message Description"
+    },
+    "productOptions": [
+      { "value": "smart-affiliate-link-cloaker", "label": "Smart Affiliate Link Cloaker" },
+      { "value": "shelfmaster", "label": "ShelfMaster" }
+    ],
+    "categoryOptions": [
+      { "value": "general-inquiry", "label": "General Inquiry" },
+      { "value": "freemius-activation", "label": "Freemius Pro Activation" },
+      { "value": "appsumo-redemption", "label": "AppSumo Redemption" },
+      { "value": "bug-report", "label": "Bug Report" },
+      { "value": "feature-request", "label": "Feature Request" }
+    ],
+    "submitButton": "Send Support Request",
+    "processing": "Transmitting request...",
+    "successTitle": "Support Request Delivered",
+    "successDesc": "Thank you for reaching out. Our engineering team has received your ticket and will respond within 24-48 business hours.",
+    "submitAnother": "Send Another Message"
+  }
+}

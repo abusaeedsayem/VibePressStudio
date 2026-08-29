@@ -1,0 +1,34 @@
+{
+  "brand": "VibePress Studio",
+  "description": "High-performance software engineering studio crafting bloat-free WordPress plugins and offline-first desktop management tools.",
+  "accreditation": "Designed & Engineered by Lead Software Architect Abu Saeed Sayem.",
+  "copyright": "© 2026 VibePress Studio. All rights reserved. Built for performance and data privacy.",
+  "columns": [
+    {
+      "title": "Software Products",
+      "items": [
+        { "label": "Smart Affiliate Link Cloaker (WordPress Plugin)", "href": "/products/smart-affiliate-link-cloaker" },
+        { "label": "ShelfMaster (Desktop Application)", "href": "/products/shelfmaster" },
+        { "label": "Upcoming Studio Tools", "href": "/products#roadmap" }
+      ]
+    },
+    {
+      "title": "Documentation & Help",
+      "items": [
+        { "label": "Knowledgebase & Docs", "href": "/docs" },
+        { "label": "License Key Management", "href": "/pricing" },
+        { "label": "AppSumo Deal Redemption", "href": "/pricing" },
+        { "label": "Support Helpdesk", "href": "/contact" }
+      ]
+    },
+    {
+      "title": "Legal & Standards",
+      "items": [
+        { "label": "GNU General Public License v2 (GPLv2) Core Notice", "href": "/legal/license" },
+        { "label": "Terms of Service", "href": "/legal/terms" },
+        { "label": "Privacy Policy & Cookie-Less Architecture", "href": "/legal/privacy" },
+        { "label": "Affiliate Earnings Disclaimer", "href": "/legal/affiliate-disclosure" }
+      ]
+    }
+  ]
+}

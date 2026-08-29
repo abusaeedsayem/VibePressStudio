@@ -1,0 +1,33 @@
+{
+  "title": "Changelog & Updates",
+  "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
+  "entries": [
+    {
+      "date": "August 2026",
+      "version": "v1.2.0 (ShelfMaster)",
+      "changes": [
+        "Added dual membership KYC feature for waived privilege accounts.",
+        "Optimized SQLite query execution reducing RAM usage by 15%.",
+        "Fixed an issue with 58mm thermal printer alignment on Linux."
+      ]
+    },
+    {
+      "date": "July 2026",
+      "version": "v2.1.4 (Link Cloaker)",
+      "changes": [
+        "Implemented strict FTC auto-disclosure injector.",
+        "Added support for 307 temporary redirects.",
+        "Fixed compatibility issue with WordPress 6.6."
+      ]
+    },
+    {
+      "date": "June 2026",
+      "version": "v1.0.0 (VibePress Studio Launch)",
+      "changes": [
+        "Official launch of the VibePress Studio platform.",
+        "Initial release of Smart Affiliate Link Cloaker Pro.",
+        "Initial release of ShelfMaster Desktop."
+      ]
+    }
+  ]
+}

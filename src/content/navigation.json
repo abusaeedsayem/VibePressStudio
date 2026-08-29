@@ -1,0 +1,24 @@
+{
+  "brand": "VibePress Studio",
+  "tagline": "High-Performance Digital Tools & Desktop Application",
+  "links": [
+    { "label": "Products", "href": "/products", "hasDropdown": true },
+    { "label": "Marketplace", "href": "/pricing" },
+    { "label": "Documentation", "href": "/docs" },
+    { "label": "About", "href": "/about" },
+    { "label": "Support", "href": "/contact" }
+  ],
+  "actions": {
+    "secondaryLabel": "View Documentation",
+    "secondaryHref": "/docs",
+    "primaryLabel": "Explore",
+    "primaryHref": "/products"
+  },
+  "searchPlaceholder": "Search catalog...",
+  "searchDialogPlaceholder": "Search products, docs, features...",
+  "dropdownLabels": {
+    "products": "Products Ecosystem",
+    "wordpressPlugins": "WordPress Performance Plugin",
+    "desktopApps": "Desktop Application (Win/macOS/Linux)"
+  }
+}

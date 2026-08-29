@@ -2,12 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import {
   Dialog,
   DialogContent,
@@ -20,21 +14,21 @@ import {
   CommandItem,
   Command,
 } from "@/components/ui/command";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { products } from "@/data/products";
-import { Search, Menu, ExternalLink, Package, Monitor, ChevronDown } from "lucide-react";
-
-const navLinks = [
-  { label: "Products", href: "#products", hasDropdown: true },
-  { label: "Documentation", href: "/docs" },
-  { label: "Pricing & Marketplace", href: "/pricing" },
-  { label: "About Studio", href: "/about" },
-  { label: "Support", href: "/support" },
-];
+import { Search, Menu, Package, Monitor, ChevronDown, BookOpen, Compass } from "lucide-react";
+import navigationData from "@/content/navigation.json";
 
 export function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+
+  const brand = navigationData.brand ?? "VibePress Studio";
+  const tagline = navigationData.tagline ?? "High-Performance Digital Tools & Desktop Application";
+  const searchPlaceholder = navigationData.searchPlaceholder ?? "Search catalog...";
+  const searchDialogPlaceholder = navigationData.searchDialogPlaceholder ?? "Search products, docs, features...";
+  const actions = navigationData.actions;
 
   return (
     <>
@@ -42,7 +36,7 @@ export function Navbar() {
       <Dialog open={searchOpen} onOpenChange={setSearchOpen}>
         <DialogContent className="p-0 max-w-xl overflow-hidden">
           <Command className="rounded-xl border-0">
-            <CommandInput placeholder="Search products, docs, features..." />
+            <CommandInput placeholder={searchDialogPlaceholder} />
             <CommandList className="max-h-80">
               <CommandEmpty>No results found.</CommandEmpty>
               <CommandGroup heading="Products">
@@ -50,148 +44,232 @@ export function Navbar() {
                   <CommandItem key={p.id} asChild>
                     <Link href={`/products/${p.slug}`} onClick={() => setSearchOpen(false)}>
                       {p.category === "wordpress-plugin" ? (
-                        <Package className="mr-2 h-4 w-4 text-on-surface-variant" />
+                        <Package className="mr-2 h-4 w-4 text-primary" />
                       ) : (
-                        <Monitor className="mr-2 h-4 w-4 text-on-surface-variant" />
+                        <Monitor className="mr-2 h-4 w-4 text-primary" />
                       )}
                       <div>
                         <div className="font-medium text-sm">{p.name}</div>
-                        <div className="text-xs text-on-surface-variant">{p.tagline}</div>
+                        <div className="text-xs text-muted-foreground">{p.tagline}</div>
                       </div>
                     </Link>
                   </CommandItem>
                 ))}
               </CommandGroup>
-              <CommandGroup heading="Pages">
-                <CommandItem asChild><Link href="/docs" onClick={() => setSearchOpen(false)}>Documentation</Link></CommandItem>
-                <CommandItem asChild><Link href="/pricing" onClick={() => setSearchOpen(false)}>Pricing & Marketplace</Link></CommandItem>
-                <CommandItem asChild><Link href="/about" onClick={() => setSearchOpen(false)}>About Studio</Link></CommandItem>
-                <CommandItem asChild><Link href="/contact" onClick={() => setSearchOpen(false)}>Support Center</Link></CommandItem>
+              <CommandGroup heading="Pages & Channels">
+                <CommandItem asChild><Link href="/products" onClick={() => setSearchOpen(false)}>Products Directory</Link></CommandItem>
+                <CommandItem asChild><Link href="/pricing" onClick={() => setSearchOpen(false)}>Marketplace & Pricing</Link></CommandItem>
+                <CommandItem asChild><Link href="/docs" onClick={() => setSearchOpen(false)}>Documentation & User Manuals</Link></CommandItem>
+                <CommandItem asChild><Link href="/about" onClick={() => setSearchOpen(false)}>About & Engineering Standards</Link></CommandItem>
+                <CommandItem asChild><Link href="/contact" onClick={() => setSearchOpen(false)}>Support & Licensing Validation</Link></CommandItem>
               </CommandGroup>
             </CommandList>
           </Command>
         </DialogContent>
       </Dialog>
 
-      {/* Navbar */}
-      <nav className="bg-surface/90 top-0 sticky z-50 shadow-sm backdrop-blur-md">
-        <div className="border-b border-border-subtle">
-          <div className="flex justify-between items-center w-full px-4 md:px-6 max-w-[1280px] mx-auto h-16">
+      {/* Header Shell */}
+      <nav className="bg-background/95 sticky top-0 z-50 shadow-sm backdrop-blur border-b border-border">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-6 h-20 flex items-center justify-between gap-4">
+          
+          {/* Brand Element */}
+          <Link href="/" className="flex flex-col group">
+            <span className="font-extrabold text-xl md:text-2xl text-primary tracking-tight group-hover:opacity-90 transition-opacity">
+              {brand}
+            </span>
+            <span className="text-[10px] md:text-xs text-muted-foreground font-medium hidden sm:inline-block">
+              {tagline}
+            </span>
+          </Link>
 
-            {/* Brand */}
-            <div className="flex items-center gap-4">
-              <Link href="/" className="font-extrabold text-xl text-primary tracking-tight">
-                VibePress Studio
+          {/* Navigation Links */}
+          <div className="hidden lg:flex items-center gap-1">
+            {/* Products Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setProductsOpen(true)}
+              onMouseLeave={() => setProductsOpen(false)}
+            >
+              <button
+                onClick={() => setProductsOpen(!productsOpen)}
+                className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors flex items-center gap-1"
+              >
+                Products <ChevronDown className="h-4 w-4" />
+              </button>
+
+              {productsOpen && (
+                <div className="absolute top-full left-0 w-80 bg-popover border border-border rounded-xl shadow-xl overflow-hidden p-3 z-50">
+                  <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider px-3 py-1 mb-1">
+                    Software Suite
+                  </div>
+                  <Link 
+                    href="/products/smart-affiliate-link-cloaker" 
+                    onClick={() => setProductsOpen(false)}
+                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                  >
+                    <Package className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm group-hover:text-primary transition-colors">
+                        Smart Affiliate Link Cloaker
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        WordPress Performance Plugin
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link 
+                    href="/products/shelfmaster" 
+                    onClick={() => setProductsOpen(false)}
+                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                  >
+                    <Monitor className="h-5 w-5 text-indigo-500 mt-0.5 shrink-0" />
+                    <div>
+                      <div className="font-semibold text-sm group-hover:text-primary transition-colors">
+                        ShelfMaster
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Desktop Application (Win/macOS/Linux)
+                      </div>
+                    </div>
+                  </Link>
+
+                  <div className="border-t border-border mt-2 pt-2 text-center">
+                    <Link href="/products" onClick={() => setProductsOpen(false)} className="text-xs font-semibold text-primary hover:underline">
+                      View All Products Directory →
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link href="/pricing" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
+              Marketplace
+            </Link>
+            <Link href="/docs" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
+              Documentation
+            </Link>
+            <Link href="/about" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
+              About
+            </Link>
+            <Link href="/contact" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
+              Support
+            </Link>
+          </div>
+
+          {/* Action Buttons & Search */}
+          <div className="flex items-center gap-3">
+            {/* Search Trigger */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center bg-muted/60 border border-input rounded-full px-3 py-1.5 hover:bg-muted transition-colors gap-2 text-muted-foreground text-xs"
+            >
+              <Search className="h-3.5 w-3.5" />
+              <span className="hidden xl:inline-block">{searchPlaceholder}</span>
+              <kbd className="hidden xl:inline-block bg-background border border-border rounded px-1.5 py-0.5 text-[10px] font-mono">
+                ⌘K
+              </kbd>
+            </button>
+
+            {/* Action Buttons */}
+            <div className="hidden sm:flex items-center gap-2">
+              <Link
+                href={actions.secondaryHref}
+                className="text-xs font-semibold px-4 py-2 rounded-md border border-input hover:bg-muted transition-colors flex items-center gap-1.5"
+              >
+                <BookOpen className="h-3.5 w-3.5" /> {actions.secondaryLabel}
+              </Link>
+              <Link
+                href={actions.primaryHref}
+                className="text-xs font-semibold px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center gap-1.5 shadow-sm"
+              >
+                <Compass className="h-3.5 w-3.5" /> {actions.primaryLabel}
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center">
-              {/* Products with dropdown */}
-              <div className="relative" onMouseEnter={() => setProductsOpen(true)} onMouseLeave={() => setProductsOpen(false)}>
-                <Link
-                  href="/#products"
-                  className="text-label-caps text-primary-container font-bold border-b-2 border-primary-container h-16 flex items-center px-3 hover:bg-surface-container-low transition-all duration-200"
-                >
-                  Products <ChevronDown className="ml-1 h-3 w-3" />
-                </Link>
-                {productsOpen && (
-                  <div className="absolute top-full left-0 w-64 bg-surface border border-border-subtle rounded-xl shadow-lg overflow-hidden z-50 py-2">
-                    <div className="px-3 py-1.5 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">WordPress Plugins</div>
-                    {products.filter(p => p.category === "wordpress-plugin").map(p => (
-                      <Link key={p.id} href={`/products/${p.slug}`} className="flex items-center gap-2 px-3 py-2 text-sm text-on-surface hover:bg-surface-container-low transition-colors">
-                        <Package className="h-4 w-4 text-primary flex-shrink-0" />{p.name}
-                      </Link>
-                    ))}
-                    <div className="px-3 py-1.5 mt-1 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Desktop Apps</div>
-                    {products.filter(p => p.category === "desktop-app").map(p => (
-                      <Link key={p.id} href={`/products/${p.slug}`} className="flex items-center gap-2 px-3 py-2 text-sm text-on-surface hover:bg-surface-container-low transition-colors">
-                        <Monitor className="h-4 w-4 text-primary flex-shrink-0" />{p.name}
-                      </Link>
-                    ))}
+            {/* Mobile Sheet Menu */}
+            <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+              <SheetTrigger asChild>
+                <button className="lg:hidden text-foreground p-2 rounded-md hover:bg-muted">
+                  <Menu className="h-6 w-6" />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-80 bg-background p-0">
+                <div className="flex flex-col h-full">
+                  <div className="p-6 border-b border-border">
+                    <span className="font-extrabold text-xl text-primary">
+                      {brand}
+                    </span>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {tagline}
+                    </p>
                   </div>
-                )}
-              </div>
 
-              {navLinks.slice(1).map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all duration-200 h-16 flex items-center px-3"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+                  <nav className="flex flex-col p-4 gap-1 flex-1 overflow-y-auto">
+                    <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest px-3 py-2">
+                      Products
+                    </div>
+                    <Link
+                      href="/products/smart-affiliate-link-cloaker"
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
+                    >
+                      <Package className="h-4 w-4 text-primary" />
+                      Smart Affiliate Link Cloaker
+                    </Link>
+                    <Link
+                      href="/products/shelfmaster"
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
+                    >
+                      <Monitor className="h-4 w-4 text-indigo-500" />
+                      ShelfMaster
+                    </Link>
+                    <Link
+                      href="/products"
+                      onClick={() => setMobileOpen(false)}
+                      className="px-3 py-2 text-xs font-semibold text-primary hover:underline"
+                    >
+                      View All Products Directory →
+                    </Link>
 
-            {/* Right actions */}
-            <div className="flex items-center gap-2">
-              {/* Search Bar */}
-              <button
-                onClick={() => setSearchOpen(true)}
-                className="hidden lg:flex items-center bg-surface-container-lowest border border-border-strong rounded px-3 py-1.5 hover:border-primary-container hover:ring-2 hover:ring-primary-container/20 transition-all gap-2 text-on-surface-variant"
-              >
-                <Search className="h-4 w-4" />
-                <span className="text-sm w-40 text-left">Search catalog...</span>
-                <div className="border border-border-strong rounded px-1.5 py-0.5">
-                  <span className="text-[10px] text-on-surface-variant">⌘K</span>
+                    <div className="border-t border-border my-3" />
+                    <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest px-3 py-1">
+                      Navigation
+                    </div>
+                    <Link href="/pricing" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
+                      Marketplace & Pricing
+                    </Link>
+                    <Link href="/docs" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
+                      Documentation & Manuals
+                    </Link>
+                    <Link href="/about" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
+                      About & Engineering Standards
+                    </Link>
+                    <Link href="/contact" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
+                      Support & Helpdesk
+                    </Link>
+                  </nav>
+
+                  <div className="p-4 border-t border-border flex flex-col gap-2">
+                    <Link
+                      href="/docs"
+                      onClick={() => setMobileOpen(false)}
+                      className="w-full py-2.5 text-center text-xs font-semibold rounded-md border border-input hover:bg-muted"
+                    >
+                      View Documentation
+                    </Link>
+                    <Link
+                      href="/products"
+                      onClick={() => setMobileOpen(false)}
+                      className="w-full py-2.5 text-center text-xs font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
+                    >
+                      Explore Products
+                    </Link>
+                  </div>
                 </div>
-              </button>
-
-              {/* Mobile search icon */}
-              <button
-                onClick={() => setSearchOpen(true)}
-                className="lg:hidden text-on-surface-variant hover:text-primary hover:bg-surface-container-low p-2 rounded-full transition-all"
-              >
-                <Search className="h-5 w-5" />
-              </button>
-
-              {/* External link */}
-              <a
-                href="https://abusaeedsayem.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:flex text-on-surface-variant hover:text-primary-container hover:bg-surface-container-low p-2 rounded-full transition-all"
-              >
-                <ExternalLink className="h-5 w-5" />
-              </a>
-
-              {/* Mobile menu */}
-              <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-                <SheetTrigger asChild>
-                  <button className="md:hidden text-primary p-2">
-                    <Menu className="h-6 w-6" />
-                  </button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-72 bg-surface p-0">
-                  <div className="flex flex-col h-full">
-                    <div className="p-6 border-b border-border-subtle">
-                      <span className="font-extrabold text-lg text-primary">VibePress Studio</span>
-                    </div>
-                    <nav className="flex flex-col p-4 gap-1 flex-1">
-                      <div className="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest px-3 py-2">Products</div>
-                      {products.map(p => (
-                        <Link key={p.id} href={`/products/${p.slug}`} onClick={() => setMobileOpen(false)} className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-on-surface hover:bg-surface-container-low transition-colors">
-                          {p.category === "wordpress-plugin" ? <Package className="h-4 w-4 text-primary" /> : <Monitor className="h-4 w-4 text-primary" />}
-                          {p.name}
-                        </Link>
-                      ))}
-                      <div className="border-t border-border-subtle my-2" />
-                      {navLinks.slice(1).map(link => (
-                        <Link key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors">
-                          {link.label}
-                        </Link>
-                      ))}
-                    </nav>
-                    <div className="p-4 border-t border-border-subtle">
-                      <a href="https://abusaeedsayem.netlify.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2.5 text-sm text-on-surface-variant hover:text-primary">
-                        <ExternalLink className="h-4 w-4" /> Developer Portfolio
-                      </a>
-                    </div>
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </nav>

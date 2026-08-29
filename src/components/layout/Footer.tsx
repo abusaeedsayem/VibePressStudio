@@ -1,89 +1,66 @@
 import Link from "next/link";
-
-const footerLinks = [
-  {
-    items: [
-      { label: "Smart Affiliate Link Cloaker", href: "/products/smart-affiliate-link-cloaker" },
-      { label: "ShelfMaster (LibrisCore Desktop)", href: "/products/shelfmaster" },
-      { label: "Documentation", href: "/docs" },
-      { label: "Changelog", href: "/changelog" },
-    ],
-  },
-  {
-    items: [
-      { label: "About the Studio", href: "/about" },
-      { label: "Support Center", href: "/contact" },
-      { label: "Privacy Policy", href: "/legal/privacy" },
-      { label: "Terms of Use", href: "/legal/terms" },
-    ],
-  },
-  {
-    items: [
-      { label: "GPLv2 License Notice", href: "/legal/license" },
-      { label: "Affiliate Disclosure", href: "/legal/affiliate-disclosure" },
-      { label: "Pricing & Marketplace", href: "/pricing" },
-    ],
-  },
-];
+import footerData from "@/content/footer.json";
 
 export function Footer() {
+  const { brand, description, accreditation, copyright, columns } = footerData;
+
   return (
-    <footer className="bg-surface-dim border-t border-border-subtle mt-auto">
-      <div className="w-full px-4 md:px-6 max-w-[1280px] mx-auto py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Column */}
-          <div className="md:col-span-1 flex flex-col gap-4">
-            <Link href="/" className="text-headline-md font-bold text-on-background">
-              VibePress Studio
+    <footer className="bg-muted/40 border-t border-border mt-auto">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          
+          {/* Column 1: VibePress Studio */}
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="font-extrabold text-2xl text-primary tracking-tight">
+              {brand}
             </Link>
-            <p className="text-body-md text-on-surface-variant leading-relaxed">
-              High-performance software solutions for modern creators and businesses.
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {description}
             </p>
-            <p className="text-sm text-on-surface-variant">
-              © 2026 VibePress Studio. All rights reserved.
-              <br />
-              <span className="font-medium">Developed by Abu Saeed Sayem</span>
-            </p>
+            <div className="pt-2 border-t border-border/60">
+              <p className="text-xs font-semibold text-foreground">
+                Engineering Accreditation:
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {accreditation}
+              </p>
+            </div>
           </div>
 
-          {/* Link Columns */}
-          {footerLinks.map((col, colIdx) => (
-            <div key={colIdx} className="flex flex-col gap-3">
-              {col.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-body-md text-on-surface-variant hover:text-primary-container transition-colors duration-200"
-                >
-                  {item.label}
-                </Link>
-              ))}
+          {/* Columns 2, 3, 4 */}
+          {columns.map((col, idx) => (
+            <div key={idx} className="flex flex-col gap-3">
+              <h4 className="font-bold text-sm text-foreground uppercase tracking-wider">
+                {col.title}
+              </h4>
+              <ul className="space-y-2">
+                {col.items.map((item, itemIdx) => (
+                  <li key={itemIdx}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
+
         </div>
 
-        {/* Bottom Tagline */}
-        <div className="mt-10 pt-6 border-t border-border-subtle flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-on-surface-variant">
-            Engineered for Performance. Built for Growth.
+        {/* Bottom Copyright Bar */}
+        <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p className="text-xs text-muted-foreground">
+            {copyright}
           </p>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://abusaeedsayem.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-on-surface-variant hover:text-primary-container transition-colors"
-            >
-              Developer Portfolio ↗
-            </a>
-            <a
-              href="https://github.com/abusaeedsayem"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-on-surface-variant hover:text-primary-container transition-colors"
-            >
-              GitHub ↗
-            </a>
+          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+            <span>WordPress VIP Standards</span>
+            <span>•</span>
+            <span>Tauri v2 + Rust</span>
+            <span>•</span>
+            <span>Zero PII Telemetry</span>
           </div>
         </div>
       </div>
