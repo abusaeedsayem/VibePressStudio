@@ -1,136 +1,227 @@
 {
-  "eyebrow": "Next-Gen Library Operation & Management System",
+  "eyebrow": "Next-Gen Library Operating & Management System",
   "hero": {
-    "title": "Lightning-Fast, 100% Offline Desktop Application Powered by Tauri v2 and SQLite",
-    "subtitle": "An all-in-one local desktop application replacing fragile spreadsheets and costly cloud services with ultra-fast cataloging, circulation, payroll, and financial tracking.",
-    "ctaPrimary": "Get ShelfMaster on AppSumo",
-    "ctaPrimaryHref": "https://appsumo.com/products/shelfmaster/",
-    "ctaSecondary": "Download Commercial Desktop Package",
-    "ctaSecondaryHref": "/pricing",
+    "title": "Lightning-Fast, 100% Offline Desktop Application Powered by Tauri, Rust, React, and SQLite",
+    "subtitle": "Designed to replace clunky web portals and legacy library software, ShelfMaster provides a lightning-fast, offline-first interface to manage every aspect of a library's daily operations on macOS and Windows.",
+    "ctaPrimary": "Register for Launch Updates",
+    "ctaPrimaryHref": "/pricing",
+    "ctaSecondary": "Read Documentation Guide",
+    "ctaSecondaryHref": "/docs",
+    "readinessBadge": "80% Production-Ready",
     "coreMetrics": [
-      "Starts in under 1 second",
-      "Consumes under 40MB of RAM",
-      "Zero Monthly Cloud Fees",
-      "True Offline Reliability"
+      "Sub-millisecond Local Database Search",
+      "100% Local Data Sovereignty",
+      "Zero Cloud Server Lag or Hosting Fees",
+      "Native macOS (.dmg) & Windows (.exe) Bundling"
     ]
   },
-  "problems": {
-    "title": "The Problem with Legacy Spreadsheets & Web SaaS",
-    "subtitle": "Why modern institutions are switching from fragile sheets and expensive SaaS to native desktop software.",
+  "readiness": {
+    "title": "Development Milestone: 80% Production-Ready",
+    "subtitle": "ShelfMaster is undergoing final engineering polish prior to official launch.",
+    "completeTitle": "What is 100% Complete",
+    "completeItems": [
+      "Complete intuitive UI/UX design with dark/light themes",
+      "Local SQLite database architecture with high-performance WAL (Write-Ahead Logging) mode",
+      "Lazy-loaded routing system for fractional system memory footprint",
+      "All 9 core business-logic modules (Circulation, Catalog, Members, Payroll, Expenses, etc.)",
+      "Native macOS and Windows application bundling with custom icons"
+    ],
+    "remainingTitle": "What Remains (The Final 20%)",
+    "remainingItems": [
+      "Implementing Database Backup/Restore feature for data safety",
+      "Linking the Lemon Squeezy License Key activation screen",
+      "Executing automated QA test suites across Windows & macOS"
+    ]
+  },
+  "whyUseful": {
+    "title": "Why Modern Institutions Choose ShelfMaster",
+    "subtitle": "Replacing prohibitively expensive cloud SaaS and outdated legacy software.",
     "items": [
       {
-        "title": "The Spreadsheet Risk",
-        "desc": "Excel sheets lack relational integrity, corrupt easily with larger inventories, and provide zero security for sensitive member data.",
-        "icon": "FileSpreadsheet"
-      },
-      {
-        "title": "The Cloud SaaS Bottleneck",
-        "desc": "Web applications incur ongoing monthly server costs and become completely unusable when internet connectivity drops.",
-        "icon": "CloudOff"
-      },
-      {
-        "title": "The ShelfMaster Advantage",
-        "desc": "Rust-powered desktop native performance, zero hosting fees, full hardware peripheral compatibility, and complete data privacy.",
+        "title": "Unmatched Speed",
+        "desc": "Because the database lives locally on the user's machine in SQLite WAL mode, searching for any book or member takes milliseconds.",
         "icon": "Zap"
+      },
+      {
+        "title": "Data Sovereignty",
+        "desc": "Libraries own 100% of their data locally. Information is never stored on vulnerable or monitored third-party cloud servers.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "All-in-One Operations Hub",
+        "desc": "Doesn't just manage books—handles staff payroll, operational expenses, and philanthropic donations, eliminating separate accounting software.",
+        "icon": "Database"
+      },
+      {
+        "title": "Modern & Intuitive UX",
+        "desc": "A sleek interface with a gentle learning curve ensures staff and volunteers master the system in minutes, not weeks.",
+        "icon": "Sparkles"
       }
     ]
   },
   "modules": {
-    "title": "Nine Core Integrated Modules",
-    "subtitle": "A complete operational operating system built into a single lightweight desktop binary.",
+    "title": "The 9 Built Core Modules",
+    "subtitle": "Engineered directly into a lightweight desktop binary with zero third-party dependencies.",
     "items": [
       {
-        "title": "Master Cataloging & Copy Tracking",
-        "desc": "Catalog book editions, multi-author data, and ISBNs while managing physical shelf locations and accession barcodes.",
-        "icon": "BookOpen"
+        "title": "Real-Time Command Dashboard",
+        "desc": "Central command center displaying live active member counts, total cataloged books, overdue loans, and quick-access operational action buttons.",
+        "icon": "Monitor"
       },
       {
-        "title": "3-Second POS Circulation Desk",
-        "desc": "Scan member IDs and book barcodes to execute checkouts in seconds, complete with automated overdue fine calculation.",
+        "title": "POS Circulation Desk",
+        "desc": "The heart of the library. Issue books via Member Code and Barcode, process returns, and automatically calculate overdue fines ($0.50/day default rate).",
         "icon": "ShoppingCart"
       },
       {
-        "title": "Donors & Gift Registry",
-        "desc": "Record donor profiles, track donated inventory with distinct tags, and print professional donation certificates.",
-        "icon": "Gift"
+        "title": "Inventory Catalog",
+        "desc": "Full book inventory management. Add books, categorize editions, and automatically generate unique sequential barcodes (e.g. BK-001).",
+        "icon": "BookOpen"
       },
       {
-        "title": "Dual Membership KYC System",
-        "desc": "Register standard paying members or authorize waived special privilege memberships with built-in photo and ID card printing.",
+        "title": "Patron Directory & KYC",
+        "desc": "Register patrons with auto-generated Member IDs (MBR-TIMESTAMP). View colored status badges to instantly identify active vs. expired memberships.",
         "icon": "Users"
       },
       {
-        "title": "Staff HR & Weekly Duty Roster",
-        "desc": "Maintain complete staff directories and assign shift schedules and departmental duties through a visual calendar.",
+        "title": "Donors & Gift Registry",
+        "desc": "A dual-tab system to register philanthropic Donors and track their specific book or monetary donations over time.",
+        "icon": "Gift"
+      },
+      {
+        "title": "Staff & Roster Directory",
+        "desc": "Employee management module to track library staff members, maintain contact info, and monitor active staff status.",
         "icon": "Calendar"
       },
       {
         "title": "Automated Payroll Engine",
-        "desc": "Calculate net monthly salaries, manage deductions and overtime bonuses, and export official printable pay-slips.",
+        "desc": "Generate dynamic payslips. Automatically calculates net pay (Base + Bonus - Deductions) and marks monthly salaries as paid.",
         "icon": "Banknote"
       },
       {
-        "title": "Institutional Expense Management",
-        "desc": "Record day-to-day operating expenditures with voucher tracking, vendor notes, and category budgets.",
+        "title": "Expenses & Financial Tracking",
+        "desc": "Track daily operational expenses (utilities, maintenance, supplies) with monthly/yearly financial summary progress bars.",
         "icon": "Receipt"
       },
       {
-        "title": "Unified Cash-Flow Ledger & Audits",
-        "desc": "Automatically reconcile membership fees, late fines, staff payroll, and operational expenses into unified balance sheets.",
+        "title": "Settings & Policy Reports",
+        "desc": "Configure library name & address, globally adjust loan policies (default loan days, fine rates), and view visual progress bars of popular books.",
         "icon": "BarChart"
-      },
-      {
-        "title": "Hardware & Multi-Format Printing",
-        "desc": "Full support for USB barcode scanners, 58mm/80mm thermal receipts, and full A4 administrative document printers.",
-        "icon": "Printer"
       }
     ]
   },
-  "deployments": {
-    "title": "Real-World Deployments",
-    "subtitle": "Trusted across municipal libraries, educational campuses, and research collections.",
-    "items": [
+  "targetAudience": {
+    "title": "Designed for Diverse Institutional & Personal Use Cases",
+    "subtitle": "Tailored for organizations needing fast circulation and individuals cataloging private collections.",
+    "organizational": [
       {
-        "title": "Municipal and Community Libraries",
-        "desc": "Fast member checkouts, reliable late-fine auditing, and uninterrupted offline daily operations.",
-        "icon": "Building2"
+        "title": "Public & Community Libraries",
+        "desc": "Require robust member tracking, automated fine calculations, and donor gift management."
       },
       {
-        "title": "Academic Schools and Colleges",
-        "desc": "Rapid semester-start cataloging, student duty scheduling, and instant scholarship member authorization.",
-        "icon": "GraduationCap"
+        "title": "K-12 Schools & Universities",
+        "desc": "Need ultra-fast textbook circulation during busy class-change periods."
       },
       {
-        "title": "Research Centers and Private Collections",
-        "desc": "Detailed acquisition tracking, donation provenance, and printable financial audit reports.",
-        "icon": "Landmark"
+        "title": "Corporate Offices & Law Firms",
+        "desc": "Track expensive reference manuals, legal journals, and materials loaned to employees."
+      },
+      {
+        "title": "Churches & Non-Profits",
+        "desc": "Rely heavily on volunteer staff, requiring an intuitive UI with donation tracking."
       }
+    ],
+    "personal": [
+      {
+        "title": "Bibliophiles & Collectors",
+        "desc": "Individuals with hundreds or thousands of books wanting professional-grade cataloging."
+      },
+      {
+        "title": "Researchers & Academics",
+        "desc": "Professionals loaning reference materials to students who need to track return dates."
+      }
+    ],
+    "otherCases": [
+      "Academic Book Tracking: Managing checkouts and returns for school textbooks.",
+      "Archive Management: Organizing rare collections with auto-generated barcode IDs.",
+      "Private Collections: Organizing vast personal libraries to prevent losing loaned books."
     ]
   },
-  "architecture": {
-    "title": "Technical Architecture & Platform Compatibility",
-    "description": "Engineered for rock-solid local execution with fractional system footprint.",
-    "frontend": "React 18, TypeScript, Tailwind CSS, shadcn/ui",
-    "kernel": "Tauri v2, Rust native system APIs, SQLite3 with WAL persistence",
-    "platforms": "Windows (.msi and .exe), macOS (.dmg), and Linux (.deb and .AppImage)"
-  },
-  "pricing": {
-    "title": "AppSumo Lifetime Deal & Direct Licensing",
-    "subtitle": "Pay once and own your library operating system forever. Zero subscription fees.",
-    "planName": "AppSumo Founder Lifetime Deal",
-    "price": "$79",
-    "originalPrice": "$199",
-    "desc": "Get complete lifetime access to ShelfMaster with all 9 core operational modules included.",
-    "cta": "Claim AppSumo Lifetime Deal",
-    "ctaHref": "https://appsumo.com/products/shelfmaster/",
-    "guarantee": "60-Day Money-Back Guarantee backed by AppSumo",
+  "licensing": {
+    "title": "Security, Licensing, and License Key Management",
+    "subtitle": "Enterprise-grade protection powered by Lemon Squeezy integration.",
     "features": [
-      "Lifetime desktop software license",
-      "Complete 9-module offline engine",
-      "Unlimited member & catalog records",
-      "USB barcode scanner & thermal printer support",
-      "A4 document & certificate printing",
-      "100% offline data privacy"
+      {
+        "title": "16-Character License Key Workflow",
+        "desc": "When customers purchase ShelfMaster, they receive a 16-character key. Upon initial app launch, a secure Activation Screen prompts key entry."
+      },
+      {
+        "title": "Rust-Backed API Security",
+        "desc": "The application securely connects to the Lemon Squeezy API via our Rust backend—making it virtually impossible to bypass activation."
+      },
+      {
+        "title": "Hardware-Bound Device Management",
+        "desc": "Licenses are tied to specific computer hardware. Installing on a new machine requires deactivating the previous device, preventing unauthorized piracy."
+      }
+    ]
+  },
+  "roadmap": {
+    "title": "Estimated Timeframe to Public Launch (3 to 4 Weeks)",
+    "weeks": [
+      {
+        "week": "Week 1",
+        "task": "Implement Database Backup/Restore tools and finalize the Lemon Squeezy License Activation screen."
+      },
+      {
+        "week": "Week 2",
+        "task": "Quality Assurance (QA). Aggressively testing the app for bugs, fine calculation accuracy, and native Windows/macOS cross-compatibility."
+      },
+      {
+        "week": "Week 3",
+        "task": "Setting up marketing website storefront on Lemon Squeezy and compiling final .exe (Windows) and .dmg (macOS) installer files."
+      },
+      {
+        "week": "Week 4",
+        "task": "Official Public Launch!"
+      }
+    ]
+  },
+  "userGuide": {
+    "title": "End-User Guide: Getting Started with ShelfMaster",
+    "subtitle": "Install the software and get your library operational in under 5 minutes.",
+    "parts": [
+      {
+        "part": "Part 1: Installation",
+        "steps": [
+          "Download the Installer: After purchasing, download ShelfMaster.dmg for Mac or ShelfMaster-Setup.exe for Windows.",
+          "Install on Mac: Double-click the .dmg file and drag the ShelfMaster icon into your Applications folder.",
+          "Install on Windows: Double-click the .exe file and follow the on-screen installation wizard.",
+          "Activate: Launch ShelfMaster. Paste your 16-character License Key into the Activation Screen and click 'Activate' (Internet connection required for activation step only)."
+        ]
+      },
+      {
+        "part": "Part 2: Setting Up Your Library",
+        "steps": [
+          "Configure Settings: Click Settings in the bottom left of the sidebar.",
+          "Enter your Library Name and Address.",
+          "Set Loan Policy: Scroll to Loan Policy. Set standard loan duration (e.g. 14 days) and overdue fine rate (e.g. $0.50 per day). Click Save."
+        ]
+      },
+      {
+        "part": "Part 3: Adding Your First Book & Member",
+        "steps": [
+          "Add a Book: Go to the Catalog tab and click '+ Add Book'. Enter Title, Author, and copy count. Click Save to auto-generate barcodes (e.g. BK-001).",
+          "Add a Member: Go to the Members tab and click '+ Add Member'. Fill out name and contact info to auto-generate a unique Member ID (MBR-TIMESTAMP)."
+        ]
+      },
+      {
+        "part": "Part 4: Issuing & Returning Books (Circulation)",
+        "steps": [
+          "Issue a Book: Navigate to the Circulation tab and click 'Issue Book'.",
+          "Enter Member ID and Book Barcode. Due date is set automatically based on loan policy settings. Click Issue.",
+          "Return a Book: When returned, locate the loan in the Active Loans list and click Return. ShelfMaster automatically calculates and displays overdue fines if late!"
+        ]
+      }
     ]
   }
 }

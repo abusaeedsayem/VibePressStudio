@@ -87,8 +87,8 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-indigo-300 font-medium pt-2">
             <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> WPCS & PSR-12 Compliant</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> Tauri v2 Memory Safety</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> GDPR & PII-Free Data Sovereignty</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> Tauri, Rust & SQLite WAL Engine</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> 100% Offline Data Sovereignty</span>
           </div>
         </div>
       </section>

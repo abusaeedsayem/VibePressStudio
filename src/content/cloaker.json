@@ -1,217 +1,232 @@
 {
-  "eyebrow": "WordPress Link Management & Compliance Architecture",
+  "eyebrow": "Complete Product & User Guide",
   "hero": {
-    "title": "Branded Link Cloaking, Automated Legal Compliance, and Zero Database Bloat",
-    "subtitle": "Transform complicated affiliate URLs into high-converting branded links while automating FTC disclosures, dynamic geolocation, and conversion split testing.",
-    "ctaPrimary": "Download Free from WordPress.org",
-    "ctaPrimaryHref": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/",
-    "ctaSecondary": "Buy Pro License via Freemius",
-    "ctaSecondaryHref": "#pricing",
-    "ctaTertiary": "Grab AppSumo Lifetime Deal",
-    "ctaTertiaryHref": "https://appsumo.com/products/smart-affiliate-link-cloaker/",
-    "badges": [
-      { "label": "Sub-Millisecond HTTP Routing", "icon": "Zap" },
-      { "label": "Zero Database Bloat", "icon": "Database" },
-      { "label": "Automated FTC Compliance", "icon": "ShieldCheck" }
+    "title": "Smart Affiliate Link Cloaker",
+    "subtitle": "A premium-grade WordPress plugin designed to transform ugly, complex, and unmemorable affiliate URLs into clean, branded, and trackable links right inside your WordPress dashboard.",
+    "ctaPrimary": "Register for Launch Updates",
+    "ctaPrimaryHref": "/pricing",
+    "ctaSecondary": "Read Documentation Guide",
+    "ctaSecondaryHref": "/docs",
+    "readinessBadge": "100% Feature Complete (v1.0.0)",
+    "coreMetrics": [
+      "Branded Short Link Routing",
+      "Automated FTC Legal Disclosures",
+      "Zero Third-Party SaaS Fees",
+      "100% WordPress Data Ownership"
     ]
   },
-  "bottlenecks": {
-    "title": "Core Operational Bottlenecks Solved",
-    "subtitle": "Eliminate commission loss, compliance risks, and database degradation with a modern link management architecture.",
+  "status": {
+    "title": "Development Status: 100% Feature Complete (v1.0.0)",
+    "subtitle": "Every feature has been successfully engineered, rigorously tested, and fully integrated.",
+    "description": "Smart Affiliate Link Cloaker is 100% Feature Complete (v1.0.0). The codebase is secure, highly performant, and seamlessly integrated for license management. The plugin is packaged, zipped, and fully ready for public deployment.",
+    "rolloutTitle": "Launch Roadmap & Rollout Plan",
+    "rolloutStatus": "The free edition has been officially submitted for repository manual review, and the PRO edition is fully configured.",
+    "rolloutSteps": [
+      "Phase 1: As soon as review approval is received, the Free version will go live to millions of WordPress users globally.",
+      "Phase 2: Once the Free version has successfully launched and stabilized, the PRO edition will officially launch within one month."
+    ]
+  },
+  "whyUseful": {
+    "title": "Why is Smart Affiliate Link Cloaker Essential?",
+    "subtitle": "Solving long, intimidating links, ad-blocker filtering, and compliance risks.",
     "items": [
       {
-        "title": "Commission Theft & Link Hijacking",
-        "desc": "Unbranded URLs reveal raw affiliate IDs that browser extensions hijack; our custom slugs protect your brand and commission earnings.",
-        "icon": "ShieldAlert"
+        "title": "Brand Trust",
+        "desc": "Users are far more likely to click a clean link that uses your own domain name (e.g. yourdomain.com/go/product) rather than suspicious third-party URLs.",
+        "icon": "ShieldCheck"
       },
       {
-        "title": "Regulatory Fines & Inconvenience",
-        "desc": "FTC guidelines mandate conspicuous disclosures on referral links; our engine automatically detects links and programmatically injects accessible notices.",
+        "title": "SEO Protection",
+        "desc": "Automatically applies rel=\"nofollow sponsored\" attributes to all cloaked links to protect your website from Google ranking penalties.",
+        "icon": "Lock"
+      },
+      {
+        "title": "Legal Compliance",
+        "desc": "The automated FTC disclosure banner ensures your site is 100% legally compliant with a single click.",
         "icon": "Scale"
       },
       {
-        "title": "Database Slowdowns",
-        "desc": "Traditional plugins generate millions of custom database rows that degrade server queries; we run on native WordPress Custom Post Types with sub-millisecond template routing.",
+        "title": "Data Ownership",
+        "desc": "Instead of relying on a merchant's dashboard, you own your click data and can track performance directly in WordPress.",
         "icon": "Database"
+      },
+      {
+        "title": "Revenue Protection [PRO]",
+        "desc": "Broken link monitoring pings target URLs daily and expiry fallbacks ensure you never send traffic to a 404 dead page and lose commissions.",
+        "icon": "Zap"
+      }
+    ]
+  },
+  "useCases": {
+    "title": "All Possible Use Cases",
+    "subtitle": "Versatile workflows tailored for creators, marketers, and publishing teams.",
+    "items": [
+      {
+        "title": "Bloggers & Content Creators",
+        "desc": "Easily insert clean, cloaked links into articles, product reviews, and tutorials."
+      },
+      {
+        "title": "Social Media & Podcasters",
+        "desc": "Create short, memorable links (e.g. yoursite.com/recommends/camera) easy to speak out loud in videos or place in Instagram/TikTok bios."
+      },
+      {
+        "title": "Email Marketers",
+        "desc": "Bypass strict spam filters that traditionally block raw referral parameters by sending your domain's cloaked URLs."
+      },
+      {
+        "title": "Global Affiliate Arbitrage",
+        "desc": "Use Geolocation Redirects [PRO] to send US visitors to Amazon.com and UK visitors to Amazon.co.uk using the exact same link."
+      },
+      {
+        "title": "Conversion Rate Optimization (CRO)",
+        "desc": "Split-test two different affiliate landing pages (A/B Testing [PRO]) to see which converts better under one single URL."
+      }
+    ]
+  },
+  "targetAudience": {
+    "title": "Who Actually Needs This Plugin?",
+    "subtitle": "Segmented by organizational scale and individual publishing workflows.",
+    "organizational": [
+      {
+        "title": "Digital Media Publishers",
+        "desc": "News sites and magazines requiring strict FTC compliance across hundreds of authors, CSV bulk import/export, and broken link monitoring."
+      },
+      {
+        "title": "Marketing Agencies",
+        "desc": "Need advanced A/B split testing and dynamic UTM parameter forwarding to track campaign ROI for clients."
+      },
+      {
+        "title": "Global E-Commerce & Deal Sites",
+        "desc": "Benefit from Geolocation Redirects to automatically route international traffic to regional merchant stores."
+      }
+    ],
+    "personal": [
+      {
+        "title": "Niche Bloggers",
+        "desc": "Fast, easy way to manage links without paying monthly fees to external link-shortening SaaS platforms."
+      },
+      {
+        "title": "YouTubers & Podcasters",
+        "desc": "Need 'pretty links' that are clean and easy to say out loud on a microphone."
+      },
+      {
+        "title": "Beginner Affiliates",
+        "desc": "Rely heavily on the Auto-Linker to automatically monetize existing blog posts without manually editing hundreds of old articles."
       }
     ]
   },
   "features": {
-    "title": "Comprehensive Feature Breakdown",
-    "subtitle": "Modular, high-performance link cloaking engineered for serious WordPress publishers.",
-    "coreEngine": [
+    "freeTitle": "FREE / Core Features",
+    "freeItems": [
       {
-        "title": "Custom Cloaked Slug Architecture",
-        "desc": "Convert long referral URLs into clean links using custom prefixes such as /go/, /recommends/, or /deal/.",
-        "icon": "LinkIcon"
+        "title": "Custom Slug Redirection Engine",
+        "desc": "Create branded links using 301 (Permanent), 302 (Temporary), or 307 HTTP status redirects.",
+        "icon": "Link"
       },
       {
-        "title": "High-Speed HTTP Status Handling",
-        "desc": "Full support for native 301 permanent, 302 temporary, and 307 dynamic redirections with cache-control headers.",
-        "icon": "Zap"
-      },
-      {
-        "title": "Automatic SEO Attribute Enforcement",
-        "desc": "Automatically append rel=\"nofollow sponsored\" and rel=\"noopener noreferrer\" across all cloaked links.",
+        "title": "Automated Link Attributes",
+        "desc": "Automatically attaches target=\"_blank\", rel=\"nofollow\", and rel=\"sponsored\" to stay compliant with Google guidelines.",
         "icon": "ShieldCheck"
       },
       {
-        "title": "Administrative Dashboard",
-        "desc": "Clean link manager with instant search, merchant category grouping, and one-click copy-to-clipboard actions.",
-        "icon": "Search"
-      }
-    ],
-    "legalCompliance": [
-      {
-        "title": "Dynamic FTC Auto-Disclosure Injector",
-        "desc": "Automatically identifies cloaked URLs inside content and inserts compliant legal disclosures.",
+        "title": "Smart FTC Auto-Disclosure Banner",
+        "desc": "Automatically detects cloaked links in your content and renders a customizable legal compliance banner with 4 CSS styles (Default, Alert, Minimal, Subtle).",
         "icon": "Scale"
       },
       {
-        "title": "Flexible Positioning",
-        "desc": "Insert disclosures at the top of content, at the bottom, or immediately preceding the first commercial link.",
-        "icon": "Layout"
+        "title": "Visual Analytics Dashboard",
+        "desc": "Real-time Chart.js graph tracking clicks over 7 days, 30 days, or all time, plus top-performing links.",
+        "icon": "BarChart"
       },
       {
-        "title": "Semantic & Accessible Markup",
-        "desc": "Built with accessible semantic HTML elements designed to blend smoothly with any WordPress theme.",
-        "icon": "CheckCircle2"
+        "title": "CSV Import & Export",
+        "desc": "Bulk upload hundreds of links at once, or back up your entire link library with a single click.",
+        "icon": "FileSpreadsheet"
+      },
+      {
+        "title": "Link Categories",
+        "desc": "Organize your links by merchant, campaign, or product type.",
+        "icon": "Folder"
       }
     ],
-    "proModules": [
+    "proTitle": "PRO / Premium Features",
+    "proItems": [
       {
-        "title": "Dynamic Geolocation Routing",
-        "desc": "Automatically routes traffic to country-specific merchant storefronts based on real-time visitor IP geolocation.",
+        "title": "Automated Keyword Auto-Linker",
+        "desc": "Tell the plugin a keyword (e.g. 'WordPress Hosting') and it will automatically turn that word into an affiliate link across your entire website's history.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Target URL Health & Broken Link Monitor",
+        "desc": "A background task pings your links daily. If a merchant site goes down or a product is removed, it marks the link as Broken and emails an alert.",
+        "icon": "Activity"
+      },
+      {
+        "title": "Dynamic Geolocation Redirects",
+        "desc": "Send users to different destination URLs based on their physical country.",
         "icon": "Globe"
       },
       {
-        "title": "A/B Split Testing & Traffic Rotation",
-        "desc": "Distribute inbound clicks across multiple target URLs with percentage weights to identify top-converting vendor landing pages.",
-        "icon": "ArrowRightLeft"
+        "title": "A/B Split Testing",
+        "desc": "Rotate traffic between two or more destination URLs to test which landing page generates more sales.",
+        "icon": "Shuffle"
       },
       {
         "title": "Dynamic UTM Forwarding",
-        "desc": "Intercepts inbound UTM query parameters and automatically attaches them to the destination link.",
+        "desc": "Pass tracking parameters from your cloaked link directly through to the merchant.",
         "icon": "Share2"
       },
       {
-        "title": "Automated Deal Expiration & Fallbacks",
-        "desc": "Establish calendar expiration dates or click thresholds that route visitors to evergreen fallback deals instead of dead 404 pages.",
+        "title": "Automated Expiry & Fallback",
+        "desc": "Set a link to automatically expire on a specific date and gracefully redirect traffic to a backup URL.",
         "icon": "Clock"
-      },
-      {
-        "title": "DOM-Safe Keyword Auto-Linker",
-        "desc": "Automatically transforms target keywords in existing posts into cloaked links without breaking headings, existing hyperlinks, or code blocks.",
-        "icon": "Highlighter"
-      },
-      {
-        "title": "Automated 404 Link Health Scanner",
-        "desc": "Background health checks that alert you when affiliate destination links go offline or change.",
-        "icon": "Search"
       }
     ]
   },
   "userGuide": {
-    "title": "Practical Step-by-Step User Guide",
-    "subtitle": "Get up and running in minutes with our straightforward configuration workflow.",
-    "steps": [
+    "title": "Step-by-Step User Installation & Setup Guide",
+    "subtitle": "Complete 4-phase walkthrough to install, configure links, enable auto-linking, and activate legal FTC compliance.",
+    "phases": [
       {
-        "num": "1",
-        "title": "Configure Prefixes & Redirection",
-        "desc": "Configure Cloaking Prefixes and default redirection HTTP status codes in Settings."
+        "phase": "Phase 1: Installation",
+        "steps": [
+          "Log in to your WordPress Admin Dashboard.",
+          "Navigate to Plugins > Add New.",
+          "Click Upload Plugin at the top of the screen.",
+          "Select the smart-affiliate-link-cloaker.zip file and click Install Now.",
+          "Click Activate Plugin (Enter your License Key when prompted if using PRO)."
+        ]
       },
       {
-        "num": "2",
-        "title": "Set FTC Disclosures",
-        "desc": "Set your FTC Auto-Disclosure rules and choose your preferred post placement."
+        "phase": "Phase 2: Creating Your First Link",
+        "steps": [
+          "In your WordPress sidebar, look for the new SALC Links menu and click Add New Link.",
+          "Title: Give your link a recognizable name (e.g. 'Amazon - Blue Yeti Mic').",
+          "Cloaked Slug: Enter what you want the URL to look like (e.g. blue-yeti).",
+          "Destination URL: Paste your actual, long affiliate link here.",
+          "Redirect Type: Leave it as 302 (Temporary) for affiliate links.",
+          "Click Publish. You can now copy your new, clean URL and share it anywhere!"
+        ]
       },
       {
-        "num": "3",
-        "title": "Add Destination URLs",
-        "desc": "Add a New Link with your destination URL and generate a clean, one-click cloaked slug."
+        "phase": "Phase 3: Setting up the Auto-Linker [PRO]",
+        "steps": [
+          "Go to SALC Links > Settings and click the Auto-Linker [PRO] tab.",
+          "Check the box to enable it on Posts and/or Pages.",
+          "In the Keyword Mapping table, click Add Keyword.",
+          "Type your target keyword (e.g. 'Email Marketing') and select the cloaked link you want to associate it with.",
+          "Set a limit (e.g. 1 replacement per post so it doesn't look spammy).",
+          "Click Save Settings. The plugin will now link that keyword across your blog posts!"
+        ]
       },
       {
-        "num": "4",
-        "title": "Setup Geolocation",
-        "desc": "Configure Pro Geolocation rules to divert international traffic to local Amazon or merchant stores."
-      },
-      {
-        "num": "5",
-        "title": "Activate Auto-Linking",
-        "desc": "Activate Keyword Auto-Linking rules to monetize your archive of published articles automatically."
-      }
-    ]
-  },
-  "pricing": {
-    "title": "Pricing and Licensing Tiers",
-    "subtitle": "Choose the tier that fits your publishing workflow. All Pro plans are backed by our 14-day 100% money-back guarantee.",
-    "guarantee": "All Pro plans come backed by a 14-day 100% money-back guarantee.",
-    "tiers": [
-      {
-        "name": "Free Core Tier",
-        "price": "$0",
-        "period": "Forever Free",
-        "desc": "Essential link cloaking and automated FTC compliance for single site owners.",
-        "features": [
-          "Unlimited link cloaking",
-          "FTC auto-disclosures",
-          "Basic click tracking",
-          "Community support on WordPress.org"
-        ],
-        "cta": "Download Free",
-        "href": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/",
-        "isFeatured": false
-      },
-      {
-        "name": "Pro Single Site",
-        "priceYearly": "$49",
-        "priceLifetime": "$149",
-        "periodYearly": "/ Year",
-        "periodLifetime": "One-Time",
-        "desc": "Ideal for professional bloggers and niche site owners.",
-        "features": [
-          "1 production site license",
-          "All advanced Pro modules",
-          "Automated updates",
-          "Priority email support"
-        ],
-        "cta": "Buy Pro License",
-        "href": "https://freemius.com",
-        "isFeatured": true
-      },
-      {
-        "name": "Pro Multi-Site Agency",
-        "priceYearly": "$99",
-        "priceLifetime": "$299",
-        "periodYearly": "/ Year",
-        "periodLifetime": "One-Time",
-        "desc": "Designed for growing agencies and multi-site networks.",
-        "features": [
-          "Up to 5 production domains",
-          "Centralized Freemius license dashboard",
-          "All Pro modules",
-          "24-hour response SLA"
-        ],
-        "cta": "Buy Agency License",
-        "href": "https://freemius.com",
-        "isFeatured": false
-      },
-      {
-        "name": "Pro Unlimited Developer",
-        "priceYearly": "$199",
-        "priceLifetime": "$499",
-        "periodYearly": "/ Year",
-        "periodLifetime": "One-Time",
-        "desc": "Full freedom for large publishers and client developers.",
-        "features": [
-          "Unlimited personal and client domains",
-          "REST API analytics access",
-          "VIP engineering support",
-          "White-label options"
-        ],
-        "cta": "Buy Developer License",
-        "href": "https://freemius.com",
-        "isFeatured": false
+        "phase": "Phase 4: Activating FTC Compliance",
+        "steps": [
+          "Go to SALC Links > Settings and click the FTC Disclosure tab.",
+          "Select your preferred visual style (Default, Alert, Minimal, or Subtle).",
+          "Choose where the banner should appear (Top of Content is recommended for strict compliance).",
+          "Customize the disclaimer text if desired, and click Save."
+        ]
       }
     ]
   }

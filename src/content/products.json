@@ -3,8 +3,8 @@
     "id": "smart-affiliate-link-cloaker",
     "slug": "smart-affiliate-link-cloaker",
     "name": "Smart Affiliate Link Cloaker",
-    "tagline": "The Modern Link Routing, Geolocation, and Automated Compliance Engine",
-    "description": "Transform ugly referral links into branded short links while automating FTC legal disclosures, dynamic geo-targeting, and DOM-safe keyword linking without impacting database performance.",
+    "tagline": "The Modern Link Routing, Geolocation, and Automated Compliance Engine (100% Feature Complete)",
+    "description": "Transform ugly referral links into branded short links while automating FTC legal disclosures, dynamic geo-targeting, DOM-safe keyword auto-linking, and broken link monitoring without third-party SaaS fees.",
     "category": "wordpress-plugin",
     "categoryLabel": "WordPress Performance Plugin",
     "icon": "Link",
@@ -14,7 +14,7 @@
       "/images/products/smart-affiliate-link-cloaker-stats.png",
       "/images/products/smart-affiliate-link-cloaker-settings.png"
     ],
-    "version": "v1.0.0 Stable",
+    "version": "v1.0.0 (100% Feature Complete)",
     "changelogUrl": "/changelog",
     "techStack": ["PHP 8.x", "PSR-4", "WP REST API", "Native Transients", "WordPress Core Coding Standards"],
     "keyFeatures": [
@@ -37,8 +37,8 @@
         "isPro": false
       },
       {
-        "title": "Dynamic FTC Auto-Disclosure Injector",
-        "description": "Automatically identifies cloaked URLs inside content and inserts compliant legal disclosures with flexible positioning.",
+        "title": "Dynamic FTC Auto-Disclosure Banner",
+        "description": "Automatically identifies cloaked URLs inside content and inserts compliant legal disclosures with 4 visual CSS styles.",
         "iconName": "Scale",
         "isPro": false
       },
@@ -73,125 +73,86 @@
         "isPro": true
       },
       {
-        "title": "Automated 404 Link Health Scanner",
-        "description": "Background health checks that alert you when affiliate destination links go offline or change.",
+        "title": "Target URL Health & Broken Link Scanner",
+        "description": "Daily background pings that mark broken links and email alerts when affiliate destination links go offline or change.",
         "iconName": "Search",
         "isPro": true
       }
     ],
     "targetAudience": [
-      "Affiliate publishers",
-      "Media blogs",
-      "Digital marketing agencies",
-      "Niche review sites"
+      "Digital Media Publishers",
+      "Marketing Agencies",
+      "Global E-Commerce Sites",
+      "Niche Bloggers & YouTubers"
     ],
     "pricingTiers": [
       {
-        "planName": "Free Core Tier",
+        "planName": "Free Core Edition",
         "priceMonthly": 0,
         "priceYearly": 0,
         "priceLifetime": null,
         "features": [
-          "Unlimited link cloaking",
-          "FTC auto-disclosures",
-          "Basic click tracking",
-          "Community support on WordPress.org"
+          "100% Feature Complete v1.0.0",
+          "Custom slug redirection",
+          "FTC auto-disclosure banner",
+          "Visual Chart.js analytics"
         ],
-        "checkoutUrl": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/",
+        "checkoutUrl": "/pricing",
         "isFeatured": false
       },
       {
-        "planName": "Pro Single Site",
+        "planName": "PRO Lifetime License",
         "priceMonthly": null,
-        "priceYearly": 49,
-        "priceLifetime": 149,
+        "priceYearly": null,
+        "priceLifetime": null,
         "features": [
-          "1 production site license",
-          "All advanced Pro modules",
-          "Automated updates",
-          "Priority email support"
+          "Keyword Auto-Linker engine",
+          "Target URL Health & Broken Link Monitor",
+          "Dynamic Geolocation Redirects",
+          "A/B Split Testing & UTM Forwarding"
         ],
-        "checkoutUrl": "https://freemius.com",
+        "checkoutUrl": "/pricing",
         "isFeatured": true
-      },
-      {
-        "planName": "Pro Multi-Site Agency",
-        "priceMonthly": null,
-        "priceYearly": 99,
-        "priceLifetime": 299,
-        "features": [
-          "Up to 5 production domains",
-          "Centralized Freemius license dashboard",
-          "All Pro modules",
-          "24-hour response SLA"
-        ],
-        "checkoutUrl": "https://freemius.com",
-        "isFeatured": false
-      },
-      {
-        "planName": "Pro Unlimited Developer",
-        "priceMonthly": null,
-        "priceYearly": 199,
-        "priceLifetime": 499,
-        "features": [
-          "Unlimited personal and client domains",
-          "REST API analytics access",
-          "All Pro modules",
-          "VIP engineering support"
-        ],
-        "checkoutUrl": "https://freemius.com",
-        "isFeatured": false
       }
     ],
     "distributionChannels": {
-      "wordpressOrgUrl": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/",
-      "freemiusUrl": "https://freemius.com/plugins/smart-affiliate-link-cloaker/",
-      "appSumoUrl": "https://appsumo.com/products/smart-affiliate-link-cloaker/"
+      "preLaunchUrl": "/pricing"
     },
     "documentationSections": [
       {
-        "title": "Getting Started",
-        "content": "Automatic WordPress Admin installation, manual ZIP upload, and FTP setup procedures.",
+        "title": "Phase 1: Installation",
+        "content": "Uploading smart-affiliate-link-cloaker.zip in WordPress Admin Dashboard.",
         "steps": [
-          "Navigate to Plugins > Add New in your WordPress dashboard.",
-          "Search for 'Smart Affiliate Link Cloaker' or upload the plugin ZIP file.",
-          "Activate the plugin and set your initial cloaking prefix in Settings."
+          "Go to Plugins > Add New > Upload Plugin.",
+          "Select smart-affiliate-link-cloaker.zip and click Install Now.",
+          "Click Activate Plugin to finalize installation."
         ]
       },
       {
-        "title": "Activating Pro",
-        "content": "Entering and validating Freemius software license keys inside wp-admin.",
+        "title": "Phase 2: Creating First Link",
+        "content": "Creating clean, branded referral URLs with 301, 302, or 307 redirect status codes.",
         "steps": [
-          "Go to Link Cloaker > Account in wp-admin.",
-          "Enter your Freemius license key.",
-          "Click Activate License to unlock Pro modules instantly."
+          "Go to SALC Links > Add New Link.",
+          "Enter Title, Cloaked Slug, and Destination URL.",
+          "Publish and share your clean short link!"
         ]
       },
       {
-        "title": "Configuration Guide",
-        "content": "Setting default 301 or 307 HTTP status codes and choosing global FTC disclosure placement.",
+        "title": "Phase 3: Setting up Auto-Linker [PRO]",
+        "content": "Automating keyword replacement across all historic posts and pages.",
         "steps": [
-          "Configure default redirection status code (301 Permanent or 307 Temporary).",
-          "Choose FTC disclosure placement (Top of content, Bottom of content, or Before first commercial link).",
-          "Save changes to apply rules globally across all posts."
+          "Go to SALC Links > Settings > Auto-Linker [PRO].",
+          "Add target keyword and select associated cloaked link.",
+          "Save settings to convert keywords automatically!"
         ]
       },
       {
-        "title": "Advanced Modules",
-        "content": "Configuring Cloudflare IP country headers for geolocation, setting up A/B split traffic percentages, and tuning keyword auto-linker thresholds.",
+        "title": "Phase 4: FTC Compliance",
+        "content": "Rendering customizable legal disclosure banners across pages containing cloaked links.",
         "steps": [
-          "Enable Geo-Routing in link settings and map ISO country codes to targeted destination URLs.",
-          "Set percentage weights for A/B split testing URLs.",
-          "Define target keywords and maximum links per article in Auto-Linker settings."
-        ]
-      },
-      {
-        "title": "Privacy & Security",
-        "content": "Cookie-less execution details, PII-free data policies, and GDPR compliance validation.",
-        "steps": [
-          "Zero telemetry and zero tracking of Personally Identifiable Information (PII).",
-          "All redirection data processed in-memory and stored locally in native WordPress Custom Post Types.",
-          "100% GDPR compliant out of the box."
+          "Select banner visual style (Default, Alert, Minimal, Subtle).",
+          "Choose placement (Top of Content recommended).",
+          "Save settings to render compliance disclosures automatically."
         ]
       }
     ]
@@ -200,10 +161,10 @@
     "id": "shelfmaster",
     "slug": "shelfmaster",
     "name": "ShelfMaster",
-    "tagline": "Lightning-Fast, 100% Offline Desktop Application for Local and Small but Modern Libraries",
-    "description": "An all-in-one local application replacing fragile spreadsheets and expensive cloud tools with unified cataloging, 3-second POS checkout, staff duty scheduling, payroll, and expense ledgers.",
+    "tagline": "Next-Gen Library Operating & Management System (80% Production-Ready)",
+    "description": "A cutting-edge, desktop-native Library Operating and Management System built to replace clunky web portals and legacy library software. Provides a lightning-fast interface to manage cataloging, POS circulation with auto-fines, member KYC, donor registry, staff roster, payroll, expenses, and loan policy settings on macOS and Windows.",
     "category": "desktop-app",
-    "categoryLabel": "Native Desktop Application (Windows, macOS, Linux)",
+    "categoryLabel": "Native Desktop Application (macOS & Windows)",
     "icon": "Library",
     "logoImage": "/images/products/shelfmaster-logo.png",
     "screenshotGallery": [
@@ -211,162 +172,125 @@
       "/images/products/shelfmaster-pos.png",
       "/images/products/shelfmaster-catalog.png"
     ],
-    "version": "v1.0.0 Production Blueprint",
+    "version": "v0.8.0 (80% Production Ready)",
     "changelogUrl": "/changelog",
-    "techStack": ["Tauri v2", "Rust Core", "React 18", "TypeScript", "SQLite3 (WAL)", "Tailwind CSS", "shadcn/ui"],
+    "techStack": ["Tauri", "Rust Core", "React 18", "TypeScript", "SQLite3 (WAL)", "macOS & Windows Native"],
     "keyFeatures": [
       {
-        "title": "Master Cataloging & Copy Tracking",
-        "description": "Catalog book editions, multi-author data, and ISBNs while managing physical shelf locations and accession barcodes.",
-        "iconName": "BookOpen",
+        "title": "Real-Time Command Dashboard",
+        "description": "Central command center displaying active member counts, total books, overdue loans, and quick action buttons.",
+        "iconName": "Monitor",
         "isPro": false
       },
       {
-        "title": "3-Second POS Circulation Desk",
-        "description": "Scan member IDs and book barcodes to execute checkouts in seconds, complete with automated overdue fine calculation.",
+        "title": "POS Circulation Desk",
+        "description": "Issue books via Member Code & Barcode, process returns, and calculate overdue fines ($0.50/day default rate).",
         "iconName": "ShoppingCart",
         "isPro": false
       },
       {
-        "title": "Donors & Gift Registry",
-        "description": "Record donor profiles, track donated inventory with distinct tags, and print professional donation certificates.",
-        "iconName": "Gift",
+        "title": "Inventory Catalog",
+        "description": "Full inventory management with multi-author/ISBN tracking and auto-generated sequential barcodes (e.g. BK-001).",
+        "iconName": "BookOpen",
         "isPro": false
       },
       {
-        "title": "Dual Membership KYC System",
-        "description": "Register standard paying members or authorize waived special privilege memberships with built-in photo and ID card printing.",
+        "title": "Patron Directory & KYC",
+        "description": "Register patrons with auto-generated Member IDs (MBR-TIMESTAMP) and colored active vs. expired status badges.",
         "iconName": "Users",
         "isPro": false
       },
       {
-        "title": "Staff HR & Weekly Duty Roster",
-        "description": "Maintain complete staff directories and assign shift schedules and departmental duties through a visual calendar.",
+        "title": "Donors & Gift Registry",
+        "description": "Dual-tab system to register philanthropic Donors and track their specific book or monetary donations over time.",
+        "iconName": "Gift",
+        "isPro": false
+      },
+      {
+        "title": "Staff & Roster Directory",
+        "description": "Employee management module to track library staff, maintain contact info, and monitor active staff status.",
         "iconName": "Calendar",
         "isPro": false
       },
       {
         "title": "Automated Payroll Engine",
-        "description": "Calculate net monthly salaries, manage deductions and overtime bonuses, and export official printable pay-slips.",
+        "description": "Generate dynamic payslips with net pay calculation (Base + Bonus - Deductions) and monthly payment tracking.",
         "iconName": "Banknote",
         "isPro": false
       },
       {
-        "title": "Institutional Expense Management",
-        "description": "Record day-to-day operating expenditures with voucher tracking, vendor notes, and category budgets.",
+        "title": "Expenses & Financial Tracking",
+        "description": "Track daily operational expenses (utilities, maintenance, supplies) with monthly/yearly summary progress bars.",
         "iconName": "Receipt",
         "isPro": false
       },
       {
-        "title": "Unified Cash-Flow Ledger & Audits",
-        "description": "Automatically reconcile membership fees, late fines, staff payroll, and operational expenses into unified balance sheets.",
+        "title": "Settings & Policy Reports",
+        "description": "Configure library name & address, adjust loan policies (days, fine rates), and view visual book popularity bars.",
         "iconName": "BarChart",
-        "isPro": false
-      },
-      {
-        "title": "Hardware & Multi-Format Printing",
-        "description": "Full support for USB barcode scanners, 58mm/80mm thermal receipts, and full A4 administrative document printers.",
-        "iconName": "Printer",
         "isPro": false
       }
     ],
     "targetAudience": [
-      "Municipal and community libraries",
-      "Academic schools and colleges",
-      "Research centers and private collections"
+      "Public & Community Libraries",
+      "K-12 Schools & Universities",
+      "Corporate Offices & Law Firms",
+      "Churches & Non-Profits",
+      "Bibliophiles & Researchers"
     ],
     "pricingTiers": [
       {
-        "planName": "Commercial Single Library License",
+        "planName": "Founder Pre-Launch Access",
         "priceMonthly": null,
         "priceYearly": null,
-        "priceLifetime": 149,
+        "priceLifetime": null,
         "features": [
-          "Single installation",
-          "Complete 9-module offline database",
-          "Thermal receipt and A4 print drivers",
-          "Free bugfix updates"
-        ],
-        "checkoutUrl": "/pricing",
-        "isFeatured": false
-      },
-      {
-        "planName": "Multi-Branch Institutional License",
-        "priceMonthly": null,
-        "priceYearly": null,
-        "priceLifetime": 399,
-        "features": [
-          "Multi-seat deployment across regional library branches",
-          "Complete 9-module offline database",
-          "Priority technical deployment support",
-          "Custom receipt branding"
-        ],
-        "checkoutUrl": "/pricing",
-        "isFeatured": false
-      },
-      {
-        "planName": "AppSumo Founder Lifetime Deal",
-        "priceMonthly": null,
-        "priceYearly": null,
-        "priceLifetime": 79,
-        "features": [
-          "One-time payment",
-          "Full software access",
+          "Pre-launch registration access",
+          "Full software access upon launch",
           "Lifetime desktop application license",
           "All 9 core modules included"
         ],
-        "checkoutUrl": "https://appsumo.com/products/shelfmaster/",
+        "checkoutUrl": "/pricing",
         "isFeatured": true
       }
     ],
     "distributionChannels": {
-      "appSumoUrl": "https://appsumo.com/products/shelfmaster/",
-      "directDownloadUrl": "/pricing"
+      "preLaunchUrl": "/pricing"
     },
     "documentationSections": [
       {
-        "title": "System Setup",
-        "content": "Installing native binaries on Windows (.msi/.exe), macOS (.dmg), or Linux (.deb/.AppImage) operating system.",
+        "title": "Part 1: Installation",
+        "content": "Installing native binaries on macOS (.dmg) or Windows (.exe) operating systems.",
         "steps": [
-          "Download the official ShelfMaster installer package for your operating system.",
-          "Run the executable installer and follow setup prompts.",
-          "Launch ShelfMaster from your desktop or application launcher."
+          "Download ShelfMaster.dmg for Mac or ShelfMaster-Setup.exe for Windows.",
+          "Run the installer executable or drag to Applications folder.",
+          "Activate using your 16-character Lemon Squeezy License Key."
         ]
       },
       {
-        "title": "Database Initialization",
-        "content": "Automatic local SQLite migration and Write-Ahead Logging (WAL) data safety.",
+        "title": "Part 2: Setting Up Your Library",
+        "content": "Configuring Library name, address, and global loan policy fine rates.",
         "steps": [
-          "Upon first launch, ShelfMaster creates an encrypted local SQLite database.",
-          "Write-Ahead Logging (WAL) is enabled automatically for maximum performance and crash resilience.",
-          "No network connectivity or server setup is required."
+          "Navigate to Settings in bottom left sidebar.",
+          "Enter your Library Name and Address.",
+          "Set standard loan duration (e.g. 14 days) and overdue fine rate (e.g. $0.50/day)."
         ]
       },
       {
-        "title": "Peripherals Integration",
-        "content": "Configuring USB plug-and-play barcode scanners and setting up 58mm/80mm thermal receipt printers.",
+        "title": "Part 3: Adding Books & Members",
+        "content": "Cataloging book inventory and registering patrons with auto-generated IDs.",
         "steps": [
-          "Connect any USB HID barcode scanner (plug-and-play).",
-          "In Settings > Peripherals, choose your thermal printer paper width (58mm or 80mm).",
-          "Print a test receipt to confirm hardware driver alignment."
+          "In Catalog tab, click '+ Add Book' to auto-generate unique barcodes (BK-001).",
+          "In Members tab, click '+ Add Member' to generate Member IDs (MBR-TIMESTAMP)."
         ]
       },
       {
-        "title": "Financial Workflows",
-        "content": "Generating monthly payroll, processing itemized expense vouchers, and running end-of-year audit reports.",
+        "title": "Part 4: POS Circulation",
+        "content": "Executing checkouts, returns, and automated overdue fine calculations.",
         "steps": [
-          "Navigate to Financial Ledger & Audits.",
-          "Log operational expense vouchers and staff salary payouts.",
-          "Export comprehensive PDF balance sheets for auditing."
-        ]
-      },
-      {
-        "title": "Backup & Recovery",
-        "content": "Generating encrypted local backup archives and executing one-click database restorations.",
-        "steps": [
-          "Go to Settings > Backup & Security.",
-          "Click 'Export Database Backup' to create an encrypted .db snapshot.",
-          "To restore on another machine, use 'Import Backup Archive'."
+          "In Circulation tab, click 'Issue Book' and type Member ID + Book Barcode.",
+          "When returning, select from Active Loans and click Return.",
+          "ShelfMaster automatically calculates and displays overdue fines if late!"
         ]
       }
     ]

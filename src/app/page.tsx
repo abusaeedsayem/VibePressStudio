@@ -5,7 +5,7 @@ import { useState } from "react";
 import { products } from "@/data/products";
 import { 
   ArrowRight, Package, Monitor, CheckCircle2, Zap, Database, 
-  CloudOff, ShieldCheck, Download, Code2, Lock, Scale
+  CloudOff, ShieldCheck, Download, Code2, Lock, Scale, Bell
 } from "lucide-react";
 import homeData from "@/content/home.json";
 
@@ -169,7 +169,7 @@ export default function HomePage() {
               }`}>
                 <div className="flex items-center justify-between gap-4 mb-4">
                   <span className="text-xs font-extrabold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
-                    {p.category === "wordpress-plugin" ? "WordPress Performance Plugin" : "Native Desktop Application (Win/macOS/Linux)"}
+                    {p.categoryLabel}
                   </span>
                   <span className="text-xs font-mono font-medium opacity-80">
                     {p.version}
@@ -212,14 +212,13 @@ export default function HomePage() {
                   <div className="flex flex-wrap gap-2 text-xs font-medium text-muted-foreground">
                     {p.category === "wordpress-plugin" ? (
                       <>
-                        <span className="bg-muted px-2.5 py-1 rounded border">Free on WordPress.org</span>
-                        <span className="bg-muted px-2.5 py-1 rounded border">Pro on Freemius</span>
-                        <span className="bg-muted px-2.5 py-1 rounded border">Lifetime on AppSumo</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">100% Feature Complete (v1.0.0)</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">Pre-Launch Registration</span>
                       </>
                     ) : (
                       <>
-                        <span className="bg-muted px-2.5 py-1 rounded border">AppSumo Lifetime Deal</span>
-                        <span className="bg-muted px-2.5 py-1 rounded border">Direct Studio License</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">80% Production Ready</span>
+                        <span className="bg-muted px-2.5 py-1 rounded border">Pre-Launch Registration</span>
                       </>
                     )}
                   </div>
@@ -231,13 +230,13 @@ export default function HomePage() {
                     href={`/products/${p.slug}`}
                     className="flex-1 bg-primary text-primary-foreground text-xs font-bold py-3 px-5 rounded-lg hover:bg-primary/90 transition-colors text-center flex items-center justify-center gap-1.5"
                   >
-                    {p.category === "wordpress-plugin" ? "Learn More & Live Demo" : "Explore Modules"} <ArrowRight className="h-3.5 w-3.5" />
+                    Explore Product Details <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                   <Link
-                    href={p.category === "wordpress-plugin" ? "/pricing" : "/pricing"}
+                    href="/pricing"
                     className="flex-1 bg-muted text-foreground border border-input text-xs font-bold py-3 px-5 rounded-lg hover:bg-muted/80 transition-colors text-center flex items-center justify-center gap-1.5"
                   >
-                    {p.category === "wordpress-plugin" ? "Get Pro License" : "Download Desktop Edition"}
+                    Register for Launch Updates
                   </Link>
                 </div>
 
@@ -309,22 +308,18 @@ export default function HomePage() {
             {globalCta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
+            <Link
               href={globalCta.cta1Href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-full sm:w-auto bg-background text-foreground text-sm font-bold py-4 px-8 rounded-full hover:bg-muted transition-all flex items-center justify-center gap-2 shadow-lg"
             >
-              <Download className="h-4 w-4" /> {globalCta.cta1Label}
-            </a>
-            <a
+              <Bell className="h-4 w-4 text-primary" /> {globalCta.cta1Label}
+            </Link>
+            <Link
               href={globalCta.cta2Href}
-              target="_blank"
-              rel="noopener noreferrer"
               className="w-full sm:w-auto bg-white/10 text-white border border-white/20 text-sm font-bold py-4 px-8 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2"
             >
-              {globalCta.cta2Label}
-            </a>
+              <ArrowRight className="h-4 w-4" /> {globalCta.cta2Label}
+            </Link>
           </div>
         </div>
       </section>

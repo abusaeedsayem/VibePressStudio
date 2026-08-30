@@ -1,164 +1,205 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { CheckCircle2, ShieldCheck, Clock, Download, ExternalLink } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { 
+  CheckCircle2, Bell, Sparkles, Clock, Send, ShieldCheck, Monitor, Package, Info 
+} from "lucide-react";
 import pricingData from "@/content/pricing.json";
 
 export default function PricingPage() {
-  const { hero, wordpressPlugin, desktopApp, assurance } = pricingData;
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("all");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const { hero, notice, upcomingProducts } = pricingData;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setIsSubmitted(true);
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
       
-      {/* Hero Block */}
-      <section className="bg-gradient-to-b from-primary/10 via-background to-background py-16 md:py-24 border-b border-border">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
+      {/* ── 1. Hero Announcement Header ── */}
+      <section className="bg-gradient-to-b from-primary/10 via-background to-background py-16 md:py-24 border-b border-border text-center">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+          <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30">
+            <Clock className="w-3.5 h-3.5 mr-1.5 inline" /> {hero.badge}
+          </Badge>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 max-w-4xl mx-auto">
             {hero.title}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
             {hero.subtitle}
           </p>
         </div>
       </section>
 
-      {/* Main Content Area */}
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-16 space-y-20">
+      {/* ── 2. Pre-Launch Registration Portal ── */}
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-16 space-y-16">
         
-        {/* 1. WordPress Plugin Pricing Hub (Smart Affiliate Link Cloaker) */}
-        <section>
-          <div className="mb-10 text-center md:text-left">
-            <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">
-              WordPress Plugin Pricing Hub
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          {/* Left Column: Information & Launch Guarantees */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="inline-flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-widest">
+              <Sparkles className="h-4 w-4 text-primary" /> Pre-Launch Registration
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground leading-tight">
+              {notice.heading}
+            </h2>
+            <p className="text-base text-muted-foreground leading-relaxed">
+              {notice.subheading}
+            </p>
+
+            <div className="space-y-3 pt-2">
+              {notice.benefits.map((benefit, idx) => (
+                <div key={idx} className="flex items-start gap-3 text-sm text-foreground">
+                  <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                  <span className="leading-snug">{benefit}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="p-6 bg-muted/40 border border-border rounded-xl space-y-2 mt-6">
+              <div className="flex items-center gap-2 font-bold text-sm text-foreground">
+                <Info className="h-4 w-4 text-primary" /> Launch Timeline Status
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                ShelfMaster is currently <strong>80% Production-Ready</strong> with core database and 9 operational modules complete. Official release is targeted within 3 to 4 weeks.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: Interactive Sign-Up Form */}
+          <div className="lg:col-span-6">
+            <Card className="border-primary/30 shadow-xl overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-indigo-500/10 border-b border-border p-6 md:p-8">
+                <CardTitle className="text-2xl font-bold flex items-center gap-2">
+                  <Bell className="h-5 w-5 text-primary" /> Get Notified Upon Launch
+                </CardTitle>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Register your email below to receive instant launch updates and exclusive discounts.
+                </p>
+              </CardHeader>
+
+              <CardContent className="p-6 md:p-8">
+                {isSubmitted ? (
+                  <div className="py-8 text-center space-y-4">
+                    <div className="w-16 h-16 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground">Registration Successful!</h3>
+                    <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
+                      Thank you for registering! We have recorded your email (<strong>{email}</strong>). We will notify you immediately as soon as our software is launched.
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      onClick={() => { setIsSubmitted(false); setFullName(""); setEmail(""); }}
+                      className="mt-4 text-xs font-semibold"
+                    >
+                      Register Another Email
+                    </Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="space-y-2">
+                      <Label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider">Your Name (Optional)</Label>
+                      <Input
+                        id="fullName"
+                        type="text"
+                        placeholder="e.g. Alex Morgan"
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        className="h-11 text-sm"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider">Email Address <span className="text-red-500">*</span></Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        required
+                        placeholder="name@organization.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="h-11 text-sm"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label className="text-xs font-bold uppercase tracking-wider">Software of Interest</Label>
+                      <select
+                        value={selectedProduct}
+                        onChange={(e) => setSelectedProduct(e.target.value)}
+                        className="w-full h-11 px-3 rounded-md border border-input bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                      >
+                        <option value="all">All VibePress Software Suite</option>
+                        <option value="shelfmaster">ShelfMaster Desktop App (macOS & Windows)</option>
+                        <option value="cloaker">Smart Affiliate Link Cloaker (WordPress Plugin)</option>
+                      </select>
+                    </div>
+
+                    <Button type="submit" className="w-full h-12 text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md">
+                      <Send className="h-4 w-4" /> Register For Launch Notification
+                    </Button>
+
+                    <p className="text-[11px] text-center text-muted-foreground pt-1">
+                      We respect your privacy. Zero spam, unsubscribe anytime with 1 click.
+                    </p>
+                  </form>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+
+        </div>
+
+        {/* ── 3. Upcoming Software Pipeline Cards ── */}
+        <section className="pt-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">
+              Software Pipeline Overview
             </span>
-            <h2 className="text-3xl font-extrabold text-foreground mb-2">
-              {wordpressPlugin.title}
+            <h2 className="text-3xl font-extrabold text-foreground mb-3">
+              Products Currently in Development
             </h2>
             <p className="text-sm text-muted-foreground">
-              {wordpressPlugin.subtitle}
+              A preview of our native desktop software and WordPress performance tools scheduled for upcoming release.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {wordpressPlugin.tiers.map((tier, idx) => (
-              <Card key={idx} className="flex flex-col border-border shadow-sm hover:shadow-md transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-lg font-bold">{tier.name}</CardTitle>
-                  <div className="mt-2">
-                    <span className="text-3xl font-extrabold">{tier.price || tier.priceYearly}</span>
-                    <span className="text-xs text-muted-foreground ml-1">{tier.period || (tier.priceLifetime ? `/yr or ${tier.priceLifetime}` : "")}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="space-y-2.5">
-                    {tier.features.map((f, fIdx) => (
-                      <li key={fIdx} className="flex items-start text-xs text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 mr-2 text-primary shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full text-xs font-bold" variant="outline" asChild>
-                    <a href={tier.href} target="_blank" rel="noopener noreferrer">
-                      {tier.cta} <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
-                    </a>
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* 2. Desktop Application Pricing Hub (ShelfMaster) */}
-        <section>
-          <div className="mb-10 text-center md:text-left">
-            <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest block mb-1">
-              Desktop Application Pricing Hub
-            </span>
-            <h2 className="text-3xl font-extrabold text-foreground mb-2">
-              {desktopApp.title}
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              {desktopApp.subtitle}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {desktopApp.tiers.map((tier, idx) => (
-              <Card key={idx} className={`flex flex-col shadow-sm ${idx === 2 ? "border-amber-500 shadow-md" : "border-border"}`}>
-                <CardHeader>
-                  <CardTitle className="text-lg font-bold">{tier.name}</CardTitle>
-                  <div className="mt-2">
-                    <span className="text-3xl font-extrabold">{tier.price}</span>
-                    <span className="text-xs text-muted-foreground ml-1">{tier.period}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <ul className="space-y-2.5">
-                    {tier.features.map((f, fIdx) => (
-                      <li key={fIdx} className="flex items-start text-xs text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 mr-2 text-indigo-500 shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button className="w-full text-xs font-bold" variant={idx === 2 ? "default" : "outline"} asChild>
-                    {tier.href.startsWith("http") ? (
-                      <a href={tier.href} target="_blank" rel="noopener noreferrer">
-                        {tier.cta} <ExternalLink className="ml-1.5 h-3.5 w-3.5" />
-                      </a>
-                    ) : (
-                      <Link href={tier.href}>
-                        {tier.cta}
-                      </Link>
-                    )}
-                  </Button>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        {/* 3. Customer Assurance & SLA Standards */}
-        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-sm">
-          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-            {assurance.title}
-          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-emerald-500/10 text-emerald-500 rounded-xl shrink-0">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-bold text-base text-foreground mb-1">
-                  {assurance.items[0].title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {assurance.items[0].desc}
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-blue-500/10 text-blue-500 rounded-xl shrink-0">
-                <Clock className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="font-bold text-base text-foreground mb-1">
-                  {assurance.items[1].title}
-                </h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {assurance.items[1].desc}
-                </p>
-              </div>
-            </div>
+            {upcomingProducts.map((prod, idx) => (
+              <Card key={idx} className="border-border shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className={`p-2.5 rounded-lg shrink-0 ${idx === 0 ? "bg-indigo-500/10 text-indigo-500" : "bg-blue-500/10 text-blue-500"}`}>
+                      {idx === 0 ? <Monitor className="h-5 w-5" /> : <Package className="h-5 w-5" />}
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl font-bold">{prod.name}</CardTitle>
+                      <span className="text-xs text-muted-foreground font-medium">{prod.type}</span>
+                    </div>
+                  </div>
+                  <Badge variant="outline" className="w-fit text-[11px] font-semibold px-2.5 py-0.5 border-amber-500/40 text-amber-600 dark:text-amber-400 bg-amber-500/5 mt-2">
+                    {prod.status}
+                  </Badge>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{prod.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 

@@ -1,135 +1,31 @@
 {
   "hero": {
-    "title": "Straightforward, Value-Driven Software Pricing",
-    "subtitle": "No hidden maintenance charges, no forced upgrades. Choose the right licensing model for your workflow or institutional scale."
+    "badge": "Studio Pre-Launch Status",
+    "title": "We Are in Development Phase",
+    "subtitle": "None of our software, tools, or plugins are publicly launched yet. We will inform you soon—please register with us to get notified as soon as we are ready to launch!"
   },
-  "wordpressPlugin": {
-    "title": "WordPress Plugin Pricing Hub (Smart Affiliate Link Cloaker)",
-    "subtitle": "Flexible licensing from WordPress.org free edition to unlimited developer tiers.",
-    "tiers": [
-      {
-        "name": "WordPress.org Community Edition",
-        "price": "$0",
-        "period": "Free Forever",
-        "features": [
-          "Core link cloaking",
-          "Automatic FTC legal notices",
-          "Basic click counts",
-          "Community support on WordPress.org"
-        ],
-        "cta": "Download Free",
-        "href": "https://wordpress.org/plugins/smart-affiliate-link-cloaker/"
-      },
-      {
-        "name": "Freemius Pro Single",
-        "priceYearly": "$49/yr",
-        "priceLifetime": "$149 Lifetime",
-        "features": [
-          "Single production domain",
-          "All Pro modules (Geo-routing, A/B split, UTM, Auto-linker)",
-          "Priority email updates",
-          "1-year automated updates"
-        ],
-        "cta": "Get Pro Single",
-        "href": "https://freemius.com"
-      },
-      {
-        "name": "Freemius Pro Multi-Site",
-        "priceYearly": "$99/yr",
-        "priceLifetime": "$299 Lifetime",
-        "features": [
-          "Up to 5 production domains",
-          "Multi-site license management dashboard",
-          "All Pro modules",
-          "24-hour response SLA"
-        ],
-        "cta": "Get Multi-Site",
-        "href": "https://freemius.com"
-      },
-      {
-        "name": "Freemius Pro Unlimited",
-        "priceYearly": "$199/yr",
-        "priceLifetime": "$499 Lifetime",
-        "features": [
-          "Unlimited domains & agency licensing",
-          "REST API access",
-          "VIP engineering support",
-          "White-label options"
-        ],
-        "cta": "Get Unlimited",
-        "href": "https://freemius.com"
-      },
-      {
-        "name": "AppSumo Exclusive Tier",
-        "price": "Lifetime",
-        "period": "Limited-Time Deal",
-        "features": [
-          "Single and multi-code redemption options",
-          "All Pro features included",
-          "Lifetime software license",
-          "AppSumo 60-day money-back guarantee"
-        ],
-        "cta": "Claim AppSumo Deal",
-        "href": "https://appsumo.com/products/smart-affiliate-link-cloaker/"
-      }
+  "notice": {
+    "heading": "Register for Early Access & Launch Notifications",
+    "subheading": "Join our priority insider list to receive instant notification, exclusive launch pricing, and early access download links.",
+    "benefits": [
+      "Instant email notification when official launch opens (Estimated in 3 to 4 Weeks)",
+      "Exclusive early access and launch discount eligibility",
+      "Direct installer download links for ShelfMaster (macOS/Win) & Smart Affiliate Link Cloaker (WordPress Plugin)",
+      "Zero spam guarantee—only release updates and major milestone announcements"
     ]
   },
-  "desktopApp": {
-    "title": "Desktop Application Pricing Hub (ShelfMaster)",
-    "subtitle": "Native offline library software with zero recurring monthly fees.",
-    "tiers": [
-      {
-        "name": "Commercial Single Library License",
-        "price": "$149",
-        "period": "Lifetime License",
-        "features": [
-          "Single installation",
-          "Complete 9-module offline database",
-          "Thermal receipt and A4 print drivers",
-          "Free bugfix updates"
-        ],
-        "cta": "Buy Single License",
-        "href": "/contact"
-      },
-      {
-        "name": "Multi-Branch Institutional License",
-        "price": "$399",
-        "period": "Institutional License",
-        "features": [
-          "Multi-seat deployment across regional library branches",
-          "Complete 9-module offline database",
-          "Priority technical deployment support",
-          "Custom receipt & document branding"
-        ],
-        "cta": "Contact Engineering",
-        "href": "/contact"
-      },
-      {
-        "name": "AppSumo Founder Lifetime Deal",
-        "price": "$79",
-        "period": "One-Time Payment",
-        "features": [
-          "One-time payment",
-          "Full software access",
-          "Lifetime desktop application license",
-          "All 9 core modules included"
-        ],
-        "cta": "Get AppSumo Deal",
-        "href": "https://appsumo.com/products/shelfmaster/"
-      }
-    ]
-  },
-  "assurance": {
-    "title": "Customer Assurance & SLA Standards",
-    "items": [
-      {
-        "title": "14-Day Money-Back Guarantee",
-        "desc": "Try any paid tier risk-free; if it doesn't fit your workflow, request a prompt full refund."
-      },
-      {
-        "title": "Direct Support SLA",
-        "desc": "Inquiries answered within 24 to 48 business hours by qualified software engineers."
-      }
-    ]
-  }
+  "upcomingProducts": [
+    {
+      "name": "ShelfMaster",
+      "type": "Desktop Native Application (macOS & Windows)",
+      "status": "80% Production-Ready • Launching in 3-4 Weeks",
+      "description": "Next-Gen Library Operating & Management System with 9 core modules, local SQLite WAL database, POS circulation, payroll, and offline-first data sovereignty."
+    },
+    {
+      "name": "Smart Affiliate Link Cloaker",
+      "type": "WordPress Performance Plugin",
+      "status": "100% Feature Complete (v1.0.0) • Rollout Pending Review",
+      "description": "Premium-grade referral link routing, automatic FTC legal disclosures, dynamic IP geolocation, DOM-safe keyword auto-linking, and broken link monitoring."
+    }
+  ]
 }

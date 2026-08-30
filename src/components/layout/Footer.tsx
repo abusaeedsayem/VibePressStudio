@@ -55,13 +55,6 @@ export function Footer() {
           <p className="text-xs text-muted-foreground">
             {copyright}
           </p>
-          <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <span>WordPress VIP Standards</span>
-            <span>•</span>
-            <span>Tauri v2 + Rust</span>
-            <span>•</span>
-            <span>Zero PII Telemetry</span>
-          </div>
         </div>
       </div>
     </footer>

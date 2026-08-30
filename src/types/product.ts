@@ -10,17 +10,15 @@ export interface KeyFeature {
 export interface PricingTier {
   planName: string;
   priceMonthly?: number | null;
-  priceYearly: number | null;
-  priceLifetime: number | null;
+  priceYearly?: number | null;
+  priceLifetime?: number | null;
   features: string[];
   checkoutUrl: string;
   isFeatured: boolean;
 }
 
 export interface DistributionChannels {
-  wordpressOrgUrl?: string;
-  freemiusUrl?: string;
-  appSumoUrl?: string;
+  preLaunchUrl?: string;
   directDownloadUrl?: string;
 }
 
@@ -37,6 +35,7 @@ export interface Product {
   tagline: string;
   description: string;
   category: Category;
+  categoryLabel?: string;
   icon: string;
   logoImage: string;
   screenshotGallery: string[];

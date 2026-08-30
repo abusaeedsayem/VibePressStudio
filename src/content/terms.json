@@ -3,9 +3,9 @@
   "updated": "Last updated: August 2026",
   "sections": [
     { "heading": "1. Acceptance of Terms", "body": "By accessing and using VibePress Studio's software and services, you accept and agree to be bound by the terms and provisions of this agreement." },
-    { "heading": "2. Software Licensing", "body": "Our WordPress plugins are licensed under the GNU General Public License v2.0 or later. Desktop applications (ShelfMaster) are distributed under a proprietary commercial license, unless stated otherwise in the AppSumo LTD agreement." },
-    { "heading": "3. Support & Updates", "body": "Support and automatic updates are provided for the duration of your active license. Lifetime deals include updates for the lifetime of the major product edition." },
-    { "heading": "4. Refund Policy", "body": "We offer a 14-day no-questions-asked money-back guarantee for direct purchases. For purchases made via third-party marketplaces (e.g., AppSumo), their respective 60-day refund policies apply." },
+    { "heading": "2. Software Licensing", "body": "Our WordPress plugins and desktop applications (ShelfMaster) are distributed under commercial software licenses and terms provided upon purchase and registration." },
+    { "heading": "3. Support & Updates", "body": "Support and software updates are provided for the duration of your active license or lifetime tier." },
+    { "heading": "4. Refund Policy", "body": "We offer a 14-day no-questions-asked money-back guarantee for direct purchases." },
     { "heading": "5. Limitation of Liability", "body": "In no event shall VibePress Studio or its engineering team be liable for any indirect, incidental, special, or consequential damages arising out of or in any way connected with the use of our software." }
   ]
 }

@@ -188,7 +188,7 @@ export default function ContactPage() {
                     {/* Input 5 */}
                     <div className="space-y-2">
                       <Label htmlFor="license" className="text-xs font-semibold">{form.inputs.license}</Label>
-                      <Input id="license" placeholder="e.g. FM-123456789 or AppSumo Redemption Code" className="text-xs bg-background" />
+                      <Input id="license" placeholder="e.g. Key or Activation Reference Code" className="text-xs bg-background" />
                     </div>
 
                     {/* Input 6 */}
@@ -197,7 +197,7 @@ export default function ContactPage() {
                       <Textarea 
                         id="message" 
                         required 
-                        placeholder="Please describe your technical issue, licensing query, or AppSumo code details..." 
+                        placeholder="Please describe your technical issue, inquiry, or question..." 
                         className="min-h-[140px] text-xs bg-background"
                       />
                     </div>

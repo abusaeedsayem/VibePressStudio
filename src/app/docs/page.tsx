@@ -158,7 +158,7 @@ export default function DocsPage() {
 
                 <div className="border-t border-border pt-6 flex items-center gap-2 text-xs text-muted-foreground">
                   <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Verified for product release {activeTab === "cloaker" ? "v1.0.0 Stable" : "v1.0.0 Production Blueprint"}</span>
+                  <span>Verified for product release {activeTab === "cloaker" ? "v1.0.0 Stable" : "v0.8.0 (80% Production Ready)"}</span>
                 </div>
               </div>
             )}

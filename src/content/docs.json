@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Studio Documentation & Integration Guides",
-    "subtitle": "Step-by-step setup guides, architectural notes, and configuration instructions for our WordPress and desktop products.",
+    "title": "Studio Documentation & End-User Guides",
+    "subtitle": "Step-by-step installation guides, module walkthroughs, and setup instructions for Smart Affiliate Link Cloaker and ShelfMaster.",
     "searchPlaceholder": "Search documentation guides..."
   },
   "search": {
@@ -16,71 +16,106 @@
       "type": "WordPress Plugin",
       "index": [
         {
-          "id": "getting-started",
-          "title": "Getting Started",
-          "summary": "Automatic WordPress Admin installation, manual ZIP upload, and FTP setup procedures.",
-          "content": "Install Smart Affiliate Link Cloaker via the WordPress Admin plugin directory by searching for 'Smart Affiliate Link Cloaker' or by uploading the downloadable ZIP archive under Plugins > Add New > Upload Plugin. For FTP installations, extract the archive to /wp-content/plugins/smart-affiliate-link-cloaker/ and activate through the administration panel."
+          "id": "phase1-installation",
+          "title": "Phase 1: Installation & Setup",
+          "summary": "Uploading smart-affiliate-link-cloaker.zip in WordPress Admin Dashboard and activating the plugin.",
+          "content": "Log in to your WordPress Admin Dashboard. Navigate to Plugins > Add New and click 'Upload Plugin' at the top of the screen. Select the smart-affiliate-link-cloaker.zip file and click 'Install Now'. Once uploaded, click 'Activate Plugin' to complete setup. If using PRO, enter your License Key when prompted to unlock premium features.",
+          "steps": [
+            "Log in to your WordPress Admin Dashboard.",
+            "Navigate to Plugins > Add New.",
+            "Click Upload Plugin at the top of the screen.",
+            "Select the smart-affiliate-link-cloaker.zip file and click Install Now.",
+            "Click Activate Plugin."
+          ]
         },
         {
-          "id": "activating-pro",
-          "title": "Activating Pro",
-          "summary": "Entering and validating Freemius software license keys inside wp-admin.",
-          "content": "To activate Pro features, navigate to Link Cloaker > Account in your WordPress admin menu. Paste your license key generated upon Freemius checkout. The engine validates the key via secure REST API handshake and unlocks advanced modules instantly."
+          "id": "phase2-creating-first-link",
+          "title": "Phase 2: Creating Your First Link",
+          "summary": "Creating clean, branded referral URLs with 301, 302, or 307 redirect status codes.",
+          "content": "In your WordPress sidebar, look for the new SALC Links menu and click 'Add New Link'. Enter a Title (e.g. 'Amazon - Blue Yeti Mic'), enter your desired Cloaked Slug (e.g. blue-yeti), and paste your destination long affiliate URL. Leave Redirect Type as 302 (Temporary) for affiliate links and click Publish. Copy your clean URL (e.g. yourdomain.com/go/blue-yeti) and share anywhere!",
+          "steps": [
+            "In your WordPress sidebar, look for SALC Links and click Add New Link.",
+            "Title: Give your link a recognizable name (e.g. 'Amazon - Blue Yeti Mic').",
+            "Cloaked Slug: Enter what you want the URL to look like (e.g. blue-yeti).",
+            "Destination URL: Paste your actual, long affiliate link here.",
+            "Redirect Type: Leave as 302 (Temporary) for affiliate links.",
+            "Click Publish. Copy your clean URL and share it anywhere!"
+          ]
         },
         {
-          "id": "configuration-guide",
-          "title": "Configuration Guide",
-          "summary": "Setting default 301 or 307 HTTP status codes and choosing global FTC disclosure placement.",
-          "content": "Under Link Cloaker > Settings, select your default HTTP redirection header (301 Permanent Redirect for SEO pass-through or 307 Temporary Redirect for dynamic tracking). Configure FTC auto-disclosure rules by selecting global placement: Top of Content, Bottom of Content, or Immediately Preceding First Commercial Link."
+          "id": "phase3-auto-linker",
+          "title": "Phase 3: Setting up the Auto-Linker [PRO]",
+          "summary": "Automating keyword replacement across all historic posts and pages.",
+          "content": "Go to SALC Links > Settings and click the 'Auto-Linker [PRO]' tab. Check the box to enable keyword auto-linking on Posts and/or Pages. In the Keyword Mapping table, click 'Add Keyword', enter your target phrase (e.g. 'WordPress Hosting'), and select the cloaked link to associate it with. Set a replacement limit per post (e.g. 1 per post to maintain readability) and click Save Settings.",
+          "steps": [
+            "Go to SALC Links > Settings and click the Auto-Linker [PRO] tab.",
+            "Check the box to enable it on Posts and/or Pages.",
+            "In the Keyword Mapping table, click Add Keyword.",
+            "Type your target keyword (e.g. 'Email Marketing') and select your cloaked link.",
+            "Set a limit (e.g. 1 replacement per post).",
+            "Click Save Settings. The plugin will link that keyword across your blog history!"
+          ]
         },
         {
-          "id": "advanced-modules",
-          "title": "Advanced Modules",
-          "summary": "Configuring Cloudflare IP country headers for geolocation, setting up A/B split traffic percentages, and tuning keyword auto-linker thresholds.",
-          "content": "Enable Geo-Routing in link settings to utilize Cloudflare IP country headers or MaxMind local databases. Set up A/B Split Testing by providing multiple target URLs with percentage weights (e.g. 50/50 split). Configure DOM Keyword Auto-Linker thresholds to automatically convert target keywords into cloaked links while protecting headings, existing anchors, and code blocks."
+          "id": "phase4-ftc-compliance",
+          "title": "Phase 4: Activating FTC Compliance",
+          "summary": "Rendering customizable legal disclosure banners across pages containing cloaked links.",
+          "content": "Go to SALC Links > Settings and click the 'FTC Disclosure' tab. Select your preferred visual banner style (Default, Alert, Minimal, or Subtle) and choose the banner position (Top of Content is recommended for strict compliance). Customize the legal disclaimer text if desired and click Save. The plugin automatically detects cloaked links in your content and displays the disclosure banner.",
+          "steps": [
+            "Go to SALC Links > Settings and click the FTC Disclosure tab.",
+            "Select your preferred visual style (Default, Alert, Minimal, or Subtle).",
+            "Choose banner placement (Top of Content recommended for strict compliance).",
+            "Customize disclaimer text if desired, and click Save."
+          ]
         },
         {
-          "id": "privacy-security",
-          "title": "Privacy & Security",
-          "summary": "Cookie-less execution details, PII-free data policies, and GDPR compliance validation.",
-          "content": "Smart Affiliate Link Cloaker uses a 100% cookie-less redirect execution engine. Click statistics are logged anonymously without storing IP addresses or Personally Identifiable Information (PII), ensuring strict compliance with GDPR and global privacy standards."
+          "id": "health-analytics",
+          "title": "Health Monitoring & Visual Analytics",
+          "summary": "Chart.js click performance graphs, broken link detection daily background tasks, and geolocation routing.",
+          "content": "Smart Affiliate Link Cloaker tracks link clicks using a built-in Chart.js visual analytics dashboard showing performance over 7 days, 30 days, or all time. Under PRO, a daily background task pings destination URLs to detect broken merchant pages or out-of-stock products, emailing alerts instantly. Geolocation Redirects allow routing international traffic (e.g. US vs. UK Amazon stores) dynamically under a single link."
         }
       ]
     },
     {
       "id": "shelfmaster",
       "name": "ShelfMaster",
-      "type": "Desktop Application",
+      "type": "Desktop Application (macOS & Windows)",
       "index": [
         {
-          "id": "system-setup",
-          "title": "System Setup",
-          "summary": "Installing native binaries on Windows, macOS, or Linux operating system.",
-          "content": "Download the native binary matching your operating system: Windows (.msi/.exe installer), macOS (.dmg package), or Linux (.deb/.AppImage). Run the installer to unpack the binary. No third-party runtime frameworks (such as Node.js or Java) are required."
+          "id": "part1-installation",
+          "title": "Part 1: Installation & License Activation",
+          "summary": "Downloading installers for Mac (.dmg) or Windows (.exe) and validating 16-character Lemon Squeezy license keys.",
+          "content": "Download the installer matching your operating system: ShelfMaster.dmg for macOS or ShelfMaster-Setup.exe for Windows. On macOS, double-click the .dmg and drag the ShelfMaster icon to your Applications folder. On Windows, double-click the .exe installer and follow the setup wizard. Upon initial launch, paste the 16-character License Key received in your email and click 'Activate' (Internet connection required for activation step only)."
         },
         {
-          "id": "database-initialization",
-          "title": "Database Initialization",
-          "summary": "Automatic local SQLite migration and Write-Ahead Logging (WAL) data safety.",
-          "content": "Upon initial launch, ShelfMaster creates an ACID-compliant local SQLite3 database stored in your user application data directory. Write-Ahead Logging (WAL) mode is auto-configured to ensure transactional integrity during unexpected power loss."
+          "id": "part2-setup",
+          "title": "Part 2: Setting Up Your Library",
+          "summary": "Configuring Library Name, Address, standard loan duration, and overdue fine rates.",
+          "content": "Click Settings in the bottom left of the sidebar. Enter your Library Name and Address. Scroll down to Loan Policy and set your standard loan duration (e.g. 14 days) and overdue fine rate (e.g. $0.50 per day). Click Save to apply policy rules across your institution."
         },
         {
-          "id": "peripherals-integration",
-          "title": "Peripherals Integration",
-          "summary": "Configuring USB plug-and-play barcode scanners and setting up 58mm/80mm thermal receipt printers.",
-          "content": "Connect standard USB HID barcode scanners directly—no drivers needed. Under Settings > Peripherals, select your receipt printer paper width (58mm or 80mm ESC/POS) or standard A4 printer to enable instant POS checkouts and certificate printing."
+          "id": "part3-books-members",
+          "title": "Part 3: Adding Books & Members",
+          "summary": "Cataloging book inventory with auto-generated barcodes (BK-001) and registering patrons with Member IDs (MBR-TIMESTAMP).",
+          "content": "To add a book, go to the Catalog tab and click '+ Add Book'. Enter Title, Author, category, and copy count, then click Save to auto-generate unique sequential barcodes (e.g. BK-001). To register a patron, go to the Members tab and click '+ Add Member'. Enter name and contact info to auto-generate a Member ID (MBR-TIMESTAMP) and assign colored active vs. expired status badges."
         },
         {
-          "id": "financial-workflows",
-          "title": "Financial Workflows",
-          "summary": "Generating monthly payroll, processing itemized expense vouchers, and running end-of-year audit reports.",
-          "content": "Manage institutional finances using the built-in ledger modules. Record daily operational expense vouchers, process staff salary pay-slips with deduction calculations, and export unified cash-flow audit reports."
+          "id": "part4-circulation",
+          "title": "Part 4: POS Circulation & Overdue Fines",
+          "summary": "Executing checkouts via Member Code and Barcode, processing returns, and auto-calculating late fines.",
+          "content": "When a member borrows a book, navigate to the Circulation tab and click 'Issue Book'. Enter the Member ID and Book Barcode. ShelfMaster automatically sets the Due Date based on your loan policy settings. When returning a book, locate the borrower in Active Loans and click Return. ShelfMaster automatically calculates and displays any overdue fine owed ($0.50/day default rate)!"
         },
         {
-          "id": "backup-recovery",
-          "title": "Backup & Recovery",
-          "summary": "Generating encrypted local backup archives and executing one-click database restorations.",
-          "content": "Execute one-click database backups under Settings > Backup & Data Safety. The system exports an encrypted SQLite archive snapshot that can be transferred or restored to any machine running ShelfMaster."
+          "id": "payroll-expenses",
+          "title": "Part 5: Staff Payroll & Financial Tracking",
+          "summary": "Generating dynamic employee payslips, tracking operational expense vouchers, and viewing financial progress bars.",
+          "content": "Manage institutional finances using the built-in Payroll and Expenses modules. The Payroll engine calculates net salary (Base + Bonus - Deductions) and generates printable payslips marked by month. The Expenses module records operational expenditures (utilities, maintenance, supplies) with visual monthly/yearly financial summary bars."
+        },
+        {
+          "id": "security-wal",
+          "title": "Part 6: Security & SQLite WAL Database",
+          "summary": "Local Write-Ahead Logging persistence, Rust-backed Lemon Squeezy API security, and hardware-bound device management.",
+          "content": "ShelfMaster stores all catalog and financial records in a local SQLite3 database operating in high-performance Write-Ahead Logging (WAL) mode. The app connects to the Lemon Squeezy API via a native Rust backend for license verification. Licenses are bound to your specific computer hardware to prevent piracy and unauthorized sharing."
         }
       ]
     }

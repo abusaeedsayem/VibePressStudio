@@ -1,23 +1,23 @@
 {
   "hero": {
-    "badge": "Technical Helpdesk & Licensing",
-    "title": "Direct Technical Support & Licensing Inquiries",
-    "subtitle": "Have a technical inquiry, need license activation assistance, or want to redeem an AppSumo code? Our engineering team is ready to assist."
+    "badge": "Technical Helpdesk & Inquiries",
+    "title": "Direct Technical Support & Studio Inquiries",
+    "subtitle": "Have a technical inquiry, pre-launch question, or feature request? Our engineering team is ready to assist."
   },
   "channels": [
     {
-      "name": "Free Plugin Community Channel",
-      "desc": "Hosted directly on the official WordPress.org support repository.",
-      "href": "https://wordpress.org/support/plugin/smart-affiliate-link-cloaker/"
+      "name": "General Technical Support",
+      "desc": "Direct helpdesk assistance for studio software and upcoming tools.",
+      "href": "#contact-form"
     },
     {
-      "name": "Pro License Ticketing",
-      "desc": "Priority ticketing assistance for active Freemius license holders.",
-      "href": "https://freemius.com"
+      "name": "Pre-Launch & Registration",
+      "desc": "Questions regarding early access registration and official launch dates.",
+      "href": "/pricing"
     },
     {
-      "name": "AppSumo Redemption Support",
-      "desc": "Dedicated support for lifetime deal code redemptions and tier activations.",
+      "name": "Feature Requests & Feedback",
+      "desc": "Direct channel to request new features or report roadmap feedback.",
       "href": "#contact-form"
     }
   ],
@@ -38,7 +38,7 @@
       "email": "Professional Email Address",
       "product": "Product Name",
       "category": "Support Category",
-      "license": "License Key or AppSumo Redemption Code (Optional)",
+      "license": "License Key or Reference (Optional)",
       "message": "Message Description"
     },
     "productOptions": [
@@ -47,8 +47,7 @@
     ],
     "categoryOptions": [
       { "value": "general-inquiry", "label": "General Inquiry" },
-      { "value": "freemius-activation", "label": "Freemius Pro Activation" },
-      { "value": "appsumo-redemption", "label": "AppSumo Redemption" },
+      { "value": "pre-launch-registration", "label": "Pre-Launch Registration Question" },
       { "value": "bug-report", "label": "Bug Report" },
       { "value": "feature-request", "label": "Feature Request" }
     ],

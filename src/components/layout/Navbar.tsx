@@ -73,12 +73,9 @@ export function Navbar() {
         <div className="max-w-[1280px] mx-auto px-4 md:px-6 h-20 flex items-center justify-between gap-4">
           
           {/* Brand Element */}
-          <Link href="/" className="flex flex-col group">
+          <Link href="/" className="flex items-center group">
             <span className="font-extrabold text-xl md:text-2xl text-primary tracking-tight group-hover:opacity-90 transition-opacity">
               {brand}
-            </span>
-            <span className="text-[10px] md:text-xs text-muted-foreground font-medium hidden sm:inline-block">
-              {tagline}
             </span>
           </Link>
 
@@ -129,7 +126,7 @@ export function Navbar() {
                         ShelfMaster
                       </div>
                       <div className="text-xs text-muted-foreground">
-                        Desktop Application (Win/macOS/Linux)
+                        Desktop Application (Win/macOS)
                       </div>
                     </div>
                   </Link>
@@ -162,30 +159,16 @@ export function Navbar() {
             {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center bg-muted/60 border border-input rounded-full px-3 py-1.5 hover:bg-muted transition-colors gap-2 text-muted-foreground text-xs"
+              className="flex items-center justify-between w-48 sm:w-64 md:w-72 bg-muted/60 border border-input rounded-full px-4 py-2 hover:bg-muted transition-colors gap-2 text-muted-foreground text-xs"
             >
-              <Search className="h-3.5 w-3.5" />
-              <span className="hidden xl:inline-block">{searchPlaceholder}</span>
-              <kbd className="hidden xl:inline-block bg-background border border-border rounded px-1.5 py-0.5 text-[10px] font-mono">
+              <div className="flex items-center gap-2">
+                <Search className="h-4 w-4 shrink-0" />
+                <span className="truncate">{searchPlaceholder}</span>
+              </div>
+              <kbd className="hidden sm:inline-block bg-background border border-border rounded px-1.5 py-0.5 text-[10px] font-mono shrink-0">
                 ⌘K
               </kbd>
             </button>
-
-            {/* Action Buttons */}
-            <div className="hidden sm:flex items-center gap-2">
-              <Link
-                href={actions.secondaryHref}
-                className="text-xs font-semibold px-4 py-2 rounded-md border border-input hover:bg-muted transition-colors flex items-center gap-1.5"
-              >
-                <BookOpen className="h-3.5 w-3.5" /> {actions.secondaryLabel}
-              </Link>
-              <Link
-                href={actions.primaryHref}
-                className="text-xs font-semibold px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 transition-colors flex items-center gap-1.5 shadow-sm"
-              >
-                <Compass className="h-3.5 w-3.5" /> {actions.primaryLabel}
-              </Link>
-            </div>
 
             {/* Mobile Sheet Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -200,9 +183,6 @@ export function Navbar() {
                     <span className="font-extrabold text-xl text-primary">
                       {brand}
                     </span>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {tagline}
-                    </p>
                   </div>
 
                   <nav className="flex flex-col p-4 gap-1 flex-1 overflow-y-auto">
@@ -250,23 +230,6 @@ export function Navbar() {
                       Support & Helpdesk
                     </Link>
                   </nav>
-
-                  <div className="p-4 border-t border-border flex flex-col gap-2">
-                    <Link
-                      href="/docs"
-                      onClick={() => setMobileOpen(false)}
-                      className="w-full py-2.5 text-center text-xs font-semibold rounded-md border border-input hover:bg-muted"
-                    >
-                      View Documentation
-                    </Link>
-                    <Link
-                      href="/products"
-                      onClick={() => setMobileOpen(false)}
-                      className="w-full py-2.5 text-center text-xs font-semibold rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
-                    >
-                      Explore Products
-                    </Link>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>

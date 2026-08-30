@@ -14,11 +14,11 @@
     "primaryLabel": "Explore",
     "primaryHref": "/products"
   },
-  "searchPlaceholder": "Search catalog...",
+  "searchPlaceholder": "Search products, docs, features...",
   "searchDialogPlaceholder": "Search products, docs, features...",
   "dropdownLabels": {
     "products": "Products Ecosystem",
     "wordpressPlugins": "WordPress Performance Plugin",
-    "desktopApps": "Desktop Application (Win/macOS/Linux)"
+    "desktopApps": "Desktop Application (macOS & Windows)"
   }
 }

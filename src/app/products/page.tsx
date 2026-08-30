@@ -78,7 +78,7 @@ export default function ProductsDirectoryPage() {
                         ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
                         : "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"
                     }`}>
-                      {product.category === "wordpress-plugin" ? "WordPress Plugin" : "Desktop Application (Win/macOS/Linux)"}
+                      {product.categoryLabel}
                     </span>
                     <span className="text-xs font-mono font-medium text-muted-foreground border border-border px-2.5 py-0.5 rounded">
                       Current Release: {product.version}
@@ -138,8 +138,8 @@ export default function ProductsDirectoryPage() {
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {product.category === "wordpress-plugin" 
-                      ? "WordPress.org (Free Core), Freemius (Pro), AppSumo (LTD)"
-                      : "AppSumo Lifetime Deal, Direct Institutional Installer"}
+                      ? "Pre-Launch Registration, Direct Download & License Activation"
+                      : "Pre-Launch Registration, Direct Installer Package"}
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function ProductsDirectoryPage() {
           </div>
 
           <Link
-            href="/contact"
+            href="/pricing"
             className="bg-white text-slate-900 text-sm font-bold py-3.5 px-7 rounded-xl hover:bg-slate-100 transition-colors flex items-center gap-2 shrink-0"
           >
             <Bell className="h-4 w-4 text-indigo-600" /> Subscribe to Release Notes
