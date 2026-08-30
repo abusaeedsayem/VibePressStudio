@@ -5,6 +5,15 @@ All notable changes to VibePress Studio will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.1] - 2026-08-30
+
+### Fixed
+- **Sitemap** (`src/app/sitemap.ts:14`): add missing `/products` static route to `MetadataRoute.Sitemap` (now 10 URLs total: `/`, `/products`, `/products/[slug]` x2, `/pricing`, `/about`, `/docs`, `/contact`, `/legal/terms`, `/legal/privacy`); regenerates `https://vibepress.studio/sitemap.xml` with correct baseUrl `https://vibepress.studio`
+- **Deployment verification** – confirmed Vercel auto-deploy pipeline healthy (`prj_2BbWSdv7373HQZ5NRYxSQcl6QaKe`); all routes return `200` (`/`, `/pricing`, `/products`, `/products/shelfmaster`, `/products/smart-affiliate-link-cloaker`, `/docs`) and deleted legal routes correctly `404`; `vercel.json` security headers + CSP verified live
+
+### Changed
+- Bump `package.json:3` `0.2.0` → `0.2.1` for patch release
+
 ## [0.2.0] - 2026-08-30
 
 Pre-Launch Rebrand & Content Consolidation – shifts the entire studio site from live-sales (Freemius/AppSumo/WordPress.org) to a **pre-launch registration** posture. ShelfMaster is 80% production-ready, Smart Affiliate Link Cloaker is 100% feature-complete (pending review).
@@ -42,5 +51,6 @@ Initial architecture and subsequent hardening prior to 0.2.0. Aggregated from `g
 - **Fixed** – ESLint ignore during Vercel build 404 (`32ec67c`); remove incompatible `@plugin` directive in Tailwind v4 (`deb1e8f`); add full shadcn CSS variable set for transparent dropdowns (`976c842`)
 - **Chore** – remove frontend editing CMS and deploy static content (`829f7ca`)
 
+[0.2.1]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/abusaeedsayem/VibePressStudio/releases/tag/v0.1.0
