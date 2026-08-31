@@ -4,6 +4,18 @@
   "entries": [
     {
       "date": "August 31, 2026",
+      "version": "v0.3.0 — Brand Redesign, Studio Lab & Contrast Polish",
+      "changes": [
+        "Integrated complete Google Stitch Design System with custom color tokens, Inter/JetBrains Mono typography, and responsive layouts.",
+        "Renamed top navigation menu from 'Marketplace' to 'Studio' and migrated page route from /pricing to /lab.",
+        "Added permanent 301 redirect from /pricing to /lab ensuring zero broken links and full backward compatibility.",
+        "Added SVG brand logo to Header, Mobile Drawer, and Footer, along with modern vector favicon (icon.svg).",
+        "Fixed primary button and tab text contrast (--color-primary-foreground: #ffffff) ensuring full WCAG AAA compliance.",
+        "Updated SEO sitemap metadata and verified production build for live Vercel deployment."
+      ]
+    },
+    {
+      "date": "August 31, 2026",
       "version": "v0.2.2 — Accessibility Contrast Fix (Option B)",
       "changes": [
         "Replaced all low-contrast Blue (from-blue-600) and Black (from-slate-800/900/950, bg-slate-950) button/gradient backgrounds with high-contrast brand gradients from-primary to-indigo-600 and from-indigo-600 to-violet-600 (page.tsx product headers, products roadmap teaser, shelfmaster licensing, about commitment banner).",
