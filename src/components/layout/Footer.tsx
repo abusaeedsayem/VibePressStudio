@@ -12,8 +12,7 @@ export function Footer() {
           {/* Column 1: VibePress Studio */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="inline-block">
-              <img src="/logo.svg" alt="VibePress Studio" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity dark:hidden" />
-              <img src="/logo-dark.svg" alt="VibePress Studio" className="hidden h-10 w-auto opacity-90 hover:opacity-100 transition-opacity dark:block" />
+              <img src="/logo-dark.svg" alt="VibePress Studio" className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {description}

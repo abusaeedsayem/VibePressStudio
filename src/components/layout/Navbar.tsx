@@ -74,8 +74,7 @@ export function Navbar() {
           
           {/* Brand Element */}
           <Link href="/" className="flex items-center group">
-            <img src="/logo.svg" alt="VibePress Studio" className="h-8 md:h-10 w-auto group-hover:opacity-90 transition-opacity dark:hidden" />
-            <img src="/logo-dark.svg" alt="VibePress Studio" className="hidden h-8 md:h-10 w-auto group-hover:opacity-90 transition-opacity dark:block" />
+            <img src="/logo-dark.svg" alt="VibePress Studio" className="h-8 md:h-10 w-auto group-hover:opacity-90 transition-opacity" />
           </Link>
 
           {/* Navigation Links */}
@@ -180,8 +179,7 @@ export function Navbar() {
                 <div className="flex flex-col h-full">
                   <div className="p-6 border-b border-border">
                     <Link href="/" className="flex items-center">
-                      <img src="/logo.svg" alt={brand} className="h-8 w-auto dark:hidden" />
-                      <img src="/logo-dark.svg" alt={brand} className="hidden h-8 w-auto dark:block" />
+                      <img src="/logo-dark.svg" alt={brand} className="h-8 w-auto" />
                     </Link>
                   </div>
 
