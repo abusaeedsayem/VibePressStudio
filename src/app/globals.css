@@ -10,6 +10,7 @@
   /* Primary */
   --color-primary: #0058be;
   --color-on-primary: #ffffff;
+  --color-primary-foreground: #ffffff;
   --color-primary-container: #2170e4;
   --color-on-primary-container: #fefcff;
   --color-primary-fixed: #d8e2ff;
@@ -21,6 +22,7 @@
   /* Secondary */
   --color-secondary: #505f76;
   --color-on-secondary: #ffffff;
+  --color-secondary-foreground: #ffffff;
   --color-secondary-container: #d0e1fb;
   --color-on-secondary-container: #54647a;
   --color-secondary-fixed: #d3e4fe;
@@ -84,6 +86,8 @@
   --color-border: #E2E8F0;
   --color-foreground: #111c2d;
   --color-destructive: #EF4444;
+  --color-destructive-foreground: #ffffff;
+  --color-accent-foreground: #111c2d;
 
   /* Fonts */
   --font-sans: "Inter", sans-serif;
