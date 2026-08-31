@@ -3,6 +3,16 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "August 31, 2026",
+      "version": "v0.2.2 — Accessibility Contrast Fix (Option B)",
+      "changes": [
+        "Replaced all low-contrast Blue (from-blue-600) and Black (from-slate-800/900/950, bg-slate-950) button/gradient backgrounds with high-contrast brand gradients from-primary to-indigo-600 and from-indigo-600 to-violet-600 (page.tsx product headers, products roadmap teaser, shelfmaster licensing, about commitment banner).",
+        "Fixed button text legibility: removed opacity-80/90, changed bg-white/10 and bg-white/20 translucent pills to solid bg-white text-primary (v0.2.2 badges, global CTA, roadmap pill, product category labels).",
+        "Unified CTAs to bg-primary text-primary-foreground (shelfmaster hero + bottom CTA, readiness badge) and improved FREE/PRO badges (blue-600 → primary, indigo-600 → violet-600) for WCAG AA+ contrast.",
+        "Verified build and Vercel deployment live at https://vibepressstudio.vercel.app"
+      ]
+    },
+    {
       "date": "August 2026",
       "version": "v1.2.0 (ShelfMaster)",
       "changes": [

@@ -80,15 +80,15 @@ export default function AboutPage() {
 
       {/* Quality Commitment Notice */}
       <section className="py-16 px-4 md:px-6 max-w-[1280px] mx-auto w-full">
-        <div className="bg-gradient-to-r from-blue-900 to-indigo-950 text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-xl space-y-4">
-          <h3 className="text-2xl font-bold">100% Production-Grade Standards</h3>
-          <p className="text-sm md:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+        <div className="bg-gradient-to-r from-primary to-indigo-600 text-white rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto shadow-xl space-y-4">
+          <h3 className="text-2xl font-bold text-white">100% Production-Grade Standards</h3>
+          <p className="text-sm md:text-base text-white leading-relaxed max-w-2xl mx-auto">
             Whether operating on an enterprise WordPress site or a local desktop workstation, our tools deliver deterministic, rock-solid performance with zero cloud tracking.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-indigo-300 font-medium pt-2">
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> WPCS & PSR-12 Compliant</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> Tauri, Rust & SQLite WAL Engine</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-emerald-400" /> 100% Offline Data Sovereignty</span>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-white font-medium pt-2">
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-white" /> WPCS & PSR-12 Compliant</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-white" /> Tauri, Rust & SQLite WAL Engine</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-white" /> 100% Offline Data Sovereignty</span>
           </div>
         </div>
       </section>

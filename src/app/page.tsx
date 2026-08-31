@@ -164,21 +164,21 @@ export default function HomePage() {
               {/* Top Banner */}
               <div className={`p-8 ${
                 p.category === "wordpress-plugin" 
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-700 text-white" 
-                  : "bg-gradient-to-r from-slate-800 to-indigo-950 text-white"
+                  ? "bg-gradient-to-r from-primary to-indigo-600 text-white" 
+                  : "bg-gradient-to-r from-indigo-600 to-violet-600 text-white"
               }`}>
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <span className="text-xs font-extrabold uppercase tracking-wider bg-white/20 px-3 py-1 rounded-full">
+                  <span className="text-xs font-extrabold uppercase tracking-wider bg-white text-primary px-3 py-1 rounded-full shadow-sm">
                     {p.categoryLabel}
                   </span>
-                  <span className="text-xs font-mono font-medium opacity-80">
+                  <span className="text-xs font-mono font-semibold text-white">
                     {p.version}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">
+                <h3 className="text-2xl font-bold mb-2 text-white">
                   {p.name}
                 </h3>
-                <p className="text-sm opacity-90 leading-snug">
+                <p className="text-sm text-white leading-snug">
                   {p.tagline}
                 </p>
               </div>
@@ -260,7 +260,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
-              <div className="p-3 bg-blue-500/10 text-blue-500 rounded-lg w-fit mb-4">
+              <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                 <Code2 className="h-6 w-6" />
               </div>
               <h3 className="font-bold text-lg text-foreground mb-3">
@@ -304,7 +304,7 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
             {globalCta.title}
           </h2>
-          <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-10 leading-relaxed">
             {globalCta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -316,7 +316,7 @@ export default function HomePage() {
             </Link>
             <Link
               href={globalCta.cta2Href}
-              className="w-full sm:w-auto bg-white/10 text-white border border-white/20 text-sm font-bold py-4 px-8 rounded-full hover:bg-white/20 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto bg-white text-primary border border-transparent text-sm font-bold py-4 px-8 rounded-full hover:bg-slate-50 transition-all flex items-center justify-center gap-2 shadow-md"
             >
               <ArrowRight className="h-4 w-4" /> {globalCta.cta2Label}
             </Link>

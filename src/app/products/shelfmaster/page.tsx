@@ -50,7 +50,7 @@ export default function ShelfMasterPage() {
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 max-w-4xl mx-auto mb-12">
             <Link
               href={hero.ctaPrimaryHref}
-              className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold py-4 px-8 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground text-sm font-bold py-4 px-8 rounded-lg transition-all flex items-center justify-center gap-2 shadow-md"
             >
               {hero.ctaPrimary} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -88,7 +88,7 @@ export default function ShelfMasterPage() {
                   {readiness.title}
                 </h2>
               </div>
-              <Badge className="bg-indigo-600 text-white font-bold text-sm px-4 py-2 self-start md:self-auto">
+              <Badge className="bg-primary text-primary-foreground font-bold text-sm px-4 py-2 self-start md:self-auto">
                 80% Production-Ready
               </Badge>
             </div>
@@ -252,28 +252,28 @@ export default function ShelfMasterPage() {
       </section>
 
       {/* ── 6. Security, Licensing, & Lemon Squeezy ── */}
-      <section className="py-20 bg-slate-950 text-white border-b border-slate-800">
+      <section className="py-20 bg-gradient-to-r from-primary to-indigo-600 text-white border-b border-indigo-700">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-white block mb-2">
               Enterprise Licensing Architecture
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
               {licensing.title}
             </h2>
-            <p className="text-slate-300 text-base mt-3">
+            <p className="text-white text-base mt-3">
               {licensing.subtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {licensing.features.map((feat, idx) => (
-              <div key={idx} className="bg-slate-900 border border-slate-800 rounded-2xl p-8 space-y-4">
-                <div className="p-3 bg-indigo-500/10 text-indigo-400 rounded-xl w-fit">
+              <div key={idx} className="bg-white border border-white/20 rounded-2xl p-8 space-y-4 shadow-lg">
+                <div className="p-3 bg-primary/10 text-primary rounded-xl w-fit">
                   {idx === 0 ? <Key className="h-6 w-6" /> : idx === 1 ? <ShieldCheck className="h-6 w-6" /> : <Monitor className="h-6 w-6" />}
                 </div>
-                <h3 className="font-bold text-lg text-white">{feat.title}</h3>
-                <p className="text-xs text-slate-400 leading-relaxed">{feat.desc}</p>
+                <h3 className="font-bold text-lg text-foreground">{feat.title}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">{feat.desc}</p>
               </div>
             ))}
           </div>
@@ -361,7 +361,7 @@ export default function ShelfMasterPage() {
           <div className="mt-16 text-center">
             <Link
               href="/pricing"
-              className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm py-4 px-8 rounded-xl shadow-lg transition-all"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-sm py-4 px-8 rounded-xl shadow-lg transition-all"
             >
               Register for ShelfMaster Launch Updates <ArrowRight className="h-4 w-4" />
             </Link>

@@ -5,6 +5,15 @@ All notable changes to VibePress Studio will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.2] - 2026-08-31
+
+### Fixed
+- **Accessibility – Blue & Black button contrast (Option B)** – replaced low-contrast `Blue` (`from-blue-600`/`blue-500/10`) and `Black` (`from-slate-800/900/950`, `bg-slate-950/900`, `bg-white/10`/`bg-white/20` with `opacity-80/90`) gradients with high-contrast brand tokens: `src/app/page.tsx:165` product headers `from-primary to-indigo-600` / `from-indigo-600 to-violet-600` with `bg-white text-primary` badge and solid `text-white` (`opacity-80/90` removed), engineering icon `bg-blue-500/10 text-blue-500` → `bg-primary/10 text-primary` (`:263`), global CTA `bg-white/10 text-white border-white/20` → `bg-white text-primary border-transparent` (`:319`); `src/app/products/page.tsx:154` roadmap teaser `from-slate-900 to-indigo-950` → `from-primary to-indigo-600` with `bg-white text-primary` pill and `text-white` body; `src/app/products/shelfmaster/page.tsx:53` hero CTA `bg-indigo-600` → `bg-primary`, `50` readiness badge `bg-indigo-600` → `bg-primary`, `255` licensing section `bg-slate-950` → `bg-gradient-to-r from-primary to-indigo-600` with `bg-white text-foreground` cards and `bg-primary/10 text-primary` icons, `364` bottom CTA `bg-indigo-600` → `bg-primary`; `src/app/about/page.tsx:83` commitment banner `from-blue-900 to-indigo-950 text-slate-300/indigo-300` → `from-primary to-indigo-600 text-white`; `src/app/products/smart-affiliate-link-cloaker/page.tsx:184` FREE badge `bg-blue-600` → `bg-primary`, `197` icon `bg-blue-500/10` → `bg-primary/10`, `211` PRO badge `bg-indigo-600` → `bg-violet-600` and `223` `bg-indigo-500/5` → `bg-violet-500/5`
+- Verified `npm run build` passes (17 static routes) and Vercel auto-deploy pipeline healthy; site live at `https://vibepressstudio.vercel.app`
+
+### Changed
+- Bump `package.json:3` `0.2.1` → `0.2.2` for patch release
+
 ## [0.2.1] - 2026-08-30
 
 ### Fixed
@@ -51,6 +60,7 @@ Initial architecture and subsequent hardening prior to 0.2.0. Aggregated from `g
 - **Fixed** – ESLint ignore during Vercel build 404 (`32ec67c`); remove incompatible `@plugin` directive in Tailwind v4 (`deb1e8f`); add full shadcn CSS variable set for transparent dropdowns (`976c842`)
 - **Chore** – remove frontend editing CMS and deploy static content (`829f7ca`)
 
+[0.2.2]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/abusaeedsayem/VibePressStudio/releases/tag/v0.1.0

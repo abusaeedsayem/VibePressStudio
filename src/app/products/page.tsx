@@ -151,24 +151,24 @@ export default function ProductsDirectoryPage() {
 
       {/* Upcoming Engineering Roadmap Teaser */}
       <section id="roadmap" className="py-16 px-4 md:px-6 max-w-[1280px] mx-auto w-full">
-        <div className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+        <div className="bg-gradient-to-r from-primary to-indigo-600 text-white rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 text-indigo-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-white text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
               <Sparkles className="h-3.5 w-3.5" /> Upcoming Software Roadmap
             </div>
             <h3 className="text-2xl md:text-3xl font-extrabold text-white">
               In The Studio Pipeline
             </h3>
-            <p className="text-sm md:text-base text-slate-300 leading-relaxed">
+            <p className="text-sm md:text-base text-white leading-relaxed">
               We are continually architecting new tools, including automated content staging workflows and cross-platform desktop developer utilities.
             </p>
           </div>
 
           <Link
             href="/pricing"
-            className="bg-white text-slate-900 text-sm font-bold py-3.5 px-7 rounded-xl hover:bg-slate-100 transition-colors flex items-center gap-2 shrink-0"
+            className="bg-white text-primary text-sm font-bold py-3.5 px-7 rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-2 shrink-0 shadow-md"
           >
-            <Bell className="h-4 w-4 text-indigo-600" /> Subscribe to Release Notes
+            <Bell className="h-4 w-4 text-primary" /> Subscribe to Release Notes
           </Link>
         </div>
       </section>

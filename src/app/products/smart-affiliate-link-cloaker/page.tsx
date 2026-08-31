@@ -181,7 +181,7 @@ export default function SmartAffiliateLinkCloakerPage() {
           {/* FREE / Core Features */}
           <div>
             <div className="mb-10 text-center md:text-left">
-              <Badge className="bg-blue-600 text-white font-bold text-xs px-3 py-1 mb-2">
+              <Badge className="bg-primary text-primary-foreground font-bold text-xs px-3 py-1 mb-2">
                 Core Included Features
               </Badge>
               <h2 className="text-3xl font-extrabold text-foreground">
@@ -194,7 +194,7 @@ export default function SmartAffiliateLinkCloakerPage() {
                 const Icon = featureIcons[feat.icon] ?? LinkIcon;
                 return (
                   <div key={idx} className="p-6 border border-border rounded-xl bg-card shadow-sm space-y-3">
-                    <div className="p-2.5 bg-blue-500/10 text-blue-600 dark:text-blue-400 rounded-lg w-fit">
+                    <div className="p-2.5 bg-primary/10 text-primary rounded-lg w-fit">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="font-bold text-base text-foreground">{feat.title}</h3>
@@ -208,7 +208,7 @@ export default function SmartAffiliateLinkCloakerPage() {
           {/* PRO / Premium Features */}
           <div>
             <div className="mb-10 text-center md:text-left">
-              <Badge className="bg-indigo-600 text-white font-bold text-xs px-3 py-1 mb-2">
+              <Badge className="bg-violet-600 text-white font-bold text-xs px-3 py-1 mb-2">
                 Advanced PRO Engine
               </Badge>
               <h2 className="text-3xl font-extrabold text-foreground">
@@ -220,8 +220,8 @@ export default function SmartAffiliateLinkCloakerPage() {
               {features.proItems.map((feat, idx) => {
                 const Icon = featureIcons[feat.icon] ?? Sparkles;
                 return (
-                  <div key={idx} className="p-6 border border-indigo-500/30 rounded-xl bg-indigo-500/5 shadow-sm space-y-3">
-                    <div className="p-2.5 bg-indigo-500/10 text-indigo-500 rounded-lg w-fit">
+                  <div key={idx} className="p-6 border border-violet-500/30 rounded-xl bg-violet-500/5 shadow-sm space-y-3">
+                    <div className="p-2.5 bg-violet-500/10 text-violet-600 rounded-lg w-fit">
                       <Icon className="h-5 w-5" />
                     </div>
                     <h3 className="font-bold text-base text-foreground">{feat.title}</h3>
