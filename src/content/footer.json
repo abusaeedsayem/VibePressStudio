@@ -15,7 +15,7 @@
       "title": "Documentation & Help",
       "items": [
         { "label": "Knowledgebase & Docs", "href": "/docs" },
-        { "label": "Pre-Launch Registration", "href": "/pricing" },
+        { "label": "Pre-Launch Registration", "href": "/lab" },
         { "label": "Support Helpdesk", "href": "/contact" }
       ]
     },

@@ -49,7 +49,7 @@ export default function HomePage() {
               {hero.ctaPrimary} <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/pricing"
+              href="/lab"
               className="w-full sm:w-auto bg-background text-foreground border border-input text-sm font-bold py-4 px-8 rounded-full hover:bg-muted transition-all flex items-center justify-center gap-2"
             >
               {hero.ctaSecondary}
@@ -233,7 +233,7 @@ export default function HomePage() {
                     Explore Product Details <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
                   <Link
-                    href="/pricing"
+                    href="/lab"
                     className="flex-1 bg-muted text-foreground border border-input text-xs font-bold py-3 px-5 rounded-lg hover:bg-muted/80 transition-colors text-center flex items-center justify-center gap-1.5"
                   >
                     Register for Launch Updates

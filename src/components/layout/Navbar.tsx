@@ -58,7 +58,7 @@ export function Navbar() {
               </CommandGroup>
               <CommandGroup heading="Pages & Channels">
                 <CommandItem asChild><Link href="/products" onClick={() => setSearchOpen(false)}>Products Directory</Link></CommandItem>
-                <CommandItem asChild><Link href="/pricing" onClick={() => setSearchOpen(false)}>Marketplace & Pricing</Link></CommandItem>
+                <CommandItem asChild><Link href="/lab" onClick={() => setSearchOpen(false)}>Studio Lab</Link></CommandItem>
                 <CommandItem asChild><Link href="/docs" onClick={() => setSearchOpen(false)}>Documentation & User Manuals</Link></CommandItem>
                 <CommandItem asChild><Link href="/about" onClick={() => setSearchOpen(false)}>About & Engineering Standards</Link></CommandItem>
                 <CommandItem asChild><Link href="/contact" onClick={() => setSearchOpen(false)}>Support & Licensing Validation</Link></CommandItem>
@@ -138,8 +138,8 @@ export function Navbar() {
               )}
             </div>
 
-            <Link href="/pricing" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
-              Marketplace
+            <Link href="/lab" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
+              Studio
             </Link>
             <Link href="/docs" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
               Documentation
@@ -215,8 +215,8 @@ export function Navbar() {
                     <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest px-3 py-1">
                       Navigation
                     </div>
-                    <Link href="/pricing" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
-                      Marketplace & Pricing
+                    <Link href="/lab" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
+                      Studio Lab
                     </Link>
                     <Link href="/docs" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
                       Documentation & Manuals

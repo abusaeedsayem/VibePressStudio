@@ -360,7 +360,7 @@ export default function ShelfMasterPage() {
 
           <div className="mt-16 text-center">
             <Link
-              href="/pricing"
+              href="/lab"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-sm py-4 px-8 rounded-xl shadow-lg transition-all"
             >
               Register for ShelfMaster Launch Updates <ArrowRight className="h-4 w-4" />

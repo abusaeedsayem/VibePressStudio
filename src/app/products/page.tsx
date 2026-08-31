@@ -165,7 +165,7 @@ export default function ProductsDirectoryPage() {
           </div>
 
           <Link
-            href="/pricing"
+            href="/lab"
             className="bg-white text-primary text-sm font-bold py-3.5 px-7 rounded-xl hover:bg-slate-50 transition-colors flex items-center gap-2 shrink-0 shadow-md"
           >
             <Bell className="h-4 w-4 text-primary" /> Subscribe to Release Notes

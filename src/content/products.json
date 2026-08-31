@@ -97,7 +97,7 @@
           "FTC auto-disclosure banner",
           "Visual Chart.js analytics"
         ],
-        "checkoutUrl": "/pricing",
+        "checkoutUrl": "/lab",
         "isFeatured": false
       },
       {
@@ -111,12 +111,12 @@
           "Dynamic Geolocation Redirects",
           "A/B Split Testing & UTM Forwarding"
         ],
-        "checkoutUrl": "/pricing",
+        "checkoutUrl": "/lab",
         "isFeatured": true
       }
     ],
     "distributionChannels": {
-      "preLaunchUrl": "/pricing"
+      "preLaunchUrl": "/lab"
     },
     "documentationSections": [
       {
@@ -250,12 +250,12 @@
           "Lifetime desktop application license",
           "All 9 core modules included"
         ],
-        "checkoutUrl": "/pricing",
+        "checkoutUrl": "/lab",
         "isFeatured": true
       }
     ],
     "distributionChannels": {
-      "preLaunchUrl": "/pricing"
+      "preLaunchUrl": "/lab"
     },
     "documentationSections": [
       {

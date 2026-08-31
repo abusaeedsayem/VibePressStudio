@@ -3,7 +3,7 @@
   "tagline": "High-Performance Digital Tools & Desktop Application",
   "links": [
     { "label": "Products", "href": "/products", "hasDropdown": true },
-    { "label": "Marketplace", "href": "/pricing" },
+    { "label": "Studio", "href": "/lab" },
     { "label": "Documentation", "href": "/docs" },
     { "label": "About", "href": "/about" },
     { "label": "Support", "href": "/contact" }

@@ -4,7 +4,7 @@
     "title": "Lightning-Fast, 100% Offline Desktop Application Powered by Tauri, Rust, React, and SQLite",
     "subtitle": "Designed to replace clunky web portals and legacy library software, ShelfMaster provides a lightning-fast, offline-first interface to manage every aspect of a library's daily operations on macOS and Windows.",
     "ctaPrimary": "Register for Launch Updates",
-    "ctaPrimaryHref": "/pricing",
+    "ctaPrimaryHref": "/lab",
     "ctaSecondary": "Read Documentation Guide",
     "ctaSecondaryHref": "/docs",
     "readinessBadge": "80% Production-Ready",
