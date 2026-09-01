@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { AutoUpdater } from "@/components/updater/AutoUpdater";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
@@ -79,6 +80,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
+          <AutoUpdater />
         </ThemeProvider>
       </body>
     </html>

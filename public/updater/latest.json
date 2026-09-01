@@ -1,0 +1,23 @@
+{
+  "version": "0.4.0",
+  "notes": "Auto-Updater Release — ShelfMaster now supports signed background updates via Tauri 2.x Updater",
+  "pub_date": "2026-09-01T00:00:00Z",
+  "platforms": {
+    "darwin-x86_64": {
+      "signature": "",
+      "url": "https://github.com/abusaeedsayem/VibePressStudio/releases/download/v0.4.0/ShelfMaster_0.4.0_x64.app.tar.gz"
+    },
+    "darwin-aarch64": {
+      "signature": "",
+      "url": "https://github.com/abusaeedsayem/VibePressStudio/releases/download/v0.4.0/ShelfMaster_0.4.0_aarch64.app.tar.gz"
+    },
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://github.com/abusaeedsayem/VibePressStudio/releases/download/v0.4.0/ShelfMaster_0.4.0_x64-setup.nsis.zip"
+    },
+    "linux-x86_64": {
+      "signature": "",
+      "url": "https://github.com/abusaeedsayem/VibePressStudio/releases/download/v0.4.0/ShelfMaster_0.4.0_amd64.AppImage.tar.gz"
+    }
+  }
+}

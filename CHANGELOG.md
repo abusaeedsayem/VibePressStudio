@@ -5,6 +5,42 @@ All notable changes to VibePress Studio will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2026-09-01
+
+### Added
+- **ShelfMaster Application Auto-Updater (Tauri 2.x)** – production-ready update infrastructure using `@tauri-apps/plugin-updater`:
+  - **Backend (Rust & Config):** `src-tauri/Cargo.toml:5` now `shelfmaster@0.4.0` with `tauri-plugin-updater@2`, `tauri-plugin-process@2`, `tauri-plugin-dialog@2`; `src-tauri/src/lib.rs:1` registers all plugins via `tauri::Builder::default().plugin()`; `src-tauri/src/main.rs:1` binary entry; `src-tauri/tauri.conf.json:4` version `0.4.0`, `bundle.targets: "all"`, `createUpdaterArtifacts: true`, `plugins.updater` with ECDSA `pubkey` (placeholder — replace via `npx tauri signer generate`) and dual endpoints (`github releases` + `vercel api`), `build.frontendDist: "../out"` + `devUrl: "http://localhost:3001"`; `src-tauri/capabilities/default.json:1` permissions `updater:allow-check`, `updater:allow-download-and-install`, `process:allow-restart`, `dialog:allow-*`; `src-tauri/icons/*` valid PNG/ICNS generated from `public/logo-dark.png`; `src-tauri/build.rs:1` `tauri_build::build()`; `.gitignore:41` now ignores `src-tauri/target/`, `*.key`, `.tauri/`
+  - **Security & Signatures (CLI):** workflow documented in `implementation_plan.md:1` — `npx tauri signer generate -w ~/.tauri/shelfmaster.key` (or `npx @tauri-apps/cli signer generate`), pubkey embedding in `tauri.conf.json:46`, private key management via `TAURI_SIGNING_PRIVATE_KEY` / `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` env (local `~/.tauri/` + CI GitHub Secrets), placeholder pubkey `dW50cnVzd...` to be replaced before first signed build
+  - **Next.js Tauri Integration:** `next.config.ts:4` conditional `output: process.env.TAURI ? "export" : undefined` + `images.unoptimized: true` to emit `out/` for Tauri without breaking Vercel SSR; `package.json:10` added `@tauri-apps/api@^2.11.1`, `@tauri-apps/plugin-updater@^2.11.0`, `@tauri-apps/plugin-process@^2.3.1`, `@tauri-apps/plugin-dialog@^2.7.3` (verified `npm install` — 427 packages, 0 vulnerabilities)
+  - **Frontend Hook:** `src/hooks/useAutoUpdater.ts:1` — `useAutoUpdater()` state machine `idle|checking|available|downloading|downloaded|error|upToDate`, quiet background check `useEffect` 2.5s after mount (`check(false)` silent), manual `checkForUpdates(true)`, `downloadAndInstall` with progress callbacks (`Started`/`Progress`/`Finished`) + `relaunch()`, SSR guard `__TAURI__ in window`, dynamic `import("@tauri-apps/plugin-updater")` to avoid bundling on web
+  - **UI Components:** `src/components/updater/UpdateModal.tsx:1` — Radix `Dialog` (`src/components/ui/dialog.tsx:1`) with release notes scroll area, progress bar `role="progressbar"`, actions `Later` / `Install & Restart` (`Download`/`Loader2`/`Sparkles` from `lucide-react`); `src/components/updater/AutoUpdater.tsx:1` global controller with dev logging, mounted in `src/app/layout.tsx:7,82` inside `ThemeProvider`
+  - **Endpoints & Fallback:** `public/updater/latest.json:1` static static version `0.4.0` with GitHub release URLs (`abusaeedsayem/VibePressStudio`); `src/app/api/updater/latest.json/route.ts:1` dynamic proxy — tries GitHub primary then falls back to static `0.4.0` JSON, `revalidate:3600` + `Cache-Control: public, s-maxage=3600`
+  - **Settings Integration:** `src/components/SettingsPage.tsx:1` (new spec target) — card with current version `v0.4.0`, `Check for Updates` button (shared hook), conditional states `available` (version + date + body + `Install & Restart`), `downloading` progress, `upToDate` green banner, `error` with retry, footer `ECDSA Signed` + `Tauri 2.x Updater` meta; `src/app/settings/page.tsx:1` route `/settings` wrapping `SettingsPage`
+- **Implementation Plan Artifact:** `implementation_plan.md:1` detailed planning document covering CLI key generation, Rust config, frontend UX, settings integration, and verification steps — approved before execution
+
+### Changed
+- Bump `package.json:3`, `src-tauri/tauri.conf.json:4`, `src-tauri/Cargo.toml:7` `0.3.0` → `0.4.0` for minor feature release
+- Update updater endpoint URLs from `vibepress/shelfmaster` placeholder to real repo `abusaeedsayem/VibePressStudio` (`tauri.conf.json:49`, `public/updater/latest.json:8`, `src/app/api/updater/latest.json/route.ts:12`)
+- Update `src/components/SettingsPage.tsx:59,148` version display `v0.3.0` → `v0.4.0`
+
+### Fixed
+- **Cargo Build:** `tauri.conf.json:30` `bundle.targets: ["app","updater"]` → `"all"` to fix `BundleTargetInner` deserialization error (`invalid bundle type updater`); removed stale `icon.ico` (0-byte) leaving only valid `32x32.png`/`128x128.png`/`icon.icns` — `cargo check` now `Finished dev profile`
+- **Static Export:** `next.config.ts:4` ensures `frontendDist: "../out"` exists for `tauri::generate_context!()` (dummy `out/index.html` created for `cargo check`)
+- Verify `npx tsc --noEmit` (exit 0), `npm run build` (19 static routes including `/api/updater/latest.json` + `/settings`), `cargo check` (Finished), `npm run lint` (0 errors, 29 warnings pre-existing)
+
+## [0.3.0] - 2026-08-30
+
+### Added
+- **Brand Redesign:** `public/logo-dark.svg:1`, `public/logo-dark.png`, `public/logo-dark-icon.png` (`136330`, `150087` bytes) + `src/app/icon.svg:1` vector favicon — dark logo with new typography, always-visible on light backgrounds
+- **Studio Lab Route Migration:** `src/app/lab/page.tsx:1` pricing/pre-launch registration portal migrated from `/pricing` → `/lab` (see `0.2.2` precedent `7bf7cb1`); retains benefits list, launch timeline card, upcoming products pipeline
+
+### Changed
+- **Routing:** `next.config.ts:7` `async redirects()` adds permanent 301 `source: '/pricing'` → `destination: '/lab'` for backward compatibility
+- **Theme & Contrast (WCAG):** `src/styles` / Tailwind palette adjustments ensuring brand redesign meets contrast requirements (follow-up to `0.2.2` contrast fix)
+
+### Fixed
+- Verified `npm run build` 17 routes, Vercel auto-deploy healthy, `https://vibepressstudio.vercel.app` live; tagged `v0.3.0` (`45c0e2b`)
+
 ## [0.2.2] - 2026-08-31
 
 ### Fixed
@@ -60,6 +96,8 @@ Initial architecture and subsequent hardening prior to 0.2.0. Aggregated from `g
 - **Fixed** – ESLint ignore during Vercel build 404 (`32ec67c`); remove incompatible `@plugin` directive in Tailwind v4 (`deb1e8f`); add full shadcn CSS variable set for transparent dropdowns (`976c842`)
 - **Chore** – remove frontend editing CMS and deploy static content (`829f7ca`)
 
+[0.4.0]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.1.0...v0.2.0

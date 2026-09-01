@@ -1,0 +1,27 @@
+[lib]
+name = "shelfmaster_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[package]
+name = "shelfmaster"
+version = "0.4.0"
+description = "ShelfMaster - Next-Gen Library Management System by VibePress Studio"
+authors = ["VibePress Studio"]
+edition = "2021"
+repository = "https://github.com/vibepress/shelfmaster"
+rust-version = "1.77.2"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-updater = "2"
+tauri-plugin-process = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

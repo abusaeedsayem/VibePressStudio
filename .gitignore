@@ -36,6 +36,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# tauri
+src-tauri/target/
+src-tauri/gen/
+src-tauri/Cargo.lock
+*.key
+*.key.pub
+.tauri/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
