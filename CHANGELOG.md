@@ -1,6 +1,6 @@
 # VibePress Studio — Release Notes & Changelog
 
-## v1.0.0 — Smart Affiliate Link Cloaker Complete Documentation & Studio Consolidation (September 2026)
+## v1.0.6 — Smart Affiliate Link Cloaker Version Update & Documentation Release (September 2026)
 
 - **Smart Affiliate Link Cloaker Upgrade**:
   - Integrated complete enterprise-grade product documentation from PDF specifications across the Home Page, Products Directory, Product Page (`/products/smart-affiliate-link-cloaker`), and Documentation Hub (`/docs`).

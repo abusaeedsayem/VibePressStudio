@@ -7,7 +7,7 @@
     "ctaPrimaryHref": "/lab",
     "ctaSecondary": "Read Complete Documentation",
     "ctaSecondaryHref": "/docs",
-    "readinessBadge": "100% Feature Complete (v1.0.0)",
+    "readinessBadge": "100% Feature Complete (v1.0.6)",
     "coreMetrics": [
       "Custom Post Type salc_link",
       "Smart ToS Uncloaking (Amazon §6)",
@@ -18,7 +18,7 @@
     ]
   },
   "status": {
-    "title": "Development Status: 100% Feature Complete (v1.0.0)",
+    "title": "Development Status: 100% Feature Complete (v1.0.6)",
     "subtitle": "Enterprise-grade WordPress plugin · Conditional routing · Smart ToS uncloaking · Click analytics & Stripe • WP 6.0+ · PHP 8.0+",
     "description": "Smart Affiliate Link Cloaker is engineered by Lead Software Architect Abu Saeed Sayem at VibePress Studio. Each cloaked link is a WordPress custom post type (salc_link) with top-priority rewrite rules (^go/{slug}), 24h transient caching, bot-filtered local click tracking (wp_salc_clicks), and automated compliance layers.",
     "rolloutTitle": "Launch Roadmap & Rollout Plan",

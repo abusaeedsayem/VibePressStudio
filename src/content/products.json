@@ -14,7 +14,7 @@
       "/images/products/smart-affiliate-link-cloaker-stats.png",
       "/images/products/smart-affiliate-link-cloaker-settings.png"
     ],
-    "version": "v1.0.0 (100% Feature Complete)",
+    "version": "v1.0.6 (100% Feature Complete)",
     "changelogUrl": "/changelog",
     "techStack": ["PHP 8.0+", "WordPress 6.0+", "Custom Post Type salc_link", "WP REST API", "Transient Caching (24h)", "WPCS Standards"],
     "keyFeatures": [
@@ -106,7 +106,7 @@
         "priceYearly": 0,
         "priceLifetime": null,
         "features": [
-          "100% Feature Complete v1.0.0",
+          "100% Feature Complete v1.0.6",
           "Custom slug redirection & 307 headers",
           "Smart ToS Uncloaking (Amazon §6)",
           "FTC auto-disclosure banner",

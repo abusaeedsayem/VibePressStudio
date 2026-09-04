@@ -74,7 +74,7 @@ export default function LabPage() {
                 <Info className="h-4 w-4 text-primary" /> Launch Timeline Status
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Smart Affiliate Link Cloaker is <strong>100% Feature Complete (v1.0.0)</strong> and submitted for plugin directory review. Official public release will take place immediately upon approval.
+                Smart Affiliate Link Cloaker is <strong>100% Feature Complete (v1.0.6)</strong> and submitted for plugin directory review. Official public release will take place immediately upon approval.
               </p>
             </div>
           </div>

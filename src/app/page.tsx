@@ -173,7 +173,7 @@ export default function HomePage() {
                   </h4>
                   <div className="flex flex-wrap gap-2 text-xs font-medium text-muted-foreground">
                     <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold px-3 py-1 rounded-md border border-emerald-500/30">
-                      100% Feature Complete (v1.0.0)
+                      100% Feature Complete (v1.0.6)
                     </span>
                     <span className="bg-muted px-3 py-1 rounded-md border">
                       Submitted for WP.org Review

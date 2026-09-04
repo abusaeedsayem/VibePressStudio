@@ -4,7 +4,7 @@
   "entries": [
     {
       "date": "September 2026",
-      "version": "v1.0.0 — Complete Product Documentation & Architecture Upgrade",
+      "version": "v1.0.6 — Complete Product Documentation & Architecture Upgrade",
       "changes": [
         "Updated Smart Affiliate Link Cloaker with complete enterprise documentation, technical architecture specs, and knowledge base.",
         "Added Stripe Payment Link integration, Smart ToS Uncloaking for Amazon Associates, and DOM-Safe Keyword Auto-Linker.",
@@ -23,7 +23,7 @@
     },
     {
       "date": "July 2026",
-      "version": "v1.0.0 (Smart Affiliate Link Cloaker)",
+      "version": "v1.0.6 (Smart Affiliate Link Cloaker)",
       "changes": [
         "Implemented strict FTC auto-disclosure injector.",
         "Added support for 307 temporary redirects and iFrame masking.",

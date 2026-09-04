@@ -14,7 +14,7 @@ VibePress Studio is a software engineering studio dedicated to crafting high-per
 
 ## Flagship Product: Smart Affiliate Link Cloaker
 
-**Smart Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (v1.0.0 — 100% Feature Complete) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain.
+**Smart Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (v1.0.6 — 100% Feature Complete) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain.
 
 ### Key Capabilities & Architecture Highlights
 - **Custom Post Type (`salc_link`) & Top-Priority Rewrite Engine**: High-performance URL routing (`^go/{slug}` or `^go/{category}/{slug}`) with 24h transient caching.
