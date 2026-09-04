@@ -3,12 +3,21 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
-      "date": "September 2026",
-      "version": "v1.0.6 — Complete Product Documentation & Architecture Upgrade",
+      "date": "September 3, 2026",
+      "version": "v1.0.6 — Complete Product Documentation & Studio Consolidation",
       "changes": [
-        "Updated Smart Affiliate Link Cloaker with complete enterprise documentation, technical architecture specs, and knowledge base.",
-        "Added Stripe Payment Link integration, Smart ToS Uncloaking for Amazon Associates, and DOM-Safe Keyword Auto-Linker.",
-        "Integrated dynamic UTM forwarding, conditional routing by OS/country/device/browser, and deal expiration scanner."
+        "Integrated complete enterprise documentation from PDF specs across Home, Products Directory, Product Page (9-part docs: CPT salc_link, Redirect 301/302/307/200, Smart ToS Amazon §6, FTC auto-disclosure, Stripe Checkout, Keyword Auto-Linker, Health Scanner) and Docs Hub 9-chapter manual — see README.md and CHANGELOG.md for file:line refs.",
+        "Standardized plugin version v1.0.0 → v1.0.6 across 9 files (README, CHANGELOG, docs/page.tsx:144, lab/page.tsx, page.tsx:177, changelog.json, cloaker.json:10, pricing.json, products.json:17) — 100% Feature Complete.",
+        "Hard-purged ShelfMaster Desktop Software (Tauri 2.x): deleted 45 files — src-tauri/*, updater hooks/components, /products/shelfmaster (374 lines), /settings, shelfmaster.json (227 lines) — net -2132 lines (git show 0164f54).",
+        "Enforced tagline \"High-Performance Digital Tools\" across site.json:11, navigation.json, footer.json, layout.tsx and purged all desktop references (about, privacy, terms, docs). Build verified 13 static routes — live at vibepressstudio.vercel.app."
+      ]
+    },
+    {
+      "date": "September 1, 2026",
+      "version": "v0.4.0 — ShelfMaster Auto-Updater (Tauri 2.x) [Superseded in v1.0.6]",
+      "changes": [
+        "Added Tauri 2.x auto-updater (Cargo 0.4.0, updater/process/dialog plugins, ECDSA signing, dual GitHub/Vercel endpoints, useAutoUpdater hook idle|checking|available|downloading|downloaded|error|upToDate).",
+        "Added UpdateModal (Radix Dialog, progress bar) + AutoUpdater controller + Settings page /settings + public/updater/latest.json fallback. Verified cargo check + npm run build (19 routes)."
       ]
     },
     {
@@ -16,18 +25,27 @@
       "version": "v0.3.0 — Brand Redesign & Studio Lab Polish",
       "changes": [
         "Integrated complete Google Stitch Design System with custom color tokens, Inter/JetBrains Mono typography, and responsive layouts.",
-        "Renamed top navigation menu from 'Marketplace' to 'Studio' and migrated page route from /pricing to /lab.",
+        "Renamed top navigation menu from 'Marketplace' to 'Studio' and migrated page route from /pricing to /lab (301 redirect in next.config.ts:12).",
         "Added SVG brand logo to Header, Mobile Drawer, and Footer, along with modern vector favicon (icon.svg).",
         "Fixed primary button and tab text contrast ensuring full WCAG AAA compliance."
       ]
     },
     {
-      "date": "July 2026",
-      "version": "v1.0.6 (Smart Affiliate Link Cloaker)",
+      "date": "August 30, 2026",
+      "version": "v0.2.0 — Pre-Launch Rebrand & Content Consolidation",
       "changes": [
-        "Implemented strict FTC auto-disclosure injector.",
-        "Added support for 307 temporary redirects and iFrame masking.",
-        "Full compatibility with WordPress 6.0+ and PHP 8.0+."
+        "Rebranded site to pre-launch registration posture; added pricing/lab portal, cloaker status (100% Feature Complete) and ShelfMaster 80% readiness content.",
+        "Rewrote docs hub (Cloaker 5 phases, ShelfMaster 6 chapters), products directory, and navigation/footer to single pre-launch tier (preLaunchUrl: /lab).",
+        "Removed legacy legal pages and Freemius/AppSumo distribution URLs; verified 17 static routes and sitemap."
+      ]
+    },
+    {
+      "date": "July 2026",
+      "version": "v1.0.6 (Smart Affiliate Link Cloaker) — Core Compliance & Routing",
+      "changes": [
+        "Implemented strict FTC auto-disclosure injector (<aside role=\"note\"> callout/badge/minimal/subtle at top/bottom/before_first_link).",
+        "Added support for 307 temporary redirects (default uncached) and 200 iFrame masking with branded gradient.",
+        "Full compatibility with WordPress 6.0+ and PHP 8.0+ (WPCS/PSR-12), local click analytics (wp_salc_clicks, 7 charts, CSV export)."
       ]
     }
   ]
