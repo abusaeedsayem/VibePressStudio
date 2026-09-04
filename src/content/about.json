@@ -2,12 +2,12 @@
   "hero": {
     "badge": "Studio Engineering Standards",
     "title": "Engineered for Substance, Not Software Bloat",
-    "subtitle": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in two primary domains: modular, high-performance WordPress infrastructure and offline-first, native desktop operating systems."
+    "subtitle": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in high-performance digital tools and modular WordPress infrastructure."
   },
   "vision": {
     "headline": "Engineered for Substance, Not Software Bloat",
-    "narrative": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in two primary domains: modular, high-performance WordPress infrastructure and offline-first, native desktop operating systems.",
-    "philosophy": "We avoid bloated architectures, unnecessary database tables, and unneeded cloud dependencies. Whether operating on an enterprise WordPress site or a local desktop workstation running macOS or Windows, our tools deliver deterministic, rock-solid performance."
+    "narrative": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in modular, high-performance WordPress infrastructure and enterprise-grade web tools.",
+    "philosophy": "We avoid bloated architectures, unnecessary database tables, and unneeded cloud dependencies. Operating on enterprise WordPress sites, our tools deliver deterministic, rock-solid performance."
   },
   "pillars": [
     {
@@ -17,18 +17,18 @@
     },
     {
       "num": "2",
-      "title": "Modern Desktop Architecture",
-      "desc": "Leveraging Tauri, Rust, React, and SQLite (WAL mode) to deliver native macOS and Windows desktop applications that run with sub-millisecond database queries."
+      "title": "High-Performance Routing & Database Efficiency",
+      "desc": "Leveraging clean query engines, transient caching, and optimized database queries to deliver sub-millisecond execution speeds."
     },
     {
       "num": "3",
-      "title": "Local-First Data Sovereignty",
-      "desc": "User data belongs entirely to the user. Our desktop software runs fully isolated on local SQLite databases with zero cloud server risk or tracking."
+      "title": "100% Data Sovereignty & Privacy",
+      "desc": "Your data stays on your server. We implement GDPR IP anonymization, bot filtering, and local data storage with zero external tracking pixels."
     },
     {
       "num": "4",
-      "title": "Enterprise Security & Licensing",
-      "desc": "Integrated with Lemon Squeezy for secure 16-character license key management, Rust-backed API authentication, and hardware-bound device protection."
+      "title": "Enterprise Security & Legal Compliance",
+      "desc": "Built-in compliance engines for FTC legal auto-disclosure, Smart ToS uncloaking, and secure licensing validation."
     }
   ]
 }

@@ -7,11 +7,11 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { 
-  CheckCircle2, Bell, Sparkles, Clock, Send, ShieldCheck, Monitor, Package, Info 
+  CheckCircle2, Bell, Sparkles, Clock, Send, Package, Info 
 } from "lucide-react";
 import pricingData from "@/content/pricing.json";
 
-export default function PricingPage() {
+export default function LabPage() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("all");
@@ -74,7 +74,7 @@ export default function PricingPage() {
                 <Info className="h-4 w-4 text-primary" /> Launch Timeline Status
               </div>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                ShelfMaster is currently <strong>80% Production-Ready</strong> with core database and 9 operational modules complete. Official release is targeted within 3 to 4 weeks.
+                Smart Affiliate Link Cloaker is <strong>100% Feature Complete (v1.0.0)</strong> and submitted for plugin directory review. Official public release will take place immediately upon approval.
               </p>
             </div>
           </div>
@@ -144,7 +144,6 @@ export default function PricingPage() {
                         className="w-full h-11 px-3 rounded-md border border-input bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                       >
                         <option value="all">All VibePress Software Suite</option>
-                        <option value="shelfmaster">ShelfMaster Desktop App (macOS & Windows)</option>
                         <option value="cloaker">Smart Affiliate Link Cloaker (WordPress Plugin)</option>
                       </select>
                     </div>
@@ -174,24 +173,24 @@ export default function PricingPage() {
               Products Currently in Development
             </h2>
             <p className="text-sm text-muted-foreground">
-              A preview of our native desktop software and WordPress performance tools scheduled for upcoming release.
+              A preview of our enterprise WordPress performance tools scheduled for upcoming release.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
             {upcomingProducts.map((prod, idx) => (
               <Card key={idx} className="border-border shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`p-2.5 rounded-lg shrink-0 ${idx === 0 ? "bg-indigo-500/10 text-indigo-500" : "bg-blue-500/10 text-blue-500"}`}>
-                      {idx === 0 ? <Monitor className="h-5 w-5" /> : <Package className="h-5 w-5" />}
+                    <div className="p-2.5 rounded-lg shrink-0 bg-primary/10 text-primary">
+                      <Package className="h-5 w-5" />
                     </div>
                     <div>
                       <CardTitle className="text-xl font-bold">{prod.name}</CardTitle>
                       <span className="text-xs text-muted-foreground font-medium">{prod.type}</span>
                     </div>
                   </div>
-                  <Badge variant="outline" className="w-fit text-[11px] font-semibold px-2.5 py-0.5 border-amber-500/40 text-amber-600 dark:text-amber-400 bg-amber-500/5 mt-2">
+                  <Badge variant="outline" className="w-fit text-[11px] font-semibold px-2.5 py-0.5 border-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/5 mt-2">
                     {prod.status}
                   </Badge>
                 </CardHeader>

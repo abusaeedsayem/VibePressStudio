@@ -1,70 +1,70 @@
 {
   "hero": {
     "eyebrow": "Engineered for Uncompromising Speed, Security, and Scalability",
-    "title": "High-Performance Software Crafted for Creators, Publishers, and Institutions",
-    "subtitle": "VibePress Studio engineers ultra-fast WordPress performance plugins and offline-first native desktop applications. Designed to replace sluggish systems with rock-solid, production-grade tools.",
+    "title": "High-Performance Digital Tools & WordPress Software Suite",
+    "subtitle": "VibePress Studio engineers enterprise-grade WordPress performance plugins and digital tools designed to replace sluggish systems with rock-solid, production-grade solutions.",
     "ctaPrimary": "Explore Software Suite",
     "ctaSecondary": "Register for Launch Updates",
     "trustBar": [
-      "WordPress Core Standards Compliant",
-      "Native Desktop Engine (Tauri & Rust)",
-      "SQLite WAL Local Data Sovereignty",
-      "Offline-First macOS & Windows Native Builds"
+      "WordPress Core Standards (WPCS) Compliant",
+      "Smart ToS Uncloaking & FTC Compliance",
+      "GA-Style Local DB Click Analytics",
+      "100% Data Sovereignty & Zero External Tracking"
     ]
   },
   "valueProps": {
     "title": "Why VibePress Studio Builds Differently",
     "pillars": [
       {
-        "title": "Zero Database Bloat",
-        "desc": "WordPress plugins that never clog your database with custom tables or runaway queries, preserving sub-millisecond execution speeds.",
+        "title": "Zero Database & Query Bloat",
+        "desc": "WordPress plugins engineered with transient caching and clean rewrite engines, preserving sub-millisecond execution speeds.",
         "icon": "Database"
       },
       {
-        "title": "Offline-First Desktop Architecture",
-        "desc": "Native desktop applications running locally in SQLite WAL mode on macOS and Windows without cloud dependencies or monthly SaaS fees.",
-        "icon": "CloudOff"
-      },
-      {
-        "title": "Built-In Automated Compliance",
-        "desc": "Automated legal disclosures and POS fine calculations built directly into application logic.",
+        "title": "Smart ToS & Legal Compliance",
+        "desc": "Automated FTC legal disclosures and Amazon §6 Smart ToS Uncloaking built directly into core application logic.",
         "icon": "ShieldCheck"
       },
       {
-        "title": "Institutional All-In-One Hubs",
-        "desc": "Integrated operational modules for cataloging, circulation POS, donor registries, staff rosters, payroll, and expenses.",
+        "title": "Stripe Payment & Conditional Routing",
+        "desc": "Direct go/checkout -> Stripe Checkout Sessions, per-visitor OS/device/geo routing, and A/B split testing without SaaS lock-in.",
         "icon": "Zap"
+      },
+      {
+        "title": "100% Local Data Sovereignty",
+        "desc": "Analytics are stored locally in your WordPress database with IPv4/IPv6 anonymization and bot filtering—zero third-party pixels.",
+        "icon": "Lock"
       }
     ]
   },
   "flagship": {
     "eyebrow": "Flagship Software Showcase",
-    "title": "Production-Grade Engineering Solutions",
-    "subtitle": "Explore our flagship software designed for reliability, performance, and complete data sovereignty."
+    "title": "Enterprise WordPress Performance Solutions",
+    "subtitle": "Explore our flagship software designed for reliability, compliance, performance, and complete data ownership."
   },
   "standards": {
     "title": "Built to Highest Industry Engineering Standards",
     "items": [
       {
-        "heading": "WordPress Core Standards",
+        "heading": "WordPress Core Standards (WPCS)",
         "body": "Engineered in strict adherence to WordPress Core Coding Standards (WPCS), PSR-4 object-oriented modular patterns, and PSR-12 formatting rules."
       },
       {
-        "heading": "Native Rust Security",
-        "body": "Powered by Tauri, Rust, and React with native system-level memory safety, local SQLite WAL persistence, and offline data sovereignty."
+        "heading": "Enterprise Performance & Routing",
+        "body": "Powered by top-priority rewrite rules, 24h transient caching, and optimized database queries with sub-millisecond execution speeds."
       },
       {
-        "heading": "Data Privacy & Sovereignty",
-        "body": "Zero third-party cloud tracking, zero Personally Identifiable Information (PII) telemetry, and 100% offline data ownership."
+        "heading": "Data Privacy & Cookie-Less Architecture",
+        "body": "Zero third-party cloud tracking, optional IPv4/IPv6 IP anonymization, bot filtering, and 100% local data ownership."
       }
     ]
   },
   "globalCta": {
     "title": "Get Informed When We Launch",
-    "subtitle": "Register with us to receive instant release notifications and exclusive launch deals for ShelfMaster and our WordPress plugins.",
+    "subtitle": "Register with us to receive instant release notifications and exclusive launch deals for Smart Affiliate Link Cloaker and our WordPress performance plugins.",
     "cta1Label": "Register for Launch Updates",
     "cta1Href": "/lab",
-    "cta2Label": "View ShelfMaster Overview",
-    "cta2Href": "/products/shelfmaster"
+    "cta2Label": "View Link Cloaker Overview",
+    "cta2Href": "/products/smart-affiliate-link-cloaker"
   }
 }

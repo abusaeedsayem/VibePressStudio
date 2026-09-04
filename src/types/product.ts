@@ -1,4 +1,4 @@
-export type Category = "wordpress-plugin" | "desktop-app" | "saas-tool";
+export type Category = "wordpress-plugin" | "digital-tool" | "saas-tool";
 
 export interface KeyFeature {
   title: string;

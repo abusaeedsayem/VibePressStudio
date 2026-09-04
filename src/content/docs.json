@@ -1,8 +1,8 @@
 {
   "hero": {
-    "title": "Studio Documentation & End-User Guides",
-    "subtitle": "Step-by-step installation guides, module walkthroughs, and setup instructions for Smart Affiliate Link Cloaker and ShelfMaster.",
-    "searchPlaceholder": "Search documentation guides..."
+    "title": "Studio Documentation & Technical User Manuals",
+    "subtitle": "Comprehensive technical architecture, setup guides, knowledge base, and step-by-step instructions for Smart Affiliate Link Cloaker WordPress Plugin.",
+    "searchPlaceholder": "Search documentation guides, hooks, metaboxes, FAQs..."
   },
   "search": {
     "resultsFor": "Search results for",
@@ -16,106 +16,58 @@
       "type": "WordPress Plugin",
       "index": [
         {
-          "id": "phase1-installation",
-          "title": "Phase 1: Installation & Setup",
-          "summary": "Uploading smart-affiliate-link-cloaker.zip in WordPress Admin Dashboard and activating the plugin.",
-          "content": "Log in to your WordPress Admin Dashboard. Navigate to Plugins > Add New and click 'Upload Plugin' at the top of the screen. Select the smart-affiliate-link-cloaker.zip file and click 'Install Now'. Once uploaded, click 'Activate Plugin' to complete setup. If using PRO, enter your License Key when prompted to unlock premium features.",
-          "steps": [
-            "Log in to your WordPress Admin Dashboard.",
-            "Navigate to Plugins > Add New.",
-            "Click Upload Plugin at the top of the screen.",
-            "Select the smart-affiliate-link-cloaker.zip file and click Install Now.",
-            "Click Activate Plugin."
-          ]
+          "id": "what-is-salc",
+          "title": "1. What is Smart Affiliate Link Cloaker?",
+          "summary": "Enterprise-grade WordPress plugin that turns raw merchant URLs into clean, branded, trackable links hosted on your own domain.",
+          "content": "Smart Affiliate Link Cloaker is an enterprise-grade WordPress plugin. Under the hood: Custom Post Type salc_link holds each link (title = name, slug = path); RewriteEngine.php adds top-priority rules ^go/([^/]+)/?$; RedirectEngine.php hooks template_redirect:1, resolving slugs via 24h transient caching (salc_link_slug_{slug}); ClickTracker.php records clicks to local DB table wp_salc_clicks with bot filtering (30+ signatures), GDPR IPv4/IPv6 anonymization, and Cloudflare geo."
         },
         {
-          "id": "phase2-creating-first-link",
-          "title": "Phase 2: Creating Your First Link",
-          "summary": "Creating clean, branded referral URLs with 301, 302, or 307 redirect status codes.",
-          "content": "In your WordPress sidebar, look for the new SALC Links menu and click 'Add New Link'. Enter a Title (e.g. 'Amazon - Blue Yeti Mic'), enter your desired Cloaked Slug (e.g. blue-yeti), and paste your destination long affiliate URL. Leave Redirect Type as 302 (Temporary) for affiliate links and click Publish. Copy your clean URL (e.g. yourdomain.com/go/blue-yeti) and share anywhere!",
-          "steps": [
-            "In your WordPress sidebar, look for SALC Links and click Add New Link.",
-            "Title: Give your link a recognizable name (e.g. 'Amazon - Blue Yeti Mic').",
-            "Cloaked Slug: Enter what you want the URL to look like (e.g. blue-yeti).",
-            "Destination URL: Paste your actual, long affiliate link here.",
-            "Redirect Type: Leave as 302 (Temporary) for affiliate links.",
-            "Click Publish. Copy your clean URL and share it anywhere!"
-          ]
+          "id": "why-essential",
+          "title": "2. Why is Smart Affiliate Link Cloaker Essential?",
+          "summary": "Trust & CTR, SEO Safety, Compliance by Default (Amazon §6 & FTC), Attribution control, and Operations at scale.",
+          "content": "2.1 Trust & CTR: Branded links (yourdomain.com/go/best-vpn) signal ownership and survive shortener bans.\n2.2 SEO Safety: Auto-injects rel=\"nofollow sponsored\" + target=\"_blank\", sends X-Robots-Tag: noindex, nofollow, and adds Disallow: /go/ in robots.txt.\n2.3 Compliance by Default: Smart ToS Uncloaking detects amazon.* / amzn.to and renders raw URLs on frontend while beacon-tracking clicks (compliant with Amazon §6). FTC Auto-Disclosure inserts accessible <aside role=\"note\">.\n2.4 Attribution Control: UTM/gclid/fbclid/msclkid/wbraid forwarding, per-visitor geo/OS/device routing, split-test variants, zero SaaS lock-in.\n2.5 Scale: Date or click-cap expiration -> 302 fallback or 410 page, nightly HEAD batch 20 health checks, DOM-safe keyword auto-linking, 1-click migration."
         },
         {
-          "id": "phase3-auto-linker",
-          "title": "Phase 3: Setting up the Auto-Linker [PRO]",
-          "summary": "Automating keyword replacement across all historic posts and pages.",
-          "content": "Go to SALC Links > Settings and click the 'Auto-Linker [PRO]' tab. Check the box to enable keyword auto-linking on Posts and/or Pages. In the Keyword Mapping table, click 'Add Keyword', enter your target phrase (e.g. 'WordPress Hosting'), and select the cloaked link to associate it with. Set a replacement limit per post (e.g. 1 per post to maintain readability) and click Save Settings.",
-          "steps": [
-            "Go to SALC Links > Settings and click the Auto-Linker [PRO] tab.",
-            "Check the box to enable it on Posts and/or Pages.",
-            "In the Keyword Mapping table, click Add Keyword.",
-            "Type your target keyword (e.g. 'Email Marketing') and select your cloaked link.",
-            "Set a limit (e.g. 1 replacement per post).",
-            "Click Save Settings. The plugin will link that keyword across your blog history!"
-          ]
+          "id": "use-cases",
+          "title": "3. All Possible Use Cases",
+          "summary": "Workflows for Amazon reviewers, deal aggregators, newsletter operators, SaaS comparison sites, podcasts, Stripe upsells, and agencies.",
+          "content": "Detailed workflows for Amazon review sites, deal aggregators with expiration caps, newsletter & paid traffic UTM forwarding, SaaS comparison sites with conditional routing by OS/country, YouTube/podcast show notes with iFrame mask 200, Stripe Checkout per-link sessions, SEO content keyword auto-linking, agency category organization, 1-click PrettyLinks/ThirstyAffiliates migration, and compliance-first publishers."
         },
         {
-          "id": "phase4-ftc-compliance",
-          "title": "Phase 4: Activating FTC Compliance",
-          "summary": "Rendering customizable legal disclosure banners across pages containing cloaked links.",
-          "content": "Go to SALC Links > Settings and click the 'FTC Disclosure' tab. Select your preferred visual banner style (Default, Alert, Minimal, or Subtle) and choose the banner position (Top of Content is recommended for strict compliance). Customize the legal disclaimer text if desired and click Save. The plugin automatically detects cloaked links in your content and displays the disclosure banner.",
-          "steps": [
-            "Go to SALC Links > Settings and click the FTC Disclosure tab.",
-            "Select your preferred visual style (Default, Alert, Minimal, or Subtle).",
-            "Choose banner placement (Top of Content recommended for strict compliance).",
-            "Customize disclaimer text if desired, and click Save."
-          ]
+          "id": "core-features-deepdive",
+          "title": "4. Core Features Deep-Dive",
+          "summary": "CPT & permalinks, 301/302/307/200 iFrame redirect engine, conditional routing, Smart ToS uncloaking, GA click analytics, Stripe links, FTC disclosure, UTM forwarding, Auto-linker, Expiration & Health scanner, Split testing, Migration tools, Dual-source updater.",
+          "content": "4.1 Link Cloaking (CPT salc_link + ^go/{slug} rewrite rules)\n4.2 Redirect Engine (301/302/307 uncached default, 200 iFrame with gradient bar #0058be->#ffb95f)\n4.3 Conditional Routing (ConditionalRouter.php filter salc_resolved_destination_url: OS/Browser/Device/Language/Country rules)\n4.4 Smart ToS Uncloaking (SmartUncloaker.php finds <a href=\"/go/slug\">, checks amazon/ebay/target/custom domains, replaces output with raw destination + data-salc-uncloaked=\"1\", enqueues uncloak-beacon.js -> navigator.sendBeacon -> POST salc/v1/track)\n4.5 Click Analytics (ClickTracker.php recordClick() -> INSERT wp_salc_clicks, StatsRepository 13 aggregations, Chart.js 7 charts, CSV export)\n4.6 SEO & Crawler Control (robots.txt Disallow: /go/, rel=\"nofollow sponsored\", X-Robots-Tag)\n4.7 Insertion Ecosystem (Direct URL, [af_link]/[salc_link] shortcodes, salc/affiliate-link Gutenberg block, Showcase Widget, TinyMCE button)\n4.8 Stripe Payment Links (StripeClient.php createCheckoutSession -> go/course-checkout -> Stripe session, webhook salc/v1/stripe-webhook)\n4.9 FTC Auto-Disclosure (DisclosureInjector.php detects affiliate signal, builds accessible banner, positions top/bottom/before_first_link with callout/badge/minimal styles)\n4.10 Dynamic UTM Forwarding (QueryForwarder.php allowlist utm_*, gclid, fbclid, wbraid, preserves target params)\n4.11 DOM-Safe Keyword Auto-Linker (KeywordLinker.php DOMDocument + XPath regex, skips h1-h6/a/code/pre/script, caps per post & keyword)\n4.12 Deal Expiration & Health Scanner (ExpiryManager.php date/click cap -> 302 fallback or 410 page; HealthScanner.php daily 02:00 UTC HEAD batch 20 checks, email report)\n4.13 Split Testing (SplitTester.php weighted random mt_rand or sequential rotation)\n4.14 Migration & Tools (CSV import/export, PrettyLinks & ThirstyAffiliates 1-click migrators, Search & Replace raw URLs to shortcodes)\n4.15 Updates & Maintenance (Updater.php dual-source GitHub / WP.org releases, deactivation feedback survey)"
         },
         {
-          "id": "health-analytics",
-          "title": "Health Monitoring & Visual Analytics",
-          "summary": "Chart.js click performance graphs, broken link detection daily background tasks, and geolocation routing.",
-          "content": "Smart Affiliate Link Cloaker tracks link clicks using a built-in Chart.js visual analytics dashboard showing performance over 7 days, 30 days, or all time. Under PRO, a daily background task pings destination URLs to detect broken merchant pages or out-of-stock products, emailing alerts instantly. Geolocation Redirects allow routing international traffic (e.g. US vs. UK Amazon stores) dynamically under a single link."
-        }
-      ]
-    },
-    {
-      "id": "shelfmaster",
-      "name": "ShelfMaster",
-      "type": "Desktop Application (macOS & Windows)",
-      "index": [
-        {
-          "id": "part1-installation",
-          "title": "Part 1: Installation & License Activation",
-          "summary": "Downloading installers for Mac (.dmg) or Windows (.exe) and validating 16-character Lemon Squeezy license keys.",
-          "content": "Download the installer matching your operating system: ShelfMaster.dmg for macOS or ShelfMaster-Setup.exe for Windows. On macOS, double-click the .dmg and drag the ShelfMaster icon to your Applications folder. On Windows, double-click the .exe installer and follow the setup wizard. Upon initial launch, paste the 16-character License Key received in your email and click 'Activate' (Internet connection required for activation step only)."
+          "id": "who-needs-this",
+          "title": "5. Who Actually Needs This Plugin?",
+          "summary": "Target personas (Needs It) vs Anti-personas (Does Not Need It) vs Decision Checklist.",
+          "content": "Needs It: Amazon & multi-network affiliates, Coupon/deal sites, Content marketers & newsletters, SaaS reviewers, Course creators selling via Stripe, Agencies managing client portfolios.\nDoes Not Need It: Pure Amazon-only store with Storefront API, Networks forbidding any redirect, Sites needing link shortening without WordPress.\nDecision Checklist: Answer YES to >= 2 -> Choose SALC."
         },
         {
-          "id": "part2-setup",
-          "title": "Part 2: Setting Up Your Library",
-          "summary": "Configuring Library Name, Address, standard loan duration, and overdue fine rates.",
-          "content": "Click Settings in the bottom left of the sidebar. Enter your Library Name and Address. Scroll down to Loan Policy and set your standard loan duration (e.g. 14 days) and overdue fine rate (e.g. $0.50 per day). Click Save to apply policy rules across your institution."
+          "id": "knowledge-base",
+          "title": "6. Knowledge Base & Step-by-Step Guides",
+          "summary": "Step-by-step Installation, First Link creation, 10 Metaboxes deep dive, Categories/Tags, Statistics pipeline, CSV Import/Export, Platform Migration, DB Search & Replace, 9-panel Settings, Stripe setup, FAQs.",
+          "content": "6.1 Setup Guide (Install ZIP -> Activate -> Global Settings -> Permalinks Flush -> First Link Test)\n6.2 Creating First Link (Title, Destination URL, Cloaked Preview, Redirect Type, rel toggles, Category/Tag, Publish)\n6.3 10 Metaboxes Deep Dive (salc_destination, salc_cloaked_preview, salc_redirect, salc_seo, salc_conditional_rules, salc_split_testing, salc_expiration, salc_stripe, salc_disclosure, salc_banner)\n6.4 Categories & Tags (aff_category / aff_tag taxonomy registration & term disclosure overrides)\n6.5 Statistics Pipeline (go/slug -> RedirectEngine -> ClickTracker -> GeoResolver -> IP anonymize -> Bot check -> INSERT wp_salc_clicks -> StatsRepository)\n6.6 Tools & Migration (CSV tab, migration tab, search_replace tab)\n6.7 CSV Import & Export (UTF-8 BOM, deduplication by post_exists)\n6.8 Platform Migration (PrettyLinks & ThirstyAffiliates import preserving clicks)\n6.9 Database Search & Replace (Converts raw merchant URLs in post_content to [af_link id=\"ID\"] shortcodes with dryRun safeguard)\n6.10 Global Settings 9 Panels (URL Structure, Stripe, Smart ToS, Privacy/GDPR, FTC Disclosure, Dynamic UTM, Keyword Auto-Linker, Deal Expiration, Updates & Maintenance)\n6.11 Stripe Integration Setup (Stripe API key, Webhook endpoint, per-link Price ID)\n6.12 Smart ToS Uncloaking (Detect, Replace, Beacon Track via navigator.sendBeacon)\n6.13 Privacy & GDPR (IP AnonymizationIPv4 last octet zero / IPv6 /64, no cookies, uninstall purge)\n6.14 FTC Auto-Disclosure (Detector, Config hierarchy, Renderer, Insertion positions)\n6.15 Dynamic UTM Forwarding (QueryForwarder logic, allowlist, fragment preservation)\n6.16 Keyword Auto-Linker (DOMDocument + XPath rules & guards)\n6.17 Deal Expiration & Health Scanner (ExpiryManager check & handle, HealthScanner HEAD batch 20 & email report)\n6.18 Dual-Source Updater (Updater.php GitHub / WP.org probe & auto-update)"
         },
         {
-          "id": "part3-books-members",
-          "title": "Part 3: Adding Books & Members",
-          "summary": "Cataloging book inventory with auto-generated barcodes (BK-001) and registering patrons with Member IDs (MBR-TIMESTAMP).",
-          "content": "To add a book, go to the Catalog tab and click '+ Add Book'. Enter Title, Author, category, and copy count, then click Save to auto-generate unique sequential barcodes (e.g. BK-001). To register a patron, go to the Members tab and click '+ Add Member'. Enter name and contact info to auto-generate a Member ID (MBR-TIMESTAMP) and assign colored active vs. expired status badges."
+          "id": "tech-architecture",
+          "title": "7. Technical Architecture Summary",
+          "summary": "Boot PSR-4, Singleton Container, Layer Class Hooks & Order, Storage Schema, Assets, Security nonces & caps.",
+          "content": "Boot: smart-affiliate-link-cloaker.php defines SALC_PLUGIN_DIR/URL/FILE, registers Autoloader PSR-4, includes Constants.php, hooks register_activation_hook -> Activator::activate, deactivation_hook -> Deactivator::deactivate, instantiates Plugin::getInstance()->run() on plugins_loaded.\nContainer: Plugin.php singleton with 18 private services + LinkShowcaseWidget on widgets_init. Admin-only: MetaBoxes, AdminMenu, DocsPage.\nHook Order: RewriteEngine (init, early) -> RedirectEngine (template_redirect:1, first) -> SplitTester (salc_resolved_destination_url:9, order 1) -> ConditionalRouter (salc_resolved_destination_url:10, order 2) -> QueryForwarder (salc_resolved_destination_url:11, order 3) -> SmartUncloaker (the_content:15, before link) -> KeywordLinker (the_content:18, mid) -> DisclosureInjector (the_content:19, after links) -> CrawlerController (the_content:20, last).\nStorage: wp_salc_clicks (id BIGINT PK AI, link_id BIGINT idx, clicked_at DATETIME, ip_address VARCHAR45, referrer TEXT, user_agent TEXT, os VARCHAR20, browser VARCHAR20, device VARCHAR20, country_code CHAR2, city VARCHAR100, region VARCHAR100, language VARCHAR100, is_bot TINYINT) + postmeta (_salc_destination_url, _salc_total_clicks, _salc_unique_clicks, _salc_lifetime_clicks, _salc_variant_clicks/map, _salc_health_*, _salc_stripe_*) + options (salc_global_settings, salc_auto_link_rules, salc_health_cursor).\nAssets: admin.css, analytics.js (Chart.js), uncloak-beacon.js, gutenberg.js, tinymce-button.js, plugin-meta.js/deactivation-survey.js.\nSecurity: nonces salc_save_settings_nonce, salc_export_links, salc_export CSV, salc_deactivation_feedback; caps manage_options; sanitization sanitize_text_field/esc_url_raw/int; ABSPATH guard every file."
         },
         {
-          "id": "part4-circulation",
-          "title": "Part 4: POS Circulation & Overdue Fines",
-          "summary": "Executing checkouts via Member Code and Barcode, processing returns, and auto-calculating late fines.",
-          "content": "When a member borrows a book, navigate to the Circulation tab and click 'Issue Book'. Enter the Member ID and Book Barcode. ShelfMaster automatically sets the Due Date based on your loan policy settings. When returning a book, locate the borrower in Active Loans and click Return. ShelfMaster automatically calculates and displays any overdue fine owed ($0.50/day default rate)!"
+          "id": "glossary",
+          "title": "8. Glossary of Key Terms",
+          "summary": "Definitions for Affiliate Link, Cloaked URL, Slug, Prefix, Redirect Type, Smart ToS Uncloaking, Beacon, FTC Disclosure, UTM/Query Forwarding, Keyword Auto-Linker, Transient, GeoResolver, Health Status, Split Tester, Anonymize IP, X-Robots-Tag, CPT/Taxonomy, REST Routes.",
+          "content": "Affiliate Link: Merchant URL with tracking param crediting you for sales.\nCloaked URL: Branded alias that redirects to merchant. Post Type salc_link slug.\nSlug: URL-safe identifier (best-vpn) from post post_name.\nPrefix: Global base directory (go default, Constants:22).\nRedirect Type: 301, 302, 307 (default uncached), 200 iFrame Mask.\nSmart ToS Uncloaking: Frontend display of raw destination for regulated merchants while beacon-tracking clicks.\nBeacon: navigator.sendBeacon POST to salc/v1/track to log uncloaked clicks without redirect.\nFTC Disclosure: Legally required affiliate notice injected as <aside role=\"note\">.\nUTM / Query Forwarding: Allowlist-based append of utm_* / gclid / fbclid from incoming $_GET to destination.\nKeyword Auto-Linker: DOM-safe conversion of keywords to links via DOMDocument XPath.\nTransient: WP cache with TTL (salc_link_slug_* 24h, salc_geo_* 1h, salc_github_release 6h).\nGeoResolver: Resolves country/city from HTTP_CF_IPCOUNTRY / GEOIP_* cached 1h.\nHealth Status: ok (<400) vs broken (>=400 or WP_Error) stored in postmeta _salc_health_status.\nSplit Tester: A/B variant rotation weighted_random (mt_rand cumulative) vs sequential transient.\nAnonymize IP: Mask last octet IPv4 /64 IPv6 before DB for GDPR.\nX-Robots-Tag: HTTP header noindex, nofollow, noarchive sent on redirect.\nCPT / Taxonomy: salc_link Custom Post Type; aff_category hierarchical, aff_tag flat.\nREST Routes: salc/v1/track (beacon), salc/v1/stripe-webhook (Stripe)."
         },
         {
-          "id": "payroll-expenses",
-          "title": "Part 5: Staff Payroll & Financial Tracking",
-          "summary": "Generating dynamic employee payslips, tracking operational expense vouchers, and viewing financial progress bars.",
-          "content": "Manage institutional finances using the built-in Payroll and Expenses modules. The Payroll engine calculates net salary (Base + Bonus - Deductions) and generates printable payslips marked by month. The Expenses module records operational expenditures (utilities, maintenance, supplies) with visual monthly/yearly financial summary bars."
-        },
-        {
-          "id": "security-wal",
-          "title": "Part 6: Security & SQLite WAL Database",
-          "summary": "Local Write-Ahead Logging persistence, Rust-backed Lemon Squeezy API security, and hardware-bound device management.",
-          "content": "ShelfMaster stores all catalog and financial records in a local SQLite3 database operating in high-performance Write-Ahead Logging (WAL) mode. The app connects to the Lemon Squeezy API via a native Rust backend for license verification. Licenses are bound to your specific computer hardware to prevent piracy and unauthorized sharing."
+          "id": "faqs",
+          "title": "9. Frequently Asked Questions",
+          "summary": "15 detailed answers to common questions about prefix changes, Amazon compliance, redirect types, uninstall vs deactivation, 404 troubleshooting, statistics, auto-linker, UTM forwarding, Stripe checkout, FTC disclosure, health scanner, deal expiration, PrettyLinks/ThirstyAffiliates migration, DB search & replace, GDPR support, and updates.",
+          "content": "Q: Will changing my prefix break old links?\nA: Yes — go -> shop makes /go/... 404. Add 301s via Redirection plugin or keep go and add new alias rule.\nQ: Does Amazon allow this?\nA: Yes with Smart ToS Uncloaking ON (default). Amazon links render as raw URLs on frontend (compliant with §6) but clicks are beacon-tracked.\nQ: Which redirect should I use?\nA: 307 Temporary Redirect default (uncached, every click reaches server & increments counter). Use 301 only for permanent moves. Use 200 iFrame mask with branded bar.\nQ: What happens on uninstall vs deactivation?\nA: Deactivate = rewrites flushed, cron unscheduled, data kept. Delete (uninstall) = uninstall.php drops wp_salc_clicks + deletes options/transients/postmeta/termmeta + clears cron.\nQ: My cloaked link 404s?\nA: Check: Activated? Settings -> Permalinks -> Save. Valid slug? Prefix matches Settings?\nQ: Why isn't Statistics updating?\nA: Confirm redirect is 307. Check range All and wp_salc_clicks not empty. Verify BotDetector isn't flagging UA as bot. Ensure salcBeacon.restUrl enqueued.\nQ: Why didn't auto-link appear?\nA: Keyword must match word boundary (?<!\\w)kw(?!\\w), case-insensitive, not in h1-h6/a/code/pre/script/style or salc-skip-linker ancestor. Check thresholds.\nQ: Why didn't UTM forward?\nA: Check Settings -> UTM allowlist includes utm_* or your key. Incoming must be $_GET key <500 chars.\nQ: Stripe Checkout not working?\nA: Verify stripe_secret_key sk_... and price_ ID correct. Endpoint salc/v1/stripe-webhook set in Stripe Dashboard.\nQ: Disclosure not showing?\nA: Ensure disclosure_enabled ON globally or per-post not disabled. Content must contain affiliate signal.\nQ: Health scanner shows Broken but link works in browser?\nA: HealthScanner uses HEAD 10s timeout, fallback GET on 405/501; some hosts block headless UA. Whitelist User-Agent SALC-HealthChecker.\nQ: How do expiring deals work?\nA: Set Expires At UTC or Max Clicks + optional Fallback URL. When expired, 302s to fallback or renders expired.php 410 with custom message.\nQ: How to migrate from PrettyLinks/ThirstyAffiliates?\nA: Tools -> tab Migration -> Migrate PrettyLinks or Migrate ThirstyAffiliates, preserves click counts.\nQ: Will Search & Replace break my posts?\nA: Use Dry Run first. Scope is post,page,publish post_content. Back up DB first.\nQ: Do you support GDPR?\nA: Yes — Anonymize IP ON masks before insert. No cookies set by plugin; data deleted on uninstall.\nQ: How are updates delivered?\nA: Dual-source Updater.php checks api.github.com/repos/.../releases/latest + api.wordpress.org every 6h."
         }
       ]
     }

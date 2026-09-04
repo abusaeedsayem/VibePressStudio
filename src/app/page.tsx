@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { products } from "@/data/products";
 import { 
-  ArrowRight, Package, Monitor, CheckCircle2, Zap, Database, 
-  CloudOff, ShieldCheck, Download, Code2, Lock, Scale, Bell
+  ArrowRight, Package, CheckCircle2, Zap, Database, 
+  ShieldCheck, Code2, Lock, Scale, Bell
 } from "lucide-react";
 import homeData from "@/content/home.json";
 
 export default function HomePage() {
-  const [filter, setFilter] = useState<"all" | "wordpress-plugin" | "desktop-app">("all");
+  const [filter, setFilter] = useState<"all" | "wordpress-plugin">("all");
 
   const filteredProducts = filter === "all" ? products : products.filter(p => p.category === filter);
   const { hero, valueProps, flagship, standards, globalCta } = homeData;
@@ -79,7 +79,7 @@ export default function HomePage() {
               {valueProps.title}
             </h2>
             <p className="text-muted-foreground text-base md:text-lg">
-              Our engineering principles prioritize speed, offline reliability, and zero unnecessary dependencies.
+              Our engineering principles prioritize speed, compliance, and 100% data sovereignty.
             </p>
           </div>
 
@@ -91,7 +91,7 @@ export default function HomePage() {
                   className="bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-primary/30 transition-all flex flex-col"
                 >
                   <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4 text-primary">
-                    {idx === 0 ? <Database className="h-6 w-6" /> : idx === 1 ? <CloudOff className="h-6 w-6" /> : idx === 2 ? <ShieldCheck className="h-6 w-6" /> : <Zap className="h-6 w-6" />}
+                    {idx === 0 ? <Database className="h-6 w-6" /> : idx === 1 ? <ShieldCheck className="h-6 w-6" /> : idx === 2 ? <Zap className="h-6 w-6" /> : <Lock className="h-6 w-6" />}
                   </div>
                   <h3 className="font-bold text-lg text-foreground mb-2">
                     Core Pillar {idx + 1}: {pillar.title}
@@ -120,83 +120,45 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Category Toggles */}
-        <div className="flex items-center justify-center gap-2 mb-12">
-          <button
-            onClick={() => setFilter("all")}
-            className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
-              filter === "all"
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-muted text-muted-foreground hover:bg-muted/80"
-            }`}
-          >
-            All Software
-          </button>
-          <button
-            onClick={() => setFilter("wordpress-plugin")}
-            className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
-              filter === "wordpress-plugin"
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-muted text-muted-foreground hover:bg-muted/80"
-            }`}
-          >
-            WordPress Plugins
-          </button>
-          <button
-            onClick={() => setFilter("desktop-app")}
-            className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
-              filter === "desktop-app"
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-muted text-muted-foreground hover:bg-muted/80"
-            }`}
-          >
-            Desktop Applications
-          </button>
-        </div>
-
         {/* Product Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
           {filteredProducts.map((p) => (
             <div
               key={p.id}
               className="bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-primary/30 transition-all flex flex-col"
             >
               {/* Top Banner */}
-              <div className={`p-8 ${
-                p.category === "wordpress-plugin" 
-                  ? "bg-gradient-to-r from-primary to-indigo-600 text-white" 
-                  : "bg-gradient-to-r from-indigo-600 to-violet-600 text-white"
-              }`}>
+              <div className="p-8 bg-gradient-to-r from-primary via-indigo-600 to-violet-600 text-white">
                 <div className="flex items-center justify-between gap-4 mb-4">
-                  <span className="text-xs font-extrabold uppercase tracking-wider bg-white text-primary px-3 py-1 rounded-full shadow-sm">
+                  <span className="text-xs font-extrabold uppercase tracking-wider bg-white text-primary px-3.5 py-1 rounded-full shadow-sm">
                     {p.categoryLabel}
                   </span>
-                  <span className="text-xs font-mono font-semibold text-white">
+                  <span className="text-xs font-mono font-semibold text-white/90">
                     {p.version}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-2 text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-white">
                   {p.name}
                 </h3>
-                <p className="text-sm text-white leading-snug">
+                <p className="text-sm md:text-base text-white/90 leading-snug">
                   {p.tagline}
                 </p>
               </div>
 
               {/* Card Body */}
               <div className="p-8 flex flex-col flex-1">
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
                   {p.description}
                 </p>
 
                 {/* Key Architecture Highlights */}
                 <div className="mb-6">
                   <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-3">
-                    Key Architecture Highlights:
+                    Key Architecture & Feature Highlights:
                   </h4>
-                  <div className="space-y-2">
-                    {p.keyFeatures.slice(0, 3).map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2 text-xs text-muted-foreground">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {p.keyFeatures.slice(0, 6).map((feat, fIdx) => (
+                      <div key={fIdx} className="flex items-start gap-2.5 text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg border border-border/50">
                         <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                         <span><strong>{feat.title}:</strong> {feat.description}</span>
                       </div>
@@ -207,20 +169,18 @@ export default function HomePage() {
                 {/* Distribution Channels */}
                 <div className="mb-8">
                   <h4 className="text-xs font-bold text-foreground uppercase tracking-wider mb-2">
-                    Distribution Channels:
+                    Distribution & Status:
                   </h4>
                   <div className="flex flex-wrap gap-2 text-xs font-medium text-muted-foreground">
-                    {p.category === "wordpress-plugin" ? (
-                      <>
-                        <span className="bg-muted px-2.5 py-1 rounded border">100% Feature Complete (v1.0.0)</span>
-                        <span className="bg-muted px-2.5 py-1 rounded border">Pre-Launch Registration</span>
-                      </>
-                    ) : (
-                      <>
-                        <span className="bg-muted px-2.5 py-1 rounded border">80% Production Ready</span>
-                        <span className="bg-muted px-2.5 py-1 rounded border">Pre-Launch Registration</span>
-                      </>
-                    )}
+                    <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold px-3 py-1 rounded-md border border-emerald-500/30">
+                      100% Feature Complete (v1.0.0)
+                    </span>
+                    <span className="bg-muted px-3 py-1 rounded-md border">
+                      Submitted for WP.org Review
+                    </span>
+                    <span className="bg-muted px-3 py-1 rounded-md border">
+                      Pre-Launch Early Access Open
+                    </span>
                   </div>
                 </div>
 
@@ -228,13 +188,13 @@ export default function HomePage() {
                 <div className="mt-auto flex flex-col sm:flex-row gap-3">
                   <Link
                     href={`/products/${p.slug}`}
-                    className="flex-1 bg-primary text-primary-foreground text-xs font-bold py-3 px-5 rounded-lg hover:bg-primary/90 transition-colors text-center flex items-center justify-center gap-1.5"
+                    className="flex-1 bg-primary text-primary-foreground text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-primary/90 transition-colors text-center flex items-center justify-center gap-2 shadow-md"
                   >
-                    Explore Product Details <ArrowRight className="h-3.5 w-3.5" />
+                    Explore Complete Documentation <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
                     href="/lab"
-                    className="flex-1 bg-muted text-foreground border border-input text-xs font-bold py-3 px-5 rounded-lg hover:bg-muted/80 transition-colors text-center flex items-center justify-center gap-1.5"
+                    className="flex-1 bg-background text-foreground border border-input text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-muted transition-colors text-center flex items-center justify-center gap-2"
                   >
                     Register for Launch Updates
                   </Link>
@@ -272,8 +232,8 @@ export default function HomePage() {
             </div>
 
             <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
-              <div className="p-3 bg-amber-500/10 text-amber-500 rounded-lg w-fit mb-4">
-                <Lock className="h-6 w-6" />
+              <div className="p-3 bg-indigo-500/10 text-indigo-500 rounded-lg w-fit mb-4">
+                <Zap className="h-6 w-6" />
               </div>
               <h3 className="font-bold text-lg text-foreground mb-3">
                 {standards.items[1].heading}

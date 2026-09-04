@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AutoUpdater } from "@/components/updater/AutoUpdater";
 import { cn } from "@/lib/utils";
 
 const inter = Inter({
@@ -25,18 +24,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vibepressstudio.vercel.app"),
   title: {
     template: "%s | VibePress Studio",
-    default: "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
+    default: "VibePress Studio | High-Performance Digital Tools",
   },
-  description: "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
-  keywords: ["WordPress plugins", "desktop apps", "Tauri v2", "Rust", "Next.js", "software studio", "library management", "affiliate cloaker"],
+  description: "High-performance WordPress plugins engineered for speed, security, and data privacy.",
+  keywords: ["WordPress plugins", "Next.js", "software studio", "affiliate cloaker", "digital tools"],
   authors: [{ name: "VibePress Studio", url: "https://vibepressstudio.vercel.app" }],
   creator: "VibePress Studio",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://vibepressstudio.vercel.app",
-    title: "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
-    description: "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
+    title: "VibePress Studio | High-Performance Digital Tools",
+    description: "High-performance WordPress plugins engineered for speed, security, and data privacy.",
     siteName: "VibePress Studio",
     images: [
       {
@@ -49,8 +48,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "VibePress Studio | High-Performance Digital Tools & Desktop Applications",
-    description: "High-performance WordPress plugins and offline-first native desktop software engineered for speed, security, and data privacy.",
+    title: "VibePress Studio | High-Performance Digital Tools",
+    description: "High-performance WordPress plugins engineered for speed, security, and data privacy.",
     images: ["/images/og-image.jpg"],
     creator: "@VibePressStudio",
   },
@@ -80,7 +79,6 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
-          <AutoUpdater />
         </ThemeProvider>
       </body>
     </html>

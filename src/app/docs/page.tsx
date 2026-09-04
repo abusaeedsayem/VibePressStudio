@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
-import { Search, BookOpen, Package, Monitor, CheckCircle2, ChevronRight } from "lucide-react";
+import { Search, BookOpen, Package, CheckCircle2, ChevronRight } from "lucide-react";
 import docsDataJson from "@/content/docs.json";
 
 export default function DocsPage() {
-  const [activeTab, setActiveTab] = useState("cloaker");
+  const [activeTab] = useState("cloaker");
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeSectionId, setActiveSectionId] = useState("getting-started");
+  const [activeSectionId, setActiveSectionId] = useState("what-is-salc");
 
   const { hero, products: docsProducts } = docsDataJson;
 
@@ -30,6 +29,10 @@ export default function DocsPage() {
       {/* Hero Header */}
       <section className="border-b border-border bg-gradient-to-b from-primary/10 via-background to-background py-14 md:py-20">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1 mb-4">
+            <Package className="h-3.5 w-3.5 text-primary" />
+            <span className="text-xs font-semibold text-primary">Smart Affiliate Link Cloaker Manual</span>
+          </div>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">
             {hero.title}
           </h1>
@@ -52,35 +55,15 @@ export default function DocsPage() {
       {/* Main Documentation Viewer */}
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-12 w-full flex-1">
         
-        {/* Product Selector Tabs */}
-        <Tabs 
-          value={activeTab} 
-          onValueChange={(val) => {
-            setActiveTab(val);
-            const targetProd = docsProducts.find(p => p.id === val);
-            if (targetProd) setActiveSectionId(targetProd.index[0].id);
-          }} 
-          className="mb-8"
-        >
-          <TabsList className="bg-muted p-1 rounded-xl">
-            <TabsTrigger value="cloaker" className="text-xs font-bold px-6 py-2.5 rounded-lg flex items-center gap-2">
-              <Package className="h-4 w-4 text-primary" /> Smart Affiliate Link Cloaker
-            </TabsTrigger>
-            <TabsTrigger value="shelfmaster" className="text-xs font-bold px-6 py-2.5 rounded-lg flex items-center gap-2">
-              <Monitor className="h-4 w-4 text-indigo-500" /> ShelfMaster Desktop
-            </TabsTrigger>
-          </TabsList>
-        </Tabs>
-
         <div className="flex flex-col md:flex-row gap-10">
           
           {/* Sidebar Section Index */}
-          <aside className="w-full md:w-72 shrink-0 space-y-4">
-            <div className="sticky top-24">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground px-3 mb-3 flex items-center gap-2">
+          <aside className="w-full md:w-80 shrink-0 space-y-4">
+            <div className="sticky top-24 bg-card border border-border rounded-xl p-4 shadow-sm">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-muted-foreground px-2 mb-3 flex items-center gap-2">
                 <BookOpen className="h-4 w-4 text-primary" /> Documentation Index
               </h3>
-              <nav className="space-y-1">
+              <nav className="space-y-1 max-h-[70vh] overflow-y-auto pr-1">
                 {currentProduct.index.map((item) => (
                   <button
                     key={item.id}
@@ -88,14 +71,14 @@ export default function DocsPage() {
                       setActiveSectionId(item.id);
                       setSearchQuery("");
                     }}
-                    className={`w-full text-left px-3.5 py-2.5 text-xs font-semibold rounded-lg transition-colors flex items-center justify-between ${
+                    className={`w-full text-left px-3 py-2.5 text-xs font-semibold rounded-lg transition-colors flex items-center justify-between gap-2 ${
                       activeSectionId === item.id && !searchQuery
                         ? "bg-primary text-primary-foreground shadow-sm"
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     }`}
                   >
-                    <span>{item.title}</span>
-                    <ChevronRight className={`h-3 w-3 opacity-60 ${activeSectionId === item.id ? "opacity-100" : ""}`} />
+                    <span className="truncate">{item.title}</span>
+                    <ChevronRight className={`h-3 w-3 shrink-0 opacity-60 ${activeSectionId === item.id ? "opacity-100" : ""}`} />
                   </button>
                 ))}
               </nav>
@@ -118,7 +101,7 @@ export default function DocsPage() {
                     <div key={item.id} className="p-6 border border-border rounded-xl bg-card space-y-2">
                       <h3 className="font-bold text-base text-primary">{item.title}</h3>
                       <p className="text-xs text-muted-foreground font-medium">{item.summary}</p>
-                      <p className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/60">{item.content}</p>
+                      <p className="text-xs text-muted-foreground leading-relaxed pt-2 border-t border-border/60 whitespace-pre-line">{item.content}</p>
                     </div>
                   ))
                 )}
@@ -128,10 +111,10 @@ export default function DocsPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                      {currentProduct.name} User Manual
+                      {currentProduct.name} Technical Guide
                     </span>
                   </div>
-                  <h2 className="text-3xl font-extrabold text-foreground mb-3">
+                  <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-3">
                     {activeDoc.title}
                   </h2>
                   <p className="text-sm text-muted-foreground leading-relaxed font-medium">
@@ -140,7 +123,7 @@ export default function DocsPage() {
                 </div>
 
                 <div className="border-t border-border pt-6 space-y-6 text-sm text-foreground leading-relaxed">
-                  <p>{activeDoc.content}</p>
+                  <div className="whitespace-pre-line leading-relaxed">{activeDoc.content}</div>
 
                   {activeDoc.steps && (
                     <div className="bg-muted/40 border border-border rounded-xl p-6 space-y-3">
@@ -158,7 +141,7 @@ export default function DocsPage() {
 
                 <div className="border-t border-border pt-6 flex items-center gap-2 text-xs text-muted-foreground">
                   <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                  <span>Verified for product release {activeTab === "cloaker" ? "v1.0.0 Stable" : "v0.8.0 (80% Production Ready)"}</span>
+                  <span>Verified for product release v1.0.0 Stable</span>
                 </div>
               </div>
             )}

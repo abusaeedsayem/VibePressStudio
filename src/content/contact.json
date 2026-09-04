@@ -42,8 +42,7 @@
       "message": "Message Description"
     },
     "productOptions": [
-      { "value": "smart-affiliate-link-cloaker", "label": "Smart Affiliate Link Cloaker" },
-      { "value": "shelfmaster", "label": "ShelfMaster" }
+      { "value": "smart-affiliate-link-cloaker", "label": "Smart Affiliate Link Cloaker" }
     ],
     "categoryOptions": [
       { "value": "general-inquiry", "label": "General Inquiry" },

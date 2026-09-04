@@ -8,24 +8,18 @@
     "heading": "Register for Early Access & Launch Notifications",
     "subheading": "Join our priority insider list to receive instant notification, exclusive launch pricing, and early access download links.",
     "benefits": [
-      "Instant email notification when official launch opens (Estimated in 3 to 4 Weeks)",
+      "Instant email notification when official launch opens",
       "Exclusive early access and launch discount eligibility",
-      "Direct installer download links for ShelfMaster (macOS/Win) & Smart Affiliate Link Cloaker (WordPress Plugin)",
+      "Direct plugin download link for Smart Affiliate Link Cloaker (WordPress Plugin)",
       "Zero spam guarantee—only release updates and major milestone announcements"
     ]
   },
   "upcomingProducts": [
     {
-      "name": "ShelfMaster",
-      "type": "Desktop Native Application (macOS & Windows)",
-      "status": "80% Production-Ready • Launching in 3-4 Weeks",
-      "description": "Next-Gen Library Operating & Management System with 9 core modules, local SQLite WAL database, POS circulation, payroll, and offline-first data sovereignty."
-    },
-    {
       "name": "Smart Affiliate Link Cloaker",
       "type": "WordPress Performance Plugin",
       "status": "100% Feature Complete (v1.0.0) • Rollout Pending Review",
-      "description": "Premium-grade referral link routing, automatic FTC legal disclosures, dynamic IP geolocation, DOM-safe keyword auto-linking, and broken link monitoring."
+      "description": "Enterprise-grade referral link routing, automatic FTC legal disclosures, dynamic IP geolocation, DOM-safe keyword auto-linking, Stripe payment links, and broken link monitoring."
     }
   ]
 }

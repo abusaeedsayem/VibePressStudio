@@ -1,18 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { 
-  Package, Monitor, ArrowRight, CheckCircle2, Code2, Users, 
+  Package, ArrowRight, CheckCircle2, Code2, Users, 
   Share2, Sparkles, Bell
 } from "lucide-react";
 
 export default function ProductsDirectoryPage() {
-  const [filter, setFilter] = useState<"all" | "wordpress-plugin" | "desktop-app">("all");
-
-  const filtered = filter === "all" ? products : products.filter(p => p.category === filter);
-
   return (
     <div className="flex flex-col min-h-screen bg-background">
       
@@ -22,50 +17,16 @@ export default function ProductsDirectoryPage() {
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
             The VibePress Software Suite
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-            Explore our complete ecosystem of modular WordPress plugins and offline-first desktop management tools built for precision and performance.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Explore our complete ecosystem of modular WordPress plugins and high-performance digital tools built for precision and speed.
           </p>
-
-          {/* Filter Toggles */}
-          <div className="flex items-center justify-center gap-2">
-            <button
-              onClick={() => setFilter("all")}
-              className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
-                filter === "all"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              All Software
-            </button>
-            <button
-              onClick={() => setFilter("wordpress-plugin")}
-              className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
-                filter === "wordpress-plugin"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              WordPress Plugins
-            </button>
-            <button
-              onClick={() => setFilter("desktop-app")}
-              className={`text-xs font-bold px-5 py-2.5 rounded-full transition-all ${
-                filter === "desktop-app"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-            >
-              Desktop Application
-            </button>
-          </div>
         </div>
       </section>
 
       {/* Directory Items List */}
       <section className="py-16 px-4 md:px-6 max-w-[1280px] mx-auto w-full">
         <div className="space-y-12">
-          {filtered.map((product) => (
+          {products.map((product) => (
             <div
               key={product.id}
               className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-sm hover:shadow-lg transition-all"
@@ -73,11 +34,7 @@ export default function ProductsDirectoryPage() {
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-border pb-6 mb-6">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <span className={`text-xs font-extrabold uppercase px-3 py-1 rounded-full ${
-                      product.category === "wordpress-plugin"
-                        ? "bg-blue-500/10 text-blue-600 dark:text-blue-400"
-                        : "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400"
-                    }`}>
+                    <span className="text-xs font-extrabold uppercase px-3 py-1 rounded-full bg-primary/10 text-primary">
                       {product.categoryLabel}
                     </span>
                     <span className="text-xs font-mono font-medium text-muted-foreground border border-border px-2.5 py-0.5 rounded">
@@ -93,7 +50,7 @@ export default function ProductsDirectoryPage() {
                   href={`/products/${product.slug}`}
                   className="bg-primary text-primary-foreground text-sm font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 self-start lg:self-center"
                 >
-                  {product.category === "wordpress-plugin" ? "View Detailed Specifications" : "View System Architecture"} <ArrowRight className="h-4 w-4" />
+                  View Detailed Specifications <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
 
@@ -137,9 +94,7 @@ export default function ProductsDirectoryPage() {
                     <Share2 className="h-4 w-4 text-primary" /> Distribution Channels
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">
-                    {product.category === "wordpress-plugin" 
-                      ? "Pre-Launch Registration, Direct Download & License Activation"
-                      : "Pre-Launch Registration, Direct Installer Package"}
+                    Pre-Launch Registration, WordPress.org Repository, Direct Download & License Activation
                   </p>
                 </div>
               </div>
@@ -160,7 +115,7 @@ export default function ProductsDirectoryPage() {
               In The Studio Pipeline
             </h3>
             <p className="text-sm md:text-base text-white leading-relaxed">
-              We are continually architecting new tools, including automated content staging workflows and cross-platform desktop developer utilities.
+              We are continually architecting new tools, including automated content staging workflows and enterprise WordPress performance utilities.
             </p>
           </div>
 
