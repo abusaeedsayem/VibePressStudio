@@ -29,7 +29,7 @@ export default function ProductsDirectoryPage() {
             <span className="text-xs font-semibold text-primary">VibePress Software Suite</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
-            Production-Grade WordPress Software
+            Production-Grade WordPress Plugin
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Engineered natively upon WordPress core database schema (wp_posts and wp_postmeta) for uncompromising speed, compliance, and complete data sovereignty.

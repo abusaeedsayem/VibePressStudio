@@ -99,7 +99,7 @@ See [`CHANGELOG.md`](./CHANGELOG.md) § [1.0.6] for full Added/Changed/Removed/F
 | Route | File | Purpose |
 |-------|------|---------|
 | `/` | `src/app/page.tsx:1` | Home — 5-section (Hero + TrustBar 5 / Value Props 4 pillars / Flagship Showcase with Live Demo + 3-tab spotlight / Engineering Standards / Global CTA) with `useState activeFeatureTab` + `copied` (`Sparkles/Copy/Check/Layers`) |
-| `/products` | `src/app/products/page.tsx:1` | Products Directory — hero `VibePress Software Suite / Production-Grade WordPress Software (wp_posts & wp_postmeta)`, flagship card with `24 Core Features Built-in` emerald badge + filterable mini-explorer (`all/redirection/compliance/automation/monetization/analytics` → `coreFeatures24:24` `grid-cols-3`) + 3-col spec (`Technical Foundation (Code2)` / `Target Users (Users)` / `Admin Menu Structure (Layers)` + `navigation.menuName`) + roadmap `In The Studio Pipeline` teaser |
+| `/products` | `src/app/products/page.tsx:1` | Products Directory — hero `VibePress Software Suite / Production-Grade WordPress Plugin (wp_posts & wp_postmeta)`, flagship card with `24 Core Features Built-in` emerald badge + filterable mini-explorer (`all/redirection/compliance/automation/monetization/analytics` → `coreFeatures24:24` `grid-cols-3`) + 3-col spec (`Technical Foundation (Code2)` / `Target Users (Users)` / `Admin Menu Structure (Layers)` + `navigation.menuName`) + roadmap `In The Studio Pipeline` teaser |
 | `/products/smart-affiliate-link-cloaker` | `src/app/products/smart-affiliate-link-cloaker/page.tsx:1` | 8-tab sticky showcase (`Overview & Essential Pillars` / `24 Core Features Catalog` / `Real-World Scenarios` / `WordPress Admin Tour` / `Setup & User Guide` / `Who Needs This` / `Master Glossary` / `FAQ Guide` `sticky top-20 backdrop-blur`) — Before→After permalink visuals, 4-tile architecture grid, 24 searchable+filterable expandable feature cards, 6 scenario toggles (Without vs With), `bg-slate-900` WP sidebar simulator (8 submenus) + inspector, 4-phase guide, audience matrix + Decision Checklist, searchable 18-term glossary, 5-category 15-FAQ accordion |
 | `/docs` | `src/app/docs/page.tsx:1` | Documentation Hub — 9-chapter searchable manual (`9 Topics` + `Manual Index` sticky `top-24` `BookOpen` + `max-h-[70vh]` scroll + `Copy Section` `Check` + verification footer `Verified against v1.0.6 (24 Core Features)`) with placeholder `Search across all 24 features, admin menus, use cases, FAQs, or glossary terms...` (`src/content/docs.json:5`) |
 | `/changelog` | `src/app/changelog/page.tsx:1` | Release Notes — renders `src/content/changelog.json:1` timeline (now Sep 5 `v1.0.7` + Sep 3 `v1.0.6` + Aug entries) |
@@ -292,7 +292,7 @@ curl -I https://vibepressstudio.vercel.app          # expect HTTP/2 200, x-verce
 curl -s https://vibepressstudio.vercel.app | grep -q "High-Performance Digital Tools"
 curl -s https://vibepressstudio.vercel.app | grep -q "24 Core Features"
 curl -s https://vibepressstudio.vercel.app/docs | grep -q "Complete Documentation"
-curl -s https://vibepressstudio.vercel.app/products | grep -q "Production-Grade WordPress Software"
+curl -s https://vibepressstudio.vercel.app/products | grep -q "Production-Grade WordPress Plugin"
 curl -s https://vibepressstudio.vercel.app/products/smart-affiliate-link-cloaker | grep -q "24 Core Features Catalog"
 curl -s https://vibepressstudio.vercel.app/changelog | grep -q "Changelog"
 vercel ls --scope team_C08AS1hMp9PdkaKDwRwHcwWi  # optional: check deployment status via Vercel CLI
