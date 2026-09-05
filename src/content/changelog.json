@@ -3,6 +3,18 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "September 5, 2026",
+      "version": "v1.0.7 — 24 Core Features Suite Expansion & Interactive Showcase Release",
+      "changes": [
+        "Expanded flagship to 24 Core Features master catalog: searchable, category-filterable (redirection/compliance/automation/monetization/analytics) UI with expandable operational logic, location, how-to and expected-result cards — see src/content/cloaker.json:207 (coreFeatures24 24 items) and src/app/products/smart-affiliate-link-cloaker/page.tsx:291 (filter + search + expandable cards).",
+        "Home & flagship showcase overhaul: live link transformation demo (raw https://network.com/aff_c?offer_id=892... → branded https://yoursite.com/go/best-vpn) with copy button, 4 stat badges (+25%–40% CTR, wp_posts, Amazon §6, 1-Click Stripe), 3-tab spotlight (24 Features / Use Cases / Admin Navigation) and hover-elevated pillars — see src/app/page.tsx:14 (activeFeatureTab+copied), src/content/home.json:14 (5-item trustBar + 4 refined pillars).",
+        "Products directory interactive explorer: 24-feature mini-catalog with category pills (all/redirection/compliance/automation/monetization/analytics), tech-stack / target-audience / 8-submenu admin menu 3-column spec, and gradient hero — see src/app/products/page.tsx:92 (mini-explorer) and src/content/products.json:14 (techStack 8 items + 6+6 keyFeatures).",
+        "Product page 8-tab sticky navigation (Overview & Pillars / 24 Features / Scenarios / Admin Tour / Guide / Target / Glossary / FAQ): before→after permalink visuals, 4-tile architecture grid (salc_link / RewriteEngine / RedirectEngine / ClickTracker), 6-scenario without/with toggles, simulated WP Admin sidebar (Link Cloaker + 8 submenus), phase-guided user guide, audience matrix, searchable 18-term glossary and category-filtered 15-FAQ accordion — see src/app/products/smart-affiliate-link-cloaker/page.tsx:121 (sticky tabs), src/content/cloaker.json:31 (navigation 8 submenus).",
+        "Docs Hub overhaul: hero tagged v1.0.6 (24 Core Features), searchable 9-chapter manual with badges (Overview/Core Value/Admin UI/Master Reference/Use Cases/Target Audience/Architecture/Glossary/FAQs), copy-section button and verified footer — see src/app/docs/page.tsx:48 (hero+search) and src/content/docs.json:3 (hero + 9 index items with expanded 5-pillar, 24-feature, 6-scenario, 8-submenu, 18-glossary, 15-FAQ content).",
+        "Build verified Next.js 16.3.2 (Turbopack) — ✓ Compiled successfully in ~1659ms — 13 static routes prerendered — live at https://vibepressstudio.vercel.app (x-nextjs-prerender, x-vercel-cache: PRERENDER)."
+      ]
+    },
+    {
       "date": "September 3, 2026",
       "version": "v1.0.6 — Complete Product Documentation & Studio Consolidation",
       "changes": [

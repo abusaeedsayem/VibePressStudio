@@ -1,38 +1,39 @@
 {
   "hero": {
     "eyebrow": "Engineered for Uncompromising Speed, Security, and Scalability",
-    "title": "High-Performance Digital Tools & WordPress Software Suite",
-    "subtitle": "VibePress Studio engineers enterprise-grade WordPress performance plugins and digital tools designed to replace sluggish systems with rock-solid, production-grade solutions.",
+    "title": "High-Performance WordPress Software Suite & Digital Tools",
+    "subtitle": "VibePress Studio engineers enterprise-grade WordPress performance plugins and digital tools built on native database architecture (wp_posts & wp_postmeta) to replace bloated SaaS systems with rock-solid, production-grade solutions.",
     "ctaPrimary": "Explore Software Suite",
     "ctaSecondary": "Register for Launch Updates",
     "trustBar": [
-      "WordPress Core Standards (WPCS) Compliant",
-      "Smart ToS Uncloaking & FTC Compliance",
-      "GA-Style Local DB Click Analytics",
-      "100% Data Sovereignty & Zero External Tracking"
+      "24 Core Production Features",
+      "+25% to 40% Click-Through Lift",
+      "Native wp_posts & wp_postmeta Architecture",
+      "Amazon §6 Smart Uncloaking & FTC Compliance",
+      "1-Click Stripe Payments & Zero SaaS Lock-in"
     ]
   },
   "valueProps": {
     "title": "Why VibePress Studio Builds Differently",
     "pillars": [
       {
-        "title": "Zero Database & Query Bloat",
-        "desc": "WordPress plugins engineered with transient caching and clean rewrite engines, preserving sub-millisecond execution speeds.",
+        "title": "Native Architecture & Zero Query Bloat",
+        "desc": "Built natively upon WordPress standard database tables (wp_posts and wp_postmeta) with 24h transient caching, preserving sub-millisecond execution speeds under traffic surges.",
         "icon": "Database"
       },
       {
-        "title": "Smart ToS & Legal Compliance",
-        "desc": "Automated FTC legal disclosures and Amazon §6 Smart ToS Uncloaking built directly into core application logic.",
+        "title": "Automated Compliance & Ban Protection",
+        "desc": "Smart ToS Uncloaking automatically detects Amazon and eBay links to keep accounts safe under Amazon §6, paired with accessible FTC disclosure banners.",
         "icon": "ShieldCheck"
       },
       {
-        "title": "Stripe Payment & Conditional Routing",
-        "desc": "Direct go/checkout -> Stripe Checkout Sessions, per-visitor OS/device/geo routing, and A/B split testing without SaaS lock-in.",
+        "title": "Dynamic Routing & Direct Monetization",
+        "desc": "Route visitors dynamically by OS, device, browser, or language, run weighted A/B split tests, and accept direct payments via Stripe Checkout without WooCommerce bloat.",
         "icon": "Zap"
       },
       {
-        "title": "100% Local Data Sovereignty",
-        "desc": "Analytics are stored locally in your WordPress database with IPv4/IPv6 anonymization and bot filtering—zero third-party pixels.",
+        "title": "100% Local Data Sovereignty & Defense",
+        "desc": "Bot-filtered click tracking stored locally with GDPR IP anonymization, daily broken link health scanning, and 1-click competitor migration engines.",
         "icon": "Lock"
       }
     ]
@@ -40,7 +41,7 @@
   "flagship": {
     "eyebrow": "Flagship Software Showcase",
     "title": "Enterprise WordPress Performance Solutions",
-    "subtitle": "Explore our flagship software designed for reliability, compliance, performance, and complete data ownership."
+    "subtitle": "Explore our flagship affiliate infrastructure suite designed for maximum CTR, automated compliance, and complete data ownership."
   },
   "standards": {
     "title": "Built to Highest Industry Engineering Standards",
@@ -51,11 +52,11 @@
       },
       {
         "heading": "Enterprise Performance & Routing",
-        "body": "Powered by top-priority rewrite rules, 24h transient caching, and optimized database queries with sub-millisecond execution speeds."
+        "body": "Powered by top-priority rewrite rules, 24h transient caching, and optimized database queries with sub-millisecond redirect speeds."
       },
       {
         "heading": "Data Privacy & Cookie-Less Architecture",
-        "body": "Zero third-party cloud tracking, optional IPv4/IPv6 IP anonymization, bot filtering, and 100% local data ownership."
+        "body": "Zero third-party cloud tracking pixels, optional IPv4/IPv6 IP anonymization, bot filtering, and 100% local database ownership."
       }
     ]
   },

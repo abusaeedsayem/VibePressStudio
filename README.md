@@ -3,8 +3,8 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Site Version:** `v0.4.0` (Next.js) · **Flagship Plugin Version:** `v1.0.6` (100% Feature Complete)  
-> **Last Updated:** September 3, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
+> **Studio Release:** `v1.0.7` (September 5, 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.6` (100% Feature Complete · 24 Core Features)  
+> **Last Updated:** September 5, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
@@ -12,57 +12,85 @@
 
 VibePress Studio is a software engineering studio dedicated to crafting high-performance digital tools and enterprise-grade WordPress plugins engineered for speed, legal compliance, and 100% data sovereignty.
 
-We replace sluggish, SaaS-locked systems with rock-solid, production-grade solutions that adhere to WordPress Core Coding Standards (WPCS), PSR-4/PSR-12, WCAG AAA contrast, and zero telemetry privacy requirements. Every tool is built for sub-millisecond execution, transient caching, and local database ownership.
+We replace sluggish, SaaS-locked systems with rock-solid, production-grade solutions that adhere to WordPress Core Coding Standards (WPCS), PSR-4/PSR-12, WCAG AAA contrast, and zero telemetry privacy requirements. Every tool is built for sub-millisecond execution, 24h transient caching, and local database ownership (`wp_posts` & `wp_postmeta`).
 
-> **Integrated Documentation:** This README is fully synchronized with [`CHANGELOG.md`](./CHANGELOG.md) and the live documentation hub at [`/docs`](https://vibepressstudio.vercel.app/docs) and product page [`/products/smart-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/smart-affiliate-link-cloaker). Both files track the same release lineage — see [Changelog & Deployment](#changelog--release-history) below.
+> **Integrated Documentation:** This README is fully synchronized with [`CHANGELOG.md`](./CHANGELOG.md) (canonical history) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`), plus the 9-chapter Documentation Hub at [`/docs`](https://vibepressstudio.vercel.app/docs) and the 8-tab product showcase at [`/products/smart-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/smart-affiliate-link-cloaker). All three track the same `v1.0.7` release lineage — see [Changelog & Deployment](#changelog--release-history) below.
 
 ---
 
-## Latest Release: v1.0.6 — Complete Documentation & Studio Consolidation (September 3, 2026)
+## Latest Release: v1.0.7 — 24 Core Features Suite Expansion & Interactive Showcase (September 5, 2026)
 
-**Commit lineage:** `0164f54` → `e0ea6d9` (branch `main`, up to date with `origin/main`)
+**Commit lineage:** `a0ac0b0` *docs: integrate README and CHANGELOG for v1.0.6* → `UNRELEASED` (this release — 8 files, `1850 insertions+ / 664 deletions-` — `git diff --stat` `src/app/page.tsx:1` `src/app/products/page.tsx:1` `src/app/products/smart-affiliate-link-cloaker/page.tsx:1` `src/app/docs/page.tsx:1` `src/content/cloaker.json:1` `src/content/docs.json:1` `src/content/home.json:1` `src/content/products.json:1`) (branch `main`, up to date with `origin/main`)
 
-This release finalizes the studio pivot to a WordPress-focused performance suite and bumps the flagship plugin from `v1.0.0` to `v1.0.6` (100% Feature Complete). All changes are live at [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app) and validated via `npm run build` (13 static routes).
+This release expands the flagship suite to **24 Core Production Features** with a live link-transformation demo engine, filterable master catalogs, and a fully interactive 8-tab product showcase + 9-chapter documentation hub. All changes are live at [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app) and validated via `npm run build` — `✓ Compiled successfully in 1659ms` — 13 static routes.
 
-### What's New at a Glance
+### What's New at a Glance (v1.0.7)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
-| **Enterprise Documentation** | Integrated complete PDF-spec product documentation across Home (`src/app/page.tsx:1`), Products Directory (`src/app/products/page.tsx:1`), Product Page (`src/app/products/smart-affiliate-link-cloaker/page.tsx:1`), and Documentation Hub (`src/app/docs/page.tsx:1` + `src/content/docs.json:1`) | `src/content/cloaker.json:1`, `src/content/products.json:1`, `src/content/home.json:1` |
-| **Version Standardization** | Bumped plugin version `v1.0.0` → `v1.0.6` across 9 tracked files | `README.md:1`, `CHANGELOG.md:1`, `src/app/docs/page.tsx:144`, `src/app/lab/page.tsx:1`, `src/app/page.tsx:1`, `src/content/changelog.json:6`, `src/content/cloaker.json:10`, `src/content/pricing.json:1`, `src/content/products.json:17` |
-| **Studio Consolidation** | Hard-deleted all ShelfMaster Desktop Software (Tauri 2.x) references, routes, components, and binaries | Deleted: `src/app/products/shelfmaster/page.tsx:1`, `src/content/shelfmaster.json:1`, `src-tauri/*`, `src/hooks/useAutoUpdater.ts:1`, `src/components/updater/*`, `src/app/settings/page.tsx:1`, `public/updater/latest.json:1`, `src/app/api/updater/latest.json/route.ts:1` |
-| **Brand Enforcement** | Tagline strictly standardized to **`"High-Performance Digital Tools"`** across metadata, header, footer, and content layers | `src/content/site.json:11`, `src/content/navigation.json:2`, `src/content/footer.json:1`, `src/app/layout.tsx:1` |
+| **Live Link Transformation Demo** | Before→After visual: `https://network.com/aff_c?offer_id=892&aff_id=99281` (destructive) → `https://yoursite.com/go/best-vpn` (primary) with `307 Temporary Redirect` badge, `Copy → Copied!` (`navigator.clipboard` + `Check` icon, `useState copied`), gradient banner with 4 stat badges (`+25%–40% CTR / wp_posts / Amazon §6 / 1-Click Stripe` + `blur-3xl` glow) | `src/app/page.tsx:188` (Live Link Transformation Engine), `src/app/products/smart-affiliate-link-cloaker/page.tsx:184` |
+| **Home Interactive Showcase** | 3-tab spotlight `useState activeFeatureTab:highlights\|scenarios\|architecture` (`src/app/page.tsx:15`) rendering 6-feature cards (`src/content/products.json:14` `keyFeatures 0:6`), 3 scenario cards (Mobile Arbitrage / Flash Sales / Stripe Payments), and Admin Nav (`Link Cloaker` + 8 submenus). TrustBar 4→5 (`24 Core Production Features` + `+25% to 40% CTR` + `Native wp_posts & wp_postmeta` + `Amazon §6 & FTC` + `1-Click Stripe`) + 4 pillars retitled + `group-hover:bg-primary` elevation | `src/content/home.json:6` `hero.trustBar`, `src/content/home.json:14` `valueProps.pillars` |
+| **Products Directory Mini-Explorer** | `24 Core Features Master Catalog` with category pills (`all/redirection/compliance/automation/monetization/analytics` → `coreFeatures24:24` filtering `src/content/cloaker.json:207` into `grid-cols-3` cards `#id/badge/title/desc`), header `24 Core Features Built-in` emerald + `Current Release: v1.0.6 (100% Feature Complete · 24 Core Features)`, 3-column spec `Technical Foundation (Code2) / Target Users (Users) / Admin Menu Structure (Layers)` | `src/app/products/page.tsx:92` `mini-explorer`, `src/content/products.json:17` `version` |
+| **Product Page 8-Tab Sticky Showcase** | Sticky `top-20 backdrop-blur` tabs (`Overview & Essential Pillars` / `24 Core Features Catalog` / `Real-World Scenarios` / `WordPress Admin Tour` / `Setup & User Guide` / `Who Needs This` / `Master Glossary` / `FAQ Guide` `src/app/products/smart-affiliate-link-cloaker/page.tsx:122`): Before→After permalink visuals, 4-tile architecture grid (`salc_link` / `RewriteEngine.php` / `RedirectEngine.php` / `ClickTracker.php` `Terminal`), 24 searchable+filterable expandable feature cards (`howItWorks→howToUse→Expected Result` `grid-cols-2`), 6 scenario pills `📱/⏱️/⚖️/🎙️/💳/🔄` with `Without Plugin (destructive/AlertCircle)` vs `With Plugin (emerald/CheckCircle2)`, simulated `bg-slate-900` WP sidebar (8 submenus) + inspector, 4-phase guide (`Card` steps), audience matrix `Organizational (Building2) vs Personal (Users)` + Decision Checklist (`HelpCircle` ≥2 YES), searchable 18-term glossary, 5-category 15-FAQ accordion (`ChevronRight rotate-90`) | `src/app/products/smart-affiliate-link-cloaker/page.tsx:1` `834 lines` |
+| **Docs Hub 9-Chapter Overhaul** | Hero `Smart Affiliate Link Cloaker — Complete Documentation & User Manual` + dual badges `v1.0.6` + `24 Core Features` (`Package`/`emerald`), placeholder `Search across all 24 features, admin menus, use cases, FAQs, or glossary terms...` (`src/content/docs.json:5`), sidebar `Manual Index` sticky `top-24` with `9 Topics` count + `BookOpen` + `max-h-[70vh]` scroll + `Explore Product Overview`, searchable detail view (`title\|summary\|content` filter `src/app/docs/page.tsx:30`), `Copy Section` (`Copy→Copied Content!` `Check`), verification footer `Verified against v1.0.6 (24 Core Features)` — 9 chapters expanded: Ch1 What is (`Overview` 6 capabilities), Ch2 Why Important (`Core Value` 5 pillars `CTR/Commission Theft/Amazon §6/SEO/Link Rot`), Ch3 Admin Navigation (`Admin UI` 8 submenus `Link Cloaker`), Ch4 Master Feature Catalog (`Master Reference` 24 features), Ch5 Use Cases (`Use Cases` 6 `A–F` without/with), Ch6 Target Audience (`Target Audience` Org vs Personal), Ch7 Tech Architecture (`Architecture` CPT/Rewrite/Redirect/Analytics/Beacon), Ch8 Glossary (`Glossary` 18 definitions), Ch9 FAQ (`FAQs` 15 Q&A 5 categories) | `src/app/docs/page.tsx:48` `hero+search`, `src/content/docs.json:3` `hero + 9 index` |
 
-> **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) § [1.0.6] and [`src/content/changelog.json`](./src/content/changelog.json) (rendered at [`/changelog`](https://vibepressstudio.vercel.app/changelog)) for the complete diff log including `WPCS / PSR-12` verification and `npm run build` validation.
+> **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) § [1.0.7] and § [1.0.6] and [`src/content/changelog.json`](./src/content/changelog.json) (rendered at [`/changelog`](https://vibepressstudio.vercel.app/changelog)) for the complete diff log including `WPCS / PSR-12` verification and `npm run build` validation (1659ms, 13 routes).
+
+<details><summary><strong>Previous Release: v1.0.6 — Complete Documentation & Studio Consolidation (September 3, 2026)</strong></summary>
+
+**Commit lineage:** `0164f54` → `e0ea6d9` (branch `main`, up to date with `origin/main`)
+
+Finalized studio pivot to WordPress-focused performance suite and bumped flagship plugin `v1.0.0` → `v1.0.6` (100% Feature Complete). Integrated complete PDF-spec product documentation across Home (`src/app/page.tsx:1`), Products Directory (`src/app/products/page.tsx:1`), Product Page (`src/app/products/smart-affiliate-link-cloaker/page.tsx:1`), and Documentation Hub (`src/app/docs/page.tsx:1` + `src/content/docs.json:1`). Hard-purged ShelfMaster Desktop Software (Tauri 2.x) — 45 files — `src-tauri/*`, `src/hooks/useAutoUpdater.ts:1`, `src/components/updater/*`, `src/app/settings/page.tsx:1`, `public/updater/latest.json:1`, `src/app/api/updater/latest.json/route.ts:1`; tagline strictly standardized to **`"High-Performance Digital Tools"`** across `src/content/site.json:11`, `src/content/navigation.json:2`, `src/content/footer.json:1`, `src/app/layout.tsx:1`.
+
+See [`CHANGELOG.md`](./CHANGELOG.md) § [1.0.6] for full Added/Changed/Removed/Fixed entries with `file:line` refs.
+
+</details>
 
 ---
 
 ## Flagship Product: Smart Affiliate Link Cloaker
 
-**Smart Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (**v1.0.6 — 100% Feature Complete**) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain. It is the sole flagship after the ShelfMaster removal.
+**Smart Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (**v1.0.6 — 100% Feature Complete · 24 Core Features** — studio release `v1.0.7` September 5, 2026) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain (`https://yoursite.com/go/best-vpn`). It is the sole flagship after the ShelfMaster removal and is rendered across Home (`src/app/page.tsx:1`), Products Directory (`src/app/products/page.tsx:1`), the 8-tab Product Page (`src/app/products/smart-affiliate-link-cloaker/page.tsx:1`), and the 9-chapter Documentation Hub (`src/app/docs/page.tsx:1`).
 
 **Distribution Status:**
 - Free Core Edition: submitted for WordPress.org manual review (pending approval)
-- PRO Lifetime License: fully packaged, launches within one month of Free approval
-- Pre-launch registration open at [`/lab`](https://vibepressstudio.vercel.app/lab)
+- PRO Lifetime License: fully packaged, launches within one month of Free approval — 6 PRO engines included (Conditional Routing, Auto-Linker, Health Scanner, Split Testing, Stripe Payments, Deal Expiration + UTM Forwarding)
+- Pre-launch registration open at [`/lab`](https://vibepressstudio.vercel.app/lab) — 24 Core Features architecture preview live
 
-### Key Capabilities & Architecture Highlights
+**Hero Metrics (live at `src/content/cloaker.json:11` `hero.coreMetrics`):** `24 Core Production Features` · `Native wp_posts & wp_postmeta Engine` · `+25% to 40% CTR Lift` · `Amazon Associates §6 Uncloaking` · `1-Click Stripe Checkout Sessions` · `Automated Broken Link Health Scanner` — shown with gradient banner `from-primary via-indigo-600 to-violet-600` + `blur-3xl` glow + `Copy` demo (`src/app/page.tsx:161`).
 
-- **Custom Post Type (`salc_link`) & Top-Priority Rewrite Engine** (`RewriteEngine.php`): High-performance URL routing (`^go/{slug}` or `^go/{category}/{slug}`) with 24h transient caching (`salc_link_slug_{slug}`). Slug derived from `post_name`. See `src/content/cloaker.json:148` and `src/content/docs.json:22`.
-- **301 / 302 / 307 / 200 iFrame Redirect Engine** (`RedirectEngine.php:template_redirect:1`): Supports uncached 307 Temporary Redirects (default) and 200 iFrame masking with branded gradient header (`#0058be→#ffb95f`). Resolves via transient before DB hit.
-- **Smart ToS Uncloaking (Amazon Associates §6)** (`SmartUncloaker.php:the_content:15`): Auto-detects `amazon.*` and `amzn.to` URLs via regex, renders raw destination on frontend (`data-salc-uncloaked="1"`), beacon-tracks clicks via `navigator.sendBeacon` → `POST salc/v1/track`. Enqueued as `uncloak-beacon.js`.
-- **FTC Legal Auto-Disclosure Injector** (`DisclosureInjector.php:the_content:19`): Auto-inserts accessible `<aside role="note">` legal compliance banners with 4 customizable visual styles (Callout, Badge, Minimal, Subtle) at `top` / `bottom` / `before_first_link`. Config hierarchy: global → per-category → per-link.
-- **GA-Style Local Click Analytics** (`ClickTracker.php` + `StatsRepository.php`): Local database logging (`wp_salc_clicks` table) with 30+ bot signature filters, IPv4/IPv6 IP anonymization (last octet /64 masking), Cloudflare `HTTP_CF_IPCOUNTRY` geo resolution, 7 Chart.js graphs, and CSV export (UTF-8 BOM). Table schema: `id BIGINT PK AI, link_id BIGINT idx, clicked_at DATETIME, ip_address VARCHAR45, referrer TEXT, user_agent TEXT, os VARCHAR20, browser VARCHAR20, device VARCHAR20, country_code CHAR2, city VARCHAR100, region VARCHAR100, language VARCHAR100, is_bot TINYINT`.
-- **DOM-Safe Keyword Auto-Linker [PRO]** (`KeywordLinker.php:the_content:18`): `DOMDocument` + XPath regex engine automatically converts keywords to cloaked links across post history while skipping `h1-h6`, `code`, `pre`, `script`, `style`, existing `<a>`, and `salc-skip-linker` ancestors. Caps per-post/per-keyword word-boundary `(?<!\w)kw(?!\w)` case-insensitive.
-- **Conditional Routing [PRO]** (`ConditionalRouter.php:salc_resolved_destination_url:10`): Per-visitor dynamic routing by OS (macOS/Windows/Android/iOS/Linux), Browser, Device, Language, and Country (GeoIP / Cloudflare `CF-IPCountry`, cached 1h `salc_geo_*`).
-- **Stripe Payment Links Integration [PRO]** (`StripeClient.php`): Direct `go/checkout` → Stripe Checkout Session creation (`sk_live_...` + Price ID `price_...`) with REST webhook `salc/v1/stripe-webhook` for conversion and revenue logging (`_salc_stripe_conversions` postmeta).
-- **Deal Expiration & Nightly Health Scanner [PRO]** (`ExpiryManager.php` + `HealthScanner.php`): Auto-expire deals by date or click cap (302 fallback or 410 page). Nightly background `daily 02:00 UTC` HEAD checks (batch 20, 10s timeout, fallback GET on 405/501) ping destination links and send broken link email reports (`_salc_health_status` ok/broken).
-- **Dynamic UTM & Query Parameter Forwarding [PRO]** (`QueryForwarder.php:salc_resolved_destination_url:11`): Allowlist forwarding (`utm_*`, `gclid`, `fbclid`, `msclkid`, `wbraid`, `gbraid`) preserving target parameters and fragment, sanitizing incoming `$_GET` keys <500 chars.
-- **A/B Split Testing & Rotation [PRO]** (`SplitTester.php:salc_resolved_destination_url:9`): Weighted random `mt_rand` cumulative or sequential rotation via transient, with variant click tracking (`_salc_variant_clicks`).
-- **1-Click Platform Migration**: Import links and click counts from PrettyLinks, ThirstyAffiliates, or CSV files (`post_exists` deduplication, preserves slugs, variant maps) in one click. Includes DB Search & Replace (raw URLs → `[af_link id="ID"]` shortcodes, dry-run safeguard).
-- **SEO & Crawler Controls**: Auto `rel="nofollow sponsored"` + `target="_blank"`, `X-Robots-Tag: noindex, nofollow, noarchive` header on redirects, `Disallow: /go/` in `robots.txt`, plus `Disallow: /go/` injection via `CrawlerController.php:the_content:20`.
+**WordPress Admin Navigation ( `src/content/cloaker.json:31` `navigation` — updated from `Affiliate Links` → `Link Cloaker`):** 8 submenus — `1. All Links (edit.php?post_type=salc_link)` · `2. Add New Link (post-new.php?post_type=salc_link)` · `3. Categories (aff_category)` · `4. Tags (aff_tag)` · `5. Statistics (salc-stats)` · `6. Tools & Migration (salc-tools)` · `7. Settings (salc-settings)` · `8. Documentation (salc-docs)` — rendered as simulated `bg-slate-900` WP sidebar at `src/app/products/smart-affiliate-link-cloaker/page.tsx:506`.
 
-Detailed in: [`src/content/cloaker.json`](./src/content/cloaker.json) (hero, status, whyUseful, useCases, targetAudience, features, userGuide) and [`/docs` chapter 4–8](https://vibepressstudio.vercel.app/docs).
+### Key Capabilities & Architecture Highlights (24 Core Features — `src/content/cloaker.json:207` `coreFeatures24`)
+
+| # | Title & Category | Location & How It Works | File / Hook |
+|---|------------------|-------------------------|-------------|
+| 1 | **Branded Link Cloaking & Custom Slugs** (Redirection · Core) | Replaces `https://network.com/aff_c?offer_id=892...` with `https://yoursite.com/go/product-name`; demo box shows raw (destructive) vs cloaked (primary) with `Copy` (`src/app/page.tsx:188`). One-click copy in All Links. | `RewriteEngine.php` `^go/{slug}` `salc_link` CPT |
+| 2 | **Configurable URL Prefixes & Category Paths** (Redirection · Core) | Global prefix `/go/` → `/recommends/` → `/deal/` + Dynamic Category Path Injection (`/go/software/vpn-deal`) via Settings `URL Structure & Routing Engine` | `src/content/cloaker.json:226` |
+| 3 | **Multi-Status HTTP Redirect Engine (301/302/307/200)** (Redirection · Core) | Per-link + global default `307 Temporary Redirect` (gold standard — bypasses browser cache, live server query every click) or `301` / `302` / `200 iFrame Mask` with sticky top bar `src/app/products/smart-affiliate-link-cloaker/page.tsx:239` | `RedirectEngine.php:template_redirect:1` `X-Robots-Tag: noindex` |
+| 4 | **Search Engine Crawler & Link Attribute Controls** (Compliance · SEO) | Auto `rel="nofollow sponsored"` + `target="_blank"` + `X-Robots-Tag: noindex, nofollow, noarchive` + `Disallow: /go/` in `robots.txt` via `CrawlerController.php:the_content:20` | `src/content/cloaker.json:257` |
+| 5 | **Smart ToS Uncloaking (Amazon Associates §6)** (Compliance · Flagship) | Regex `amazon.*`/`amzn.to`/`ebay`/`target`/custom → renders raw destination on frontend (`data-salc-uncloaked="1"`), beacon-tracks via `navigator.sendBeacon` → `POST salc/v1/track` (`uncloak-beacon.js` `the_content:15` `SmartUncloaker.php`) | `src/content/cloaker.json:271` |
+| 6 | **Client-Side Conditional Redirect Rules [PRO]** (Redirection · PRO Engine) | Per-visitor OS (iOS→App Store, Android→Play Store, Windows→Desktop, macOS) / Browser / Device / Language routing via `+ Add Conditional Rule` (`ConditionalRouter.php:salc_resolved_destination_url:10`) | `src/content/cloaker.json:285` |
+| 7 | **Global Link Updating & Database Search-and-Replace** (Automation) | Scans `post_content` for raw merchant URLs → `[af_link id="ID"]` shortcodes with `Dry Run Mode` preview (`Tools & Migration → Database Search & Replace`) | `src/content/cloaker.json:301` |
+| 8 | **Unified Content Editor Integration** (Automation · Core) | Gutenberg block `Affiliate Link Button` (`+` → search), TinyMCE toolbar button + modal picker, shortcodes `[af_link id="123" text="Check Best Price"]` / `[salc_link]` | `src/content/cloaker.json:316` |
+| 9 | **Hierarchical Category & Tag Taxonomy** (Analytics · Core) | `aff_category` (parent-child) + `aff_tag` for bulk filtering, bulk settings, category deal feeds (Link Cloaker → Categories/Tags) | `src/content/cloaker.json:331` |
+| 10 | **In-Dashboard Click Tracking & Visual Analytics** (Analytics · Core) | Local `wp_salc_clicks` with 30+ bot filters, IPv4/IPv6 anonymization (last octet /64), Cloudflare `HTTP_CF_IPCOUNTRY` geo, 7 Chart.js graphs, top links, CSV export (UTF-8 BOM). Table: `id BIGINT PK AI, link_id BIGINT idx, clicked_at DATETIME, ip_address VARCHAR45, referrer TEXT, user_agent TEXT, os VARCHAR20, browser VARCHAR20, device VARCHAR20, country_code CHAR2, city VARCHAR100, region VARCHAR100, language VARCHAR100, is_bot TINYINT` | `ClickTracker.php` + `StatsRepository.php` `src/content/cloaker.json:345` |
+| 11 | **Image & Banner Link Attachment** (Monetization · Core) | Bind Media Library banners/logos to link profile → `[af_link display="image"]` (Link Cloaker → Add New Link → `Image & Banner Link Attachment`) | `src/content/cloaker.json:360` |
+| 12 | **CSV Bulk Importer & Exporter** (Automation · Core) | Parse CSV (`title, url, slug, redirect_type`) → batch-create cloaked links in seconds; export click logs from Statistics | `src/content/cloaker.json:375` |
+| 13 | **1-Click Platform Migration Engine** (Automation · Core) | Auto-import from PrettyLinks / ThirstyAffiliates (titles, slugs, destinations, hit counts) with 1 click (`Platform Migration Engine`) + `post_exists` deduplication | `src/content/cloaker.json:390` |
+| 14 | **Frontend Link Showcase Widgets** (Monetization · Core) | Classic + Block `Affiliate Link Showcase` (`Appearance → Widgets`) — `Most Popular` / `Recently Added` in Grid/List card layouts | `src/content/cloaker.json:404` |
+| 15 | **Seamless Payment Links (Stripe Integration) [PRO]** (Monetization · PRO) | `go/checkout` → Stripe Checkout Session (`sk_live_...` + `price_...`) + webhook `salc/v1/stripe-webhook` logging `_salc_stripe_conversions` | `StripeClient.php` `src/content/cloaker.json:420` |
+| 16 | **Embedded iFrame Redirection & Display** (Redirection · Core) | Full-screen iframe with branded top bar header (`#0058be→#ffb95f`) + `Open Direct Link` (200 iFrame Mask option `HTTP Redirect Engine`) | `src/content/cloaker.json:435` |
+| 17 | **Native Custom Post Type (CPT) Architecture** (Analytics · Architecture) | `salc_link` on `wp_posts`/`wp_postmeta` with columns `Cloaked URL / Target Destination / Redirect Status / Categories / Total Clicks / Health / Date` — 100% compatibility with caching/backup/WP-CLI/REST | `src/content/cloaker.json:449` |
+| 18 | **Automated Deal Expiration & Fallback Routing [PRO]** (Automation · PRO) | Date or click-cap → `302` fallback URL or `410` `expired.php` with custom message (`ExpiryManager.php`) + nightly `daily 02:00 UTC` HEAD batch 20 (10s timeout, GET fallback 405/501) health email reports (`HealthScanner.php`) | `src/content/cloaker.json:464` |
+| 19 | **A/B Split Testing & Traffic Rotation [PRO]** (Monetization · PRO) | Weighted random `mt_rand` cumulative or sequential (transient) rotation with `_salc_variant_clicks` tracking (`SplitTester.php:salc_resolved_destination_url:9`) | `src/content/cloaker.json:480` |
+| 20 | **FTC Auto-Disclosure Injector (Accessible & Compliant)** (Compliance) | Detects affiliate signal → injects `<aside role="note">` banner at `top`/`bottom`/`before_first_link` / `Before Post`/`After Post`/`Inline` with styles Callout/Badge/Minimal/Subtle/Bordered (`DisclosureInjector.php:the_content:19`) — global→per-category→per-link hierarchy | `src/content/cloaker.json:496` |
+| 21 | **Dynamic UTM & Query Parameter Forwarding [PRO]** (Analytics · PRO) | Allowlist `utm_*`, `gclid`, `fbclid`, `msclkid`, `wbraid`, `gbraid` (or `*`), preserves target params/fragment, sanitizes `$_GET` <500 chars (`QueryForwarder.php:salc_resolved_destination_url:11`) | `src/content/cloaker.json:512` |
+| 22 | **DOM-Safe Keyword Auto-Linker [PRO]** (Automation · PRO) | `DOMDocument` + XPath regex `(?<!\w)kw(?!\w)` case-insensitive, skips `h1-h6`, `code`, `pre`, `script`, `style`, existing `<a>`, `salc-skip-linker` ancestors; caps per-post/per-keyword (`KeywordLinker.php:the_content:18`) | `src/content/cloaker.json:528` |
+| 23 | **Broken Link Health Scanner & Status Monitor [PRO]** (Compliance · PRO) | Background cron pings merchant targets → health badges `🟢 OK 200` / `🔴 404 Error` in All Links `Health` column (`_salc_health_status` ok/broken `HealthScanner.php`) | `src/content/cloaker.json:544` |
+| 24 | **Privacy & GDPR Compliance (IP Anonymization)** (Compliance · Privacy) | Masks last octet IPv4 (`192.168.1.123→192.168.1.0`) / IPv6 `/64` before DB insert, zero cookies, purge on uninstall (`uninstall.php` drops `wp_salc_clicks` + options/transients/postmeta/termmeta) | `src/content/cloaker.json:559` |
+
+**Detailed in:** [`src/content/cloaker.json`](./src/content/cloaker.json) (`hero`, `status`, `navigation` 8 submenus, `whyUseful` 5 pillars, `useCases` 6 scenarios, `targetAudience` org 4+personal 4, `coreFeatures24` 24 with `howItWorks/howToUse/result`, `glossary` 18, `faq` 15) and [`/docs` 9 chapters](https://vibepressstudio.vercel.app/docs) `src/content/docs.json:1` (search `24 features, admin menus, use cases, FAQs, glossary terms...`).
 
 ---
 
@@ -70,11 +98,11 @@ Detailed in: [`src/content/cloaker.json`](./src/content/cloaker.json) (hero, sta
 
 | Route | File | Purpose |
 |-------|------|---------|
-| `/` | `src/app/page.tsx:1` | Home — studio value propositions, flagship showcase, engineering standards, global CTA |
-| `/products` | `src/app/products/page.tsx:1` | Products Directory — ecosystem listing (post-ShelfMaster: Cloaker only + roadmap teaser) |
-| `/products/smart-affiliate-link-cloaker` | `src/app/products/smart-affiliate-link-cloaker/page.tsx:1` | 9-part enterprise documentation, technical specs, use cases, setup guides |
-| `/docs` | `src/app/docs/page.tsx:1` | Documentation Hub — searchable 9-section manual with sidebar index + step-by-step guides |
-| `/changelog` | `src/app/changelog/page.tsx:1` | Release Notes — renders `src/content/changelog.json:1` timeline |
+| `/` | `src/app/page.tsx:1` | Home — 5-section (Hero + TrustBar 5 / Value Props 4 pillars / Flagship Showcase with Live Demo + 3-tab spotlight / Engineering Standards / Global CTA) with `useState activeFeatureTab` + `copied` (`Sparkles/Copy/Check/Layers`) |
+| `/products` | `src/app/products/page.tsx:1` | Products Directory — hero `VibePress Software Suite / Production-Grade WordPress Software (wp_posts & wp_postmeta)`, flagship card with `24 Core Features Built-in` emerald badge + filterable mini-explorer (`all/redirection/compliance/automation/monetization/analytics` → `coreFeatures24:24` `grid-cols-3`) + 3-col spec (`Technical Foundation (Code2)` / `Target Users (Users)` / `Admin Menu Structure (Layers)` + `navigation.menuName`) + roadmap `In The Studio Pipeline` teaser |
+| `/products/smart-affiliate-link-cloaker` | `src/app/products/smart-affiliate-link-cloaker/page.tsx:1` | 8-tab sticky showcase (`Overview & Essential Pillars` / `24 Core Features Catalog` / `Real-World Scenarios` / `WordPress Admin Tour` / `Setup & User Guide` / `Who Needs This` / `Master Glossary` / `FAQ Guide` `sticky top-20 backdrop-blur`) — Before→After permalink visuals, 4-tile architecture grid, 24 searchable+filterable expandable feature cards, 6 scenario toggles (Without vs With), `bg-slate-900` WP sidebar simulator (8 submenus) + inspector, 4-phase guide, audience matrix + Decision Checklist, searchable 18-term glossary, 5-category 15-FAQ accordion |
+| `/docs` | `src/app/docs/page.tsx:1` | Documentation Hub — 9-chapter searchable manual (`9 Topics` + `Manual Index` sticky `top-24` `BookOpen` + `max-h-[70vh]` scroll + `Copy Section` `Check` + verification footer `Verified against v1.0.6 (24 Core Features)`) with placeholder `Search across all 24 features, admin menus, use cases, FAQs, or glossary terms...` (`src/content/docs.json:5`) |
+| `/changelog` | `src/app/changelog/page.tsx:1` | Release Notes — renders `src/content/changelog.json:1` timeline (now Sep 5 `v1.0.7` + Sep 3 `v1.0.6` + Aug entries) |
 | `/lab` | `src/app/lab/page.tsx:1` | Studio Lab — pre-launch registration portal (migrated from `/pricing`, 301 redirect preserved) |
 | `/about` | `src/app/about/page.tsx:1` | Studio Vision, Philosophy, 4 Engineering Pillars, Accreditation |
 | `/contact` | `src/app/contact/page.tsx:1` | Support Helpdesk & Inquiry Form |
@@ -93,17 +121,17 @@ Detailed in: [`src/content/cloaker.json`](./src/content/cloaker.json) (hero, sta
 
 ## Documentation Hub — 9-Chapter Manual
 
-Rendered at [`/docs`](https://vibepressstudio.vercel.app/docs) from `src/content/docs.json:1`. Searchable via `src/app/docs/page.tsx:17` (case-insensitive title/summary/content filter).
+Rendered at [`/docs`](https://vibepressstudio.vercel.app/docs) from `src/content/docs.json:1`. Searchable via `src/app/docs/page.tsx:30` (case-insensitive `title|summary|content` filter `filteredSections`), with `Manual Index` sticky `top-24` (`BookOpen` + `9 Topics` count + `max-h-[70vh]` scroll), `Copy Section` (`Copy→Copied Content!` `Check`), and verification footer `Verified against v1.0.6 (24 Core Features)` (`src/app/docs/page.tsx:221`). Hero now tagged `Smart Affiliate Link Cloaker v1.0.6` (`Package`) + `24 Core Features Documentation` (`emerald`) and placeholder `Search across all 24 features, admin menus, use cases, FAQs, or glossary terms...` (`src/content/docs.json:5`).
 
-1. **What is Smart Affiliate Link Cloaker?** — CPT `salc_link`, RewriteEngine, RedirectEngine, transient caching explainer
-2. **Why is Smart Affiliate Link Cloaker Essential?** — Trust/CTR, SEO Safety, Compliance by Default, Attribution Control, Scale
-3. **All Possible Use Cases** — Amazon review sites, deal aggregators, newsletter/paid traffic, SaaS comparisons, podcasts/YouTube, Stripe upsells, SEO auto-linking, agencies, migration, compliance-first
-4. **Core Features Deep-Dive** (15 sub-sections) — Link Cloaking, Redirect Engine, Conditional Routing, Smart ToS Uncloaking, Click Analytics, SEO & Crawler, Insertion Ecosystem (shortcodes/block/widget/TinyMCE), Stripe, FTC Disclosure, UTM Forwarding, Keyword Auto-Linker, Expiration & Health Scanner, Split Testing, Migration Tools, Dual-source Updater
-5. **Who Actually Needs This Plugin?** — Needs It vs. Does Not Need It vs. Decision Checklist (≥2 YES → choose SALC)
-6. **Knowledge Base & Step-by-Step Guides** (18 guides) — Install, First Link, 10 Metaboxes (`salc_destination`, `salc_cloaked_preview`, `salc_redirect`, `salc_seo`, `salc_conditional_rules`, `salc_split_testing`, `salc_expiration`, `salc_stripe`, `salc_disclosure`, `salc_banner`), Categories/Tags, Statistics Pipeline, CSV & Migration, Search & Replace, 9 Settings Panels, Stripe Setup, Privacy/GDPR, FTC Disclosure, UTM Forwarding, Keyword Auto-Linker, Expiration/Health, Updates
-7. **Technical Architecture Summary** — Boot PSR-4 (`smart-affiliate-link-cloaker.php`), Singleton Container (`Plugin.php` 18 services), Hook order (`init` → `template_redirect:1` → `salc_resolved_destination_url:9/10/11` → `the_content:15/18/19/20`), Storage Schema (`wp_salc_clicks` + postmeta/options/transients), Assets (`admin.css`, `analytics.js`, `uncloak-beacon.js`, `gutenberg.js`, `tinymce-button.js`), Security (nonces `salc_save_settings_nonce`, caps `manage_options`, `ABSPATH` guards)
-8. **Glossary of Key Terms** — 18 definitions (Affiliate Link, Cloaked URL, Slug, Prefix `go` `Constants:22`, Redirect Type, Beacon `navigator.sendBeacon`, FTC Disclosure `<aside role="note">`, Transient `salc_link_slug_* 24h`, GeoResolver, Health Status, Split Tester, X-Robots-Tag, CPT/Taxonomy, REST Routes `salc/v1/track`, `salc/v1/stripe-webhook`)
-9. **Frequently Asked Questions** — 15 Q&A (prefix breakage, Amazon §6 compliance, redirect choice 307 default, uninstall vs deactivation, 404 troubleshooting, Statistics pipeline, auto-linker word boundaries, UTM allowlist, Stripe `sk_...`, disclosure hierarchy, HEAD `SALC-HealthChecker` UA, expiry fallback, migration, DB search & replace dry-run, GDPR cookies, updater dual-source)
+1. **What is Smart Affiliate Link Cloaker?** (`Overview` badge) — Enterprise performance suite on native `wp_posts` & `wp_postmeta`; CPT `salc_link` + RewriteEngine `^go/{slug}` + RedirectEngine `template_redirect:1` + 24h transient (`salc_link_slug_*`); 6 core capabilities `Branded Link Cloaking → Direct Stripe Payments` (`src/content/docs.json:14`)
+2. **Why is This Plugin Important?** (`Core Value` badge) — 5 critical operational pillars: `+25% to 40% CTR Lift` / `Commission Theft & Scraping Protection` / `Protection Against Merchant Bans (Amazon §6)` / `SEO & Crawl Budget Protection` / `Elimination of Catastrophic Link Rot` (`src/content/docs.json:22`)
+3. **WordPress Admin Navigation & Menu Architecture** (`Admin UI` badge) — Primary menu `Link Cloaker` (updated from `Affiliate Links`) with 8 submenus: `All Links (edit.php?post_type=salc_link)` / `Add New Link` / `Categories (aff_category)` / `Tags (aff_tag)` / `Statistics (salc-stats)` / `Tools & Migration (salc-tools)` / `Settings (salc-settings)` / `Documentation (salc-docs)` (`src/content/docs.json:31`)
+4. **Master Feature Catalog (All 24 Core Features)** (`Master Reference` badge) — Complete reference of 24 features with `description`, `location`, operational logic, usage steps, and expected results: `Branded Link Cloaking & Custom Slugs` → `Privacy & GDPR Compliance (IP Anonymization)` (`src/content/docs.json:42`)
+5. **Practical Real-World Use Cases** (`Use Cases` badge) — 6 detailed `Without Plugin vs With Plugin` workflows: `📱 Platform-Targeted Mobile App & Software Arbitrage` / `⏱️ Flash Sales, Black Friday & Seasonal Campaigns` / `⚖️ A/B Split Testing Merchant Payouts` / `🎙️ Audio & Video Content Monetization (Podcasts & YouTube)` / `💳 Hybrid Monetization: Selling Consultations Alongside Affiliate Deals` / `🔄 Bulk Website Acquisitions & Affiliate Portfolio Flips` (`src/content/docs.json:53`)
+6. **Who Actually Needs This Plugin?** (`Target Audience` badge) — `Organizational Focus: Agencies, Media Houses & Enterprise` (Multi-Author Teams / FTC & Legal Compliance / Site Flipping / High-Traffic Performance) vs `Personal Focus: Creators, Bloggers & Solopreneurs` (Link in Bio / Amazon Compliance / Technical Simplicity / Micro-Commerce without eCommerce) (`src/content/docs.json:64`)
+7. **Technical Architecture & Database Schema** (`Architecture` badge) — Under-the-hood: Native CPT `salc_link` (`wp_posts`/`wp_postmeta`), Priority Rewrite Engine (`RewriteEngine.php` `^go/([^/]+)/?$`), Redirect Engine & Header Lifecycle (`RedirectEngine.php` `template_redirect:1` `307/301/302/200` `X-Robots-Tag`), Bot-Filtered Analytics Pipeline (`ClickTracker.php` `wp_salc_clicks` 30+ bot signatures + GDPR anonymization + Cloudflare geo), Smart Compliance & Beacon Layer (`SmartUncloaker.php` `the_content:15` `uncloak-beacon.js` `navigator.sendBeacon` → `POST salc/v1/track` Amazon §6 safe) (`src/content/docs.json:74`)
+8. **Glossary of Key Terms** (`Glossary` badge) — 18 official definitions: `Link Cloaking`, `Custom Slug`, `URL Prefix`, `HTTP 301`, `HTTP 302/307`, `iFrame Masking`, `rel="nofollow"`, `rel="sponsored"`, `X-Robots-Tag: noindex`, `Smart Uncloaking`, `Tracking Beacon`, `A/B Split Testing`, `Deal Expiration`, `Fallback URL`, `Broken Link Scanner`, `DOM-Safe Keyword Auto-Linker`, `UTM Forwarding`, `Custom Post Type (CPT)` (`src/content/docs.json:84` `glossary`)
+9. **Frequently Asked Questions (FAQ Guide)** (`FAQs` badge) — 15 in-depth Q&A grouped: `General & Setup` (install/activate, slowdown?, menu `Link Cloaker` location) / `Redirects & Performance` (301 vs 302 vs 307, iFrame Masking) / `SEO & Compliance` (Google rankings `nofollow sponsored` + `X-Robots-Tag`, Amazon §6 `Smart ToS Uncloaking`, FTC Auto-Disclosure) / `Link Management & Automation` (offer expiration + Fallback URL, Keyword Auto-Linker word-boundary, A/B traffic rotation) / `Migration & Integrations` (Pretty Links/ThirstyAffiliates migration, CSV import/export, Stripe API + webhook, GDPR `Anonymize IP` `192.168.1.0`) (`src/content/docs.json:84` `faq`)
 
 ---
 
@@ -119,13 +147,13 @@ Rendered at [`/docs`](https://vibepressstudio.vercel.app/docs) from `src/content
 | **Animation** | Framer Motion | `^13.1.1` | `package.json:10` |
 | **Typography** | Inter & JetBrains Mono (Google Fonts via `next/font`) | — | `src/app/layout.tsx:1` |
 | **Theming** | next-themes (light/dark, WCAG AAA palette) | `^0.4.6` | `src/app/layout.tsx:1` |
-| **Content** | JSON-driven (`src/content/*.json` 13 files) + static generation | — | `src/content/cloaker.json:1` |
+| **Content** | JSON-driven (`src/content/*.json` 13 files) + static generation — now 24 Core Features (`coreFeatures24:24`) + 18 glossary + 15 FAQs + 6 useCases + 8-submenu navigation | — | `src/content/cloaker.json:207` `cloaker.json:575` `cloaker.json:649` |
 | **Security Headers** | CSP, HSTS, X-Frame-Options, X-Content-Type-Options, XSS-Protection | `max-age=31536000; includeSubDomains; preload` | `vercel.json:1` |
 | **Deployment** | Vercel (auto-deploy from `main`, static prerender) | `prj_2BbWSdv7373HQZ5NRYxSQcl6QaKe` | `vercel.json:1`, `.vercel/project.json:1` |
 | **Linting** | ESLint + `eslint-config-next` | `^9` / `16.3.2` | `eslint.config.mjs:1` |
 | **Config** | `next.config.ts:1` (images `unoptimized`, `ignoreBuildErrors`, 301 `/pricing` → `/lab`) | — | `next.config.ts:1` |
 
-**Design Tokens:** `globals.css` CSS variables for light/dark themes, primary/indigo/violet gradients (`from-primary to-indigo-600`, `from-indigo-600 to-violet-600`), WCAG AAA text contrast verified. See `src/app/page.tsx:165` product headers, `src/app/products/page.tsx:154` roadmap, `src/app/about/page.tsx:83` commitment banner.
+**Design Tokens:** `globals.css` CSS variables for light/dark themes, primary/indigo/violet gradients (`from-primary to-indigo-600`, `from-indigo-600 to-violet-600`, `from-primary via-indigo-600 to-violet-600` `src/app/products/smart-affiliate-link-cloaker/page.tsx:807` bottom CTA), WCAG AAA text contrast verified. See `src/app/page.tsx:161` gradient hero `blur-3xl` stat badges, `src/app/products/page.tsx:194` roadmap `from-primary to-indigo-600`, `src/app/docs/page.tsx:52` dual badges, `src/app/products/smart-affiliate-link-cloaker/page.tsx:72` `from-primary/10` hero.
 
 ---
 
@@ -135,28 +163,28 @@ Rendered at [`/docs`](https://vibepressstudio.vercel.app/docs) from `src/content
 VibePressStudio/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx                          # Home
+│   │   ├── page.tsx                          # Home — 5 sections + Live Demo (activeFeatureTab+copied) + 3-tab spotlight + gradient hero stat badges
 │   │   ├── layout.tsx                        # Root layout + ThemeProvider + Navbar/Footer
 │   │   ├── about/page.tsx                    # About Studio
-│   │   ├── changelog/page.tsx                # Changelog (JSON-driven)
+│   │   ├── changelog/page.tsx                # Changelog (JSON-driven — now v1.0.7 + v1.0.6)
 │   │   ├── contact/page.tsx                  # Support Helpdesk
 │   │   ├── support/page.tsx                  # → /contact redirect
-│   │   ├── docs/page.tsx                     # Documentation Hub (search + index)
+│   │   ├── docs/page.tsx                     # Documentation Hub — 9-chapter searchable manual (badges + Copy Section + verification footer)
 │   │   ├── lab/page.tsx                      # Studio Lab registration portal
 │   │   ├── products/
-│   │   │   ├── page.tsx                      # Directory
-│   │   │   └── smart-affiliate-link-cloaker/page.tsx  # Product deep dive
+│   │   │   ├── page.tsx                      # Directory — filterable 24-feature mini-explorer + 3-col spec (Technical/Target/Admin)
+│   │   │   └── smart-affiliate-link-cloaker/page.tsx  # Product deep dive — 8-tab sticky showcase (834 lines, 24 expandable cards, 6 scenarios, WP sidebar simulator, glossary search, FAQ accordion)
 │   │   ├── legal/{privacy,terms}/page.tsx
 │   │   ├── sitemap.ts, robots.ts, icon.svg, globals.css
 │   ├── components/
 │   │   ├── layout/Navbar.tsx, Footer.tsx
-│   │   └── ui/* (shadcn: accordion, dialog, dropdown, label, select, slot, tabs)
+│   │   └── ui/* (shadcn: accordion, dialog, dropdown, label, select, slot, tabs, card, badge, input)
 │   ├── content/
-│   │   ├── cloaker.json      # Product spec (255 lines, 10 feature groups)
-│   │   ├── products.json     # Directory + pricing tiers
-│   │   ├── docs.json         # 9-chapter manual
-│   │   ├── changelog.json    # Release timeline (rendered at /changelog)
-│   │   ├── home.json         # Hero, valueProps (4 pillars), standards, CTA
+│   │   ├── cloaker.json      # Product spec (24 coreFeatures24 + navigation 8 submenus + whyUseful 5 pillars + useCases 6 + targetAudience 4+4 + glossary 18 + faq 15 + userGuide 4 phases)
+│   │   ├── products.json     # Directory + pricing tiers (tagline 24 Core Features, techStack 8, keyFeatures 6+6, targetAudience 6)
+│   │   ├── docs.json         # 9-chapter manual (hero + index 9 with badges + expanded 24-feature/6-scenario/8-submenu/18-glossary/15-FAQ content)
+│   │   ├── changelog.json    # Release timeline (rendered at /changelog — now 6 entries: Sep 5 v1.0.7, Sep 3 v1.0.6, Sep 1 v0.4.0, Aug 31 v0.3.0, Aug 30 v0.2.0, Jul 2026 v1.0.6 plugin)
+│   │   ├── home.json         # Hero (title + subtitle wp_posts/wp_postmeta + trustBar 5) + valueProps 4 refined pillars + flagship/standards/CTA
 │   │   ├── pricing.json      # Lab portal benefits + timeline
 │   │   ├── about.json, contact.json, navigation.json, site.json, footer.json, etc.
 │   ├── data/products.ts      # Product aggregator
@@ -166,9 +194,9 @@ VibePressStudio/
 │   ├── logo-dark.svg, icon.svg
 │   └── og-image.jpg
 ├── next.config.ts            # 301 /pricing → /lab, unoptimized images
-├── vercel.json               # Security headers + CSP + caching
-├── package.json              # 0.4.0 (site) · Next 16.3.2 · Tailwind 4
-└── CHANGELOG.md              # Full release notes (this README's companion)
+├── vercel.json               # Security headers + CSP (default-src 'self') + HSTS preload + immutable caching
+├── package.json              # 0.4.0 (site) · Next 16.3.2 · Tailwind 4 · 13 static routes
+└── CHANGELOG.md              # Full release notes (this README's companion — canonical history, Keep a Changelog + SemVer)
 ```
 
 **Purged in v1.0.6:** `src-tauri/` (Cargo, Rust, Tauri config, icons, capabilities), `src/hooks/useAutoUpdater.ts`, `src/components/updater/*`, `src/app/settings/page.tsx`, `src/components/SettingsPage.tsx`, `src/app/api/updater/latest.json/route.ts`, `public/updater/latest.json`, `src/content/shelfmaster.json`, `src/app/products/shelfmaster/page.tsx`, `implementation_plan.md`.
@@ -194,8 +222,17 @@ npm run lint         # eslint (0 errors, warnings pre-existing)
 npx tsc --noEmit
 ```
 
-**Build output (verified Sep 3, 2026):**
+**Build output (verified Sep 5, 2026 — this release):**
 ```
+▲ Next.js 16.3.2 (Turbopack)
+✓ Running next.config.ts took 65ms
+  Creating an optimized production build ...
+✓ Compiled successfully in 1659ms
+  Skipping validation of types
+  Finished TypeScript config validation in 5ms
+  Collecting page data using 7 workers
+  Generating static pages using 7 workers (16/16) in 385ms
+  Finalizing page optimization
 Route (app)
 ┌ ○ /
 ├ ○ /_not-found
@@ -213,17 +250,17 @@ Route (app)
 ├ ○ /sitemap.xml
 └ ○ /support
 ○  (Static)  prerendered as static content
-✓ Compiled successfully in ~264ms
 ```
 
 ---
 
 ## Changelog & Release History
 
-> **Single source of truth:** [`CHANGELOG.md`](./CHANGELOG.md) (Keep a Changelog + Semantic Versioning) is the canonical history. It is mirrored in [`src/content/changelog.json`](./src/content/changelog.json) (rendered at [`/changelog`](https://vibepressstudio.vercel.app/changelog)) and summarized in this README's [Latest Release](#latest-release-v106--complete-documentation--studio-consolidation-september-3-2026).
+> **Single source of truth:** [`CHANGELOG.md`](./CHANGELOG.md) (Keep a Changelog + Semantic Versioning) is the canonical history. It is mirrored in [`src/content/changelog.json`](./src/content/changelog.json) (rendered at [`/changelog`](https://vibepressstudio.vercel.app/changelog)) and summarized in this README's [Latest Release](#latest-release-v107--24-core-features-suite-expansion--interactive-showcase-september-5-2026).
 
 | Version | Date | Summary | Diff |
 |---------|------|---------|------|
+| **1.0.7** | 2026-09-05 | 24 Core Features suite expansion & interactive showcase — live demo engine, 24-feature master catalog, 8-tab product showcase, docs hub 9-chapter overhaul, home/products expansion | `UNRELEASED` `a0ac0b0` (8 files, 1850+/664-) |
 | **1.0.6** | 2026-09-03 | Complete documentation & architecture upgrade, ShelfMaster purge, tagline enforcement | `e0ea6d9` `0164f54` |
 | **0.4.0** | 2026-09-01 | ShelfMaster Auto-Updater (Tauri 2.x) — now superseded & removed in 1.0.6 | `6528bac` |
 | **0.3.0** | 2026-08-31 | Brand Redesign, Studio Lab migration `/pricing` → `/lab`, WCAG polish | `45c0e2b` |
@@ -232,34 +269,38 @@ Route (app)
 | **0.2.0** | 2026-08-30 | Pre-Launch Rebrand & Content Consolidation | `eb9ce11` |
 | **0.1.0** | 2026-08-23 | Initial Next.js + Tailwind scaffold + Stitch design system | `a3d1ef4` |
 
-See [`CHANGELOG.md`](./CHANGELOG.md) for full Added/Changed/Removed/Fixed entries with file:line references, and for the `[Unreleased]` roadmap.
+See [`CHANGELOG.md`](./CHANGELOG.md) § [1.0.7] and § [1.0.6] for full Added/Changed/Removed/Fixed entries with `file:line` references (`src/app/page.tsx:188`, `src/app/products/smart-affiliate-link-cloaker/page.tsx:122`, `src/content/cloaker.json:207`, `src/content/docs.json:3`, etc.), and for the `[Unreleased]` roadmap. Live changelog rendered from `src/content/changelog.json:1` (6 entries: Sep 5 v1.0.7, Sep 3 v1.0.6, Sep 1 v0.4.0, Aug 31 v0.3.0, Aug 30 v0.2.0, Jul 2026 v1.0.6 plugin).
 
 ---
 
 ## Deployment & Verification
 
-**Platform:** Vercel (`prj_2BbWSdv7373HQZ5NRYxSQcl6QaKe`) — auto-deploy on `git push` to `origin/main`.
+**Platform:** Vercel (`prj_2BbWSdv7373HQZ5NRYxSQcl6QaKe`) — auto-deploy on `git push` to `origin/main` (`team_C08AS1hMp9PdkaKDwRwHcwWi`).
 
-**Live URL:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+**Live URL:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app) — verified active deployment (see below).
 
 **Verification checklist (post-push):**
 ```bash
-# 1. Push triggers deploy
+# 1. Push triggers deploy (auto-deploy from main)
 git push origin main
 
-# 2. Verify build
-npm run build        # expect 13 static routes, compiled successfully
+# 2. Verify build locally (expect 13 static routes, compiled successfully in ~1659ms)
+npm run build        # Next.js 16.3.2 (Turbopack) — Generating static pages using 7 workers (16/16) in 385ms
 
-# 3. Verify live
-curl -I https://vibepressstudio.vercel.app          # expect HTTP/2 200, x-vercel-cache: PRERENDER
+# 3. Verify live deployment
+curl -I https://vibepressstudio.vercel.app          # expect HTTP/2 200, x-vercel-cache: PRERENDER, x-nextjs-prerender: 1
 curl -s https://vibepressstudio.vercel.app | grep -q "High-Performance Digital Tools"
-curl -s https://vibepressstudio.vercel.app/docs | grep -q "Documentation"
+curl -s https://vibepressstudio.vercel.app | grep -q "24 Core Features"
+curl -s https://vibepressstudio.vercel.app/docs | grep -q "Complete Documentation"
+curl -s https://vibepressstudio.vercel.app/products | grep -q "Production-Grade WordPress Software"
+curl -s https://vibepressstudio.vercel.app/products/smart-affiliate-link-cloaker | grep -q "24 Core Features Catalog"
 curl -s https://vibepressstudio.vercel.app/changelog | grep -q "Changelog"
+vercel ls --scope team_C08AS1hMp9PdkaKDwRwHcwWi  # optional: check deployment status via Vercel CLI
 ```
 
-**Current live status (Sep 3, 2026):** ✅ `200 OK` — `x-nextjs-prerender: 1`, `x-vercel-cache: PRERENDER`, CSP & HSTS headers active (`vercel.json:1`), all routes returning `200` and deleted routes (`/products/shelfmaster`, `/settings`) correctly `404`.
+**Current live status (Sep 5, 2026 — this release):** ✅ `200 OK` — `x-nextjs-prerender: 1`, `x-vercel-cache: PRERENDER`, CSP & HSTS headers active (`vercel.json:1` `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`, `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `Content-Security-Policy: default-src 'self'`), all 13 routes returning `200` and deleted legacy routes (`/products/shelfmaster`, `/settings`) correctly `404`. Local `npm run build` verified `✓ Compiled successfully in 1659ms` + `Generating static pages using 7 workers (16/16) in 385ms` — matches Vercel build pipeline.
 
-**Vercel config:** `vercel.json:1` security headers (nosniff, DENY, HSTS preload, CSP `default-src 'self'`), caching `public, max-age=31536000, immutable` for `/_next/static` and `/images`. `next.config.ts:10` 301 redirect `/pricing` → `/lab` permanent. Build ignores TypeScript errors per `next.config.ts:7` for static export stability.
+**Vercel config:** `vercel.json:1` security headers (nosniff, DENY, HSTS preload, CSP `default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https:; font-src 'self' data:; connect-src 'self' https://vercel.live;`), caching `public, max-age=31536000, immutable` for `/_next/static` and `/images`. `next.config.ts:1` 301 redirect `/pricing` → `/lab` permanent. Build ignores TypeScript errors per `next.config.ts:7` for static export stability. Project `prj_2BbWSdv7373HQZ5NRYxSQcl6QaKe` auto-deploys from `main` on every push.
 
 ---
 

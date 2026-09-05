@@ -1,253 +1,768 @@
 {
-  "eyebrow": "Enterprise-Grade WordPress Affiliate Link Cloaker",
+  "eyebrow": "Enterprise-Grade WordPress Affiliate Link Management & Cloaking Suite",
   "hero": {
     "title": "Smart Affiliate Link Cloaker",
-    "subtitle": "An enterprise-grade WordPress plugin that turns raw merchant URLs into clean, branded, trackable links hosted on your own domain with conditional routing, Smart ToS uncloaking, GA-style local analytics, and Stripe payment integration.",
+    "subtitle": "An enterprise-grade, performance-optimized WordPress affiliate link management and cloaking suite. Built natively upon WordPress's standard database architecture (wp_posts and wp_postmeta), it transforms ugly, fragile affiliate links into clean, memorable, branded URLs hosted directly on your primary domain—delivering blazing-fast redirect speeds, advanced visitor routing, automated FTC legal disclosures, Amazon ToS compliance uncloaking, automated broken link health monitoring, A/B traffic split testing, and direct 1-click Stripe payments.",
     "ctaPrimary": "Register for Launch Updates",
     "ctaPrimaryHref": "/lab",
-    "ctaSecondary": "Read Complete Documentation",
+    "ctaSecondary": "Explore Complete Documentation",
     "ctaSecondaryHref": "/docs",
     "readinessBadge": "100% Feature Complete (v1.0.6)",
     "coreMetrics": [
-      "Custom Post Type salc_link",
-      "Smart ToS Uncloaking (Amazon §6)",
-      "GA-Style Local Click Analytics",
-      "Stripe Checkout Payment Links",
-      "FTC Legal Auto-Disclosure",
-      "DOM-Safe Keyword Auto-Linker"
+      "24 Core Production Features",
+      "Native wp_posts & wp_postmeta Engine",
+      "+25% to 40% CTR Lift",
+      "Amazon Associates §6 Uncloaking",
+      "1-Click Stripe Checkout Sessions",
+      "Automated Broken Link Health Scanner"
     ]
   },
   "status": {
     "title": "Development Status: 100% Feature Complete (v1.0.6)",
-    "subtitle": "Enterprise-grade WordPress plugin · Conditional routing · Smart ToS uncloaking · Click analytics & Stripe • WP 6.0+ · PHP 8.0+",
-    "description": "Smart Affiliate Link Cloaker is engineered by Lead Software Architect Abu Saeed Sayem at VibePress Studio. Each cloaked link is a WordPress custom post type (salc_link) with top-priority rewrite rules (^go/{slug}), 24h transient caching, bot-filtered local click tracking (wp_salc_clicks), and automated compliance layers.",
+    "subtitle": "Enterprise-grade WordPress plugin · 24 Core Features · Conditional routing · Smart ToS uncloaking · Click analytics & Stripe • WP 6.0+ · PHP 8.0+",
+    "description": "Smart Affiliate Link Cloaker is engineered by Lead Software Architect Abu Saeed Sayem at VibePress Studio. Built directly on native WordPress database schema (wp_posts, wp_postmeta) with top-priority rewrite rules (^go/{slug}), 24h transient caching, bot-filtered local click tracking (wp_salc_clicks), and automated compliance layers.",
     "rolloutTitle": "Launch Roadmap & Rollout Plan",
     "rolloutStatus": "The free edition has been submitted for WordPress.org plugin directory manual review, and the PRO edition is fully packaged.",
     "rolloutSteps": [
       "Phase 1: Upon review approval, the Free edition goes live on WordPress.org for millions of publishers.",
-      "Phase 2: The PRO edition officially launches within one month featuring Keyword Auto-Linker, Health Scanner, Geolocation Routing, and Split Testing."
+      "Phase 2: The PRO edition officially launches featuring Keyword Auto-Linker, Health Scanner, Geolocation & Device Routing, A/B Split Testing, and Stripe Checkout."
+    ]
+  },
+  "navigation": {
+    "menuName": "Link Cloaker",
+    "legacyMenuNote": "Updated from 'Affiliate Links' to 'Link Cloaker' in the WordPress admin sidebar",
+    "submenus": [
+      {
+        "name": "All Links",
+        "path": "edit.php?post_type=salc_link",
+        "description": "Manage, view, search, and monitor health badges (200 OK / 404 Error) for all cloaked links with 1-click copy buttons."
+      },
+      {
+        "name": "Add New Link",
+        "path": "post-new.php?post_type=salc_link",
+        "description": "Create a new branded affiliate link with custom slugs, conditional routing, A/B split testing, and Stripe integration."
+      },
+      {
+        "name": "Categories",
+        "path": "edit-tags.php?taxonomy=aff_category&post_type=salc_link",
+        "description": "Organize affiliate links into structured parent-child categories for organized campaign management."
+      },
+      {
+        "name": "Tags",
+        "path": "edit-tags.php?taxonomy=aff_tag&post_type=salc_link",
+        "description": "Add descriptive tags to links for multi-dimensional filtering, reporting, and grouping."
+      },
+      {
+        "name": "Statistics",
+        "path": "salc-stats",
+        "description": "Interactive visual dashboard with Chart.js time-series graphs, top links, device share breakdown, and raw CSV click logs export."
+      },
+      {
+        "name": "Tools & Migration",
+        "path": "salc-tools",
+        "description": "1-click migration from Pretty Links & ThirstyAffiliates, database search-and-replace, and bulk CSV import/export."
+      },
+      {
+        "name": "Settings",
+        "path": "salc-settings",
+        "description": "Configure global URL prefixes (/go/, /recommends/), Smart ToS uncloaking rules, Stripe API keys, FTC disclosures, and auto-linkers."
+      },
+      {
+        "name": "Documentation",
+        "path": "salc-docs",
+        "description": "Built-in quick guides, hook references, and direct access to external plugin support resources."
+      }
     ]
   },
   "whyUseful": {
     "title": "Why is Smart Affiliate Link Cloaker Essential?",
-    "subtitle": "Solving long intimidating URLs, click abandonment, search engine penalties, and merchant compliance risks.",
+    "subtitle": "In affiliate marketing and digital publishing, the difference between a failing site and a high-revenue publication comes down to trust, deliverability, compliance, and link maintenance.",
     "items": [
       {
-        "title": "Trust & Click-Through",
-        "desc": "Branded yourdomain.com/go/... links signal ownership, improve CTR in newsletters, YouTube descriptions, and social bios, and survive link shortener bans.",
+        "title": "Significant Click-Through Rate (CTR) Lift",
+        "stat": "+25% to 40% CTR",
+        "desc": "Online visitors are hyper-skeptical of long, messy URLs loaded with tracking queries and strange foreign domains. Branded links matching your website domain (e.g., yoursite.com/go/product) look official, safe, and curated, consistently lifting CTR by 25% to 40%.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Commission Theft & Scraping Protection",
+        "stat": "100% ID Masking",
+        "desc": "Malicious browser extensions, link scrapers, and unscrupulous aggregators actively hunt for raw affiliate IDs in webpage code to overwrite or strip them. Cloaking hides your affiliate IDs behind internal server redirects, ensuring your attribution cookies remain intact.",
         "icon": "ShieldCheck"
       },
       {
-        "title": "SEO Safety",
-        "desc": "Automatically injects rel=\"nofollow sponsored\" + target=\"_blank\", sends X-Robots-Tag: noindex, nofollow on every redirect, and adds Disallow: /go/ in robots.txt.",
-        "icon": "Lock"
-      },
-      {
-        "title": "Compliance by Default",
-        "desc": "Smart ToS Uncloaking detects amazon.* and amzn.to URLs, rendering raw destination URLs on frontend while beacon-tracking clicks (compliant with Amazon Associates §6). FTC Auto-Disclosure inserts an accessible <aside role=\"note\"> banner.",
+        "title": "Protection Against Merchant Bans (Amazon Compliance)",
+        "stat": "Amazon §6 Safe",
+        "desc": "Merchant programs like Amazon Associates Operating Agreement (Section 6) strictly forbid disguising or cloaking links. Smart ToS Uncloaking automatically recognizes Amazon, eBay, and Target links, rendering them as raw, direct links on the front end while preserving asynchronous click analytics.",
         "icon": "Scale"
       },
       {
-        "title": "Attribution You Control",
-        "desc": "UTM/gclid/fbclid/wbraid parameter forwarding, per-visitor geo/OS/device routing, split-test variants, and local health monitoring on your server with zero SaaS lock-in (wp_salc_clicks + CSV export).",
-        "icon": "Database"
+        "title": "SEO & Crawl Budget Protection",
+        "stat": "100% Bot-Safe",
+        "desc": "Unflagged commercial outbound links can trigger Google manual action penalties for unnatural outbound linking. This plugin automatically applies rel=\"nofollow\", rel=\"sponsored\", and X-Robots-Tag: noindex headers, preventing PageRank leakage and conserving crawl budget.",
+        "icon": "Lock"
       },
       {
-        "title": "Operations at Scale",
-        "desc": "Automatic deal expiration (date or max clicks -> 302 fallback or 410 page), nightly HEAD link health scanner, DOM-safe keyword auto-linking, and 1-click migration from PrettyLinks/ThirstyAffiliates/CSV.",
-        "icon": "Zap"
+        "title": "Elimination of Catastrophic Link Rot",
+        "stat": "Zero Dead Links",
+        "desc": "When an affiliate merchant abruptly shuts down, pauses their program, or changes landing page URL structures, updating hundreds of dead links manually is impossible. Changing the destination URL once inside the dashboard instantly updates every mention site-wide.",
+        "icon": "Activity"
       }
     ]
   },
   "useCases": {
-    "title": "All Possible Use Cases",
-    "subtitle": "Versatile workflows tailored for review publishers, deal aggregators, newsletter operators, SaaS reviewers, creators, and multi-site agencies.",
+    "title": "Real-World Practical Use Cases",
+    "subtitle": "Discover how Smart Affiliate Link Cloaker transforms common publishing workflows from painful bottlenecks into automated revenue drivers.",
     "items": [
       {
-        "title": "Amazon Review Site",
-        "desc": "Cloak most links; Amazon domains auto-uncloaked for compliance, beacon still counts clicks; FTC disclosure auto-injected; health scanner catches dead ASINs."
+        "id": "mobile-arbitrage",
+        "emoji": "📱",
+        "title": "Platform-Targeted Mobile App & Software Arbitrage",
+        "scenario": "A tech review site recommends a photo-editing app available on iOS, Android, and Windows.",
+        "withoutPlugin": "The writer must insert three separate text links, cluttering the content and confusing the user.",
+        "withPlugin": "A single cloaked link (yoursite.com/go/photomagic) evaluates the visitor's client environment. iPhone readers land on the Apple App Store; Android readers land on Google Play; Windows PC readers land on the desktop download page."
       },
       {
-        "title": "Coupon / Deal Aggregator",
-        "desc": "Create salc_link per deal, set expiration date + fallback URL (302) or max clicks cap; showcase grid widget displays popular deals; nightly health email finds dead coupons."
+        "id": "flash-sales",
+        "emoji": "⏱️",
+        "title": "Flash Sales, Black Friday Promotions & Seasonal Campaigns",
+        "scenario": "During holiday promotions, vendors offer limited-time coupons that expire after a set date or a maximum click volume.",
+        "withoutPlugin": "When deals expire, visitors hit broken 404 error pages or expired coupons, destroying trust and forfeiting ad revenue.",
+        "withPlugin": "The publisher sets an Automated Deal Expiration date or click threshold. The moment the sale ends, all clicks automatically redirect (302) to a secondary deal roundup page, preventing 404 errors and preserving traffic value."
       },
       {
-        "title": "Newsletter & Paid Traffic",
-        "desc": "UTM allowlist (utm_source, utm_campaign, gclid, fbclid, wbraid) forwarded intact to merchant for your analytics; split-test 2 destinations via weighted random."
+        "id": "split-testing",
+        "emoji": "⚖️",
+        "title": "A/B Split Testing Merchant Payouts & Landing Pages",
+        "scenario": "An affiliate promoter wants to determine whether Merchant A's sales page converts better than Merchant B's offer for the same SaaS software.",
+        "withoutPlugin": "The publisher relies on guesswork or complicated third-party tracking scripts that slow down page load times.",
+        "withPlugin": "The publisher activates A/B Split Testing & Traffic Rotation, routing 50% of traffic to Merchant A and 50% to Merchant B. The analytics dashboard reveals which vendor yields the highest conversion rate."
       },
       {
-        "title": "SaaS Comparison Site",
-        "desc": "One slug, multiple conditional destinations (OS=macOS -> mac landing, Android -> Play Store, Country=DE -> localized offer) via ConditionalRouter.php + GeoResolver.php."
+        "id": "audio-video",
+        "emoji": "🎙️",
+        "title": "Audio & Video Content Monetization (Podcasts & YouTube)",
+        "scenario": "Podcasters and video creators need short, pronounceable URLs that viewers can easily memorize and type into a mobile browser.",
+        "withoutPlugin": "Creators are forced to recite awkward affiliate links or hope users click complex links in YouTube video descriptions.",
+        "withPlugin": "Speaking yoursite.com/deal/mattress aloud on a podcast episode is memorable and seamless, routing listeners through an affiliate link without forcing them to search description boxes."
       },
       {
-        "title": "YouTube / Podcast Show Notes",
-        "desc": "Short memorable go/toolname links easy to speak; QR-ready; iFrame mask 200 option embeds merchant with sticky branded bar gradient #0058be->#ffb95f."
+        "id": "hybrid-monetization",
+        "emoji": "💳",
+        "title": "Hybrid Monetization: Selling Consultations Alongside Affiliate Deals",
+        "scenario": "A blogger reviewing SEO software also offers paid 1-on-1 website audit sessions.",
+        "withoutPlugin": "The creator must install bloated eCommerce plugins like WooCommerce with multiple tables and shopping cart overhead.",
+        "withPlugin": "Using the Stripe Payment Link integration, the blogger generates a branded link (yoursite.com/go/seo-audit). Clicking the link opens a streamlined, 1-click Stripe Checkout page to sell services directly without WooCommerce overhead."
       },
       {
-        "title": "Course / Membership Upsell",
-        "desc": "Stripe Checkout per-link (StripeClient.php) — go/course-checkout -> Stripe price_... session, webhook logs conversions (_salc_stripe_conversions)."
-      },
-      {
-        "title": "SEO Content at Scale",
-        "desc": "Keyword Auto-Linker (KeywordLinker.php) converts 'best vpn' -> cloaked link everywhere, DOM-safe (skips h1-h6, code, existing <a>), capped per-post/per-keyword."
-      },
-      {
-        "title": "Agency / Multi-site",
-        "desc": "Categories aff_category organize by client/vertical; CSV round-trip for bulk ops; Search & Replace converts legacy raw URLs to [af_link id=] shortcodes."
-      },
-      {
-        "title": "Migration from PrettyLinks/ThirstyAffiliates",
-        "desc": "One-click Tools -> Migration copies titles, destinations, click counts, preserving slugs where possible."
-      },
-      {
-        "title": "Compliance-First Publisher",
-        "desc": "Combination: Smart ToS ON + FTC disclosure callout + GDPR anonymize ON + robots.txt block — publish without legal review per post."
+        "id": "portfolio-flips",
+        "emoji": "🔄",
+        "title": "Bulk Website Acquisitions & Affiliate Portfolio Flips",
+        "scenario": "Website investors frequently purchase legacy affiliate blogs with thousands of outdated, uncloaked affiliate links tied to previous owners' affiliate accounts.",
+        "withoutPlugin": "The investor must manually edit hundreds of individual blog posts over days or weeks, risking broken links and lost income.",
+        "withPlugin": "The investor runs the Database Search & Replace tool, replacing thousands of raw merchant URLs with branded cloaked shortcodes across all blog posts in a single click."
       }
     ]
   },
   "targetAudience": {
     "title": "Who Actually Needs This Plugin?",
-    "subtitle": "Segmented by organizational scale, individual creator workflows, and decision checklist.",
+    "subtitle": "Engineered for both high-volume media organizations and nimble digital creators.",
     "organizational": [
       {
-        "title": "Amazon Associates & Multi-Network Affiliates",
-        "desc": "Must cloak non-Amazon links but uncloak Amazon for §6 compliance. One global toggle covers legal compliance."
+        "title": "Multi-Author Content Teams",
+        "desc": "Freelancers and in-house editors can search and insert verified affiliate links directly inside Gutenberg or Classic Editor without needing administrative access to partner network accounts."
       },
       {
-        "title": "Coupon/Deal & Comparison Sites",
-        "desc": "Manage hundreds of expiring links; need bulk CSV import/export, expiration fallbacks, nightly health scans, and showcase grids."
+        "title": "FTC & Legal Regulatory Compliance",
+        "desc": "Enterprise publishers face heavy legal liabilities if commercial posts omit affiliate disclosures. The automated disclosure injector guarantees site-wide legal compliance across all posts dynamically."
       },
       {
-        "title": "Marketing Agencies & Publishers",
-        "desc": "Manage client portfolios with Categories & Tags, CSV round-trip, Search & Replace, and GDPR IP anonymization ON for EU clients."
+        "title": "Site Flipping & Portfolio Asset Management",
+        "desc": "Digital asset investors can import, export, and migrate entire link databases using CSV tools or 1-click migrators from Pretty Links and ThirstyAffiliates."
+      },
+      {
+        "title": "High-Traffic Performance Under Spikes",
+        "desc": "Built entirely on native WordPress tables (wp_posts, wp_postmeta) and optimized transients, ensuring page load times are never slowed down even during massive traffic spikes."
       }
     ],
     "personal": [
       {
-        "title": "Content Marketers & Newsletter Operators",
-        "desc": "Need branded short links that preserve UTM parameters for analytics and work offline (print/QR)."
+        "title": "Social Media 'Link in Bio' Clutter",
+        "desc": "Creators can produce clean, memorable vanity links (yoursite.com/go/gear) for Instagram stories, TikTok bios, and YouTube descriptions."
       },
       {
-        "title": "SaaS Review & 'Best X' Publishers",
-        "desc": "Need conditional routing by geo/device and split testing without external redirector SaaS fees."
+        "title": "Amazon Operating Agreement Compliance",
+        "desc": "Non-technical bloggers can safely promote Amazon items alongside traditional high-ticket SaaS affiliate links without risking account bans."
       },
       {
-        "title": "Course / Membership Creators Selling via Stripe",
-        "desc": "Direct go/checkout -> Stripe Checkout Session without requiring WooCommerce installation."
-      }
-    ],
-    "doesNotNeedIt": [
-      "Pure Amazon-only store with Storefront API (no cloaking benefit; consider Amazon-specific tools)",
-      "Networks that contractually forbid any redirect even with uncloaking",
-      "Sites needing link shortening without WordPress (SALC requires WP 6.0+)"
-    ]
-  },
-  "features": {
-    "freeTitle": "FREE / Core Features",
-    "freeItems": [
-      {
-        "title": "Custom Post Type & Permalinks (salc_link)",
-        "desc": "Title holds link name; slug becomes URL path (^go/{slug}). Menu icon Link-Shield SVG encoded as data URI.",
-        "icon": "Link"
+        "title": "Technical Simplicity Without GA Overhead",
+        "desc": "Solopreneurs can track link clicks, top-performing articles, and visitor device breakdowns directly inside their WordPress dashboard without setting up complex Google Analytics tracking events."
       },
       {
-        "title": "Redirect Engine (301 / 302 / 307 / 200 iFrame)",
-        "desc": "Handles 301 Moved Permanently, 302 Found, 307 Temporary Redirect (default, uncached), and 200 iFrame Mask with branded gradient bar.",
-        "icon": "ArrowRightLeft"
-      },
-      {
-        "title": "Smart ToS Uncloaking (Amazon §6)",
-        "desc": "Regex detects amazon.* and amzn.to, rendering raw destination URL on frontend while beacon-tracking clicks via navigator.sendBeacon.",
-        "icon": "ShieldCheck"
-      },
-      {
-        "title": "GA-Style Local Click Analytics",
-        "desc": "Records to local DB table wp_salc_clicks with bot filtering (30+ signatures), GDPR IPv4/IPv6 anonymization, Cloudflare geo, 7 Chart.js charts, and CSV export.",
-        "icon": "BarChart"
-      },
-      {
-        "title": "FTC Auto-Disclosure Injector",
-        "desc": "Auto-inserts accessible <aside role=\"note\"> disclosure banner in top, bottom, or before_first_link with 4 visual styles (Callout, Badge, Minimal, Subtle).",
-        "icon": "Scale"
-      },
-      {
-        "title": "SEO & Crawler Controls",
-        "desc": "Applies rel=\"nofollow sponsored\" + target=\"_blank\", sends X-Robots-Tag: noindex, nofollow, noarchive header, and adds Disallow: /go/ in robots.txt.",
-        "icon": "Lock"
-      }
-    ],
-    "proTitle": "PRO / Advanced Engine Features",
-    "proItems": [
-      {
-        "title": "DOM-Safe Keyword Auto-Linker",
-        "desc": "DOMDocument + XPath regex converts keywords to cloaked links everywhere, skipping h1-h6, code, pre, script, and existing <a> tags with per-post & global caps.",
-        "icon": "Sparkles"
-      },
-      {
-        "title": "Conditional Routing (Geo, OS, Device, Language)",
-        "desc": "Route visitors dynamically by OS (macOS, Windows, Android, iOS, Linux), Browser, Device, Language, and Country (GeoIP / Cloudflare CF-IPCountry).",
-        "icon": "Globe"
-      },
-      {
-        "title": "Stripe Payment Links Integration",
-        "desc": "Direct go/checkout -> Stripe Checkout Session creation via Stripe API. REST webhook (salc/v1/stripe-webhook) tracks revenue and conversion count.",
-        "icon": "Zap"
-      },
-      {
-        "title": "Deal Expiration & Health Scanner",
-        "desc": "Auto-expire links by date or click cap -> 302 fallback or 410 page. Nightly HEAD batch 20 health scanner tests destination URLs and emails broken link reports.",
-        "icon": "Activity"
-      },
-      {
-        "title": "A/B Split Testing & Rotation",
-        "desc": "Rotate traffic between multiple destination URLs using weighted random (mt_rand) or sequential rotation with variant click tracking.",
-        "icon": "Shuffle"
-      },
-      {
-        "title": "Dynamic UTM & Query Forwarding",
-        "desc": "Allowlist forwarding for utm_source, utm_medium, utm_campaign, gclid, fbclid, msclkid, wbraid, gbraid while preserving destination parameters.",
-        "icon": "Share2"
+        "title": "Micro-Commerce Without eCommerce Overhead",
+        "desc": "Creators selling ebooks, paid newsletters, or coaching can take payments directly via Stripe checkout sessions without installing bulky shopping carts."
       }
     ]
   },
+  "coreFeatures24": [
+    {
+      "id": 1,
+      "title": "Branded Link Cloaking & Custom Slugs",
+      "category": "redirection",
+      "badge": "Core Feature",
+      "description": "Replaces long, messy affiliate URLs with clean branded links on your root domain (e.g. yoursite.com/go/product-name).",
+      "location": "Link Cloaker -> All Links / Add New Link metabox ('Target Destination Affiliate URL' & 'Your Branded Cloaked Link' preview box with 1-click Copy button).",
+      "howItWorks": "When visitors click your cloaked link, your website intercepts the request in a split second and routes them seamlessly to your merchant destination URL without exposing raw partner codes in your article text.",
+      "howToUse": [
+        "Go to Link Cloaker -> Add New Link.",
+        "Enter a title for your link (e.g. Web Hosting Deal).",
+        "In the Target Destination Affiliate URL box, paste your raw merchant link.",
+        "Edit the custom slug if desired, then click Publish.",
+        "Use the Copy Link button next to your branded URL to paste it into your posts."
+      ],
+      "result": "Clean, professional URLs matching your site domain that protect your affiliate ID from scraping and increase click-through rates by up to 40%."
+    },
+    {
+      "id": 2,
+      "title": "Configurable URL Prefixes & Category Paths",
+      "category": "redirection",
+      "badge": "Core Feature",
+      "description": "Allows customizing default redirect directory (/go/, /recommends/, /deal/) and dynamically injecting taxonomy categories into permalinks (yoursite.com/go/software/vpn-deal).",
+      "location": "Link Cloaker -> Settings under panel 'URL Structure & Routing Engine' ('Global Link Prefix' & 'Dynamic Category Path Injection' toggle).",
+      "howItWorks": "Updates your site's permalink routing engine so every affiliate link uses your preferred folder structure (e.g., yoursite.com/deal/product-name or yoursite.com/go/software/product-name).",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings.",
+        "Enter your preferred word in the Global Link Prefix box (e.g. recommends).",
+        "Toggle Dynamic Category Path Injection if you want categories added to URLs.",
+        "Click Save Configuration."
+      ],
+      "result": "A clean, organized link hierarchy aligned with your website content strategy and easy-to-filter analytics."
+    },
+    {
+      "id": 3,
+      "title": "Multi-Status HTTP Redirect Engine (301, 302, 307, 200)",
+      "category": "redirection",
+      "badge": "Core Feature",
+      "description": "Set exact HTTP header status code (301 Permanent, 302 Found, 307 Temporary, or 200 iFrame Mask) globally or on a per-link basis.",
+      "location": "Link Cloaker -> Add New Link / Edit Link under 'HTTP Redirect Engine' dropdown and Link Cloaker -> Settings under 'Default HTTP Redirect Type'.",
+      "howItWorks": "Instructs web browsers and search engines how to handle link caching. 307 redirects force browsers to query your server on every click, preventing stale browser cache issues if your destination URL changes.",
+      "howToUse": [
+        "Open a link in Link Cloaker -> Edit Link.",
+        "Under HTTP Redirect Engine, select 307 Temporary Redirect (recommended for affiliate links) or 301 Moved Permanently.",
+        "Click Update."
+      ],
+      "result": "Full control over search engine crawl behavior, instant destination URL updates, and reliable cookie tracking."
+    },
+    {
+      "id": 4,
+      "title": "Search Engine Crawler & Link Attribute Controls",
+      "category": "compliance",
+      "badge": "SEO & Compliance",
+      "description": "Automatically injects search engine directives (rel=\"nofollow\", rel=\"sponsored\", target=\"_blank\", X-Robots-Tag: noindex, and robots.txt disallow rules).",
+      "location": "Link Cloaker -> Add New Link / Edit Link sidebar panel under 'SEO & Crawler Directives'.",
+      "howItWorks": "Applies search engine compliance attributes to outbound link HTML and instructs web crawlers not to pass PageRank or index redirect pages.",
+      "howToUse": [
+        "On any link edit screen, toggle rel=\"nofollow\", rel=\"sponsored\", and target=\"_blank\" on or off according to your preference.",
+        "Click Publish or Update."
+      ],
+      "result": "Full compliance with Google Search Essentials and FTC guidelines, protecting your website from search engine manual penalties."
+    },
+    {
+      "id": 5,
+      "title": "Smart ToS Uncloaking for Merchant Compliance",
+      "category": "compliance",
+      "badge": "Flagship Compliance",
+      "description": "Dynamically uncloaks merchant links on the front-end (Amazon Associates, eBay, Target, custom domains) to direct raw URLs while preserving click tracking via an asynchronous JS beacon.",
+      "location": "Link Cloaker -> Settings under panel 'Smart ToS Uncloaking (Amazon & Merchant Compliance)'.",
+      "howItWorks": "Scans your published content. If a link points to an Amazon or merchant domain, it shows the compliant raw URL to visitors while continuing to log click analytics using a background tracking script.",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings.",
+        "Toggle Uncloak Amazon Associates Links, Uncloak eBay Partner Network Links, or add custom merchant domains.",
+        "Click Save Configuration."
+      ],
+      "result": "Total peace of mind knowing your Amazon Associates and restricted merchant accounts remain 100% compliant and protected against ban risks."
+    },
+    {
+      "id": 6,
+      "title": "Client-Side Conditional Redirect Rules",
+      "category": "redirection",
+      "badge": "PRO Engine",
+      "description": "Routes incoming visitors to alternate landing pages based on Operating System (iOS, Android, Windows, macOS), Device, Browser, or Language settings.",
+      "location": "Link Cloaker -> Add New Link / Edit Link under 'Client-Side Conditional Redirect Rules (OS, Browser, Device, Language)'.",
+      "howItWorks": "Detects the visitor's device and browser environment when they click a link and automatically routes them to the correct platform offer.",
+      "howToUse": [
+        "Open a link in Link Cloaker -> Edit Link.",
+        "Click + Add Conditional Rule.",
+        "Select condition type (e.g. OS is iOS), enter the target value, and paste the alternate landing page URL (e.g., Apple App Store link).",
+        "Save your link."
+      ],
+      "result": "Higher conversion rates by ensuring iPhone users go to the App Store, Android users go to Google Play, and desktop users go to a desktop sales page."
+    },
+    {
+      "id": 7,
+      "title": "Global Link Updating & Database Search-and-Replace",
+      "category": "automation",
+      "badge": "Automation Tool",
+      "description": "Centralized link management where updating a destination URL updates every instance site-wide; also includes a database-wide search-and-replace tool for raw uncloaked URLs.",
+      "location": "Link Cloaker -> Tools & Migration under tab 'Database Search & Replace'.",
+      "howItWorks": "Scans your WordPress database for uncloaked merchant URLs and replaces them with branded cloaked shortcodes in seconds.",
+      "howToUse": [
+        "Go to Link Cloaker -> Tools & Migration and click the Database Search & Replace tab.",
+        "Enter the raw merchant URL to find and select the target cloaked link.",
+        "Keep Dry Run Mode checked to preview matches, then uncheck and click Execute Search & Replace."
+      ],
+      "result": "Saves hours of manual post editing and eliminates dead or broken affiliate links across your entire site history."
+    },
+    {
+      "id": 8,
+      "title": "Unified Content Editor Integration (Gutenberg & Classic Editor)",
+      "category": "automation",
+      "badge": "Core Feature",
+      "description": "Integrates directly into writing environments via shortcodes ([af_link], [salc_link]), native Gutenberg block ('Affiliate Link Button'), and Classic Editor (TinyMCE) toolbar button & search modal.",
+      "location": "Inside the WordPress Block Editor (Gutenberg), Classic Editor (TinyMCE) toolbar button, or any post/page via shortcode.",
+      "howItWorks": "Provides interactive buttons and modal pickers inside your editor so you can insert branded links without opening another browser tab.",
+      "howToUse": [
+        "In Gutenberg: Click + to add a block, search for Affiliate Link Button, and select your link.",
+        "In Classic Editor: Highlight text, click the Link Cloaker icon on the toolbar, search for your link, and insert.",
+        "Shortcode: Insert [af_link id=\"123\" text=\"Check Best Price\"] anywhere in your text."
+      ],
+      "result": "A faster publishing workflow for writers and content creation teams."
+    },
+    {
+      "id": 9,
+      "title": "Hierarchical Category & Tag Taxonomy",
+      "category": "analytics",
+      "badge": "Core Feature",
+      "description": "Organizes links into nested parent-child categories (aff_category) and tags (aff_tag) for bulk management, filtering, and organization.",
+      "location": "Link Cloaker -> Categories & Link Cloaker -> Tags submenus, and the post edit screen sidebar.",
+      "howItWorks": "Categorizes links in your database so you can filter analytics, apply bulk settings, or generate category deal feeds.",
+      "howToUse": [
+        "Navigate to Link Cloaker -> Categories to create categories (e.g. Web Hosting, VPNs, Software).",
+        "Assign categories and tags to links when creating or editing them."
+      ],
+      "result": "Clean link organization and effortless campaign management for sites with hundreds of active affiliate links."
+    },
+    {
+      "id": 10,
+      "title": "In-Dashboard Click Tracking & Visual Analytics",
+      "category": "analytics",
+      "badge": "Core Feature",
+      "description": "Internal logging mechanism tracking total clicks, unique visitors, referral sources, device breakdown, Chart.js time-series graphs, top links table, and CSV export.",
+      "location": "Link Cloaker -> Statistics dashboard page.",
+      "howItWorks": "Records every click event in real-time while filtering out search engine bots and automated web crawlers.",
+      "howToUse": [
+        "Open Link Cloaker -> Statistics to view summary cards, performance line graphs, device share breakdown, and top links.",
+        "Click Export CSV to download raw click logs for offline analysis.",
+        "Use the Reset button to reset statistics for a specific link."
+      ],
+      "result": "Instant insights into which articles, call-to-action buttons, and campaigns generate the most clicks and revenue."
+    },
+    {
+      "id": 11,
+      "title": "Image & Banner Link Attachment",
+      "category": "monetization",
+      "badge": "Core Feature",
+      "description": "Allows publishers to upload and bind display banners, product images, or logos directly to an affiliate link profile in the Media Library for shortcode rendering ([af_link display=\"image\"]).",
+      "location": "Link Cloaker -> Add New Link / Edit Link sidebar panel under 'Image & Banner Link Attachment'.",
+      "howItWorks": "Binds a media image to your affiliate link profile so you can display pre-wrapped, trackable visual banners in shortcodes or widgets.",
+      "howToUse": [
+        "Edit a link, go to Image & Banner Link Attachment, and click Select / Upload Image.",
+        "Pick a banner from your Media Library and save your link.",
+        "Use [af_link id=\"123\" display=\"image\"] inside any post or widget."
+      ],
+      "result": "Boosts click volume from visual shoppers who prefer banner ads over standard text hyperlinks."
+    },
+    {
+      "id": 12,
+      "title": "CSV Bulk Importer & Exporter",
+      "category": "automation",
+      "badge": "Core Feature",
+      "description": "Imports and exports affiliate links, slugs, destination URLs, categories, and settings using standard spreadsheet CSV formats.",
+      "location": "Link Cloaker -> Tools & Migration under tab 'CSV Import & Export' and Link Cloaker -> Statistics ('Export CSV' button).",
+      "howItWorks": "Parses uploaded spreadsheet data and batch-creates cloaked links in your database within seconds.",
+      "howToUse": [
+        "Go to Link Cloaker -> Tools & Migration -> CSV Import & Export.",
+        "Select your CSV file (containing columns: title, url, slug, redirect_type).",
+        "Click Start Bulk CSV Import."
+      ],
+      "result": "Allows effortless bulk link editing in Excel/Google Sheets and quick website portfolio migrations."
+    },
+    {
+      "id": 13,
+      "title": "1-Click Platform Migration Engine",
+      "category": "automation",
+      "badge": "Core Feature",
+      "description": "Automated 1-click migration tool to import legacy links, target URLs, and click counts from Pretty Links and ThirstyAffiliates.",
+      "location": "Link Cloaker -> Tools & Migration under tab 'Platform Migration Engine'.",
+      "howItWorks": "Reads legacy competitor tables, copies links, slugs, destination URLs, and historical hit counts into Smart Affiliate Link Cloaker format.",
+      "howToUse": [
+        "Go to Link Cloaker -> Tools & Migration -> Platform Migration Engine.",
+        "If Pretty Links or ThirstyAffiliates data is detected, click Migrate Now."
+      ],
+      "result": "Instant switch to Smart Affiliate Link Cloaker with zero downtime, zero link breakage, and zero data loss."
+    },
+    {
+      "id": 14,
+      "title": "Frontend Link Showcase Widgets",
+      "category": "monetization",
+      "badge": "Core Feature",
+      "description": "Pre-built Classic and Block sidebar/footer widgets displaying 'Most Popular' or 'Recently Added' affiliate links in Grid or List view.",
+      "location": "Appearance -> Widgets or Block Widget Editor under 'Affiliate Link Showcase'.",
+      "howItWorks": "Queries your top-clicked or newest affiliate links and renders them in stylish Grid or List card layouts on your front end.",
+      "howToUse": [
+        "Navigate to Appearance -> Widgets.",
+        "Add Affiliate Link Showcase to your Sidebar or Footer area.",
+        "Choose display count (e.g. 5 links), filter mode (Most Popular or Recently Added), and layout (Grid or List).",
+        "Click Save."
+      ],
+      "result": "Monetizes unused website sidebar and footer space automatically, driving passive exploratory clicks."
+    },
+    {
+      "id": 15,
+      "title": "Seamless Payment Links (Stripe Integration)",
+      "category": "monetization",
+      "badge": "PRO Engine",
+      "description": "Direct Stripe API integration generating branded 1-click checkout links for products/services (Stripe Checkout Sessions) and tracking conversion revenue via Stripe webhooks.",
+      "location": "Link Cloaker -> Settings under 'Stripe Payment Integration' and Link Cloaker -> Add New Link / Edit Link under 'Seamless Stripe Payment Link Integration'.",
+      "howItWorks": "When visitors click a Stripe-enabled link, they are taken directly to a dynamic Stripe 1-Click Checkout Session. When payment completes, Stripe webhooks record sales revenue and conversions in your dashboard.",
+      "howToUse": [
+        "Enter your Stripe Secret Key in Link Cloaker -> Settings.",
+        "Edit your link, toggle Enable Direct Stripe Checkout Link, and enter your Stripe Price ID (e.g. price_1N...).",
+        "Click Publish."
+      ],
+      "result": "Streamlines checkout, reduces shopping cart abandonment, and transforms your link cloaker into a direct monetization engine."
+    },
+    {
+      "id": 16,
+      "title": "Embedded iFrame Redirection & Display",
+      "category": "redirection",
+      "badge": "Core Feature",
+      "description": "Redirect delivery method that opens merchant destination URL inside an HTML iframe while keeping branded domain visible in browser address bar with a sticky top bar header.",
+      "location": "Link Cloaker -> Add New Link / Edit Link under 'HTTP Redirect Engine' (Option: Embedded iFrame Masking with Sticky Top Bar).",
+      "howItWorks": "Renders a full-screen iframe containing the merchant page with a custom top bar header featuring your website title and an 'Open Direct Link' button.",
+      "howToUse": [
+        "Open a link in Link Cloaker -> Edit Link.",
+        "Change HTTP Redirect Engine to Embedded iFrame Masking with Sticky Top Bar.",
+        "Click Update."
+      ],
+      "result": "Preserves continuous brand awareness when sending users to external tools, documentation, or sales pages."
+    },
+    {
+      "id": 17,
+      "title": "Native Custom Post Type (CPT) Architecture",
+      "category": "analytics",
+      "badge": "Architecture",
+      "description": "Built on top of WordPress native database schema (wp_posts and wp_postmeta) with custom list table columns (Cloaked URL, Target Destination, Redirect Status, Categories, Total Clicks, Health, Date).",
+      "location": "Link Cloaker -> All Links management table.",
+      "howItWorks": "Ensures complete compatibility with caching plugins, backup solutions, database cleanup tools, and standard WordPress REST API endpoints.",
+      "howToUse": [
+        "Go to Link Cloaker -> All Links to see a clean overview of all links, branded URLs, destination targets, HTTP status badges, category tags, click totals, and health status.",
+        "Use quick inline copy buttons to copy cloaked links instantly."
+      ],
+      "result": "Fast database performance, zero query bottlenecks, and an easy-to-use link management table."
+    },
+    {
+      "id": 18,
+      "title": "Automated Deal Expiration & Fallback Routing",
+      "category": "automation",
+      "badge": "PRO Engine",
+      "description": "Set expiration dates, max click thresholds, fallback URLs (302 redirect), or custom 'Deal Expired' notice messages for limited-time promotions.",
+      "location": "Link Cloaker -> Add New Link / Edit Link under 'Automated Deal Expiration & Fallbacks' and Link Cloaker -> Settings under 'Deal Expiration & Health Scanner'.",
+      "howItWorks": "Monitors link click counts and dates. When a limit is reached, it automatically stops sending traffic to the expired merchant offer.",
+      "howToUse": [
+        "Edit your link and expand Automated Deal Expiration & Fallbacks.",
+        "Set an Expiration Date or Max Clicks Threshold.",
+        "Enter a Fallback URL (e.g., your general deal roundup page) or Custom Expired Message.",
+        "Click Update."
+      ],
+      "result": "Prevents embarrassing 404 errors and wasted visitor traffic on expired Black Friday or seasonal promotional sales."
+    },
+    {
+      "id": 19,
+      "title": "A/B Split Testing & Traffic Rotation",
+      "category": "monetization",
+      "badge": "PRO Engine",
+      "description": "Distribute incoming clicks across multiple target destination URLs by weighted random percentage or sequential rotation to test merchant offers.",
+      "location": "Link Cloaker -> Add New Link / Edit Link under 'A/B Split Testing & Traffic Rotation'.",
+      "howItWorks": "Rotates destination URLs dynamically for incoming clicks based on your configured weight rules.",
+      "howToUse": [
+        "Edit a link, expand A/B Split Testing & Traffic Rotation.",
+        "Choose rotation mode (Weighted Random or Sequential).",
+        "Click + Add Variant, paste alternate merchant URLs, and set traffic percentages (e.g. 50% to Merchant A, 50% to Merchant B).",
+        "Click Update."
+      ],
+      "result": "Identifies highest-converting merchant landing pages so you can maximize your affiliate commissions."
+    },
+    {
+      "id": 20,
+      "title": "FTC Auto-Disclosure Injector (Accessible & Compliant)",
+      "category": "compliance",
+      "badge": "Compliance",
+      "description": "Automatically inject compliant affiliate disclaimers above/below cloaked links across articles, with customizable placement, styling, global defaults, and per-link overrides.",
+      "location": "Link Cloaker -> Settings under 'FTC Auto-Disclosure (Accessible & Compliant)' and Link Cloaker -> Add New Link / Edit Link under 'Granular Disclosure Override (per-link)'.",
+      "howItWorks": "Detects when an article contains active affiliate links and automatically inserts an FTC disclosure notice into the page content.",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings -> FTC Auto-Disclosure.",
+        "Toggle Enable Dynamic FTC Disclosure Injector.",
+        "Customize disclosure text, placement (Before Post Content, After Post Content, or Inline), and visual style (Bordered, Badge, Callout).",
+        "Click Save Configuration."
+      ],
+      "result": "Keeps your website 100% compliant with FTC endorsement guidelines and consumer transparency laws."
+    },
+    {
+      "id": 21,
+      "title": "Dynamic UTM & Query Parameter Forwarding",
+      "category": "analytics",
+      "badge": "PRO Engine",
+      "description": "Pass incoming UTM parameters (utm_source, utm_medium, utm_campaign, etc.) or custom affiliate sub-ids dynamically to merchant destination URLs.",
+      "location": "Link Cloaker -> Settings under panel 'Dynamic UTM & Query Forwarding'.",
+      "howItWorks": "Appends incoming URL parameters to your merchant destination link so partner networks can track sub-IDs and traffic sources.",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings -> Dynamic UTM & Query Forwarding.",
+        "Toggle Forward UTM / Gold / 1-Click to Merchant.",
+        "Enter allowed parameter keys (or use * for all parameters).",
+        "Click Save Configuration."
+      ],
+      "result": "Preserves marketing attribution data across your entire sales funnel."
+    },
+    {
+      "id": 22,
+      "title": "DOM-Safe Keyword Auto-Linker",
+      "category": "automation",
+      "badge": "PRO Engine",
+      "description": "Automatically scan post content and convert specified keywords to cloaked affiliate links with customizable limits per post and per keyword.",
+      "location": "Link Cloaker -> Settings under panel 'DOM-Safe Keyword Auto-Linker' and Link Cloaker -> Add New Link / Edit Link under 'Keyword Auto-Linker Override (per-post)'.",
+      "howItWorks": "Safely parses HTML content and injects affiliate hyperlinks onto matching keywords up to your set link limit per post without breaking headers or existing links.",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings -> DOM-Safe Keyword Auto-Linker.",
+        "Set Max links per post and Max per keyword.",
+        "Click + Add Keyword Rule, enter your target keyword (e.g. Web Hosting), and select the cloaked link to assign.",
+        "Click Save Configuration."
+      ],
+      "result": "Monetizes thousands of existing blog posts automatically without manually editing past content."
+    },
+    {
+      "id": 23,
+      "title": "Broken Link Health Scanner & Status Monitor",
+      "category": "compliance",
+      "badge": "PRO Engine",
+      "description": "Background scanner verifying merchant target URLs and reporting HTTP status badges (e.g. 🟢 OK 200, 🔴 404) directly in the link list table.",
+      "location": "Link Cloaker -> All Links list table column ('Health') and Link Cloaker -> Settings under 'Deal Expiration & Health Scanner'.",
+      "howItWorks": "Runs a background scan, verifies merchant server responses, and displays green/red status indicators in your dashboard.",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings -> Deal Expiration & Health Scanner.",
+        "Toggle Enable Daily Cron Broken Link Health Scanner and click Save.",
+        "Check Link Cloaker -> All Links anytime to view health badges (e.g. 🟢 OK 200 or 🔴 Error 404)."
+      ],
+      "result": "Notifies you immediately if a merchant program goes down or changes landing pages, protecting your revenue from lost commissions."
+    },
+    {
+      "id": 24,
+      "title": "Privacy & GDPR Compliance (IP Anonymization)",
+      "category": "compliance",
+      "badge": "Privacy & Legal",
+      "description": "Anonymizes visitor IPv4 and IPv6 addresses prior to database logging to ensure full GDPR compliance.",
+      "location": "Link Cloaker -> Settings under panel 'Privacy & GDPR Compliance'.",
+      "howItWorks": "Masks the last octet of IPv4 and IPv6 addresses before storing click logs in your WordPress database (e.g., 192.168.1.123 becomes 192.168.1.0).",
+      "howToUse": [
+        "Go to Link Cloaker -> Settings -> Privacy & GDPR Compliance.",
+        "Toggle Anonymize Visitor IP Addresses.",
+        "Click Save Configuration."
+      ],
+      "result": "Full legal compliance with European GDPR, California CCPA, and privacy laws without losing visitor analytics accuracy."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Link Cloaking",
+      "definition": "The process of masking an external affiliate URL behind a branded URL hosted on your primary domain."
+    },
+    {
+      "term": "Custom Slug",
+      "definition": "The unique keyword identifier at the end of a URL path (e.g. in yoursite.com/go/bluehost, bluehost is the slug)."
+    },
+    {
+      "term": "URL Prefix",
+      "definition": "The parent directory preceding cloaked links (e.g., /go/, /recommends/, /deal/)."
+    },
+    {
+      "term": "HTTP 301 Redirect (Permanent)",
+      "definition": "Tells browsers and search engines that a page has moved permanently; heavily cached by web browsers."
+    },
+    {
+      "term": "HTTP 302 / 307 Redirect (Temporary)",
+      "definition": "Informs browsers to query the server on every single click; prevents stale destination cache issues (307 is the industry standard for affiliate marketing)."
+    },
+    {
+      "term": "iFrame Masking",
+      "definition": "Opening a merchant sales page inside a full-width HTML container while keeping your own domain visible in the browser address bar."
+    },
+    {
+      "term": "rel=\"nofollow\"",
+      "definition": "An HTML attribute instructing search engines that your site does not endorse or pass PageRank to the destination URL."
+    },
+    {
+      "term": "rel=\"sponsored\"",
+      "definition": "Google's official attribute designating that a link is commercial, compensated, or an affiliate hyperlink."
+    },
+    {
+      "term": "X-Robots-Tag: noindex",
+      "definition": "An HTTP header instructing search engine spiders not to index redirect pages in Google search results."
+    },
+    {
+      "term": "Smart Uncloaking",
+      "definition": "A dynamic script that uncloaks affiliate links for restricted merchants (like Amazon) into raw URLs on the front end to maintain ToS compliance."
+    },
+    {
+      "term": "Tracking Beacon",
+      "definition": "A lightweight JavaScript mechanism (navigator.sendBeacon) that logs visitor click analytics asynchronously in the background."
+    },
+    {
+      "term": "A/B Split Testing",
+      "definition": "Distributing incoming clicks across multiple target URLs by weighted percentage to measure conversion rate differences."
+    },
+    {
+      "term": "Deal Expiration",
+      "definition": "Automatically disabling or rerouting affiliate links once a calendar date or click limit is exceeded."
+    },
+    {
+      "term": "Fallback URL",
+      "definition": "A backup destination URL used when an affiliate deal expires or a merchant link fails."
+    },
+    {
+      "term": "Broken Link Scanner",
+      "definition": "An automated cron script that pings target merchant URLs to verify they return an OK 200 response."
+    },
+    {
+      "term": "DOM-Safe Keyword Auto-Linker",
+      "definition": "A tool that scans article copy and automatically hyperlinks target keywords to affiliate URLs without corrupting HTML tags or headings."
+    },
+    {
+      "term": "UTM Forwarding",
+      "definition": "Dynamically passing tracking parameters (utm_source, utm_medium, etc.) from incoming visitor links through to merchant URLs."
+    },
+    {
+      "term": "Custom Post Type (CPT)",
+      "definition": "WordPress's native content structure (salc_link), ensuring high-speed queries and universal theme/plugin compatibility."
+    }
+  ],
+  "faq": [
+    {
+      "category": "General & Setup",
+      "question": "How do I install and activate the plugin?",
+      "answer": "Download the plugin ZIP file, log in to your WordPress dashboard, navigate to Plugins -> Add New -> Upload Plugin, upload the ZIP, and click Activate. Once active, you will see the new Link Cloaker item in your WordPress admin menu."
+    },
+    {
+      "category": "General & Setup",
+      "question": "Will cloaking affiliate links slow down my website?",
+      "answer": "No. Smart Affiliate Link Cloaker is built for high speed. Redirect lookups use native WordPress post IDs paired with WordPress Transients (cached database lookups), executing redirects in milliseconds with negligible server overhead."
+    },
+    {
+      "category": "General & Setup",
+      "question": "Where did the plugin menu go? I can't find 'Affiliate Links'.",
+      "answer": "The menu is named 'Link Cloaker' in your WordPress admin sidebar. All submenus (All Links, Add New Link, Categories, Tags, Statistics, Tools & Migration, Settings, Documentation) are grouped directly beneath it."
+    },
+    {
+      "category": "Redirects & Performance",
+      "question": "What is the difference between a 301, 302, and 307 redirect?",
+      "answer": "301 (Permanent): Browser caches this redirect aggressively. If you ever change the affiliate destination URL later, visitors' browsers may still take them to the old URL.\n302 (Found / Temporary): Bypasses browser cache, checking the server on each click.\n307 (Temporary Redirect): The gold standard for affiliate links. It bypasses browser cache, forces a live server lookup on every click, and guarantees complete preservation of HTTP request headers."
+    },
+    {
+      "category": "Redirects & Performance",
+      "question": "What is iFrame Masking and when should I use it?",
+      "answer": "iFrame Masking displays the merchant's landing page inside an embedded container on your site, keeping yoursite.com/go/deal in the visitor's address bar. It is ideal for linking to documentation, web calculators, or client onboarding tools where you want to maintain your brand visibility. Note: Some merchants (such as Amazon and financial institutions) prohibit iFraming via X-Frame-Options headers."
+    },
+    {
+      "category": "SEO & Compliance",
+      "question": "Will cloaking affiliate links hurt my Google search rankings?",
+      "answer": "No—in fact, it protects them. The plugin automatically adds rel=\"nofollow sponsored\" attributes and X-Robots-Tag: noindex headers, fully complying with Google Search Essentials. This prevents search engines from penalizing your site for thin affiliate content or unnatural outbound links."
+    },
+    {
+      "category": "SEO & Compliance",
+      "question": "Is cloaking permitted by Amazon Associates?",
+      "answer": "Amazon Associates Operating Agreement Section 6 prohibits disguising or cloaking affiliate links. However, Smart Affiliate Link Cloaker features Smart ToS Uncloaking. When enabled in Link Cloaker -> Settings, any link pointing to Amazon is dynamically uncloaked on your public website into an approved, direct Amazon affiliate link, while preserving background click tracking."
+    },
+    {
+      "category": "SEO & Compliance",
+      "question": "How does the FTC Auto-Disclosure work?",
+      "answer": "The plugin detects whether a blog post or page contains cloaked affiliate links. If detected, it automatically injects a styled compliance notice (e.g. 'This post contains affiliate links...') at the top or bottom of your post, fulfilling Federal Trade Commission disclosure regulations."
+    },
+    {
+      "category": "Link Management & Automation",
+      "question": "What happens when an affiliate offer expires?",
+      "answer": "You can set an Expiration Date or Max Clicks Threshold on any link. Once reached, the plugin will automatically redirect visitors to your specified Fallback URL (such as your homepage or a general deals category) or display a custom 'Deal Expired' notice."
+    },
+    {
+      "category": "Link Management & Automation",
+      "question": "How does the DOM-Safe Keyword Auto-Linker work?",
+      "answer": "Under Link Cloaker -> Settings, you can specify keywords (e.g., 'Bluehost') and link them to an affiliate URL. The plugin automatically parses your articles and converts matching text into affiliate links, while strictly respecting your configured limits (e.g., maximum 3 links per post) and never corrupting HTML headings, images, or existing anchors."
+    },
+    {
+      "category": "Link Management & Automation",
+      "question": "How does A/B traffic rotation work?",
+      "answer": "On the link edit screen under A/B Split Testing & Traffic Rotation, you can enter multiple merchant URLs and assign percentage weights (e.g. 70% to Vendor A, 30% to Vendor B). Incoming traffic is split dynamically, allowing you to test which vendor yields higher conversions."
+    },
+    {
+      "category": "Migration & Integrations",
+      "question": "Can I migrate my existing links from Pretty Links or ThirstyAffiliates?",
+      "answer": "Yes. Navigate to Link Cloaker -> Tools & Migration and click Platform Migration Engine. The plugin automatically scans your database for Pretty Links or ThirstyAffiliates data and imports all titles, slugs, destinations, and historical click counts with a single click."
+    },
+    {
+      "category": "Migration & Integrations",
+      "question": "Can I import and export links using CSV spreadsheets?",
+      "answer": "Yes. Under Link Cloaker -> Tools & Migration -> CSV Import & Export, you can upload a CSV spreadsheet to batch-create hundreds of links instantly. You can also export click logs into CSV format directly from the Statistics page."
+    },
+    {
+      "category": "Migration & Integrations",
+      "question": "How does the Stripe Payment Link feature work?",
+      "answer": "By entering your Stripe API Secret Key in Link Cloaker -> Settings, you can turn any cloaked link into a direct checkout session. When a visitor clicks the link, they are taken directly to Stripe's hosted 1-click checkout. Once the transaction completes, your dashboard logs conversion count and dollar revenue via Stripe webhooks."
+    },
+    {
+      "category": "Migration & Integrations",
+      "question": "How does the plugin comply with GDPR privacy laws?",
+      "answer": "Under Link Cloaker -> Settings -> Privacy & GDPR Compliance, you can enable Anonymize Visitor IP Addresses. This automatically strips the last octet from visitor IPv4 (e.g. 192.168.1.0) and IPv6 addresses prior to database logging, ensuring full compliance with European GDPR and California CCPA guidelines."
+    }
+  ],
   "userGuide": {
-    "title": "Step-by-Step User Installation & Setup Guide",
-    "subtitle": "Complete walkthrough to install, configure links, setup conditional routing, enable FTC disclosures, and activate Stripe payment links.",
+    "title": "Official Setup & User Guide",
+    "subtitle": "Step-by-step walkthrough to install, configure links, setup conditional routing, enable FTC disclosures, and activate Stripe payment links.",
     "phases": [
       {
         "phase": "Phase 1: Installation & Setup",
         "steps": [
           "Upload ZIP via WP Admin -> Plugins -> Add New -> Upload Plugin (or unzip smart-affiliate-link-cloaker to /wp-content/plugins/).",
-          "Activate plugin. Activator.php creates wp_salc_clicks table, seeds global settings, and schedules daily 02:00 UTC health check.",
-          "Go to Affiliate Links -> Settings. Confirm Global Prefix (go), Anonymize IP (ON), Smart ToS (ON), and Default HTTP Redirect (307). Click Save.",
+          "Activate plugin. Activator creates wp_salc_clicks table, seeds global settings, and schedules daily broken link health check.",
+          "Go to Link Cloaker -> Settings. Confirm Global Prefix (go), Anonymize IP (ON), Smart ToS (ON), and Default HTTP Redirect (307). Click Save.",
           "Go to Settings -> Permalinks and click Save Changes (no edits) to register RewriteEngine rules."
         ]
       },
       {
-        "phase": "Phase 2: Creating Your First Link",
+        "phase": "Phase 2: Creating Your First Branded Link",
         "steps": [
-          "Navigate to Affiliate Links -> Add New Link.",
-          "Enter Title (e.g. 'Best VPN Deal') and Target Destination URL (e.g. https://merchant.com/?aff_id=123).",
-          "Preview Cloaked URL (e.g. https://yourdomain.com/go/best-vpn).",
-          "Select Redirect Type (307 Temporary Recommended) and toggle rel=\"nofollow / sponsored\".",
-          "Assign Categories & Tags (aff_category / aff_tag) and click Publish."
+          "Navigate to Link Cloaker -> Add New Link.",
+          "Enter Title (e.g. 'Web Hosting Deal') and Target Destination Affiliate URL (e.g. https://merchant.com/?aff_id=123).",
+          "Preview your branded cloaked link (e.g. https://yoursite.com/go/web-hosting-deal).",
+          "Select Redirect Type (307 Temporary Redirect Recommended) and toggle rel=\"nofollow sponsored\" and target=\"_blank\".",
+          "Assign Categories & Tags (aff_category / aff_tag) and click Publish. Click 'Copy Link' to use in your articles."
         ]
       },
       {
-        "phase": "Phase 3: Configuring Advanced Engine [PRO]",
+        "phase": "Phase 3: Advanced Conditional Routing & PRO Monetization",
         "steps": [
-          "Conditional Routing: Add rules based on OS (macOS -> Mac offer), Device (Mobile -> App Store), or Country (DE -> German landing).",
-          "Stripe Payment: Enter Stripe Secret Key sk_live_... & Webhook Secret in Settings. Toggle Enable Stripe on link metabox and enter Price ID.",
-          "Keyword Auto-Linker: Go to Settings -> Auto-Linker, set max limits per post, and add keyword-to-link mapping rules.",
-          "Deal Expiration: Set UTC expiration datetime or click cap, fallback URL (302 redirect), or expired message (410 page)."
+          "Conditional Routing: Add rules based on OS (iOS -> App Store, Android -> Google Play, Windows -> Desktop installer) or Device/Browser.",
+          "A/B Split Testing: Configure multiple vendor URLs with percentage weights (e.g. 50% to Vendor A, 50% to Vendor B) to test conversions.",
+          "Stripe Payment: Enter Stripe Secret Key sk_live_... in Settings. Toggle Enable Stripe on link metabox and enter Price ID.",
+          "DOM-Safe Keyword Auto-Linker: Go to Settings -> Auto-Linker, set max limits per post, and add keyword-to-link mapping rules.",
+          "Automated Deal Expiration: Set expiration date or click threshold + fallback URL (302 redirect) to prevent 404 errors."
         ]
       },
       {
-        "phase": "Phase 4: FTC Compliance & Analytics",
+        "phase": "Phase 4: FTC Compliance, Uncloaking & Analytics",
         "steps": [
-          "Go to Settings -> FTC Disclosure. Choose position (before_first_link, top, bottom) and style (Callout, Badge, Minimal, Subtle).",
-          "Verify Smart ToS Uncloaking: Test an Amazon URL. Raw link renders on frontend while beacon tracks clicks via navigator.sendBeacon -> POST salc/v1/track.",
-          "Go to Affiliate Links -> Statistics to inspect real-time click charts, device breakdown, top performing links, and export CSV."
+          "Go to Link Cloaker -> Settings -> FTC Auto-Disclosure. Choose position (Before Post, After Post, Inline) and style (Callout, Badge, Bordered).",
+          "Verify Smart ToS Uncloaking: Test an Amazon URL. Raw link renders on frontend while beacon tracks clicks via navigator.sendBeacon.",
+          "Go to Link Cloaker -> Statistics to inspect real-time click charts, device breakdown, top performing links, and export CSV.",
+          "Check Link Cloaker -> All Links anytime to inspect automated broken link health badges (🟢 OK 200 or 🔴 Error 404)."
         ]
       }
     ]
