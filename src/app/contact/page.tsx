@@ -13,16 +13,60 @@ import { motion } from "framer-motion";
 import contactData from "@/content/contact.json";
 
 export default function ContactPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [product, setProduct] = useState("smart-affiliate-link-cloaker");
+  const [category, setCategory] = useState("general-inquiry");
+  const [license, setLicense] = useState("");
+  const [message, setMessage] = useState("");
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email.trim() || !name.trim()) return;
+
     setIsSubmitting(true);
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          product,
+          category,
+          license,
+          message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSuccess(true);
+      } else {
+        setErrorMessage(data.error || "Unable to send your request. Please try again.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setErrorMessage("Network connection error. Please check your connection and try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1200);
+    }
+  };
+
+  const handleReset = () => {
+    setIsSuccess(false);
+    setName("");
+    setEmail("");
+    setLicense("");
+    setMessage("");
+    setErrorMessage(null);
   };
 
   const { hero, channels, directEmail, sla, form } = contactData;
@@ -137,21 +181,44 @@ export default function ContactPage() {
                     <p className="text-xs text-muted-foreground max-w-md">
                       {form.successDesc}
                     </p>
-                    <Button onClick={() => setIsSuccess(false)} variant="outline" className="mt-4 text-xs font-bold">
+                    <Button onClick={handleReset} variant="outline" className="mt-4 text-xs font-bold">
                       {form.submitAnother}
                     </Button>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {errorMessage && (
+                      <div className="p-3 bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 rounded-md text-xs font-medium">
+                        {errorMessage}
+                      </div>
+                    )}
+
                     {/* Inputs 1 & 2 */}
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="name" className="text-xs font-semibold">{form.inputs.name}</Label>
-                        <Input id="name" required placeholder="Jane Doe" className="text-xs bg-background" />
+                        <Input 
+                          id="name" 
+                          required 
+                          placeholder="Jane Doe" 
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          disabled={isSubmitting}
+                          className="text-xs bg-background" 
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="email" className="text-xs font-semibold">{form.inputs.email}</Label>
-                        <Input id="email" type="email" required placeholder="jane@organization.com" className="text-xs bg-background" />
+                        <Input 
+                          id="email" 
+                          type="email" 
+                          required 
+                          placeholder="jane@organization.com" 
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          disabled={isSubmitting}
+                          className="text-xs bg-background" 
+                        />
                       </div>
                     </div>
 
@@ -159,7 +226,7 @@ export default function ContactPage() {
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="product" className="text-xs font-semibold">{form.inputs.product}</Label>
-                        <Select defaultValue="smart-affiliate-link-cloaker">
+                        <Select value={product} onValueChange={setProduct} disabled={isSubmitting}>
                           <SelectTrigger id="product" className="text-xs bg-background">
                             <SelectValue placeholder="Select Product" />
                           </SelectTrigger>
@@ -172,7 +239,7 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="category" className="text-xs font-semibold">{form.inputs.category}</Label>
-                        <Select defaultValue="general-inquiry">
+                        <Select value={category} onValueChange={setCategory} disabled={isSubmitting}>
                           <SelectTrigger id="category" className="text-xs bg-background">
                             <SelectValue placeholder="Select Support Category" />
                           </SelectTrigger>
@@ -188,7 +255,14 @@ export default function ContactPage() {
                     {/* Input 5 */}
                     <div className="space-y-2">
                       <Label htmlFor="license" className="text-xs font-semibold">{form.inputs.license}</Label>
-                      <Input id="license" placeholder="e.g. Key or Activation Reference Code" className="text-xs bg-background" />
+                      <Input 
+                        id="license" 
+                        placeholder="e.g. Key or Activation Reference Code" 
+                        value={license}
+                        onChange={(e) => setLicense(e.target.value)}
+                        disabled={isSubmitting}
+                        className="text-xs bg-background" 
+                      />
                     </div>
 
                     {/* Input 6 */}
@@ -198,6 +272,9 @@ export default function ContactPage() {
                         id="message" 
                         required 
                         placeholder="Please describe your technical issue, inquiry, or question..." 
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        disabled={isSubmitting}
                         className="min-h-[140px] text-xs bg-background"
                       />
                     </div>

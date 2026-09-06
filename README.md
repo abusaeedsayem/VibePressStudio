@@ -3,8 +3,8 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.0.7` (September 5, 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.6` (100% Feature Complete · 24 Core Features)  
-> **Last Updated:** September 5, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
+> **Studio Release:** `v1.0.8` (September 6, 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.6` (100% Feature Complete · 24 Core Features)  
+> **Last Updated:** September 6, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
@@ -18,11 +18,23 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.0.7 — 24 Core Features Suite Expansion & Interactive Showcase (September 5, 2026)
+## Latest Release: v1.0.8 — Contact & Lab Forms Integration (September 6, 2026)
 
-**Commit lineage:** `a0ac0b0` *docs: integrate README and CHANGELOG for v1.0.6* → `UNRELEASED` (this release — 8 files, `1850 insertions+ / 664 deletions-` — `git diff --stat` `src/app/page.tsx:1` `src/app/products/page.tsx:1` `src/app/products/smart-affiliate-link-cloaker/page.tsx:1` `src/app/docs/page.tsx:1` `src/content/cloaker.json:1` `src/content/docs.json:1` `src/content/home.json:1` `src/content/products.json:1`) (branch `main`, up to date with `origin/main`)
+This release integrates live form submissions for the `/contact` and `/lab` routes. Submissions are now sent to a Google Apps Script Webhook which records the data into a Google Sheet and sends an email notification to `vibepress.studio@proton.me`. Next.js API routes `/api/contact` and `/api/lab` securely handle validation and request forwarding.
 
-This release expands the flagship suite to **24 Core Production Features** with a live link-transformation demo engine, filterable master catalogs, and a fully interactive 8-tab product showcase + 9-chapter documentation hub. All changes are live at [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app) and validated via `npm run build` — `✓ Compiled successfully in 1659ms` — 13 static routes.
+### What's New at a Glance (v1.0.8)
+
+| Area | Update | Files / Routes |
+|------|--------|----------------|
+| **Functional Forms** | Added `/api/contact` and `/api/lab` routes to forward payloads to `GOOGLE_SCRIPT_WEBHOOK_URL`. | `src/app/api/contact/route.ts`, `src/app/api/lab/route.ts` |
+| **Google Sheets Integration** | Form submissions are securely saved in a Google Sheet on Proton Drive and send email notifications. | `scripts/google-sheets-apps-script.js` |
+| **UI Polish** | Loading states and success/error feedbacks added to the contact and lab pages. | `src/app/contact/page.tsx`, `src/app/lab/page.tsx` |
+
+> **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) for the complete diff log.
+
+<details><summary><strong>Previous Release: v1.0.7 — 24 Core Features Suite Expansion & Interactive Showcase (September 5, 2026)</strong></summary>
+
+This release expanded the flagship suite to **24 Core Production Features** with a live link-transformation demo engine, filterable master catalogs, and a fully interactive 8-tab product showcase + 9-chapter documentation hub. All changes are live at [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app).
 
 ### What's New at a Glance (v1.0.7)
 
@@ -260,7 +272,8 @@ Route (app)
 
 | Version | Date | Summary | Diff |
 |---------|------|---------|------|
-| **1.0.7** | 2026-09-05 | 24 Core Features suite expansion & interactive showcase — live demo engine, 24-feature master catalog, 8-tab product showcase, docs hub 9-chapter overhaul, home/products expansion | `UNRELEASED` `a0ac0b0` (8 files, 1850+/664-) |
+| **1.0.8** | 2026-09-06 | Contact & Lab Forms Integration — live forms connected to Google Apps Script webhook for Google Sheets recording & email alerts | `UNRELEASED` |
+| **1.0.7** | 2026-09-05 | 24 Core Features suite expansion & interactive showcase — live demo engine, 24-feature master catalog, 8-tab product showcase, docs hub 9-chapter overhaul, home/products expansion | `a0ac0b0` (8 files, 1850+/664-) |
 | **1.0.6** | 2026-09-03 | Complete documentation & architecture upgrade, ShelfMaster purge, tagline enforcement | `e0ea6d9` `0164f54` |
 | **0.4.0** | 2026-09-01 | ShelfMaster Auto-Updater (Tauri 2.x) — now superseded & removed in 1.0.6 | `6528bac` |
 | **0.3.0** | 2026-08-31 | Brand Redesign, Studio Lab migration `/pricing` → `/lab`, WCAG polish | `45c0e2b` |

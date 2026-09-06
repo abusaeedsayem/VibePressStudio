@@ -9,6 +9,20 @@ This changelog is the **canonical history** for the studio website and is fully 
 
 ---
 
+## [1.0.8] — Contact & Lab Forms Integration — September 6, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Functional Forms via Google Apps Script Webhook**: Integrated live form submissions for the `/contact` and `/lab` routes. Submissions are now sent to a Google Apps Script Webhook which records the data into a Google Sheet and sends an email notification to `vibepress.studio@proton.me`.
+- **API Routes**: Created Next.js API routes `/api/contact` and `/api/lab` to handle form validation and securely forward requests to the external webhook.
+- **Environment Variables**: Documented the required `.env` configuration (including `GOOGLE_SCRIPT_WEBHOOK_URL`) in `.env.example`.
+
+### Changed
+- **UI Feedback**: Added loading states and success/error messaging to both the Contact and Lab forms to improve user experience during submission.
+
+---
+
 ## [1.0.7] — 24 Core Features Suite Expansion & Interactive Showcase Release — September 5, 2026
 
 **Commits:** `a0ac0b0` *docs: integrate README and CHANGELOG for v1.0.6* → `UNRELEASED` (this release — 8 files, `1850 insertions+ / 664 deletions-` `git diff --stat`)  

@@ -15,14 +15,51 @@ export default function LabPage() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("all");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const { hero, notice, upcomingProducts } = pricingData;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    setIsSubmitted(true);
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("/api/lab", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          email,
+          selectedProduct,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrorMessage(data.error || "Unable to complete registration. Please try again.");
+      }
+    } catch (err) {
+      console.error("Lab registration error:", err);
+      setErrorMessage("Network connection error. Please check your internet connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleReset = () => {
+    setIsSubmitted(false);
+    setFullName("");
+    setEmail("");
+    setSelectedProduct("all");
+    setErrorMessage(null);
   };
 
   return (
@@ -103,7 +140,7 @@ export default function LabPage() {
                     </p>
                     <Button 
                       variant="outline" 
-                      onClick={() => { setIsSubmitted(false); setFullName(""); setEmail(""); }}
+                      onClick={handleReset}
                       className="mt-4 text-xs font-semibold"
                     >
                       Register Another Email
@@ -111,6 +148,12 @@ export default function LabPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
+                    {errorMessage && (
+                      <div className="p-3 bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 rounded-md text-xs font-medium">
+                        {errorMessage}
+                      </div>
+                    )}
+
                     <div className="space-y-2">
                       <Label htmlFor="fullName" className="text-xs font-bold uppercase tracking-wider">Your Name (Optional)</Label>
                       <Input
@@ -119,6 +162,7 @@ export default function LabPage() {
                         placeholder="e.g. Alex Morgan"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
+                        disabled={isSubmitting}
                         className="h-11 text-sm"
                       />
                     </div>
@@ -132,6 +176,7 @@ export default function LabPage() {
                         placeholder="name@organization.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        disabled={isSubmitting}
                         className="h-11 text-sm"
                       />
                     </div>
@@ -141,6 +186,7 @@ export default function LabPage() {
                       <select
                         value={selectedProduct}
                         onChange={(e) => setSelectedProduct(e.target.value)}
+                        disabled={isSubmitting}
                         className="w-full h-11 px-3 rounded-md border border-input bg-background text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                       >
                         <option value="all">All VibePress Software Suite</option>
@@ -148,8 +194,18 @@ export default function LabPage() {
                       </select>
                     </div>
 
-                    <Button type="submit" className="w-full h-12 text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md">
-                      <Send className="h-4 w-4" /> Register For Launch Notification
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="w-full h-12 text-sm font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-md"
+                    >
+                      {isSubmitting ? (
+                        <span>Transmitting registration...</span>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4" /> Register For Launch Notification
+                        </>
+                      )}
                     </Button>
 
                     <p className="text-[11px] text-center text-muted-foreground pt-1">
