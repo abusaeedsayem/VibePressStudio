@@ -1,10 +1,8 @@
 {
-  "title": "Privacy Policy & Cookie-Less Architecture",
-  "updated": "Last updated: September 2026",
-  "sections": [
-    { "heading": "1. Information We Collect", "body": "We collect information that you provide directly to us, such as when you register for launch updates or contact technical support. This includes your name, email address, and inquiry details." },
-    { "heading": "2. How We Use Your Information", "body": "We use the information we collect strictly to provide, maintain, and support our products, notify you of software launches, and respond to technical inquiry tickets." },
-    { "heading": "3. WordPress Plugin Telemetry & Anonymization", "body": "Smart Affiliate Link Cloaker uses a cookie-less link redirection engine with optional IPv4/IPv6 IP anonymization. Click statistics are logged locally on your database without third-party tracking pixels." },
-    { "heading": "4. Contact Us", "body": "If you have any questions about this Privacy Policy, please contact our engineering helpdesk at vibepress.studio@proton.me." }
-  ]
+  "title": "VibePress Studio: Official Privacy Policy",
+  "effectiveDate": "September 2026",
+  "lastUpdated": "September 2026",
+  "website": "https://vibepressstudio.vercel.app",
+  "contactEmail": "VibePress.Studio@Proton.me",
+  "architect": "Abu Saeed Sayem"
 }
