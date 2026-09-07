@@ -21,7 +21,8 @@
       "title": "Legal & Standards",
       "items": [
         { "label": "Terms of Service", "href": "/legal/terms" },
-        { "label": "Privacy Policy", "href": "/legal/privacy" }
+        { "label": "Privacy Policy", "href": "/legal/privacy" },
+        { "label": "Admin Portal", "href": "/admin/login" }
       ]
     }
   ]
