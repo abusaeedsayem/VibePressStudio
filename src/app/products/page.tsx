@@ -61,7 +61,7 @@ export default function ProductsDirectoryPage() {
                   </div>
                   <div className="flex items-center gap-4 mb-2">
                     <img 
-                      src={product.logoImage || (product.id === 'shelfmaster' ? '/ShelfMaster-icon-1024.png' : '/Smart-Affiliate-Link-Cloaker-icon.svg')} 
+                      src={product.logoImage || '/Smart-Affiliate-Link-Cloaker-icon.svg'} 
                       alt={product.name} 
                       className="w-12 h-12 rounded-xl bg-white p-1 border border-border shadow-md object-contain shrink-0" 
                     />

@@ -91,27 +91,9 @@ export default function TermsPage() {
           </div>
 
           {/* 2.2 */}
-          <div className="space-y-3 bg-muted/30 border border-border rounded-xl p-6">
-            <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-              <Database className="w-5 h-5 text-indigo-500" /> 2.2. ShelfMaster (Desktop Library Operating &amp; Management System)
-            </h3>
-            <p className="text-muted-foreground leading-relaxed">
-              ShelfMaster is a specialized desktop library management system engineered on Tauri v2, React 18, and local SQLite persistence engines.
-            </p>
-            <ul className="list-disc pl-6 space-y-2.5 text-muted-foreground pt-2">
-              <li>
-                <strong className="text-foreground">Development and Availability Status:</strong> ShelfMaster is an active architectural blueprint and internal engineering system. Notice is hereby given that ShelfMaster is not scheduled for public distribution, commercial release, or digital retail during the current calendar year.
-              </li>
-              <li>
-                <strong className="text-foreground">Proprietary Concept &amp; Code:</strong> System blueprints, database schemas, architectural specifications, and related intellectual assets associated with ShelfMaster are the exclusive intellectual property of Developer &amp; Architect Abu Saeed Sayem and VibePress Studio. Unauthorized commercial exploitation or misrepresentation of unreleased software builds is strictly prohibited.
-              </li>
-            </ul>
-          </div>
-
-          {/* 2.3 */}
           <div className="space-y-2">
             <h3 className="text-lg font-bold text-foreground">
-              2.3. Future Software and Digital Releases
+              2.2. Future Software and Digital Releases
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               VibePress Studio actively designs and engineers experimental and commercial software systems. We reserve the uninhibited right to introduce, deploy, deprecate, or distribute new WordPress plugins, native desktop systems, developer command-line interfaces, or digital utilities in the future under either open-source licenses or commercial end-user licensing models. Any future tool or service deployed by VibePress Studio will automatically fall under the governance of these Terms, unless accompanied by an explicit standalone software license agreement.

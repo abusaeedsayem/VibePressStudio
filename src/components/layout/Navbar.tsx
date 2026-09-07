@@ -20,7 +20,7 @@ import {
   Command,
 } from "@/components/ui/command";
 import { products } from "@/data/products";
-import { Search, Menu, ChevronDown, Package, Monitor } from "lucide-react";
+import { Search, Menu, ChevronDown } from "lucide-react";
 import navigationData from "@/content/navigation.json";
 
 export function Navbar() {
@@ -28,7 +28,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
 
-  const { brand, links, actions, searchPlaceholder, searchDialogPlaceholder } = navigationData;
+  const { brand, searchPlaceholder, searchDialogPlaceholder } = navigationData;
 
   return (
     <>
@@ -44,7 +44,7 @@ export function Navbar() {
                   <CommandItem key={p.id} asChild>
                     <Link href={`/products/${p.slug}`} onClick={() => setSearchOpen(false)}>
                       <img 
-                        src={p.logoImage || (p.id === 'shelfmaster' ? '/ShelfMaster-icon-1024.png' : '/Smart-Affiliate-Link-Cloaker-icon.svg')} 
+                        src={p.logoImage || '/Smart-Affiliate-Link-Cloaker-icon.svg'} 
                         alt={p.name} 
                         className="mr-2.5 h-5 w-5 object-contain rounded shrink-0" 
                       />
@@ -109,22 +109,6 @@ export function Navbar() {
                       </div>
                       <div className="text-xs text-muted-foreground">
                         WordPress Performance Plugin
-                      </div>
-                    </div>
-                  </Link>
-
-                  <Link 
-                    href="/products/shelfmaster" 
-                    onClick={() => setProductsOpen(false)}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
-                  >
-                    <img src="/ShelfMaster-icon-1024.png" alt="ShelfMaster" className="h-6 w-6 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" />
-                    <div>
-                      <div className="font-semibold text-sm group-hover:text-primary transition-colors">
-                        ShelfMaster
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        Desktop Application (Win/macOS)
                       </div>
                     </div>
                   </Link>
@@ -194,14 +178,6 @@ export function Navbar() {
                     >
                       <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker" className="h-5 w-5 object-contain rounded shrink-0" />
                       Smart Affiliate Link Cloaker
-                    </Link>
-                    <Link
-                      href="/products/shelfmaster"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
-                    >
-                      <img src="/ShelfMaster-icon-1024.png" alt="ShelfMaster" className="h-5 w-5 object-contain rounded shrink-0" />
-                      ShelfMaster
                     </Link>
                     <Link
                       href="/products"

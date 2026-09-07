@@ -47,7 +47,7 @@ export default function LabPage() {
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
                   <img 
-                    src={prod.name.includes("ShelfMaster") ? "/ShelfMaster-icon-1024.png" : "/Smart-Affiliate-Link-Cloaker-icon.svg"} 
+                    src="/Smart-Affiliate-Link-Cloaker-icon.svg" 
                     alt={prod.name} 
                     className="w-10 h-10 rounded-lg p-0.5 bg-white border border-border shrink-0 object-contain shadow-xs" 
                   />
