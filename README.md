@@ -3,8 +3,8 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.0.8` (September 6, 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.6` (100% Feature Complete · 24 Core Features)  
-> **Last Updated:** September 6, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
+> **Studio Release:** `v1.0.9` (September 7, 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.6` (100% Feature Complete · 24 Core Features)  
+> **Last Updated:** September 7, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
@@ -18,7 +18,22 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.0.8 — Subscription Engine & Admin Panel (September 6, 2026)
+## Latest Release: v1.0.9 — Footer Modernization & Studio Lab Subscription Streamlining (September 7, 2026)
+
+This release focuses on streamlining global navigation, modernizing the site footer with a clean 4-column layout, and embedding the high-performance subscription engine into the Studio Lab page (`/lab`).
+
+### What's New at a Glance (v1.0.9)
+
+| Area | Update | Files / Routes |
+|------|--------|----------------|
+| **Footer Modernization** | Streamlined footer into balanced 4 columns (Brand, Software Suite, Documentation & Help, Legal & Standards); removed "Pre-Launch Registration", "Upcoming Studio Tools", accreditation block, and inline subscription form. | `src/components/layout/Footer.tsx`, `src/content/footer.json`, `src/content/site.json` |
+| **Studio Lab Subscription Form** | Replaced previous interactive sign-up form with the integrated, production-grade `SubscriberForm` component inside a dedicated Subscription Form card directly wired to `/api/subscribe` with real-time feedback and validation. | `src/app/lab/page.tsx`, `src/components/forms/SubscriberForm.tsx` |
+| **Content Cleanup** | Removed redundant and outdated notices ("Zero spam guarantee...", "Launch Timeline Status", directory review notices) for cleaner readability. | `src/content/pricing.json`, `src/app/lab/page.tsx` |
+| **Next.js Stability** | Resolved Next.js App Router PageProps constraint on `/admin/login` and added dynamic loading fallback for background mailer dispatch. | `src/app/admin/login/page.tsx`, `src/lib/email/notifications.ts`, `next.config.ts` |
+
+> **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) for the complete diff log.
+
+<details><summary><strong>Previous Release: v1.0.8 — Subscription Engine & Admin Panel (September 6, 2026)</strong></summary>
 
 This release integrates the public subscription and notification engine, the secure admin control panel, and the shared Subscriber data model. Form submissions are now sent to a Google Apps Script Webhook which records the data into a Google Sheet and sends an email notification to `vibepress.studio@proton.me`. Next.js API routes `/api/contact` and `/api/subscribe` securely handle validation and request forwarding.
 
@@ -32,7 +47,7 @@ This release integrates the public subscription and notification engine, the sec
 | **Subscription Engine** | Public subscription form in global footer and Studio Lab early-access dispatch, validated, deduplicated, and backed by Prisma PostgreSQL/SQLite with unique email index. | `src/components/forms/SubscriberForm.tsx`, `src/app/api/subscribe/route.ts`, `src/lib/db/subscribers.ts` |
 | **Admin Control Panel** | Password-protected admin area invisible to normal visitors, where administrators can edit page text content via dropdown-driven interface, and view/download the subscriber list. | `src/app/admin/login/page.tsx`, `src/app/admin/dashboard/page.tsx`, `src/components/ui/table.tsx`, `src/lib/hash.ts` |
 
-> **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) for the complete diff log.
+</details>
 
 <details><summary><strong>Previous Release: v1.0.7 — 24 Core Features Suite Expansion & Interactive Showcase (September 5, 2026)</strong></summary>
 
@@ -326,6 +341,18 @@ vercel ls --scope team_C08AS1hMp9PdkaKDwRwHcwWi  # optional: check deployment st
 **Engineering Accreditation:** Designed & Engineered by Lead Software Architect Abu Saeed Sayem. See [`/about`](https://vibepressstudio.vercel.app/about) and `src/content/about.json:1`.
 
 **Trademarks:** WordPress® is a registered trademark of the WordPress Foundation. Amazon Associates®, Stripe®, Cloudflare® referenced under nominative fair use.
+
+---
+
+## Updates in v1.0.9
+
+### Footer Architecture
+- **Streamlined Navigation**: Removed 'Pre-Launch Registration' and 'Upcoming Studio Tools' menu items from the footer.
+- **Clean 4-Column Layout**: Removed the inline footer newsletter/subscription form and engineering accreditation block in favor of a balanced, responsive 4-column studio layout (Brand, Software Suite, Documentation & Help, Legal & Standards).
+
+### Studio Lab Portal (`/lab`)
+- **Integrated Subscription Form**: Upgraded the right column with the production-grade `SubscriberForm` component directly connected to `/api/subscribe`.
+- **Copy Cleanup**: Cleaned up obsolete timeline, spam guarantee, and directory review copy.
 
 ---
 

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-labelledby="salcIconTitle">
+  <title id="salcIconTitle">Smart Affiliate Link Cloaker — Link-Shield</title>
+  <defs>
+    <linearGradient id="salc-shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0058be"/>
+      <stop offset="100%" stop-color="#2170e4"/>
+    </linearGradient>
+  </defs>
+  <!-- Card background — solid white, crisp border, distinct from VibePress 4-bar studio icon -->
+  <rect width="100" height="100" rx="22" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+  <rect x="0.6" y="0.6" width="98.8" height="98.8" rx="21.4" fill="none" stroke="white" stroke-width="1.2" opacity="0.9"/>
+  <!-- Link-Shield motif — unique to this plugin, VibePress palette retained -->
+  <g transform="translate(21, 14)">
+    <!-- Shield outline -->
+    <path d="M28 2.5 L50 12.2 L50 33.5 C50 45 28 58.2 28 58.2 C28 58.2 6 45 6 33.5 L6 12.2 Z" fill="white" stroke="url(#salc-shield-grad)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- subtle tint inside shield top -->
+    <path d="M28 2.5 L50 12.2 L50 33.5 C50 45 28 58.2 28 58.2 C28 57.9 6 45 6 33.5 L6 12.2 Z" fill="url(#salc-shield-grad)" opacity="0.055"/>
+    <!-- inner shield inner shadow -->
+    <path d="M28 4.2 L48.2 13.2 L48.2 32.8 C48.2 43 28 55.2 28 55.2 C28 55.2 7.8 43 7.8 32.8 L7.8 13.2 Z" fill="none" stroke="white" stroke-width="0.9" opacity="0.7"/>
+    <!-- Chain links — horizontal interlocked -->
+    <g transform="translate(0, 8.5)">
+      <!-- left link -->
+      <rect x="8.5" y="15.5" width="19.5" height="12.5" rx="6.25" fill="none" stroke="#0058be" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- right link -->
+      <rect x="28" y="15.5" width="19.5" height="12.5" rx="6.25" fill="none" stroke="#2170e4" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- center overlap accent — cloaking veil (peach) -->
+      <rect x="23.2" y="18.2" width="9.6" height="7.1" rx="2.2" fill="#ffb95f" stroke="white" stroke-width="1.15"/>
+      <!-- cutout to show interlock -->
+      <line x1="18.2" y1="21.7" x2="18.2" y2="21.7" stroke="white" stroke-width="2.4" stroke-linecap="round" opacity="0"/>
+    </g>
+    <!-- top accent — secure dot (cloaked) -->
+    <circle cx="43.2" cy="7.8" r="3.6" fill="#ffb95f" stroke="white" stroke-width="1.15"/>
+    <circle cx="43.2" cy="7.8" r="1.35" fill="white" opacity="0.96"/>
+  </g>
+</svg>

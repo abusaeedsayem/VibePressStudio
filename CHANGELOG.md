@@ -9,6 +9,24 @@ This changelog is the **canonical history** for the studio website and is fully 
 
 ---
 
+## [1.0.9] — Footer Modernization & Studio Lab Subscription Streamlining — September 7, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Footer Streamlining & Balanced 4-Column Layout**:
+  - Removed "Pre-Launch Registration" menu link under *Documentation & Help* (`src/content/footer.json`).
+  - Removed "Upcoming Studio Tools" menu link under *Software Suite* (`src/content/footer.json`).
+  - Removed "Engineering Accreditation: Designed & Engineered by Lead Software Architect Abu Saeed Sayem" accreditation block from the footer (`src/components/layout/Footer.tsx`, `src/content/footer.json`, and `src/content/site.json`).
+  - Removed the embedded subscription form ("Stay Informed") from the footer, restoring a balanced, responsive 4-column layout (`src/components/layout/Footer.tsx`).
+- **Studio Lab Page Subscription Integration**:
+  - Replaced the previous ad-hoc interactive sign-up form in the right column of `/lab` (`src/app/lab/page.tsx`) with the integrated `SubscriberForm` component (`variant="expanded"`, `source="lab_hero"`).
+  - Wired directly into `/api/subscribe` with real-time feedback, field validation, honeypot bot prevention, and database persistence.
+  - Removed redundant copy including "Zero spam guarantee...", "Launch Timeline Status", and the directory review status notice.
+- **Next.js & App Stability**:
+  - Corrected Next.js App Router `PageProps` typing constraint for `/admin/login` (`src/app/admin/login/page.tsx`).
+  - Added resilient fallback loading for notification mailers and configured `serverExternalPackages` for native modules.
+
 ## [1.0.8] — Contact & Lab Forms Integration & Subscription Engine — September 6, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

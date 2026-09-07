@@ -6,11 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { hashPassword, verifyPassword } from "@/lib/hash";
 
-type LoginFormProps = {
-  onSuccess: () => void;
-};
-
-export function AdminLoginPage({ onSuccess }: LoginFormProps) {
+export default function AdminLoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -27,7 +23,6 @@ export function AdminLoginPage({ onSuccess }: LoginFormProps) {
 
       if (!expectedHash) {
         // Fallback: if no hash is set, allow any password (for initial setup)
-        onSuccess();
         router.push("/admin/dashboard");
         return;
       }
@@ -35,7 +30,6 @@ export function AdminLoginPage({ onSuccess }: LoginFormProps) {
       const isValid = await verifyPassword(password, expectedHash);
 
       if (isValid) {
-        onSuccess();
         router.push("/admin/dashboard");
       } else {
         setError("Invalid email or password");

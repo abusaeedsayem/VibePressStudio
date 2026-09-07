@@ -1,22 +1,19 @@
 {
   "brand": "VibePress Studio",
   "description": "High-performance software engineering studio crafting bloat-free WordPress plugins and digital tools.",
-  "accreditation": "Designed & Engineered by Lead Software Architect Abu Saeed Sayem.",
   "copyright": "© 2026 VibePress Studio. All rights reserved. Built for performance and data privacy.",
   "columns": [
     {
       "title": "Software Suite",
       "items": [
         { "label": "Smart Affiliate Link Cloaker", "href": "/products/smart-affiliate-link-cloaker" },
-        { "label": "Products Directory", "href": "/products" },
-        { "label": "Upcoming Studio Tools", "href": "/products#roadmap" }
+        { "label": "Products Directory", "href": "/products" }
       ]
     },
     {
       "title": "Documentation & Help",
       "items": [
         { "label": "Knowledgebase & Docs", "href": "/docs" },
-        { "label": "Pre-Launch Registration", "href": "/lab" },
         { "label": "Support Helpdesk", "href": "/contact" }
       ]
     },

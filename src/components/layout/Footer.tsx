@@ -1,14 +1,13 @@
 import Link from "next/link";
 import footerData from "@/content/footer.json";
-import { SubscriberForm } from "@/components/forms/SubscriberForm";
 
 export function Footer() {
-  const { brand, description, accreditation, copyright, columns } = footerData;
+  const { description, copyright, columns } = footerData;
 
   return (
     <footer className="bg-muted/40 border-t border-border mt-auto">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
           {/* Column 1: VibePress Studio */}
           <div className="flex flex-col gap-4">
@@ -18,29 +17,9 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">
               {description}
             </p>
-            <div className="pt-2 border-t border-border/60">
-              <p className="text-xs font-semibold text-foreground">
-                Engineering Accreditation:
-              </p>
-              <p className="text-xs text-muted-foreground mt-0.5">
-                {accreditation}
-              </p>
-            </div>
           </div>
 
-          {/* Column 2: Newsletter / Subscription */}
-          <div className="flex flex-col gap-4">
-            <h4 className="font-bold text-xs text-foreground uppercase tracking-wider">
-              Stay Informed
-            </h4>
-            <SubscriberForm
-              source="footer"
-              variant="compact"
-              buttonLabel="Subscribe"
-            />
-          </div>
-
-          {/* Columns 3, 4 */}
+          {/* Link Columns: Software Suite, Documentation & Help, Legal & Standards */}
           {columns.map((col, idx) => (
             <div key={idx} className="flex flex-col gap-3">
               <h4 className="font-bold text-xs text-foreground uppercase tracking-wider">

@@ -1,4 +1,3 @@
-import nodemailer from "nodemailer";
 
 interface NotificationPayload {
   name: string;
@@ -19,14 +18,21 @@ export async function sendAdminSubscriberNotification(
     ADMIN_NOTIFICATION_RECIPIENT,
   } = process.env;
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: parseInt(SMTP_PORT || "587", 10),
-    auth: {
-      user: SMTP_USER,
-      pass: SMTP_PASSWORD,
-    },
-  });
+  let transporter: any;
+  try {
+    const nodemailer = require("nodemailer");
+    transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: parseInt(SMTP_PORT || "587", 10),
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASSWORD,
+      },
+    });
+  } catch {
+    console.warn("nodemailer not available. Admin notification skipped.");
+    return;
+  }
 
   const html = `
     <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto;">

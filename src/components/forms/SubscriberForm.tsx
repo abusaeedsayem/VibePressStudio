@@ -93,6 +93,7 @@ export function SubscriberForm(props: SubscriberFormProps) {
   const renderCompact = () => {
     return (
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        {errorMessage && renderError(errorMessage)}
         <Label htmlFor="name" className="hidden">
           Name
         </Label>
@@ -169,46 +170,45 @@ tabIndex={-1}
 
   const renderExpanded = () => {
     return (
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <p className="text-sm text-muted-foreground">
-          Stay Ahead of Studio Releases
-        </p>
-        <Label htmlFor="name" className="block text-sm font-medium text-foreground">
-          Name
-        </Label>
-        <Input
-          id="name"
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          disabled={status === "loading"}
-          className={cn(
-            "rounded-md border border-input bg-transparent/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors disabled:cursor-not-allowed disabled:opacity-50 block w-full",
-            "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-placeholder"
-          )}
-        />
-        <Label htmlFor="email" className="block text-sm font-medium text-foreground">
-          Email Address
-        </Label>
-        <Input
-          id="email"
-          type="email"
-          placeholder="name@organization.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={status === "loading"}
-          className={cn(
-            "rounded-md border border-input bg-transparent/50 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors disabled:cursor-not-allowed disabled:opacity-50 block w-full",
-            "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-placeholder"
-          )}
-        />
+      <form onSubmit={handleSubmit} className="space-y-5">
+        {errorMessage && renderError(errorMessage)}
+
+        <div className="space-y-2">
+          <Label htmlFor="name" className="text-xs font-bold uppercase tracking-wider">
+            Your Name <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="name"
+            type="text"
+            placeholder="e.g. Alex Morgan"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            disabled={status === "loading"}
+            className="h-11 text-sm"
+          />
+        </div>
+
+        <div className="space-y-2">
+          <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider">
+            Email Address <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="email"
+            type="email"
+            required
+            placeholder="name@organization.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={status === "loading"}
+            className="h-11 text-sm"
+          />
+        </div>
+
         <input
           type="hidden"
           name="honeypot"
-          
           style={{ display: "none", caretColor: "transparent" }}
-tabIndex={-1}
+          tabIndex={-1}
           defaultValue=""
         />
         <Button

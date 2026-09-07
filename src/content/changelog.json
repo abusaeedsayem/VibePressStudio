@@ -3,6 +3,24 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "September 7, 2026",
+      "version": "v1.0.9 — Footer Modernization & Studio Lab Subscription Streamlining",
+      "changes": [
+        "Streamlined site footer: removed 'Pre-Launch Registration' and 'Upcoming Studio Tools' menu items, removed engineering accreditation block, and eliminated the footer subscription form in favor of a clean, responsive 4-column architecture (Brand, Software Suite, Documentation & Help, Legal & Standards).",
+        "Studio Lab (/lab) page subscription overhaul: replaced legacy sign-up form with the integrated, production-grade SubscriberForm component inside a dedicated Subscription Form card directly wired to /api/subscribe with real-time feedback and validation.",
+        "Content cleanup: purged outdated and redundant copy from the /lab page, including 'Zero spam guarantee...', 'Launch Timeline Status', and directory review notices.",
+        "System stabilization: resolved Next.js App Router PageProps constraint on /admin/login and added dynamic fallback protection for background mail dispatch."
+      ]
+    },
+    {
+      "date": "September 6, 2026",
+      "version": "v1.0.8 — Contact & Lab Forms Integration & Subscription Engine",
+      "changes": [
+        "Functional form integration: added /api/contact and /api/subscribe endpoints forwarding lead payloads to Google Apps Script webhook with email alerts.",
+        "Subscription and notification engine: built Prisma database model, idempotent upsert, honeypot bot mitigation, and secure admin control panel at /admin/login and /admin/dashboard with CSV subscriber exports."
+      ]
+    },
+    {
       "date": "September 5, 2026",
       "version": "v1.0.7 — 24 Core Features Suite Expansion & Interactive Showcase Release",
       "changes": [
