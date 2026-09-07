@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { hashPassword, verifyPassword } from "@/lib/hash";
 
 export default function AdminLoginPage() {
   const [email, setEmail] = useState("");
@@ -19,20 +18,18 @@ export default function AdminLoginPage() {
     setError(null);
 
     try {
-      const expectedHash = process.env.ADMIN_PASSWORD_HASH;
+      const response = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-      if (!expectedHash) {
-        // Fallback: if no hash is set, allow any password (for initial setup)
-        router.push("/admin/dashboard");
-        return;
-      }
+      const data = await response.json();
 
-      const isValid = await verifyPassword(password, expectedHash);
-
-      if (isValid) {
+      if (response.ok && data.success) {
         router.push("/admin/dashboard");
       } else {
-        setError("Invalid email or password");
+        setError(data.error || "Invalid email or password");
         setIsLoading(false);
       }
     } catch (err) {

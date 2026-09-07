@@ -18,9 +18,14 @@ export async function sendAdminSubscriberNotification(
     ADMIN_NOTIFICATION_RECIPIENT,
   } = process.env;
 
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASSWORD) {
+    return;
+  }
+
   let transporter: any;
   try {
-    const nodemailer = require("nodemailer");
+    const dynamicRequire = eval("require");
+    const nodemailer = dynamicRequire("nodemailer");
     transporter = nodemailer.createTransport({
       host: SMTP_HOST,
       port: parseInt(SMTP_PORT || "587", 10),

@@ -9,7 +9,6 @@ import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuIte
 import { X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { prisma } from "@/lib/prisma";
 
 interface PageContent {
   fieldName: string;
@@ -87,18 +86,11 @@ export default function AdminDashboard() {
   useEffect(() => {
     async function fetchSubscribers() {
       try {
-        const allSubscribers = await prisma.subscriber.findMany({
-          orderBy: { createdAt: "desc" },
-          select: {
-            id: true,
-            name: true,
-            email: true,
-            source: true,
-            createdAt: true,
-            updatedAt: true,
-          },
-        });
-        setSubscribers(allSubscribers);
+        const res = await fetch("/api/admin/subscribers");
+        const data = await res.json();
+        if (data.subscribers) {
+          setSubscribers(data.subscribers);
+        }
       } catch (err) {
         console.error("Failed to fetch subscribers:", err);
       }
@@ -114,10 +106,12 @@ export default function AdminDashboard() {
   // Handle deletion
   const handleDelete = async (id: string) => {
     try {
-      await prisma.subscriber.delete({
-        where: { id },
+      const res = await fetch(`/api/admin/subscribers?id=${id}`, {
+        method: "DELETE",
       });
-      setSubscribers(subscribers.filter((s) => s.id !== id));
+      if (res.ok) {
+        setSubscribers(subscribers.filter((s) => s.id !== id));
+      }
     } catch (err) {
       console.error("Failed to delete subscriber:", err);
     } finally {
@@ -128,9 +122,10 @@ export default function AdminDashboard() {
 
   // Handle CSV export
   const handleExport = () => {
-    const csvRows = subscribers.map((s) =>
-      `"${s.name}","${s.email}","${s.source}","${s.createdAt.toISOString()}"`
-    );
+    const csvRows = subscribers.map((s) => {
+      const dateStr = s.createdAt ? new Date(s.createdAt).toISOString() : "";
+      return `"${s.name}","${s.email}","${s.source}","${dateStr}"`;
+    });
     const csvContent = "Name,Email,Source,Timestamp\n" + csvRows.join("\n");
     const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);

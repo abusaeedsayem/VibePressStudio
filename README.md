@@ -29,7 +29,7 @@ This release focuses on streamlining global navigation, modernizing the site foo
 | **Footer Modernization** | Streamlined footer into balanced 4 columns (Brand, Software Suite, Documentation & Help, Legal & Standards); removed "Pre-Launch Registration", "Upcoming Studio Tools", accreditation block, and inline subscription form. | `src/components/layout/Footer.tsx`, `src/content/footer.json`, `src/content/site.json` |
 | **Studio Lab Subscription Form** | Replaced previous interactive sign-up form with the integrated, production-grade `SubscriberForm` component inside a dedicated Subscription Form card directly wired to `/api/subscribe` with real-time feedback and validation. | `src/app/lab/page.tsx`, `src/components/forms/SubscriberForm.tsx` |
 | **Content Cleanup** | Removed redundant and outdated notices ("Zero spam guarantee...", "Launch Timeline Status", directory review notices) for cleaner readability. | `src/content/pricing.json`, `src/app/lab/page.tsx` |
-| **Next.js Stability** | Resolved Next.js App Router PageProps constraint on `/admin/login` and added dynamic loading fallback for background mailer dispatch. | `src/app/admin/login/page.tsx`, `src/lib/email/notifications.ts`, `next.config.ts` |
+| **Next.js & Build Stability** | Decoupled client components from server modules with dedicated `/api/admin/login` and `/api/admin/subscribers` routes, added lazy Prisma client initialization with graceful fallback, eliminated native module client bundle errors (`node-gyp-build`/`fs`), and resolved PageProps constraint on `/admin/login`. | `src/app/api/admin/`, `src/app/admin/login/page.tsx`, `src/app/admin/dashboard/page.tsx`, `src/lib/prisma.ts` |
 
 > **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) for the complete diff log.
 

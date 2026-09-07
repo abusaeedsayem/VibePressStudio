@@ -25,7 +25,9 @@ This changelog is the **canonical history** for the studio website and is fully 
   - Removed redundant copy including "Zero spam guarantee...", "Launch Timeline Status", and the directory review status notice.
 - **Next.js & App Stability**:
   - Corrected Next.js App Router `PageProps` typing constraint for `/admin/login` (`src/app/admin/login/page.tsx`).
-  - Added resilient fallback loading for notification mailers and configured `serverExternalPackages` for native modules.
+  - Decoupled client-side components from server modules: created dedicated `/api/admin/login` and `/api/admin/subscribers` server API routes, removing client-side `bcrypt` and direct `prisma` calls.
+  - Implemented lazy-loaded `PrismaClient` proxy with graceful fallback handling in `src/lib/prisma.ts` to prevent constructor validation errors during static build phases.
+  - Eliminated native module client bundling errors (`node-gyp-build` / `fs`) and silenced static mailer resolution under Next.js Turbopack.
 
 ## [1.0.8] — Contact & Lab Forms Integration & Subscription Engine — September 6, 2026
 
