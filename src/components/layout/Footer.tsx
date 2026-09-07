@@ -42,18 +42,11 @@ export function Footer() {
 
         </div>
 
-        {/* Bottom Copyright Bar with Small Admin Link on Right */}
+        {/* Bottom Copyright Bar */}
         <div className="mt-12 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-xs text-muted-foreground">
             {copyright}
           </p>
-          <Link
-            href="/admin/login"
-            className="text-[11px] text-muted-foreground/40 hover:text-muted-foreground transition-colors font-medium"
-            title="Admin Portal Login"
-          >
-            Admin Portal
-          </Link>
         </div>
       </div>
     </footer>
