@@ -72,6 +72,11 @@ export default function SmartAffiliateLinkCloakerPage() {
       <section className="relative pt-20 pb-20 md:pt-28 md:pb-24 border-b border-border bg-gradient-to-b from-primary/10 via-background to-background overflow-hidden">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6 text-center relative z-10">
           
+          {/* Plugin Icon Badge */}
+          <div className="inline-block p-3 rounded-2xl bg-white border border-primary/20 shadow-2xl mb-6 hover:scale-105 transition-transform">
+            <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker Icon" className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl" />
+          </div>
+
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
             <span className="px-4 py-1.5 text-xs md:text-sm font-semibold border border-primary/30 bg-primary/10 text-primary rounded-full shadow-xs">
               {eyebrow}

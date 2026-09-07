@@ -3,6 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import {
   Dialog,
   DialogContent,
 } from "@/components/ui/dialog";
@@ -14,9 +19,8 @@ import {
   CommandItem,
   Command,
 } from "@/components/ui/command";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { products } from "@/data/products";
-import { Search, Menu, Package, ChevronDown } from "lucide-react";
+import { Search, Menu, ChevronDown, Package, Monitor } from "lucide-react";
 import navigationData from "@/content/navigation.json";
 
 export function Navbar() {
@@ -24,9 +28,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
 
-  const brand = navigationData.brand ?? "VibePress Studio";
-  const searchPlaceholder = navigationData.searchPlaceholder ?? "Search catalog...";
-  const searchDialogPlaceholder = navigationData.searchDialogPlaceholder ?? "Search products, docs, features...";
+  const { brand, links, actions, searchPlaceholder, searchDialogPlaceholder } = navigationData;
 
   return (
     <>
@@ -41,7 +43,11 @@ export function Navbar() {
                 {products.map((p) => (
                   <CommandItem key={p.id} asChild>
                     <Link href={`/products/${p.slug}`} onClick={() => setSearchOpen(false)}>
-                      <Package className="mr-2 h-4 w-4 text-primary" />
+                      <img 
+                        src={p.logoImage || (p.id === 'shelfmaster' ? '/ShelfMaster-icon-1024.png' : '/Smart-Affiliate-Link-Cloaker-icon.svg')} 
+                        alt={p.name} 
+                        className="mr-2.5 h-5 w-5 object-contain rounded shrink-0" 
+                      />
                       <div>
                         <div className="font-medium text-sm">{p.name}</div>
                         <div className="text-xs text-muted-foreground">{p.tagline}</div>
@@ -81,7 +87,7 @@ export function Navbar() {
             >
               <button
                 onClick={() => setProductsOpen(!productsOpen)}
-                className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors flex items-center gap-1"
+                className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors flex items-center gap-1 cursor-pointer"
               >
                 Products <ChevronDown className="h-4 w-4" />
               </button>
@@ -94,15 +100,31 @@ export function Navbar() {
                   <Link 
                     href="/products/smart-affiliate-link-cloaker" 
                     onClick={() => setProductsOpen(false)}
-                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
                   >
-                    <Package className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker" className="h-6 w-6 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" />
                     <div>
                       <div className="font-semibold text-sm group-hover:text-primary transition-colors">
                         Smart Affiliate Link Cloaker
                       </div>
                       <div className="text-xs text-muted-foreground">
                         WordPress Performance Plugin
+                      </div>
+                    </div>
+                  </Link>
+
+                  <Link 
+                    href="/products/shelfmaster" 
+                    onClick={() => setProductsOpen(false)}
+                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
+                  >
+                    <img src="/ShelfMaster-icon-1024.png" alt="ShelfMaster" className="h-6 w-6 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" />
+                    <div>
+                      <div className="font-semibold text-sm group-hover:text-primary transition-colors">
+                        ShelfMaster
+                      </div>
+                      <div className="text-xs text-muted-foreground">
+                        Desktop Application (Win/macOS)
                       </div>
                     </div>
                   </Link>
@@ -135,7 +157,7 @@ export function Navbar() {
             {/* Search Trigger */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center justify-between w-48 sm:w-64 md:w-72 bg-muted/60 border border-input rounded-full px-4 py-2 hover:bg-muted transition-colors gap-2 text-muted-foreground text-xs"
+              className="flex items-center justify-between w-48 sm:w-64 md:w-72 bg-muted/60 border border-input rounded-full px-4 py-2 hover:bg-muted transition-colors gap-2 text-muted-foreground text-xs cursor-pointer"
             >
               <div className="flex items-center gap-2">
                 <Search className="h-4 w-4 shrink-0" />
@@ -149,7 +171,7 @@ export function Navbar() {
             {/* Mobile Sheet Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
               <SheetTrigger asChild>
-                <button className="lg:hidden text-foreground p-2 rounded-md hover:bg-muted">
+                <button className="lg:hidden text-foreground p-2 rounded-md hover:bg-muted cursor-pointer">
                   <Menu className="h-6 w-6" />
                 </button>
               </SheetTrigger>
@@ -170,8 +192,16 @@ export function Navbar() {
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
                     >
-                      <Package className="h-4 w-4 text-primary" />
+                      <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker" className="h-5 w-5 object-contain rounded shrink-0" />
                       Smart Affiliate Link Cloaker
+                    </Link>
+                    <Link
+                      href="/products/shelfmaster"
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
+                    >
+                      <img src="/ShelfMaster-icon-1024.png" alt="ShelfMaster" className="h-5 w-5 object-contain rounded shrink-0" />
+                      ShelfMaster
                     </Link>
                     <Link
                       href="/products"

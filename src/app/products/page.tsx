@@ -59,9 +59,16 @@ export default function ProductsDirectoryPage() {
                       24 Core Features Built-in
                     </span>
                   </div>
-                  <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
-                    {product.name}
-                  </h2>
+                  <div className="flex items-center gap-4 mb-2">
+                    <img 
+                      src={product.logoImage || (product.id === 'shelfmaster' ? '/ShelfMaster-icon-1024.png' : '/Smart-Affiliate-Link-Cloaker-icon.svg')} 
+                      alt={product.name} 
+                      className="w-12 h-12 rounded-xl bg-white p-1 border border-border shadow-md object-contain shrink-0" 
+                    />
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+                      {product.name}
+                    </h2>
+                  </div>
                   <p className="text-base text-primary font-medium mt-1">
                     {product.tagline}
                   </p>

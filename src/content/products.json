@@ -8,7 +8,7 @@
     "category": "wordpress-plugin",
     "categoryLabel": "WordPress Performance Plugin",
     "icon": "Link",
-    "logoImage": "/images/products/smart-affiliate-link-cloaker-logo.png",
+    "logoImage": "/Smart-Affiliate-Link-Cloaker-icon.svg",
     "screenshotGallery": [
       "/images/products/smart-affiliate-link-cloaker-dash.png",
       "/images/products/smart-affiliate-link-cloaker-stats.png",
@@ -178,6 +178,144 @@
           "Verify Smart ToS Uncloaking: Test an Amazon URL. Raw link renders on frontend while beacon tracks clicks via navigator.sendBeacon.",
           "Go to Link Cloaker -> Statistics to inspect real-time click charts, device breakdown, top performing links, and export CSV.",
           "Monitor Link Cloaker -> All Links for automated broken link health badges (🟢 200 OK / 🔴 404 Error)."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "shelfmaster",
+    "slug": "shelfmaster",
+    "name": "ShelfMaster",
+    "tagline": "Next-Gen Library Operating & Management System (80% Production-Ready)",
+    "description": "A cutting-edge, desktop-native Library Operating and Management System built to replace clunky web portals and legacy library software. Provides a lightning-fast interface to manage cataloging, POS circulation with auto-fines, member KYC, donor registry, staff roster, payroll, expenses, and loan policy settings on macOS and Windows.",
+    "category": "desktop-app",
+    "categoryLabel": "Native Desktop Application (macOS & Windows)",
+    "icon": "Library",
+    "logoImage": "/ShelfMaster-icon-1024.png",
+    "screenshotGallery": [
+      "/images/products/shelfmaster-dashboard.png",
+      "/images/products/shelfmaster-pos.png",
+      "/images/products/shelfmaster-catalog.png"
+    ],
+    "version": "v0.8.0 (80% Production Ready)",
+    "changelogUrl": "/changelog",
+    "techStack": ["Tauri", "Rust Core", "React 18", "TypeScript", "SQLite3 (WAL)", "macOS & Windows Native"],
+    "keyFeatures": [
+      {
+        "title": "Real-Time Command Dashboard",
+        "description": "Central command center displaying active member counts, total books, overdue loans, and quick action buttons.",
+        "iconName": "Monitor",
+        "isPro": false
+      },
+      {
+        "title": "POS Circulation Desk",
+        "description": "Issue books via Member Code & Barcode, process returns, and calculate overdue fines ($0.50/day default rate).",
+        "iconName": "ShoppingCart",
+        "isPro": false
+      },
+      {
+        "title": "Inventory Catalog",
+        "description": "Full inventory management with multi-author/ISBN tracking and auto-generated sequential barcodes (e.g. BK-001).",
+        "iconName": "BookOpen",
+        "isPro": false
+      },
+      {
+        "title": "Patron Directory & KYC",
+        "description": "Register patrons with auto-generated Member IDs (MBR-TIMESTAMP) and colored active vs. expired status badges.",
+        "iconName": "Users",
+        "isPro": false
+      },
+      {
+        "title": "Donors & Gift Registry",
+        "description": "Dual-tab system to register philanthropic Donors and track their specific book or monetary donations over time.",
+        "iconName": "Gift",
+        "isPro": false
+      },
+      {
+        "title": "Staff & Roster Directory",
+        "description": "Employee management module to track library staff, maintain contact info, and monitor active staff status.",
+        "iconName": "Calendar",
+        "isPro": false
+      },
+      {
+        "title": "Automated Payroll Engine",
+        "description": "Generate dynamic payslips with net pay calculation (Base + Bonus - Deductions) and monthly payment tracking.",
+        "iconName": "Banknote",
+        "isPro": false
+      },
+      {
+        "title": "Expenses & Financial Tracking",
+        "description": "Track daily operational expenses (utilities, maintenance, supplies) with monthly/yearly summary progress bars.",
+        "iconName": "Receipt",
+        "isPro": false
+      },
+      {
+        "title": "Settings & Policy Reports",
+        "description": "Configure library name & address, adjust loan policies (days, fine rates), and view visual book popularity bars.",
+        "iconName": "BarChart",
+        "isPro": false
+      }
+    ],
+    "targetAudience": [
+      "Public & Community Libraries",
+      "K-12 Schools & Universities",
+      "Corporate Offices & Law Firms",
+      "Churches & Non-Profits",
+      "Bibliophiles & Researchers"
+    ],
+    "pricingTiers": [
+      {
+        "planName": "Founder Pre-Launch Access",
+        "priceMonthly": null,
+        "priceYearly": null,
+        "priceLifetime": null,
+        "features": [
+          "Pre-launch registration access",
+          "Full software access upon launch",
+          "Lifetime desktop application license",
+          "All 9 core modules included"
+        ],
+        "checkoutUrl": "/lab",
+        "isFeatured": true
+      }
+    ],
+    "distributionChannels": {
+      "preLaunchUrl": "/lab"
+    },
+    "documentationSections": [
+      {
+        "title": "Part 1: Installation",
+        "content": "Installing native binaries on macOS (.dmg) or Windows (.exe) operating systems.",
+        "steps": [
+          "Download ShelfMaster.dmg for Mac or ShelfMaster-Setup.exe for Windows.",
+          "Run the installer executable or drag to Applications folder.",
+          "Activate using your 16-character License Key."
+        ]
+      },
+      {
+        "title": "Part 2: Setting Up Your Library",
+        "content": "Configuring Library name, address, and global loan policy fine rates.",
+        "steps": [
+          "Navigate to Settings in bottom left sidebar.",
+          "Enter your Library Name and Address.",
+          "Set standard loan duration (e.g. 14 days) and overdue fine rate (e.g. $0.50/day)."
+        ]
+      },
+      {
+        "title": "Part 3: Adding Books & Members",
+        "content": "Cataloging book inventory and registering patrons with auto-generated IDs.",
+        "steps": [
+          "In Catalog tab, click '+ Add Book' to auto-generate unique barcodes (BK-001).",
+          "In Members tab, click '+ Add Member' to generate Member IDs (MBR-TIMESTAMP)."
+        ]
+      },
+      {
+        "title": "Part 4: POS Circulation",
+        "content": "Executing checkouts, returns, and automated overdue fine calculations.",
+        "steps": [
+          "In Circulation tab, click 'Issue Book' and type Member ID + Book Barcode.",
+          "When returning, select from Active Loans and click Return.",
+          "ShelfMaster automatically calculates and displays overdue fines if late!"
         ]
       }
     ]

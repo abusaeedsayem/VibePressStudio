@@ -46,9 +46,11 @@ export default function LabPage() {
             <Card key={idx} className="border-border shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2.5 rounded-lg shrink-0 bg-primary/10 text-primary">
-                    <Package className="h-5 w-5" />
-                  </div>
+                  <img 
+                    src={prod.name.includes("ShelfMaster") ? "/ShelfMaster-icon-1024.png" : "/Smart-Affiliate-Link-Cloaker-icon.svg"} 
+                    alt={prod.name} 
+                    className="w-10 h-10 rounded-lg p-0.5 bg-white border border-border shrink-0 object-contain shadow-xs" 
+                  />
                   <div>
                     <CardTitle className="text-xl font-bold">{prod.name}</CardTitle>
                     <span className="text-xs text-muted-foreground font-medium">{prod.type}</span>
