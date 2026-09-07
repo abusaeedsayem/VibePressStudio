@@ -1,5 +1,6 @@
 import Link from "next/link";
 import footerData from "@/content/footer.json";
+import { SubscriberForm } from "@/components/forms/SubscriberForm";
 
 export function Footer() {
   const { brand, description, accreditation, copyright, columns } = footerData;
@@ -8,7 +9,7 @@ export function Footer() {
     <footer className="bg-muted/40 border-t border-border mt-auto">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
-          
+
           {/* Column 1: VibePress Studio */}
           <div className="flex flex-col gap-4">
             <Link href="/" className="inline-block">
@@ -27,10 +28,22 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Columns 2, 3, 4 */}
+          {/* Column 2: Newsletter / Subscription */}
+          <div className="flex flex-col gap-4">
+            <h4 className="font-bold text-xs text-foreground uppercase tracking-wider">
+              Stay Informed
+            </h4>
+            <SubscriberForm
+              source="footer"
+              variant="compact"
+              buttonLabel="Subscribe"
+            />
+          </div>
+
+          {/* Columns 3, 4 */}
           {columns.map((col, idx) => (
             <div key={idx} className="flex flex-col gap-3">
-              <h4 className="font-bold text-sm text-foreground uppercase tracking-wider">
+              <h4 className="font-bold text-xs text-foreground uppercase tracking-wider">
                 {col.title}
               </h4>
               <ul className="space-y-2">

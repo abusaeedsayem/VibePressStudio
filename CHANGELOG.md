@@ -9,7 +9,7 @@ This changelog is the **canonical history** for the studio website and is fully 
 
 ---
 
-## [1.0.8] — Contact & Lab Forms Integration — September 6, 2026
+## [1.0.8] — Contact & Lab Forms Integration & Subscription Engine — September 6, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
 
@@ -17,11 +17,15 @@ This changelog is the **canonical history** for the studio website and is fully 
 - **Functional Forms via Google Apps Script Webhook**: Integrated live form submissions for the `/contact` and `/lab` routes. Submissions are now sent to a Google Apps Script Webhook which records the data into a Google Sheet and sends an email notification to `vibepress.studio@proton.me`.
 - **API Routes**: Created Next.js API routes `/api/contact` and `/api/lab` to handle form validation and securely forward requests to the external webhook.
 - **Environment Variables**: Documented the required `.env` configuration (including `GOOGLE_SCRIPT_WEBHOOK_URL`) in `.env.example`.
+- **Subscription Engine**: Public subscription and notification engine capturing early access signups from the global site footer and the Studio Lab page, backed by database persistence and automated internal email notification, with bot mitigation and full type safety.
+- **Secure Admin Control Panel**: Password-protected admin area invisible to normal visitors, where administrators can edit the text content of any page through a dropdown-driven interface, view and export the subscriber list, and manage page content with live updates.
 
 ### Changed
 - **UI Feedback**: Added loading states and success/error messaging to both the Contact and Lab forms to improve user experience during submission.
-
----
+- **Footer Integration**: Replaced static newsletter markup in `src/components/layout/Footer.tsx` with the new reactive `SubscriberForm` component (`variant="compact"`, `source="footer"`, `buttonLabel="Subscribe"`).
+- **Lab Page Integration**: Mounted featured `SubscriberForm` above the hero section on `/lab` page (`variant="expanded"`, `source="lab_hero"`, `buttonLabel="Join Studio Alpha Dispatch"`, with privacy line: "Zero spam, zero tracking cookies, direct engineering updates only, unsubscribe at any time").
+- **Admin Authentication**: Built dedicated login page at `/admin/login` as the only way into the admin area, with bcrypt-hashed passwords, session cookies, rate limiting, and CSRF protection.
+- **Admin Dashboard**: Built dashboard with page dropdown editor (generates options from actual site structure), inline content editing, repeatable item management, single Save action, and CSV export of subscriber list.
 
 ## [1.0.7] — 24 Core Features Suite Expansion & Interactive Showcase Release — September 5, 2026
 

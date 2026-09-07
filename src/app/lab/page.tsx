@@ -10,6 +10,7 @@ import {
   CheckCircle2, Bell, Sparkles, Clock, Send, Package, Info 
 } from "lucide-react";
 import pricingData from "@/content/pricing.json";
+import { SubscriberForm } from "@/components/forms/SubscriberForm";
 
 export default function LabPage() {
   const [fullName, setFullName] = useState("");
@@ -21,21 +22,20 @@ export default function LabPage() {
 
   const { hero, notice, upcomingProducts } = pricingData;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
 
     setIsSubmitting(true);
     setErrorMessage(null);
 
     try {
-      const response = await fetch("/api/lab", {
+      const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          fullName,
+          name: fullName,
           email,
-          selectedProduct,
+          source: "lab_hero",
         }),
       });
 
@@ -47,7 +47,7 @@ export default function LabPage() {
         setErrorMessage(data.error || "Unable to complete registration. Please try again.");
       }
     } catch (err) {
-      console.error("Lab registration error:", err);
+      console.error("Lab subscription error:", err);
       setErrorMessage("Network connection error. Please check your internet connection and try again.");
     } finally {
       setIsSubmitting(false);
@@ -65,6 +65,17 @@ export default function LabPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
       
+      {/* ── Subscriber Form: Early Access Dispatch ── */}
+      <section className="bg-gradient-to-b from-primary/10 via-background to-background py-4 md:py-6 border-b border-border text-center">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+          <SubscriberForm
+            source="lab_hero"
+            variant="expanded"
+            buttonLabel="Join Studio Alpha Dispatch"
+          />
+        </div>
+      </section>
+
       {/* ── 1. Hero Announcement Header ── */}
       <section className="bg-gradient-to-b from-primary/10 via-background to-background py-16 md:py-24 border-b border-border text-center">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
@@ -147,7 +158,7 @@ export default function LabPage() {
                     </Button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form onSubmit={handleSubscribe} className="space-y-5">
                     {errorMessage && (
                       <div className="p-3 bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 rounded-md text-xs font-medium">
                         {errorMessage}

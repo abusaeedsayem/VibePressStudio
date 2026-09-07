@@ -18,17 +18,19 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.0.8 — Contact & Lab Forms Integration (September 6, 2026)
+## Latest Release: v1.0.8 — Subscription Engine & Admin Panel (September 6, 2026)
 
-This release integrates live form submissions for the `/contact` and `/lab` routes. Submissions are now sent to a Google Apps Script Webhook which records the data into a Google Sheet and sends an email notification to `vibepress.studio@proton.me`. Next.js API routes `/api/contact` and `/api/lab` securely handle validation and request forwarding.
+This release integrates the public subscription and notification engine, the secure admin control panel, and the shared Subscriber data model. Form submissions are now sent to a Google Apps Script Webhook which records the data into a Google Sheet and sends an email notification to `vibepress.studio@proton.me`. Next.js API routes `/api/contact` and `/api/subscribe` securely handle validation and request forwarding.
 
 ### What's New at a Glance (v1.0.8)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
-| **Functional Forms** | Added `/api/contact` and `/api/lab` routes to forward payloads to `GOOGLE_SCRIPT_WEBHOOK_URL`. | `src/app/api/contact/route.ts`, `src/app/api/lab/route.ts` |
+| **Functional Forms** | Added `/api/contact` and `/api/subscribe` routes to forward payloads to `GOOGLE_SCRIPT_WEBHOOK_URL`. | `src/app/api/contact/route.ts`, `src/app/api/subscribe/route.ts` |
 | **Google Sheets Integration** | Form submissions are securely saved in a Google Sheet on Proton Drive and send email notifications. | `scripts/google-sheets-apps-script.js` |
 | **UI Polish** | Loading states and success/error feedbacks added to the contact and lab pages. | `src/app/contact/page.tsx`, `src/app/lab/page.tsx` |
+| **Subscription Engine** | Public subscription form in global footer and Studio Lab early-access dispatch, validated, deduplicated, and backed by Prisma PostgreSQL/SQLite with unique email index. | `src/components/forms/SubscriberForm.tsx`, `src/app/api/subscribe/route.ts`, `src/lib/db/subscribers.ts` |
+| **Admin Control Panel** | Password-protected admin area invisible to normal visitors, where administrators can edit page text content via dropdown-driven interface, and view/download the subscriber list. | `src/app/admin/login/page.tsx`, `src/app/admin/dashboard/page.tsx`, `src/components/ui/table.tsx`, `src/lib/hash.ts` |
 
 > **Full history:** See [`CHANGELOG.md`](./CHANGELOG.md) for the complete diff log.
 
@@ -324,4 +326,36 @@ vercel ls --scope team_C08AS1hMp9PdkaKDwRwHcwWi  # optional: check deployment st
 **Engineering Accreditation:** Designed & Engineered by Lead Software Architect Abu Saeed Sayem. See [`/about`](https://vibepressstudio.vercel.app/about) and `src/content/about.json:1`.
 
 **Trademarks:** WordPress® is a registered trademark of the WordPress Foundation. Amazon Associates®, Stripe®, Cloudflare® referenced under nominative fair use.
+
+---
+
+## New Features in v1.0.8
+
+### Subscription Engine
+- **Public Footer Form**: `SubscriberForm` component mounted in the global footer (`variant="compact"`, `source="footer"`, `buttonLabel="Subscribe"`)
+- **Studio Lab Early-Access Dispatch**: Featured `SubscriberForm` above the hero section (`variant="expanded"`, `source="lab_hero"`, `buttonLabel="Join Studio Alpha Dispatch"`)
+- **Validation**: Name (min 2 chars, trimmed/sanitized), Email (RFC 5322, lowercase, sanitized)
+- **Honeypot Bot Mitigation**: Hidden `hp_website_title` field with `display: none`, `tabIndex: -1`, `autocomplete: disabled`
+- **Deduplication**: Upsert keyed on email — updates existing record if email exists, creates new if not
+- **Animated Success State**: No page reload, no layout shift, reads "You're on the list" with emerald checkmark
+- **Email Notification**: HTML (bg:#0B1120, accent:#38BDF8) + plain text alternative, sent asynchronously via Nodemailer/Ethereal test transport
+- **Server-Side Saving**: `saveSubscriber` upsert in `src/lib/db/subscribers.ts` using shared Prisma client singleton
+
+### Admin Control Panel
+- **Dedicated Login**: `/admin/login` — the only way into the admin area, bcrypt-hashed passwords via `ADMIN_PASSWORD_HASH` env var
+- **Session Security**: HttpOnly, SameSite cookies; server-side verification on every request; never trusts client-side flags
+- **Rate Limiting + Lockout**: Failed login attempts trigger temporary lockout from the same source
+- **CSRF Protection**: Every state-changing admin request (login, save, delete, export) includes CSRF token validation
+- **Page Content Editor**: Dropdown generates options from actual site structure; never goes stale; inline editing of headlines, body copy, button labels, repeatable items
+- **Save & Live Update**: Single Save action commits all changes; next public page load reflects edits without redeploy
+- **Repeatable Content**: Add/delete FAQ items, testimonial entries, feature list entries on pages that support them
+- **Sanitization**: All admin-entered text sanitized/escaped before storing and before rendering on public pages (XSS risk if account compromised)
+- **Subscriber List View**: Reads from the exact same `Subscriber` Prisma table (not a separate store); sortable by most recent first; search/filter by name/email
+- **CSV Export**: Download button produces valid CSV file with Name, Email, Source, Timestamp
+- **Auto-Logout**: Logout after reasonable inactivity period
+
+### Integration
+- Both the public subscription engine and the admin subscriber list share **one** `Subscriber` Prisma model — no duplicate storage
+- Admin panel subscriber list auto-updates when new subscribers sign up through the public footer form
+- Page content edits and subscriber data persist across deploys (database-backed / live on next page load)
 
