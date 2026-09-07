@@ -1,11 +1,8 @@
 {
-  "title": "Terms of Service",
-  "updated": "Last updated: September 2026",
-  "sections": [
-    { "heading": "1. Acceptance of Terms", "body": "By accessing and using VibePress Studio's software and services, you accept and agree to be bound by the terms and provisions of this agreement." },
-    { "heading": "2. Software Licensing", "body": "Our WordPress plugins and digital tools are distributed under commercial software licenses and GPLv2 or later terms provided upon purchase and registration." },
-    { "heading": "3. Support & Updates", "body": "Support and software updates are provided for the duration of your active license or lifetime tier." },
-    { "heading": "4. Refund Policy", "body": "We offer a 14-day no-questions-asked money-back guarantee for direct purchases." },
-    { "heading": "5. Limitation of Liability", "body": "In no event shall VibePress Studio or its engineering team be liable for any indirect, incidental, special, or consequential damages arising out of or in any way connected with the use of our software." }
-  ]
+  "title": "VibePress Studio: Official Terms of Use",
+  "effectiveDate": "September 2026",
+  "lastUpdated": "September 2026",
+  "website": "https://vibepressstudio.vercel.app",
+  "contactEmail": "VibePress.Studio@Proton.me",
+  "architect": "Abu Saeed Sayem"
 }
