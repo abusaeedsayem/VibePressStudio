@@ -1,5 +1,3 @@
-import { PrismaClient } from "@prisma/client";
-
 const globalForPrisma = globalThis as unknown as {
   prisma: any;
 };
@@ -10,7 +8,19 @@ function getPrismaInstance(): any {
   }
 
   try {
-    const client = new PrismaClient({
+    let PrismaClientClass: any;
+    try {
+      const pc = require("@prisma/client");
+      PrismaClientClass = pc.PrismaClient;
+    } catch {
+      PrismaClientClass = null;
+    }
+
+    if (!PrismaClientClass) {
+      throw new Error("PrismaClient module not generated or unavailable");
+    }
+
+    const client = new PrismaClientClass({
       log: process.env.NODE_ENV !== "production" ? ["query", "error"] : ["error"],
     } as any);
 
