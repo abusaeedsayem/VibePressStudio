@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { saveSubscriber } from "@/lib/db/subscribers";
 
 export async function POST(request: Request) {
   try {
@@ -27,10 +28,13 @@ export async function POST(request: Request) {
       recipientEmail: process.env.NOTIFICATION_EMAIL || "vibepress.studio@proton.me",
     };
 
+    // Save subscriber immediately into database / persistent store
+    await saveSubscriber(payload.fullName, payload.email, "Studio Lab Pre-Launch");
+
     const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
     const web3formsKey = process.env.WEB3FORMS_ACCESS_KEY;
 
-    // 1. Send to Google Sheets Webhook (which saves row to Sheet & sends notification email)
+    // 1. Send to Google Sheets Webhook (if configured)
     if (webhookUrl) {
       try {
         await fetch(webhookUrl, {
@@ -43,7 +47,7 @@ export async function POST(request: Request) {
       }
     }
 
-    // 2. Optional: Forward to Web3Forms if key is provided
+    // 2. Forward to Web3Forms (if configured)
     if (web3formsKey) {
       try {
         await fetch("https://api.web3forms.com/submit", {
@@ -61,14 +65,6 @@ export async function POST(request: Request) {
       } catch (err) {
         console.error("Failed to forward lab registration to Web3Forms:", err);
       }
-    }
-
-    // If in development mode and no webhook is configured, log for visibility
-    if (!webhookUrl && !web3formsKey) {
-      console.log(
-        "[VibePress Lab Registration - Dev Mode]:",
-        JSON.stringify(payload, null, 2)
-      );
     }
 
     return NextResponse.json({

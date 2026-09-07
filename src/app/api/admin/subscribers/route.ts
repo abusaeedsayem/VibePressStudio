@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { getMemorySubscribers, deleteMemorySubscriber } from "@/lib/db/memoryStore";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+  let dbSubscribers: any[] = [];
   try {
-    const subscribers = await prisma.subscriber.findMany({
+    dbSubscribers = await prisma.subscriber.findMany({
       orderBy: { createdAt: "desc" },
       select: {
         id: true,
@@ -16,14 +18,20 @@ export async function GET() {
         updatedAt: true,
       },
     });
-    return NextResponse.json({ success: true, subscribers });
   } catch (err) {
-    console.error("Failed to fetch subscribers:", err);
-    return NextResponse.json(
-      { success: false, subscribers: [], error: "Failed to fetch subscribers" },
-      { status: 500 }
-    );
+    console.warn("Prisma DB fetch warning (using fallback store):", err);
   }
+
+  // Combine DB subscribers and memory fallback subscribers without duplicates
+  const memorySubscribers = getMemorySubscribers();
+  const emailSet = new Set(dbSubscribers.map((s) => s.email.toLowerCase()));
+
+  const combined = [
+    ...dbSubscribers,
+    ...memorySubscribers.filter((s) => !emailSet.has(s.email.toLowerCase())),
+  ];
+
+  return NextResponse.json({ success: true, subscribers: combined });
 }
 
 export async function DELETE(request: Request) {
@@ -38,9 +46,17 @@ export async function DELETE(request: Request) {
       );
     }
 
-    await prisma.subscriber.delete({
-      where: { id },
-    });
+    // Try deleting from DB
+    try {
+      await prisma.subscriber.delete({
+        where: { id },
+      });
+    } catch (err) {
+      // Ignored if DB record not present or DB unreachable
+    }
+
+    // Delete from memory store
+    deleteMemorySubscriber(id);
 
     return NextResponse.json({ success: true });
   } catch (err) {
