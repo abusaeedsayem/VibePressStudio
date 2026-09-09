@@ -3,6 +3,17 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "September 9, 2026",
+      "version": "v1.0.10 — Admin Security Hardening, Data Persistence & Public UI Clean-Up",
+      "changes": [
+        "Public UI Clean-Up: completely removed all public 'Admin Login', 'Admin Portal', and 'Sign In' links and buttons from the top navigation bar, command search dialog (⌘K), mobile menu drawer, and website footer. No normal site visitor can see or click into the admin panel.",
+        "Subscriber Data Persistence: built a dual-layer persistence system (saveSubscriber) combining Prisma database storage with an in-memory/persistent store fallback (src/lib/db/memoryStore.ts). Form submissions from /lab, /contact, and / now persist instantly with zero data loss.",
+        "Admin Control Center Overhaul: redesigned /admin/dashboard into a full control center featuring executive metric cards, real-time subscriber directory table with search filter & CSV export, support helpdesk logs, and JSON content inspector.",
+        "ShelfMaster Complete Removal: purged all legacy ShelfMaster desktop software data, routes, image assets, and legal references site-wide.",
+        "Official Legal Documents: updated official 8-section Privacy Policy (/legal/privacy) and 12-section Terms of Use (/legal/terms) from official PDF specifications."
+      ]
+    },
+    {
       "date": "September 7, 2026",
       "version": "v1.0.9 — Footer Modernization & Studio Lab Subscription Streamlining",
       "changes": [
@@ -52,12 +63,11 @@
     },
     {
       "date": "August 31, 2026",
-      "version": "v0.3.0 — Brand Redesign & Studio Lab Polish",
+      "version": "v0.3.0 — Brand Redesign & Studio Lab Migration",
       "changes": [
-        "Integrated complete Google Stitch Design System with custom color tokens, Inter/JetBrains Mono typography, and responsive layouts.",
-        "Renamed top navigation menu from 'Marketplace' to 'Studio' and migrated page route from /pricing to /lab (301 redirect in next.config.ts:12).",
-        "Added SVG brand logo to Header, Mobile Drawer, and Footer, along with modern vector favicon (icon.svg).",
-        "Fixed primary button and tab text contrast ensuring full WCAG AAA compliance."
+        "Layout & Navbar: Integrated Stitch design system (Inter + JetBrains Mono), default light theme, upper-case label caps, hover products dropdown, mobile sheet menu, and custom SVG branding.",
+        "Route Migration: Migrated /pricing route to /lab and renamed Marketplace to Studio in top navigation menu. Added 301 permanent redirect in next.config.ts.",
+        "Contrast Fix: Added missing primary-foreground color variables to globals.css @theme block resolving dark text on blue buttons."
       ]
     },
     {
@@ -65,17 +75,7 @@
       "version": "v0.2.0 — Pre-Launch Rebrand & Content Consolidation",
       "changes": [
         "Rebranded site to pre-launch registration posture; added pricing/lab portal, cloaker status (100% Feature Complete) and ShelfMaster 80% readiness content.",
-        "Rewrote docs hub (Cloaker 5 phases, ShelfMaster 6 chapters), products directory, and navigation/footer to single pre-launch tier (preLaunchUrl: /lab).",
-        "Removed legacy legal pages and Freemius/AppSumo distribution URLs; verified 17 static routes and sitemap."
-      ]
-    },
-    {
-      "date": "July 2026",
-      "version": "v1.0.6 (Smart Affiliate Link Cloaker) — Core Compliance & Routing",
-      "changes": [
-        "Implemented strict FTC auto-disclosure injector (<aside role=\"note\"> callout/badge/minimal/subtle at top/bottom/before_first_link).",
-        "Added support for 307 temporary redirects (default uncached) and 200 iFrame masking with branded gradient.",
-        "Full compatibility with WordPress 6.0+ and PHP 8.0+ (WPCS/PSR-12), local click analytics (wp_salc_clicks, 7 charts, CSV export)."
+        "Rewrote docs hub (Cloaker 5 phases, ShelfMaster 6 chapters), products directory, and navigation/footer to single pre-launch tier (preLaunchUrl: /lab)."
       ]
     }
   ]
