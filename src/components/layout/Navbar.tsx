@@ -20,7 +20,7 @@ import {
   Command,
 } from "@/components/ui/command";
 import { products } from "@/data/products";
-import { Search, Menu, ChevronDown, User, ShieldCheck } from "lucide-react";
+import { Search, Menu, ChevronDown } from "lucide-react";
 import navigationData from "@/content/navigation.json";
 
 export function Navbar() {
@@ -62,7 +62,6 @@ export function Navbar() {
                 <CommandItem asChild><Link href="/docs" onClick={() => setSearchOpen(false)}>Documentation & User Manuals</Link></CommandItem>
                 <CommandItem asChild><Link href="/about" onClick={() => setSearchOpen(false)}>About & Engineering Standards</Link></CommandItem>
                 <CommandItem asChild><Link href="/contact" onClick={() => setSearchOpen(false)}>Support & Licensing Validation</Link></CommandItem>
-                <CommandItem asChild><Link href="/admin/login" onClick={() => setSearchOpen(false)}>Admin Portal / Sign In</Link></CommandItem>
               </CommandGroup>
             </CommandList>
           </Command>
@@ -135,9 +134,6 @@ export function Navbar() {
             <Link href="/contact" className="text-sm font-semibold text-foreground hover:text-primary px-3 py-2 rounded-md transition-colors">
               Support
             </Link>
-            <Link href="/admin/login" className="text-sm font-semibold text-primary hover:text-primary/80 px-3 py-2 rounded-md transition-colors flex items-center gap-1">
-              <User className="h-4 w-4" /> Admin
-            </Link>
           </div>
 
           {/* Action Buttons & Search */}
@@ -206,15 +202,6 @@ export function Navbar() {
                     </Link>
                     <Link href="/contact" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
                       Support & Helpdesk
-                    </Link>
-                    
-                    <div className="border-t border-border my-3" />
-                    <Link 
-                      href="/admin/login" 
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-2 px-3 py-3 rounded-lg text-sm font-bold bg-primary text-primary-foreground justify-center mt-2 shadow-xs"
-                    >
-                      <User className="h-4 w-4" /> Sign In to Admin Portal
                     </Link>
                   </nav>
                 </div>
