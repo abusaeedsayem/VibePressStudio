@@ -15,3 +15,16 @@ model Subscriber {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model SupportTicket {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  product   String   @default("vibepress-affiliate-link-cloaker")
+  category  String   @default("general-inquiry")
+  license   String?
+  message   String
+  status    String   @default("OPEN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

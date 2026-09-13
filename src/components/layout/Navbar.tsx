@@ -98,14 +98,14 @@ export function Navbar() {
                     Software Suite
                   </div>
                   <Link 
-                    href="/products/smart-affiliate-link-cloaker" 
+                    href="/products/vibepress-affiliate-link-cloaker" 
                     onClick={() => setProductsOpen(false)}
                     className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
                   >
-                    <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker" className="h-6 w-6 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" />
+                    <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker" className="h-6 w-6 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" />
                     <div>
                       <div className="font-semibold text-sm group-hover:text-primary transition-colors">
-                        Smart Affiliate Link Cloaker
+                        VibePress Affiliate Link Cloaker
                       </div>
                       <div className="text-xs text-muted-foreground">
                         WordPress Performance Plugin
@@ -172,12 +172,12 @@ export function Navbar() {
                       Products
                     </div>
                     <Link
-                      href="/products/smart-affiliate-link-cloaker"
+                      href="/products/vibepress-affiliate-link-cloaker"
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
                     >
-                      <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker" className="h-5 w-5 object-contain rounded shrink-0" />
-                      Smart Affiliate Link Cloaker
+                      <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker" className="h-5 w-5 object-contain rounded shrink-0" />
+                      VibePress Affiliate Link Cloaker
                     </Link>
                     <Link
                       href="/products"

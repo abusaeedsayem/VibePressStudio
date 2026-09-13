@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         destination: '/lab',
         permanent: true,
       },
+      {
+        source: '/products/smart-affiliate-link-cloaker',
+        destination: '/products/vibepress-affiliate-link-cloaker',
+        permanent: true,
+      },
     ];
   },
 };

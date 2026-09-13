@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import cloakerData from "@/content/cloaker.json";
 
-export default function SmartAffiliateLinkCloakerPage() {
+export default function VibePressAffiliateLinkCloakerPage() {
   const [activeNavTab, setActiveNavTab] = useState("overview");
   const [featureFilter, setFeatureFilter] = useState("all");
   const [featureSearch, setFeatureSearch] = useState("");
@@ -74,7 +74,7 @@ export default function SmartAffiliateLinkCloakerPage() {
           
           {/* Plugin Icon Badge */}
           <div className="inline-block p-3 rounded-2xl bg-white border border-primary/20 shadow-2xl mb-6 hover:scale-105 transition-transform">
-            <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker Icon" className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl" />
+            <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker Icon" className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl" />
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
@@ -169,7 +169,7 @@ export default function SmartAffiliateLinkCloakerPage() {
                       Architecture Deep Dive
                     </Badge>
                     <h2 className="text-3xl font-extrabold text-foreground">
-                      1. What is Smart Affiliate Link Cloaker?
+                      1. What is VibePress Affiliate Link Cloaker?
                     </h2>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground bg-muted px-3 py-1.5 rounded-lg border">
@@ -178,7 +178,7 @@ export default function SmartAffiliateLinkCloakerPage() {
                 </div>
 
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-4xl">
-                  Smart Affiliate Link Cloaker is an enterprise-grade, performance-optimized WordPress affiliate link management and cloaking suite. Rather than acting merely as a basic URL redirect script, it operates as a complete affiliate infrastructure and monetization engine built natively upon WordPress standard database architecture.
+                  VibePress Affiliate Link Cloaker is an enterprise-grade, performance-optimized WordPress affiliate link management and cloaking suite. Rather than acting merely as a basic URL redirect script, it operates as a complete affiliate infrastructure and monetization engine built natively upon WordPress standard database architecture.
                 </p>
 
                 {/* Before / After Transformation Visual */}
@@ -481,7 +481,7 @@ export default function SmartAffiliateLinkCloakerPage() {
 
                   <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-6 space-y-3">
                     <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4" /> With Smart Affiliate Link Cloaker
+                      <CheckCircle2 className="h-4 w-4" /> With VibePress Affiliate Link Cloaker
                     </div>
                     <p className="text-xs md:text-sm text-foreground font-medium leading-relaxed">
                       {activeUseCase.withPlugin}
@@ -683,7 +683,7 @@ export default function SmartAffiliateLinkCloakerPage() {
               {/* Decision Checklist */}
               <div className="bg-muted/30 border border-border rounded-2xl p-8 space-y-6">
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                  <HelpCircle className="h-5 w-5 text-primary" /> Decision Checklist: Choose Smart Affiliate Link Cloaker if you answer YES to &ge; 2:
+                  <HelpCircle className="h-5 w-5 text-primary" /> Decision Checklist: Choose VibePress Affiliate Link Cloaker if you answer YES to &ge; 2:
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs md:text-sm">
                   {[

@@ -3,8 +3,8 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.0.10` (September 9, 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.6` (100% Feature Complete · 24 Core Features)  
-> **Last Updated:** September 9, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
+> **Studio Release:** `v1.0.13` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.13` (100% Feature Complete · 24 Core Features)  
+> **Last Updated:** September 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
@@ -14,28 +14,30 @@ VibePress Studio is a software engineering studio dedicated to crafting high-per
 
 We replace sluggish, SaaS-locked systems with rock-solid, production-grade solutions that adhere to WordPress Core Coding Standards (WPCS), PSR-4/PSR-12, WCAG AAA contrast, and zero telemetry privacy requirements. Every tool is built for sub-millisecond execution, 24h transient caching, and local database ownership (`wp_posts` & `wp_postmeta`).
 
-> **Integrated Documentation:** This README is fully synchronized with [`CHANGELOG.md`](./CHANGELOG.md) (canonical history) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json`), plus the 9-chapter Documentation Hub at [`/docs`](https://vibepressstudio.vercel.app/docs) and the 8-tab product showcase at [`/products/smart-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/smart-affiliate-link-cloaker).
+> **Integrated Documentation:** This README is fully synchronized with [`CHANGELOG.md`](./CHANGELOG.md) (canonical history) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json`), plus the 9-chapter Documentation Hub at [`/docs`](https://vibepressstudio.vercel.app/docs) and the 8-tab product showcase at [`/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker).
 
 ---
 
-## Latest Release: v1.0.10 — Admin Security Hardening, Data Persistence & Public UI Clean-Up (September 9, 2026)
+## Latest Release: v1.0.13 — Rebranding, Support Ticket Engine & Admin Helpdesk Center (September 2026)
 
-This release focuses on removing public Admin buttons/links from the site UI for security and privacy, enforcing subscriber data persistence across form endpoints, and overhauling the Admin Control Center.
+This release rebrands our flagship WordPress plugin to **VibePress Affiliate Link Cloaker**, upgrades the version to **v1.0.13**, synchronizes all internal product routes to `/products/vibepress-affiliate-link-cloaker` (with permanent 308 redirect), introduces a full-featured Support Ticket database persistence system with instant email delivery to `VibePress.Studio@proton.me`, and upgrades the Admin Dashboard with an interactive Helpdesk Inquiries Directory.
 
-### What's New at a Glance (v1.0.10)
+### What's New at a Glance (v1.0.13)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
-| **Public UI Security Clean-Up** | Completely removed all public "Admin Login", "Admin Portal", and "Sign In" links and buttons from top navigation bar, command search dialog (⌘K), mobile menu drawer, and footer. No normal site visitor can see or click into the admin panel. | `src/components/layout/Navbar.tsx`, `src/content/footer.json` |
-| **Subscriber Data Persistence** | Built a dual-layer persistence system (`saveSubscriber`) combining Prisma database storage with an in-memory/persistent store fallback (`src/lib/db/memoryStore.ts`). Form submissions from `/lab`, `/contact`, and `/` now persist instantly with zero data loss. | `src/lib/db/subscribers.ts`, `src/lib/db/memoryStore.ts`, `src/app/api/lab/route.ts`, `src/app/api/admin/subscribers/route.ts` |
-| **Admin Control Center Overhaul** | Redesigned `/admin/dashboard` into a full control center featuring executive metric cards, real-time subscriber directory table with search filter & CSV export, support helpdesk logs, and JSON content inspector. | `src/app/admin/dashboard/page.tsx`, `src/app/admin/login/page.tsx` |
-| **Official Legal Documents** | Updated official 8-section Privacy Policy (`/legal/privacy`) and 12-section Terms of Use (`/legal/terms`) from official PDF specifications. | `src/app/legal/privacy/page.tsx`, `src/app/legal/terms/page.tsx`, `src/content/privacy.json`, `src/content/terms.json` |
+| **Plugin Rebranding** | Renamed plugin from "Smart Affiliate Link Cloaker" to **"VibePress Affiliate Link Cloaker"** across all UI components, legal documents, and content schemas. | `src/content/products.json`, `src/content/cloaker.json`, `src/content/docs.json` |
+| **Route & URL Migration** | Migrated canonical product URL to [`/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker) with backward-compatible 308 redirect in `next.config.ts`. | `src/app/products/vibepress-affiliate-link-cloaker/page.tsx`, `next.config.ts` |
+| **Support Ticket Persistence** | Built dual-layer database persistence (`prisma.supportTicket` + `memoryStore.ts`) for `/contact` form submissions, capturing requester name, email, product, category, license key, and inquiry message. | `src/lib/db/tickets.ts`, `src/lib/db/memoryStore.ts`, `src/app/api/contact/route.ts`, `prisma/schema.prisma` |
+| **Instant Email Dispatch** | Automated real-time email notifications to `VibePress.Studio@proton.me` with complete ticket metadata, formatted message body, and direct reply link. | `src/lib/email/notifications.ts`, `src/app/api/contact/route.ts` |
+| **Admin Helpdesk Inquiries Desk** | Upgraded `/admin/dashboard` with real-time support ticket tracking, search & status filters, expandable detail modals, status toggle (`OPEN`/`RESOLVED`), and ticket CSV export. | `src/app/admin/dashboard/page.tsx`, `src/app/api/admin/tickets/route.ts` |
+| **Version Alignment (v1.0.13)** | Standardized plugin version to `v1.0.13 (100% Feature Complete · 24 Core Features)` across all landing pages, docs, admin metrics, and metadata. | Entire Project |
 
 ---
 
-## Flagship Product: Smart Affiliate Link Cloaker
+## Flagship Product: VibePress Affiliate Link Cloaker
 
-**Smart Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (**v1.0.6 — 100% Feature Complete · 24 Core Features**) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain (`https://yoursite.com/go/best-vpn`). It is rendered across Home (`src/app/page.tsx`), Products Directory (`src/app/products/page.tsx`), the 8-tab Product Page (`src/app/products/smart-affiliate-link-cloaker`), and the 9-chapter Documentation Hub (`src/app/docs/page.tsx`).
+**VibePress Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (**v1.0.13 — 100% Feature Complete · 24 Core Features**) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain (`https://yoursite.com/go/best-vpn`). It is rendered across Home (`src/app/page.tsx`), Products Directory (`src/app/products/page.tsx`), the 8-tab Product Page (`src/app/products/vibepress-affiliate-link-cloaker`), and the 9-chapter Documentation Hub (`src/app/docs/page.tsx`).
 
 ---
 
@@ -45,7 +47,7 @@ This release focuses on removing public Admin buttons/links from the site UI for
 |-------|------|---------|
 | `/` | `src/app/page.tsx` | Home — 5-section layout with live link transformation demo, feature spotlight, and engineering standards |
 | `/products` | `src/app/products/page.tsx` | Products Directory — filterable 24-feature mini-explorer + 3-col technical specification |
-| `/products/smart-affiliate-link-cloaker` | `src/app/products/smart-affiliate-link-cloaker/page.tsx` | 8-tab sticky showcase with WP Admin sidebar simulator & interactive use cases |
+| `/products/vibepress-affiliate-link-cloaker` | `src/app/products/vibepress-affiliate-link-cloaker/page.tsx` | 8-tab sticky showcase with WP Admin sidebar simulator & interactive use cases |
 | `/docs` | `src/app/docs/page.tsx` | Documentation Hub — 9-chapter searchable manual with Copy Section tool |
 | `/changelog` | `src/app/changelog/page.tsx` | Release Notes — renders `src/content/changelog.json` timeline |
 | `/lab` | `src/app/lab/page.tsx` | Studio Lab — pre-launch registration portal with real-time subscription engine |

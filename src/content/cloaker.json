@@ -1,13 +1,13 @@
 {
   "eyebrow": "Enterprise-Grade WordPress Affiliate Link Management & Cloaking Suite",
   "hero": {
-    "title": "Smart Affiliate Link Cloaker",
+    "title": "VibePress Affiliate Link Cloaker",
     "subtitle": "An enterprise-grade, performance-optimized WordPress affiliate link management and cloaking suite. Built natively upon WordPress's standard database architecture (wp_posts and wp_postmeta), it transforms ugly, fragile affiliate links into clean, memorable, branded URLs hosted directly on your primary domain—delivering blazing-fast redirect speeds, advanced visitor routing, automated FTC legal disclosures, Amazon ToS compliance uncloaking, automated broken link health monitoring, A/B traffic split testing, and direct 1-click Stripe payments.",
     "ctaPrimary": "Register for Launch Updates",
     "ctaPrimaryHref": "/lab",
     "ctaSecondary": "Explore Complete Documentation",
     "ctaSecondaryHref": "/docs",
-    "readinessBadge": "100% Feature Complete (v1.0.6)",
+    "readinessBadge": "100% Feature Complete (v1.0.13)",
     "coreMetrics": [
       "24 Core Production Features",
       "Native wp_posts & wp_postmeta Engine",
@@ -18,9 +18,9 @@
     ]
   },
   "status": {
-    "title": "Development Status: 100% Feature Complete (v1.0.6)",
+    "title": "Development Status: 100% Feature Complete (v1.0.13)",
     "subtitle": "Enterprise-grade WordPress plugin · 24 Core Features · Conditional routing · Smart ToS uncloaking · Click analytics & Stripe • WP 6.0+ · PHP 8.0+",
-    "description": "Smart Affiliate Link Cloaker is engineered by Lead Software Architect Abu Saeed Sayem at VibePress Studio. Built directly on native WordPress database schema (wp_posts, wp_postmeta) with top-priority rewrite rules (^go/{slug}), 24h transient caching, bot-filtered local click tracking (wp_salc_clicks), and automated compliance layers.",
+    "description": "VibePress Affiliate Link Cloaker is engineered by Lead Software Architect Abu Saeed Sayem at VibePress Studio. Built directly on native WordPress database schema (wp_posts, wp_postmeta) with top-priority rewrite rules (^go/{slug}), 24h transient caching, bot-filtered local click tracking (wp_salc_clicks), and automated compliance layers.",
     "rolloutTitle": "Launch Roadmap & Rollout Plan",
     "rolloutStatus": "The free edition has been submitted for WordPress.org plugin directory manual review, and the PRO edition is fully packaged.",
     "rolloutSteps": [
@@ -75,7 +75,7 @@
     ]
   },
   "whyUseful": {
-    "title": "Why is Smart Affiliate Link Cloaker Essential?",
+    "title": "Why is VibePress Affiliate Link Cloaker Essential?",
     "subtitle": "In affiliate marketing and digital publishing, the difference between a failing site and a high-revenue publication comes down to trust, deliverability, compliance, and link maintenance.",
     "items": [
       {
@@ -112,7 +112,7 @@
   },
   "useCases": {
     "title": "Real-World Practical Use Cases",
-    "subtitle": "Discover how Smart Affiliate Link Cloaker transforms common publishing workflows from painful bottlenecks into automated revenue drivers.",
+    "subtitle": "Discover how VibePress Affiliate Link Cloaker transforms common publishing workflows from painful bottlenecks into automated revenue drivers.",
     "items": [
       {
         "id": "mobile-arbitrage",
@@ -394,12 +394,12 @@
       "badge": "Core Feature",
       "description": "Automated 1-click migration tool to import legacy links, target URLs, and click counts from Pretty Links and ThirstyAffiliates.",
       "location": "Link Cloaker -> Tools & Migration under tab 'Platform Migration Engine'.",
-      "howItWorks": "Reads legacy competitor tables, copies links, slugs, destination URLs, and historical hit counts into Smart Affiliate Link Cloaker format.",
+      "howItWorks": "Reads legacy competitor tables, copies links, slugs, destination URLs, and historical hit counts into VibePress Affiliate Link Cloaker format.",
       "howToUse": [
         "Go to Link Cloaker -> Tools & Migration -> Platform Migration Engine.",
         "If Pretty Links or ThirstyAffiliates data is detected, click Migrate Now."
       ],
-      "result": "Instant switch to Smart Affiliate Link Cloaker with zero downtime, zero link breakage, and zero data loss."
+      "result": "Instant switch to VibePress Affiliate Link Cloaker with zero downtime, zero link breakage, and zero data loss."
     },
     {
       "id": 14,
@@ -655,7 +655,7 @@
     {
       "category": "General & Setup",
       "question": "Will cloaking affiliate links slow down my website?",
-      "answer": "No. Smart Affiliate Link Cloaker is built for high speed. Redirect lookups use native WordPress post IDs paired with WordPress Transients (cached database lookups), executing redirects in milliseconds with negligible server overhead."
+      "answer": "No. VibePress Affiliate Link Cloaker is built for high speed. Redirect lookups use native WordPress post IDs paired with WordPress Transients (cached database lookups), executing redirects in milliseconds with negligible server overhead."
     },
     {
       "category": "General & Setup",
@@ -680,7 +680,7 @@
     {
       "category": "SEO & Compliance",
       "question": "Is cloaking permitted by Amazon Associates?",
-      "answer": "Amazon Associates Operating Agreement Section 6 prohibits disguising or cloaking affiliate links. However, Smart Affiliate Link Cloaker features Smart ToS Uncloaking. When enabled in Link Cloaker -> Settings, any link pointing to Amazon is dynamically uncloaked on your public website into an approved, direct Amazon affiliate link, while preserving background click tracking."
+      "answer": "Amazon Associates Operating Agreement Section 6 prohibits disguising or cloaking affiliate links. However, VibePress Affiliate Link Cloaker features Smart ToS Uncloaking. When enabled in Link Cloaker -> Settings, any link pointing to Amazon is dynamically uncloaked on your public website into an approved, direct Amazon affiliate link, while preserving background click tracking."
     },
     {
       "category": "SEO & Compliance",
@@ -730,7 +730,7 @@
       {
         "phase": "Phase 1: Installation & Setup",
         "steps": [
-          "Upload ZIP via WP Admin -> Plugins -> Add New -> Upload Plugin (or unzip smart-affiliate-link-cloaker to /wp-content/plugins/).",
+          "Upload ZIP via WP Admin -> Plugins -> Add New -> Upload Plugin (or unzip vibepress-affiliate-link-cloaker to /wp-content/plugins/).",
           "Activate plugin. Activator creates wp_salc_clicks table, seeds global settings, and schedules daily broken link health check.",
           "Go to Link Cloaker -> Settings. Confirm Global Prefix (go), Anonymize IP (ON), Smart ToS (ON), and Default HTTP Redirect (307). Click Save.",
           "Go to Settings -> Permalinks and click Save Changes (no edits) to register RewriteEngine rules."

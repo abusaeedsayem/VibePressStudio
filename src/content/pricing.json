@@ -10,14 +10,14 @@
     "benefits": [
       "Instant email notification when official launch opens",
       "Exclusive early access and launch discount eligibility",
-      "Direct plugin download link for Smart Affiliate Link Cloaker (WordPress Plugin)"
+      "Direct plugin download link for VibePress Affiliate Link Cloaker (WordPress Plugin)"
     ]
   },
   "upcomingProducts": [
     {
-      "name": "Smart Affiliate Link Cloaker",
+      "name": "VibePress Affiliate Link Cloaker",
       "type": "WordPress Performance Plugin",
-      "status": "100% Feature Complete (v1.0.6) • Rollout Pending Review",
+      "status": "100% Feature Complete (v1.0.13) • Rollout Pending Review",
       "description": "Enterprise-grade referral link routing, automatic FTC legal disclosures, dynamic IP geolocation, DOM-safe keyword auto-linking, Stripe payment links, and broken link monitoring."
     }
   ]

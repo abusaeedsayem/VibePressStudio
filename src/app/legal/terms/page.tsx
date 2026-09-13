@@ -72,17 +72,17 @@ export default function TermsPage() {
           {/* 2.1 */}
           <div className="space-y-3 bg-muted/30 border border-border rounded-xl p-6">
             <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-primary" /> 2.1. Smart Affiliate Link Cloaker (WordPress Plugin)
+              <Cpu className="w-5 h-5 text-primary" /> 2.1. VibePress Affiliate Link Cloaker (WordPress Plugin)
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Smart Affiliate Link Cloaker is an engineered WordPress performance plugin designed to handle URL redirection, automated FTC disclosure injections, and link management.
+              VibePress Affiliate Link Cloaker is an engineered WordPress performance plugin designed to handle URL redirection, automated FTC disclosure injections, and link management.
             </p>
             <ul className="list-disc pl-6 space-y-2.5 text-muted-foreground pt-2">
               <li>
-                <strong className="text-foreground">Distribution Model:</strong> Smart Affiliate Link Cloaker is distributed 100% free of charge via the official WordPress.org Plugin Repository. VibePress Studio does not currently sell, license for payment, or gate any modules of this plugin behind commercial paywalls.
+                <strong className="text-foreground">Distribution Model:</strong> VibePress Affiliate Link Cloaker is distributed 100% free of charge via the official WordPress.org Plugin Repository. VibePress Studio does not currently sell, license for payment, or gate any modules of this plugin behind commercial paywalls.
               </li>
               <li>
-                <strong className="text-foreground">Open-Source Licensing:</strong> The core software code of Smart Affiliate Link Cloaker is released under the GNU General Public License version 2.0 (GPLv2) or later. You are authorized to install, modify, audit, and redistribute the codebase under the reciprocal legal terms of the GPLv2 license.
+                <strong className="text-foreground">Open-Source Licensing:</strong> The core software code of VibePress Affiliate Link Cloaker is released under the GNU General Public License version 2.0 (GPLv2) or later. You are authorized to install, modify, audit, and redistribute the codebase under the reciprocal legal terms of the GPLv2 license.
               </li>
               <li>
                 <strong className="text-foreground">Compliance Responsibility:</strong> While the plugin integrates automated regulatory disclosure injectors, you acknowledge that advertising compliance regulations (including United States Federal Trade Commission mandates and international consumer disclosures) vary by jurisdiction. You remain exclusively responsible for verifying that your deployed disclosures, cloaked paths, and commercial links comply with all applicable regional laws and third-party merchant operating agreements.
@@ -107,7 +107,7 @@ export default function TermsPage() {
             3. Intellectual Property Rights
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Unless otherwise explicitly designated under an open-source license (such as the GPLv2 governing Smart Affiliate Link Cloaker):
+            Unless otherwise explicitly designated under an open-source license (such as the GPLv2 governing VibePress Affiliate Link Cloaker):
           </p>
           <ul className="list-disc pl-6 space-y-2.5 text-muted-foreground">
             <li>
@@ -185,7 +185,7 @@ export default function TermsPage() {
             7. Affiliate and Merchant Earnings Disclaimer
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            Smart Affiliate Link Cloaker provides software infrastructure for link routing, slug cloaking, and compliance injection.
+            VibePress Affiliate Link Cloaker provides software infrastructure for link routing, slug cloaking, and compliance injection.
           </p>
           <ul className="list-disc pl-6 space-y-2.5 text-muted-foreground">
             <li>

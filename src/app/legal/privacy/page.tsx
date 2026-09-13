@@ -94,10 +94,10 @@ export default function PrivacyPage() {
           {/* 3 */}
           <div className="space-y-3 bg-muted/30 border border-border rounded-xl p-6">
             <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-primary" /> Smart Affiliate Link Cloaker (WordPress Plugin)
+              <Cpu className="w-5 h-5 text-primary" /> VibePress Affiliate Link Cloaker (WordPress Plugin)
             </h3>
             <p className="text-muted-foreground leading-relaxed">
-              Smart Affiliate Link Cloaker is an open-source performance plugin authored and architected by Developer &amp; Architect Abu Saeed Sayem. The plugin is currently distributed exclusively free of charge via the official WordPress.org Plugin Directory to support the open-source web publishing community. It contains zero paid modules, zero commercial tracking libraries, and zero external licensing checkpoints.
+              VibePress Affiliate Link Cloaker is an open-source performance plugin authored and architected by Developer &amp; Architect Abu Saeed Sayem. The plugin is currently distributed exclusively free of charge via the official WordPress.org Plugin Directory to support the open-source web publishing community. It contains zero paid modules, zero commercial tracking libraries, and zero external licensing checkpoints.
             </p>
             <ul className="list-disc pl-6 space-y-2.5 text-muted-foreground pt-2">
               <li>

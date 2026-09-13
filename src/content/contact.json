@@ -42,7 +42,7 @@
       "message": "Message Description"
     },
     "productOptions": [
-      { "value": "smart-affiliate-link-cloaker", "label": "Smart Affiliate Link Cloaker" }
+      { "value": "vibepress-affiliate-link-cloaker", "label": "VibePress Affiliate Link Cloaker" }
     ],
     "categoryOptions": [
       { "value": "general-inquiry", "label": "General Inquiry" },

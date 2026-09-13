@@ -50,8 +50,8 @@ export default function DocsPage() {
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             <div className="inline-flex items-center gap-2.5 bg-white border border-primary/20 rounded-full px-4 py-1.5 shadow-xs">
-              <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="Smart Affiliate Link Cloaker" className="h-5 w-5 object-contain" />
-              <span className="text-xs font-semibold text-primary">Smart Affiliate Link Cloaker v1.0.6</span>
+              <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker" className="h-5 w-5 object-contain" />
+              <span className="text-xs font-semibold text-primary">VibePress Affiliate Link Cloaker v1.0.13</span>
             </div>
             <span className="text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20">
               24 Core Features Documentation
@@ -116,7 +116,7 @@ export default function DocsPage() {
 
               <div className="pt-4 mt-4 border-t border-border">
                 <Link
-                  href="/products/smart-affiliate-link-cloaker"
+                  href="/products/vibepress-affiliate-link-cloaker"
                   className="w-full bg-muted hover:bg-muted/80 text-foreground text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <span>Explore Product Overview</span> <ArrowRight className="h-3.5 w-3.5 text-primary" />
@@ -221,11 +221,11 @@ export default function DocsPage() {
                 <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                    <span>Verified against Smart Affiliate Link Cloaker v1.0.6 (24 Core Features)</span>
+                    <span>Verified against VibePress Affiliate Link Cloaker v1.0.13 (24 Core Features)</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Link
-                      href="/products/smart-affiliate-link-cloaker"
+                      href="/products/vibepress-affiliate-link-cloaker"
                       className="text-primary font-bold hover:underline"
                     >
                       View Live Product Page &rarr;

@@ -9,6 +9,42 @@ This changelog is the **canonical history** for the studio website and is fully 
 
 ---
 
+## [1.0.13] — Plugin Rebranding to VibePress Affiliate Link Cloaker, Support Ticket Engine & Admin Helpdesk — September 13, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Support Ticket Database Persistence Engine**:
+  - Added `SupportTicket` model to Prisma schema ([`prisma/schema.prisma`](file:///Users/abusaeedmohammadsayem/VibePressStudio/prisma/schema.prisma)) and in-memory fallback store ([`src/lib/db/memoryStore.ts`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/lib/db/memoryStore.ts)).
+  - Built data access layer ([`src/lib/db/tickets.ts`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/lib/db/tickets.ts)) supporting `saveSupportTicket`, `fetchAllSupportTickets`, `updateTicketStatus`, and `deleteTicket`.
+  - Upgraded `/api/contact` ([`src/app/api/contact/route.ts`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/api/contact/route.ts)) to permanently record every inquiry with requester name, email, product, category, license key, and message body.
+- **Automated Instant Email Notifications**:
+  - Implemented `sendAdminSupportTicketNotification` in [`src/lib/email/notifications.ts`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/lib/email/notifications.ts) dispatching HTML + plain text alerts to `VibePress.Studio@proton.me` with full metadata and direct reply links upon every form submission.
+- **Admin Helpdesk Inquiries Control Center**:
+  - Created `/api/admin/tickets` ([`src/app/api/admin/tickets/route.ts`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/api/admin/tickets/route.ts)) endpoint for ticket fetching, status updates, and deletions.
+  - Upgraded Admin Dashboard ([`src/app/admin/dashboard/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/admin/dashboard/page.tsx)) with live open-ticket counter cards, search across all fields, status filter tabs (`All`/`Open`/`Resolved`), full inquiry detail modals, status toggle buttons (`OPEN` <-> `RESOLVED`), direct email action buttons, and full CSV export (`vibepress-support-tickets-YYYY-MM-DD.csv`).
+
+### Changed
+- **Flagship Plugin Rebranding**:
+  - Renamed WordPress plugin name from "Smart Affiliate Link Cloaker" to **"VibePress Affiliate Link Cloaker"** across all landing pages, documentation index, legal agreements, admin cards, and content schemas.
+- **Canonical Route & URL Synchronization**:
+  - Migrated primary product page route to `/products/vibepress-affiliate-link-cloaker` ([`https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker)).
+  - Added permanent 308 redirect in `next.config.ts` from `/products/smart-affiliate-link-cloaker` to `/products/vibepress-affiliate-link-cloaker` to maintain backward compatibility for existing external links and bookmarks.
+- **Version Alignment (v1.0.13)**:
+  - Standardized plugin version to `v1.0.13` (100% Feature Complete · 24 Core Features) across the entire application ecosystem (`products.json`, `cloaker.json`, `pricing.json`, `docs.json`, `page.tsx`, `docs/page.tsx`, `admin/dashboard/page.tsx`, `README.md`, `CHANGELOG.md`).
+
+## [1.0.10] — Admin Security Hardening, Data Persistence & Public UI Clean-Up — September 9, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Public UI Security Clean-Up**:
+  - Completely removed all public "Admin Login", "Admin Portal", and "Sign In" links and buttons from the top navigation bar, command search dialog (⌘K), mobile menu drawer, and footer.
+- **Subscriber Data Persistence**:
+  - Built a dual-layer persistence system combining Prisma database storage with an in-memory fallback store (`src/lib/db/memoryStore.ts`). Form submissions from `/lab`, `/contact`, and `/` persist instantly.
+- **Admin Control Center Overhaul**:
+  - Redesigned `/admin/dashboard` into a full control center featuring executive metric cards, real-time subscriber directory table with search filter & CSV export, support helpdesk logs, and JSON content inspector.
+
 ## [1.0.9] — Footer Modernization & Studio Lab Subscription Streamlining — September 7, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

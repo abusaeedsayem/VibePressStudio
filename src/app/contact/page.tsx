@@ -15,7 +15,7 @@ import contactData from "@/content/contact.json";
 export default function ContactPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [product, setProduct] = useState("smart-affiliate-link-cloaker");
+  const [product, setProduct] = useState("vibepress-affiliate-link-cloaker");
   const [category, setCategory] = useState("general-inquiry");
   const [license, setLicense] = useState("");
   const [message, setMessage] = useState("");
