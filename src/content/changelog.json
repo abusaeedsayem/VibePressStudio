@@ -4,6 +4,13 @@
   "entries": [
     {
       "date": "September 17, 2026",
+      "version": "v1.1.4 — Footer Menu Label Update for Blueprnt Desktop Utility",
+      "changes": [
+        "Footer Menu Label Update: Updated Software Suite menu label in footer (src/content/footer.json) from 'Blueprnt Desktop Workstage' to 'Blueprnt Desktop Utility' for precise product naming consistency."
+      ]
+    },
+    {
+      "date": "September 17, 2026",
       "version": "v1.1.3 — Blueprnt Core Architecture & Feature Tiers Integration",
       "changes": [
         "Core Engine Architecture: Documented universal format handling (CR2/CR3, NEF, ARW, HEIC, JPEG, TIFF, PNG), sub-15ms embedded preview extraction, indivisible shot-group locking, high-throughput parallel processing, and SIMD BLAKE3 cryptographic hashing.",

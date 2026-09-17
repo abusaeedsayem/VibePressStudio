@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.4] — Footer Menu Label Update for Blueprnt Desktop Utility — September 17, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Footer Menu Naming Alignment**:
+  - Updated the Software Suite link label in `src/content/footer.json` from `Blueprnt Desktop Workstage` to **`Blueprnt Desktop Utility`** for precise product designation across footer navigation.
+
+---
+
+## [1.1.3] — Blueprnt Core Engine Architecture & Detailed Feature Tiers Integration — September 17, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Core Engine Architecture**:
+  - Documented 5 core engineering foundations: Universal Offline Format Support (CR2/CR3, NEF, ARW, HEIC, JPEG, TIFF, PNG), sub-15ms embedded preview extraction, indivisible shot-group locking, high-throughput native parallel processing (`jwalk` & `rayon`), and SIMD-accelerated BLAKE3 cryptographic hashing.
+- **Basic Feature Tier Matrix**:
+  - Documented 6 Basic features: Visual Storage Inventory Map (radial SVG sunburst visualizer), Exact Duplicate Detection, Basic Rule-Based Bulk Renamer (capped at 100 files/batch), Non-Destructive Deletion Alternatives, Basic EXIF & Location Viewer, and One-Click Clean Directory Export (`_Clean` folder).
+- **Premium Pro Feature Tier Matrix**:
+  - Documented 12 Premium Pro features: Renamer Pro with EXIF Token Engine (`{Date:YYYY-MM-DD}`, `{Time:HHmmss}`, `{Model}`, `{Lens}`, `{ISO}`, `{Sequence:0001}`), Atomic Sidecar Renaming, Pre-Flight Collision Detection, Preset Chains (Wedding Delivery, Real Estate MLS), Duplicate Pro (Temporal Burst Clustering within 0.5s-5.0s delta), Smart-Keep Heuristics, Quarantine Vault (`_Quarantine` folder), Scrubber Pro (Deep Sanitation & Strip-Then-Add), Clean IPTC/XMP Metadata Injection, Before/After Map Proof Inspector, Studio Cross-Drive Scanning, and CSV Client Roster Mapping.
+- **Enterprise Safety & Data Integrity**:
+  - Documented 3 safety mechanisms: Persistent Local Undo Journal (local WAL database for 1-click reversibility across restarts), Two-Stage Temporary File Replacement (`.tmp_blueprnt` intermediate binaries), and Offline Ed25519 Cryptographic Licensing (100% offline, zero telemetry).
+- **Documentation & UI Integration**:
+  - Rendered complete 4-tier feature matrix in `src/app/products/blueprnt/page.tsx`, `src/content/blueprnt.json`, and `src/content/docs.json` under `/docs`.
+
+---
+
+## [1.1.2] — Multi-Product UI Sanitization & Blueprnt Desktop Integration Fix — September 17, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Home Page & Products Directory Sanitization**:
+  - Refactored `src/app/page.tsx` and `src/app/products/page.tsx` product cards to render stats, demo boxes, features, and specs dynamically based on `product.id`.
+  - Removed unrelated WordPress cloaker badges, live redirect demo box, 24-feature cloaker filter, and WP Admin menu structure from Blueprnt product cards, replacing them with BLAKE3 checksum verification, 3-2-1 dual-drive backups, ProRes/DNxHR proxies, and local-first desktop specs.
+
+---
+
 ## [1.1.0] — Blueprnt v1.1.0 Product Launch & Multi-Product Platform Integration — September 17, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

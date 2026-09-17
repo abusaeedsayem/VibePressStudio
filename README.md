@@ -3,8 +3,8 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.1.0` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Software:** `Blueprnt v1.1.0` · **Flagship Plugin:** `v1.0.13`  
-> **Last Updated:** September 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
+> **Studio Release:** `v1.1.4` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt v1.1.0` · **Flagship Plugin:** `v1.0.13`  
+> **Last Updated:** September 17, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
@@ -18,19 +18,19 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.1.0 — Blueprnt v1.1.0 Product Launch & Multi-Product Platform Integration (September 2026)
+## Latest Release: v1.1.4 — Blueprnt Desktop Utility Feature Matrix & UI Alignment (September 17, 2026)
 
-This release launches **Blueprnt v1.1.0**, a professional local-first desktop media application for camera card offloading, BLAKE3 checksum verification, atomic shot-group preservation, token renaming, ProRes/DNxHR proxies, and EXIF privacy scrubbing.
+This release incorporates the complete **Blueprnt v1.1.0** feature architecture matrix across the site, sanitizes multi-product cards on the Home page and Products directory, and updates footer navigation.
 
-### What's New at a Glance (v1.1.0)
+### What's New at a Glance (v1.1.4 / v1.1.3 / v1.1.2)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
-| **Blueprnt Product Page** | Launched dedicated showcase page for **Blueprnt v1.1.0** with 4 feature studios, real-world use cases, target audience specs, installation guides, and FAQs. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/blueprnt.json` |
-| **Studio Lab How-To Guide** | Integrated **6.1 Multi-Platform Installation Guide** (macOS, Windows 10/11, Linux) and **6.2 Step-by-Step Feature Instructions** into `/lab` for instant user manual access. | [`src/app/lab/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/lab/page.tsx), `src/content/pricing.json` |
-| **Documentation Hub Switcher** | Upgraded `/docs` with a multi-product switcher tab allowing visitors to toggle between VibePress Affiliate Link Cloaker and Blueprnt v1.1.0 manuals. | [`src/app/docs/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/docs/page.tsx), `src/content/docs.json` |
-| **Navigation & Search** | Updated Navbar dropdown, mobile drawer, and Command Search Menu (`⌘K`) to include Blueprnt v1.1.0 with official `/blueprnt-icon.svg`. | [`src/components/layout/Navbar.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/components/layout/Navbar.tsx), `src/content/footer.json` |
-| **Products Directory & Home** | Added Blueprnt v1.1.0 to `/products` directory and Home page software showcase cards. | `src/content/products.json`, `src/content/home.json` |
+| **Core Engine Architecture** | Documented universal format handling (CR2/CR3, NEF, ARW, HEIC, JPEG, TIFF, PNG), sub-15ms embedded preview extraction, indivisible shot-group locking, high-throughput parallel processing (`jwalk` & `rayon`), and SIMD BLAKE3 cryptographic hashing. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/blueprnt.json` |
+| **Feature Tier Matrices** | Documented 6 Basic features (Visual Storage Inventory Map, Exact Duplicate Finder, Basic Renamer, Non-Destructive Deletion, EXIF Viewer, Clean Export) and 12 Premium Pro features (Renamer Pro EXIF Tokens, Atomic Sidecars, Collision Detection, Preset Chains, Duplicate Pro, Smart-Keep, Quarantine Vault, Scrubber Pro, Clean IPTC Injection, Before/After Map Proof, Cross-Drive Scanning, CSV Roster Mapping). | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/docs.json` |
+| **Enterprise Data Integrity** | Integrated Persistent Local Undo Journal (local WAL database), Two-Stage Temporary File Replacement (`.tmp_blueprnt`), and 100% Offline Ed25519 Cryptographic Licensing. | `src/content/blueprnt.json`, [`src/app/docs/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/docs/page.tsx) |
+| **Multi-Product UI Sanitization** | Refactored product cards on Home (`/`) and Products Directory (`/products`) to dynamically render product-specific stats, demos, and specs based on `product.id`, purging unrelated cloaker data from Blueprnt cards. | [`src/app/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/page.tsx), [`src/app/products/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/page.tsx) |
+| **Footer Navigation Alignment** | Updated Software Suite menu label in footer from `Blueprnt Desktop Workstage` to `Blueprnt Desktop Utility`. | `src/content/footer.json` |
 
 ---
 
