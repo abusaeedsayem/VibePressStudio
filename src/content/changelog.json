@@ -4,6 +4,15 @@
   "entries": [
     {
       "date": "September 17, 2026",
+      "version": "v1.1.2 — Multi-Product UI Sanitization & Blueprnt Desktop Integration Fix",
+      "changes": [
+        "Product Card Sanitization: Refactored Home page (/) and Products Directory (/products) product cards to render product-specific stats, demos, features, and specs dynamically based on product ID.",
+        "Blueprnt Card Architecture: Removed unrelated WordPress cloaker badges, live redirect demo box, 24-feature cloaker filter, and WP Admin menu structure from Blueprnt product cards, replacing them with BLAKE3 checksum verification, 3-2-1 dual-drive backups, ProRes/DNxHR proxies, and local-first desktop specs.",
+        "Platform UI Consistency: Ensured clean separation between WordPress plugins and standalone desktop software across all directory showcases."
+      ]
+    },
+    {
+      "date": "September 17, 2026",
       "version": "v1.1.0 — Blueprnt v1.1.0 Product Launch, Workstage Documentation & Multi-Product Platform Integration",
       "changes": [
         "Blueprnt v1.1.0 Product Page: Launched dedicated product showcase page at /products/blueprnt featuring complete specifications for BLAKE3 checksum verification, 3-2-1 backups, token renaming, ProRes/DNxHR proxies, and EXIF privacy scrubbing.",

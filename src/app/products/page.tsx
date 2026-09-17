@@ -29,10 +29,10 @@ export default function ProductsDirectoryPage() {
             <span className="text-xs font-semibold text-primary">VibePress Software Suite</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6">
-            Production-Grade WordPress Plugin
+            Production-Grade Software Suite
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Engineered natively upon WordPress core database schema (wp_posts and wp_postmeta) for uncompromising speed, compliance, and complete data sovereignty.
+            Engineered for uncompromising speed, security, and complete data sovereignty across web applications, WordPress plugins, and desktop environments.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function ProductsDirectoryPage() {
                       Current Release: {product.version}
                     </span>
                     <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded border border-emerald-500/20">
-                      24 Core Features Built-in
+                      {product.id === "blueprnt" ? "100% Offline • Local-First Desktop" : "24 Core Features Built-in"}
                     </span>
                   </div>
                   <div className="flex items-center gap-4 mb-2">
@@ -95,47 +95,116 @@ export default function ProductsDirectoryPage() {
                 {product.description}
               </p>
 
-              {/* Interactive 24 Core Features Mini-Explorer */}
-              <div className="bg-muted/30 border border-border rounded-xl p-6 mb-8 space-y-5">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
-                  <div>
-                    <h3 className="text-base font-bold text-foreground flex items-center gap-2">
-                      <Sparkles className="h-4 w-4 text-primary" /> 24 Core Features Master Catalog
-                    </h3>
-                    <p className="text-xs text-muted-foreground mt-0.5">Filter all built-in capabilities included in the suite</p>
+              {/* Feature Explorer / Spec Summary */}
+              {product.id === "blueprnt" ? (
+                <div className="bg-muted/30 border border-border rounded-xl p-6 mb-8 space-y-5">
+                  <div className="flex items-center justify-between border-b border-border pb-4">
+                    <div>
+                      <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-primary" /> Core Workstage Capabilities
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">High-performance media ingest and archival engine for photo &amp; video professionals</p>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
-                    {["all", "redirection", "compliance", "automation", "monetization", "analytics"].map((cat) => (
-                      <button
-                        key={cat}
-                        onClick={() => setFeatureCategory(cat)}
-                        className={`text-xs capitalize font-semibold px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
-                          featureCategory === cat
-                            ? "bg-primary text-primary-foreground"
-                            : "bg-background text-muted-foreground hover:bg-muted border border-border"
-                        }`}
-                      >
-                        {cat === "all" ? "All (24)" : cat}
-                      </button>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    <div className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold text-primary">#01</span>
+                        <span className="text-[10px] font-semibold uppercase bg-sky-500/10 text-sky-600 dark:text-sky-400 px-2 py-0.5 rounded border border-sky-500/20">Ingest</span>
+                      </div>
+                      <h4 className="font-bold text-xs text-foreground leading-snug">BLAKE3 Checksum Ingestion</h4>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">Cryptographic hash verification guarantees 100% data integrity with zero silent file corruption.</p>
+                    </div>
+
+                    <div className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold text-primary">#02</span>
+                        <span className="text-[10px] font-semibold uppercase bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">Safety</span>
+                      </div>
+                      <h4 className="font-bold text-xs text-foreground leading-snug">Atomic Shot-Group Operations</h4>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">RAW, JPG, MOV, and XMP sidecar files remain atomically linked during copy, move, or rename.</p>
+                    </div>
+
+                    <div className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold text-primary">#03</span>
+                        <span className="text-[10px] font-semibold uppercase bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 px-2 py-0.5 rounded border border-indigo-500/20">Backup</span>
+                      </div>
+                      <h4 className="font-bold text-xs text-foreground leading-snug">3-2-1 Dual-Drive Archival</h4>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">Simultaneous dual-destination mirror backup ensures instant redundancy during field shoots.</p>
+                    </div>
+
+                    <div className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold text-primary">#04</span>
+                        <span className="text-[10px] font-semibold uppercase bg-amber-500/10 text-amber-600 dark:text-amber-400 px-2 py-0.5 rounded border border-amber-500/20">Video</span>
+                      </div>
+                      <h4 className="font-bold text-xs text-foreground leading-snug">ProRes &amp; DNxHR Proxy Engine</h4>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">Automated lightweight video proxy generation for seamless NLE editing workflows.</p>
+                    </div>
+
+                    <div className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold text-primary">#05</span>
+                        <span className="text-[10px] font-semibold uppercase bg-purple-500/10 text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">Metadata</span>
+                      </div>
+                      <h4 className="font-bold text-xs text-foreground leading-snug">EXIF / XMP Staging</h4>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">Preserves camera metadata, lens profiles, timestamp synchronization, and rating flags.</p>
+                    </div>
+
+                    <div className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold text-primary">#06</span>
+                        <span className="text-[10px] font-semibold uppercase bg-rose-500/10 text-rose-600 dark:text-rose-400 px-2 py-0.5 rounded border border-rose-500/20">Privacy</span>
+                      </div>
+                      <h4 className="font-bold text-xs text-foreground leading-snug">100% Offline Local-First Security</h4>
+                      <p className="text-[11px] text-muted-foreground leading-relaxed">Zero cloud tracking, zero telemetry, zero forced online accounts. Runs fully air-gapped.</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-muted/30 border border-border rounded-xl p-6 mb-8 space-y-5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-border pb-4">
+                    <div>
+                      <h3 className="text-base font-bold text-foreground flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 text-primary" /> 24 Core Features Master Catalog
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">Filter all built-in capabilities included in the suite</p>
+                    </div>
+                    <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+                      {["all", "redirection", "compliance", "automation", "monetization", "analytics"].map((cat) => (
+                        <button
+                          key={cat}
+                          onClick={() => setFeatureCategory(cat)}
+                          className={`text-xs capitalize font-semibold px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${
+                            featureCategory === cat
+                              ? "bg-primary text-primary-foreground"
+                              : "bg-background text-muted-foreground hover:bg-muted border border-border"
+                          }`}
+                        >
+                          {cat === "all" ? "All (24)" : cat}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {filteredFeatures.map((feat) => (
+                      <div key={feat.id} className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-[11px] font-bold text-primary">#{feat.id}</span>
+                          <span className="text-[10px] font-semibold uppercase bg-muted px-2 py-0.5 rounded text-muted-foreground border">
+                            {feat.badge}
+                          </span>
+                        </div>
+                        <h4 className="font-bold text-xs text-foreground leading-snug">{feat.title}</h4>
+                        <p className="text-[11px] text-muted-foreground leading-relaxed line-clamp-2">{feat.description}</p>
+                      </div>
                     ))}
                   </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {filteredFeatures.map((feat) => (
-                    <div key={feat.id} className="p-3.5 bg-card border border-border rounded-lg space-y-1.5 hover:border-primary/40 transition-colors">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-[11px] font-bold text-primary">#{feat.id}</span>
-                        <span className="text-[10px] font-semibold uppercase bg-muted px-2 py-0.5 rounded text-muted-foreground border">
-                          {feat.badge}
-                        </span>
-                      </div>
-                      <h4 className="font-bold text-xs text-foreground leading-snug">{feat.title}</h4>
-                      <p className="text-[11px] text-muted-foreground leading-relaxed line-clamp-2">{feat.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              )}
 
               {/* Three-Column Spec Breakdown */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 border-t border-border/60">
@@ -171,24 +240,43 @@ export default function ProductsDirectoryPage() {
                 {/* Admin Navigation & Distribution */}
                 <div>
                   <div className="flex items-center gap-2 text-xs font-bold text-foreground uppercase tracking-wider mb-3">
-                    <Layers className="h-4 w-4 text-primary" /> Admin Menu Structure
+                    <Layers className="h-4 w-4 text-primary" /> {product.id === "blueprnt" ? "Architecture & Distribution" : "Admin Menu Structure"}
                   </div>
-                  <div className="space-y-1.5 text-xs text-muted-foreground">
-                    <div className="font-semibold text-foreground">
-                      Main Menu: <code className="bg-muted px-1.5 py-0.5 rounded text-primary">{navigation.menuName}</code>
+                  {product.id === "blueprnt" ? (
+                    <div className="space-y-1.5 text-xs text-muted-foreground">
+                      <div className="font-semibold text-foreground">
+                        Target Platforms: <code className="bg-muted px-1.5 py-0.5 rounded text-primary">macOS • Windows • Linux</code>
+                      </div>
+                      <p className="text-[11px] leading-relaxed">
+                        Standalone desktop executable. Zero external server dependencies, local SQLite state, local-first storage.
+                      </p>
+                      <div className="pt-2">
+                        <Link
+                          href={`/products/${product.slug}`}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
+                        >
+                          Explore detailed specifications &rarr;
+                        </Link>
+                      </div>
                     </div>
-                    <p className="text-[11px] leading-relaxed">
-                      8 Submenus: All Links, Add New Link, Categories, Tags, Statistics, Tools &amp; Migration, Settings, Documentation.
-                    </p>
-                    <div className="pt-2">
-                      <Link
-                        href={`/products/${product.slug}`}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
-                      >
-                        Explore detailed specifications &rarr;
-                      </Link>
+                  ) : (
+                    <div className="space-y-1.5 text-xs text-muted-foreground">
+                      <div className="font-semibold text-foreground">
+                        Main Menu: <code className="bg-muted px-1.5 py-0.5 rounded text-primary">{navigation.menuName}</code>
+                      </div>
+                      <p className="text-[11px] leading-relaxed">
+                        8 Submenus: All Links, Add New Link, Categories, Tags, Statistics, Tools &amp; Migration, Settings, Documentation.
+                      </p>
+                      <div className="pt-2">
+                        <Link
+                          href={`/products/${product.slug}`}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline"
+                        >
+                          Explore detailed specifications &rarr;
+                        </Link>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
 
