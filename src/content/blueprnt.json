@@ -4,7 +4,7 @@
   "name": "Blueprnt",
   "version": "v1.1.0",
   "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage",
-  "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
+  "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, EXIF token batch renaming, temporal burst deduplication, cinema proxy transcoding, and deep EXIF/IPTC privacy scrubbing.",
   "logoImage": "/blueprnt-icon.svg",
   "category": "digital-tool",
   "categoryLabel": "Local-First Desktop Media Workstage",
@@ -65,6 +65,139 @@
     "Professional Event & Wedding Photographers: Managing massive paired RAW/JPG catalogs and CSV client rosters.",
     "Commercial Filmmakers & Editors: Needing standardized ProRes/DNxHR proxies with preserved SMPTE timecode.",
     "School & Sports Portrait Studios: Mapping sequential photo ranges to student names and IDs automatically."
+  ],
+  "coreEngineArchitecture": [
+    {
+      "title": "Universal Offline Format Support",
+      "description": "Natively reads and handles Canon CR2 and CR3, Nikon NEF, Sony ARW, Apple HEIC/HEIF, standard JPEG, TIFF, and PNG entirely on the local file system without third-party network APIs."
+    },
+    {
+      "title": "Instant Embedded Preview Extraction",
+      "description": "Bypasses full-frame RAW sensor array decoding by seeking directly to container offsets (TIFF IFD tags and ISOBMFF boxes) to extract embedded 1080p JPEG preview streams in sub-15ms windows."
+    },
+    {
+      "title": "Indivisible Shot-Group Locking",
+      "description": "Automatically detects and clusters multi-format capture files sharing a stem—treating RAW, JPG, HEIC, MOV, WAV voice memos, and sidecar XMP files as a single logical exposure unit across all pipeline stages."
+    },
+    {
+      "title": "High-Throughput Parallel Processing",
+      "description": "Built with a high-performance native engine, utilizing multi-threaded directory walking via jwalk and data stream parallelism via rayon to handle shoots spanning 10,000+ files without UI lag."
+    },
+    {
+      "title": "Hardware-Accelerated Cryptographic Hashing",
+      "description": "Uses SIMD-accelerated BLAKE3 hashing for fast partial and full bitstream verifications."
+    }
+  ],
+  "basicFeatures": [
+    {
+      "title": "Visual Storage Inventory Map",
+      "badge": "Basic",
+      "description": "Provides an interactive radial SVG sunburst visualizer breaking down project storage footprint into clear categories, including RAW, HEIC, standard JPEG, 4K video, and sidecar files."
+    },
+    {
+      "title": "Exact Duplicate Detection",
+      "badge": "Basic",
+      "description": "Executes an exact duplicate finder using byte-size filters and partial-to-full cryptographic checksums to locate byte-for-byte identical assets."
+    },
+    {
+      "title": "Basic Rule-Based Bulk Renamer",
+      "badge": "Basic",
+      "description": "Standard batch renaming supporting basic string replacement, prefixes, suffixes, and regex patterns with real-time target previews, capped at 100 files per batch."
+    },
+    {
+      "title": "Non-Destructive Deletion Alternatives",
+      "badge": "Basic",
+      "description": "Moves unneeded files to the native operating system trash or a staging area instead of performing permanent file erasure."
+    },
+    {
+      "title": "Basic EXIF & Location Viewer",
+      "badge": "Basic",
+      "description": "Displays a basic metadata readout, highlighting whether an asset exposes private GPS coordinates."
+    },
+    {
+      "title": "One-Click Clean Directory Export",
+      "badge": "Basic",
+      "description": "Provides a quick-action wipe that strips metadata into an isolated _Clean destination folder, capped at 50 file scrubs per day."
+    }
+  ],
+  "premiumFeatures": [
+    {
+      "title": "Renamer Pro with EXIF Token Engine",
+      "badge": "Premium Pro",
+      "description": "Allows custom token chains including {Date:YYYY-MM-DD}, {Time:HHmmss}, {Model}, {Lens}, {ISO}, and padded {Sequence:0001}."
+    },
+    {
+      "title": "Atomic Sidecar Renaming",
+      "badge": "Premium Pro",
+      "description": "Keeps companion RAW, JPG, HEIC, MOV, and XMP files locked together, applying identical stem mutations across all paired assets in a single pass without breaking Lightroom catalog paths."
+    },
+    {
+      "title": "Pre-Flight Collision Detection",
+      "badge": "Premium Pro",
+      "description": "Continuously evaluates projected filenames in memory against target directories, disabling execution and displaying warning banners if name conflicts exist."
+    },
+    {
+      "title": "Preset Chains",
+      "badge": "Premium Pro",
+      "description": "Supports unlimited, loadable renaming presets tailored for distinct delivery workflows, such as Wedding Delivery and Real Estate MLS pipelines."
+    },
+    {
+      "title": "Duplicate Pro (Temporal Burst Clustering)",
+      "badge": "Premium Pro",
+      "description": "Identifies near-burst duplicates by grouping shots sharing a camera model taken within a configurable capture-time delta (0.5s to 5.0s)."
+    },
+    {
+      "title": "Smart-Keep Heuristics",
+      "badge": "Premium Pro",
+      "description": "Automatically flags the highest-resolution frame or largest file in a burst sequence as the recommended keeper while marking redundant shots for staging."
+    },
+    {
+      "title": "Quarantine Vault",
+      "badge": "Premium Pro",
+      "description": "Safely moves duplicate clusters into an isolated _Quarantine project folder while strictly preserving the original nested subfolder tree."
+    },
+    {
+      "title": "Scrubber Pro (Deep Sanitation & Strip-Then-Add)",
+      "badge": "Premium Pro",
+      "description": "Permanently purges GPS IFD tags, camera serial numbers, lens serial numbers, proprietary MakerNotes, and embedded thumbnail caches from media and XMP sidecars."
+    },
+    {
+      "title": "Clean IPTC/XMP Metadata Injection",
+      "badge": "Premium Pro",
+      "description": "Injects studio-branded metadata templates immediately after sanitation, embedding Creator Name, Copyright Notice, License Terms, and Studio Website URL."
+    },
+    {
+      "title": "Before/After Map Proof Inspector",
+      "badge": "Premium Pro",
+      "description": "Displays an interactive comparison confirming the eradication of GPS coordinates, accompanied by red/green status badges for all stripped and injected fields."
+    },
+    {
+      "title": "Studio Cross-Drive Scanning",
+      "badge": "Premium Pro",
+      "description": "Enables scanning and deduplicating assets distributed across multiple connected external SSDs or memory card mounts."
+    },
+    {
+      "title": "CSV Roster Mapping",
+      "badge": "Premium Pro",
+      "description": "Imports client portrait roster CSV files to match sequence number ranges directly to client or property names."
+    }
+  ],
+  "enterpriseSafetyDataIntegrity": [
+    {
+      "title": "Persistent Local Undo Journal",
+      "badge": "Enterprise Safety",
+      "description": "Logs every batch rename, quarantine, and scrub into a local database running in WAL mode, ensuring 1-click reversibility across app restarts."
+    },
+    {
+      "title": "Two-Stage Temporary File Replacement",
+      "badge": "Enterprise Safety",
+      "description": "Writes scrubbed and renamed binaries to .tmp_blueprnt intermediate paths before atomic replacement, protecting files against mid-flight system crashes or power losses."
+    },
+    {
+      "title": "Offline Ed25519 Cryptographic Licensing",
+      "badge": "Enterprise Safety",
+      "description": "Validates LemonSqueezy license tiers via local public-key cryptography cached in OS credential vaults, running fully offline with zero telemetry or network tracking."
+    }
   ],
   "detailedFeatures": [
     {
@@ -130,14 +263,29 @@
       "answer": "Blueprnt is a desktop media application engineered for zero-cloud asset management. It runs 100% offline directly on your workstation without uploading media, telemetry, or metadata to external cloud servers."
     },
     {
+      "category": "Architecture & Speed",
+      "question": "How does Blueprnt achieve instant sub-15ms embedded preview extraction?",
+      "answer": "Blueprnt seeks directly to TIFF IFD tags and ISOBMFF container boxes without decoding full-frame RAW sensor array data, extracting embedded 1080p JPEG previews instantaneously across Canon CR2/CR3, Nikon NEF, Sony ARW, Apple HEIC, and TIFF files."
+    },
+    {
       "category": "Data Integrity",
       "question": "How does BLAKE3 checksum verification prevent bit-rot during transfers?",
       "answer": "Blueprnt executes real-time bit-by-bit binary checksum verification using the BLAKE3 cryptographic algorithm during file ingestion. Before any memory card is cleared, Blueprnt verifies that every bit on the target drive exactly matches the source."
     },
     {
+      "category": "Data Integrity",
+      "question": "What protection does the Persistent Local Undo Journal and Two-Stage Replacement offer?",
+      "answer": "Every batch rename, quarantine, and scrub is logged into a local database running in WAL mode for 1-click reversibility across app restarts. Scrubbed/renamed binaries are written to intermediate .tmp_blueprnt files before atomic replacement to prevent data loss from mid-flight power cuts."
+    },
+    {
       "category": "Asset Management",
-      "question": "What is Atomic Shot-Group Preservation?",
-      "answer": "Atomic Shot-Group Preservation binds paired camera captures (RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE) into unified logical units. When you modify or rename a RAW file, Blueprnt automatically renames and updates all linked sidecars simultaneously."
+      "question": "What is Indivisible Shot-Group Locking & Atomic Sidecar Renaming?",
+      "answer": "Indivisible Shot-Group Locking automatically binds paired camera captures (RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE) into unified logical units. When renaming or modifying a stem, Blueprnt mutates all linked sidecars simultaneously in a single pass without breaking Lightroom catalog paths."
+    },
+    {
+      "category": "Asset Management",
+      "question": "How does Duplicate Pro (Temporal Burst Clustering) work?",
+      "answer": "Duplicate Pro identifies near-burst duplicates by grouping shots sharing a camera model taken within a configurable capture-time delta (0.5s to 5.0s). Smart-Keep heuristics automatically flag the highest-resolution or largest frame as the keeper, moving redundant shots to the Quarantine Vault."
     },
     {
       "category": "Video Editing",
@@ -146,13 +294,13 @@
     },
     {
       "category": "Workflow & Roster",
-      "question": "How does CSV Client Roster mapping work for event & school photographers?",
-      "answer": "You can upload a CSV roster (containing student IDs, client names, or MLS listings) inside Settings. Blueprnt synchronizes photo sequence ranges to roster rows with a live bi-directional preview before executing batch renaming."
+      "question": "How does Renamer Pro with EXIF Tokens & CSV Client Roster mapping work?",
+      "answer": "Renamer Pro allows custom token chains like {Date:YYYY-MM-DD}, {Model}, {Lens}, {ISO}, and {Sequence:0001}. Additionally, uploading a CSV roster maps student IDs, client names, or property listings directly to photo sequence ranges with real-time pre-flight collision detection."
     },
     {
       "category": "Privacy & Security",
-      "question": "How does Metadata Privacy Sanitation clean exported files?",
-      "answer": "Before delivering client folders, Blueprnt can automatically strip sensitive EXIF/IPTC tags including camera body serial numbers, lens serial numbers, binary MakerNotes, and GPS location coordinates."
+      "question": "How does Scrubber Pro clean exported client delivery folders?",
+      "answer": "Scrubber Pro permanently purges sensitive metadata (GPS IFD tags, camera/lens serial numbers, proprietary MakerNotes, thumbnail caches) from media and XMP sidecars, then injects studio-branded IPTC/XMP templates (Creator Name, Copyright, License Terms) with a Before/After Map Proof Inspector."
     },
     {
       "category": "Installation",

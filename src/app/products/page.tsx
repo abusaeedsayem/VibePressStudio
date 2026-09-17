@@ -248,7 +248,7 @@ export default function ProductsDirectoryPage() {
                         Target Platforms: <code className="bg-muted px-1.5 py-0.5 rounded text-primary">macOS • Windows • Linux</code>
                       </div>
                       <p className="text-[11px] leading-relaxed">
-                        Standalone desktop executable. Zero external server dependencies, local SQLite state, local-first storage.
+                        Standalone desktop executable. Zero external server dependencies, local database state, local-first storage.
                       </p>
                       <div className="pt-2">
                         <Link

@@ -26,7 +26,8 @@ export default function BlueprntProductPage() {
     name, version, tagline, description, logoImage,
     categoryLabel, techStack, whyUseful, useCases, 
     targetAudience, detailedFeatures, installation, 
-    userGuide, faq 
+    userGuide, faq, coreEngineArchitecture, basicFeatures,
+    premiumFeatures, enterpriseSafetyDataIntegrity
   } = blueprntData;
 
   const handleCopyCmd = () => {
@@ -315,6 +316,115 @@ export default function BlueprntProductPage() {
                 )}
               </CardContent>
             </Card>
+
+            {/* ── COMPLETE FEATURE MATRIX & TIERS ── */}
+            <div className="space-y-12 pt-8 border-t border-border">
+              
+              {/* 1. Core Engine Architecture */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-sky-500/10 text-sky-500 rounded-xl">
+                    <Cpu className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Core Engine Architecture</h3>
+                    <p className="text-xs text-muted-foreground">High-throughput, low-latency, zero-cloud desktop foundation</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {coreEngineArchitecture?.map((item, idx) => (
+                    <div key={idx} className="p-5 bg-card border border-border rounded-xl space-y-2 hover:border-sky-500/40 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-sky-500">ENGINE #{idx + 1}</span>
+                        <span className="text-[10px] font-semibold bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded border border-sky-500/20">Native</span>
+                      </div>
+                      <h4 className="font-bold text-sm text-foreground">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 2. Basic Features */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-emerald-500/10 text-emerald-500 rounded-xl">
+                    <CheckCircle2 className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Basic Features</h3>
+                    <p className="text-xs text-muted-foreground">Included out-of-the-box for essential storage &amp; metadata management</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {basicFeatures?.map((item, idx) => (
+                    <div key={idx} className="p-5 bg-card border border-border rounded-xl space-y-2 hover:border-emerald-500/40 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-emerald-500">BASIC #{idx + 1}</span>
+                        <span className="text-[10px] font-semibold bg-emerald-500/10 text-emerald-500 px-2 py-0.5 rounded border border-emerald-500/20">{item.badge}</span>
+                      </div>
+                      <h4 className="font-bold text-sm text-foreground">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 3. Premium Features */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-primary/10 text-primary rounded-xl">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Premium Features</h3>
+                    <p className="text-xs text-muted-foreground">Advanced automation, EXIF token renaming, burst clustering &amp; deep sanitation</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {premiumFeatures?.map((item, idx) => (
+                    <div key={idx} className="p-5 bg-card border border-border rounded-xl space-y-2 hover:border-primary/40 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-primary">PRO #{idx + 1}</span>
+                        <span className="text-[10px] font-semibold bg-primary/10 text-primary px-2 py-0.5 rounded border border-primary/20">{item.badge}</span>
+                      </div>
+                      <h4 className="font-bold text-sm text-foreground">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 4. Enterprise Safety & Data Integrity */}
+              <div className="space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 bg-indigo-500/10 text-indigo-500 rounded-xl">
+                    <ShieldCheck className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-foreground">Enterprise Safety &amp; Data Integrity</h3>
+                    <p className="text-xs text-muted-foreground">Fail-safe database journals, atomic file replacements &amp; offline licensing</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {enterpriseSafetyDataIntegrity?.map((item, idx) => (
+                    <div key={idx} className="p-5 bg-card border border-border rounded-xl space-y-2 hover:border-indigo-500/40 transition-colors">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-mono font-bold text-indigo-500">SAFETY #{idx + 1}</span>
+                        <span className="text-[10px] font-semibold bg-indigo-500/10 text-indigo-400 px-2 py-0.5 rounded border border-indigo-500/20">{item.badge}</span>
+                      </div>
+                      <h4 className="font-bold text-sm text-foreground">{item.title}</h4>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
           </section>
         )}
 
