@@ -1,16 +1,16 @@
 {
   "hero": {
     "eyebrow": "Engineered for Uncompromising Speed, Security, and Scalability",
-    "title": "High-Performance WordPress Plugin Suite & Digital Tools",
-    "subtitle": "VibePress Studio engineers enterprise-grade WordPress performance plugins and digital tools built on native database architecture (wp_posts & wp_postmeta) to replace bloated SaaS systems with rock-solid, production-grade solutions.",
+    "title": "High-Performance WordPress Plugins & Local-First Software",
+    "subtitle": "VibePress Studio engineers enterprise-grade WordPress performance plugins and local-first desktop applications built on native database architectures to replace bloated SaaS systems with rock-solid, production-grade solutions.",
     "ctaPrimary": "Explore Software Suite",
     "ctaSecondary": "Register for Launch Updates",
     "trustBar": [
-      "24 Core Production Features",
-      "+25% to 40% Click-Through Lift",
+      "Enterprise WordPress Plugins & Desktop Software",
+      "BLAKE3 Cryptographic Checksum Engine",
       "Native wp_posts & wp_postmeta Architecture",
       "Amazon §6 Smart Uncloaking & FTC Compliance",
-      "1-Click Stripe Payments & Zero SaaS Lock-in"
+      "100% Offline Local Data Sovereignty"
     ]
   },
   "valueProps": {
@@ -18,7 +18,7 @@
     "pillars": [
       {
         "title": "Native Architecture & Zero Query Bloat",
-        "desc": "Built natively upon WordPress standard database tables (wp_posts and wp_postmeta) with 24h transient caching, preserving sub-millisecond execution speeds under traffic surges.",
+        "desc": "Built natively upon standard database tables (wp_posts & wp_postmeta / SQLite WAL) with 24h transient caching, preserving sub-millisecond execution speeds.",
         "icon": "Database"
       },
       {
@@ -27,45 +27,45 @@
         "icon": "ShieldCheck"
       },
       {
-        "title": "Dynamic Routing & Direct Monetization",
-        "desc": "Route visitors dynamically by OS, device, browser, or language, run weighted A/B split tests, and accept direct payments via Stripe Checkout without WooCommerce bloat.",
+        "title": "Dynamic Routing & Cinema Proxies",
+        "desc": "Route visitors dynamically by OS, device, browser, or language, run weighted A/B split tests, and generate studio ProRes/DNxHR proxies for cinema footage.",
         "icon": "Zap"
       },
       {
         "title": "100% Local Data Sovereignty & Defense",
-        "desc": "Bot-filtered click tracking stored locally with GDPR IP anonymization, daily broken link health scanning, and 1-click competitor migration engines.",
+        "desc": "Zero-cloud desktop asset management with BLAKE3 bit-by-bit binary checksum verification, 3-2-1 backup drive mirroring, and GDPR anonymization.",
         "icon": "Lock"
       }
     ]
   },
   "flagship": {
     "eyebrow": "Flagship Software Showcase",
-    "title": "Enterprise WordPress Performance Solutions",
-    "subtitle": "Explore our flagship affiliate infrastructure suite designed for maximum CTR, automated compliance, and complete data ownership."
+    "title": "Production-Grade Software Solutions",
+    "subtitle": "Explore our suite of flagship WordPress plugins and local-first desktop applications designed for maximum performance, compliance, and complete data ownership."
   },
   "standards": {
     "title": "Built to Highest Industry Engineering Standards",
     "items": [
       {
-        "heading": "WordPress Core Standards (WPCS)",
-        "body": "Engineered in strict adherence to WordPress Core Coding Standards (WPCS), PSR-4 object-oriented modular patterns, and PSR-12 formatting rules."
+        "heading": "Native Core Standards & Tauri v2",
+        "body": "Engineered in strict adherence to WordPress Core Coding Standards (WPCS), PSR-4 patterns, Tauri v2 desktop architecture, and Rust (Edition 2021) engines."
       },
       {
-        "heading": "Enterprise Performance & Routing",
-        "body": "Powered by top-priority rewrite rules, 24h transient caching, and optimized database queries with sub-millisecond redirect speeds."
+        "heading": "Enterprise Performance & Verification",
+        "body": "Powered by top-priority rewrite rules, 24h transient caching, SQLite WAL databases, and real-time BLAKE3 bit-by-bit checksum validation."
       },
       {
-        "heading": "Data Privacy & Cookie-Less Architecture",
-        "body": "Zero third-party cloud tracking pixels, optional IPv4/IPv6 IP anonymization, bot filtering, and 100% local database ownership."
+        "heading": "Data Privacy & 100% Offline Security",
+        "body": "Zero third-party cloud tracking pixels, optional IPv4/IPv6 IP anonymization, EXIF privacy scrubbing, and 100% local database ownership."
       }
     ]
   },
   "globalCta": {
     "title": "Get Informed When We Launch",
-    "subtitle": "Register with us to receive instant release notifications and exclusive launch deals for VibePress Affiliate Link Cloaker and our WordPress performance plugins.",
+    "subtitle": "Register with us to receive instant release notifications and exclusive launch deals for VibePress Affiliate Link Cloaker, Blueprnt v1.1.0, and our performance tools.",
     "cta1Label": "Register for Launch Updates",
     "cta1Href": "/lab",
-    "cta2Label": "View Link Cloaker Overview",
-    "cta2Href": "/products/vibepress-affiliate-link-cloaker"
+    "cta2Label": "View Software Directory",
+    "cta2Href": "/products"
   }
 }

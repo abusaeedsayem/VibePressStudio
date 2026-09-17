@@ -181,5 +181,155 @@
         ]
       }
     ]
+  },
+  {
+    "id": "blueprnt",
+    "slug": "blueprnt",
+    "name": "Blueprnt",
+    "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage (v1.1.0)",
+    "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Built on Tauri v2, Rust (Edition 2021), SQLite (WAL Mode), and React 19 + TypeScript, Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
+    "category": "digital-tool",
+    "categoryLabel": "Desktop Media Workstage",
+    "icon": "Layers",
+    "logoImage": "/blueprnt-icon.svg",
+    "screenshotGallery": [
+      "/blueprnt-icon.svg"
+    ],
+    "version": "v1.1.0 (100% Offline · Local-First)",
+    "changelogUrl": "/changelog",
+    "techStack": [
+      "Tauri v2",
+      "Rust (Edition 2021)",
+      "SQLite (WAL Mode)",
+      "React 19",
+      "TypeScript",
+      "BLAKE3 Cryptography",
+      "Apple ProRes 422",
+      "Avid DNxHR"
+    ],
+    "keyFeatures": [
+      {
+        "title": "Zero Bit-Rot & Zero Data Loss Guarantee",
+        "description": "Executes real-time BLAKE3 bit-by-bit binary checksum verification during file transfers to guarantee 100% data integrity before clearing camera cards.",
+        "iconName": "ShieldCheck",
+        "isPro": false
+      },
+      {
+        "title": "Atomic Shot-Group Preservation",
+        "description": "Binds paired camera assets (RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE) as unified logical units.",
+        "iconName": "Layers",
+        "isPro": false
+      },
+      {
+        "title": "Persistent System Settings & Studio Defaults",
+        "description": "Configure primary editing SSDs, secondary 3-2-1 backup drives, cloud sync folders, IPTC studio creator tags, renaming patterns, and proxy codecs once in Settings.",
+        "iconName": "Settings",
+        "isPro": false
+      },
+      {
+        "title": "Sub-Millisecond Catalog Scalability",
+        "description": "Embedded SQLite WAL database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy.",
+        "iconName": "Zap",
+        "isPro": false
+      },
+      {
+        "title": "Token Pattern Builder & CSV Client Roster Engine",
+        "description": "Allows drag-and-drop construction of dynamic renaming templates ({Date}, {Model}, {Sequence}) and CSV roster range synchronization.",
+        "iconName": "FileSpreadsheet",
+        "isPro": true
+      },
+      {
+        "title": "Video Transcoder & Editing Proxies Studio",
+        "description": "Generates studio-grade Apple ProRes 422 (Proxy/LT/HQ) and Avid DNxHR (LB/SQ) proxies with resolution scaling and timecode preservation.",
+        "iconName": "Video",
+        "isPro": true
+      },
+      {
+        "title": "Media Indexer & Infographics Analytics",
+        "description": "Scans cards recursively with visual color breakdowns for stills, RAW negatives, Live Photos, video clips, and payload size.",
+        "iconName": "BarChart",
+        "isPro": false
+      },
+      {
+        "title": "Deduplication & Quarantine Vault",
+        "description": "Filter byte-for-byte duplicate captures and high-speed motor drive burst frames using 2-tier BLAKE3 and perceptual hash scanning.",
+        "iconName": "ShieldAlert",
+        "isPro": true
+      },
+      {
+        "title": "Client Delivery & Metadata Privacy Sanitation",
+        "description": "Strip camera body serials, lens serials, binary MakerNotes, and GPS location coordinates before exporting client delivery folders.",
+        "iconName": "Lock",
+        "isPro": true
+      }
+    ],
+    "targetAudience": [
+      "Digital Imaging Technicians (DITs)",
+      "Professional Event & Wedding Photographers",
+      "Commercial Filmmakers & Editors",
+      "School & Sports Portrait Studios"
+    ],
+    "pricingTiers": [
+      {
+        "planName": "Studio Edition",
+        "priceMonthly": 0,
+        "priceYearly": 0,
+        "priceLifetime": null,
+        "features": [
+          "Complete Tauri v2 & Rust local-first desktop application",
+          "BLAKE3 bit-by-bit checksum verification engine",
+          "Atomic Shot-Group Preservation for RAW+JPG & XMP sidecars",
+          "Persistent 3-2-1 backup drive mirroring",
+          "Token pattern builder & CSV roster mapping",
+          "Apple ProRes 422 & Avid DNxHR proxy generator",
+          "EXIF/IPTC metadata sanitation & GPS stripping"
+        ],
+        "checkoutUrl": "/lab",
+        "isFeatured": true
+      }
+    ],
+    "distributionChannels": {
+      "preLaunchUrl": "/lab"
+    },
+    "documentationSections": [
+      {
+        "title": "Phase 1: Multi-Platform Installation",
+        "content": "Downloading and launching Blueprnt v1.1.0 on macOS, Windows 10/11, or Linux.",
+        "steps": [
+          "macOS: Download Blueprnt_1.1.0_aarch64.dmg or Blueprnt_1.1.0_universal.dmg. Drag Blueprnt into /Applications.",
+          "Windows 10/11: Download Blueprnt_1.1.0_x64-setup.exe (NSIS) or Blueprnt_1.1.0_x64_en-US.msi and run installer.",
+          "Linux: Download Blueprnt_1.1.0_amd64.AppImage (chmod +x) or blueprnt_1.1.0_amd64.deb (dpkg -i)."
+        ]
+      },
+      {
+        "title": "Phase 2: Media Indexing & Verified Transfer",
+        "content": "Indexing source camera cards and executing BLAKE3 bit-by-bit verified ingestion.",
+        "steps": [
+          "Select source drive or camera card path in Source Media & Drive Discovery.",
+          "Click 'Scan & Index Source Media' to render visual payload infographics.",
+          "Review destination SSDs (primary, 3-2-1 secondary backup, cloud sync).",
+          "Click 'Transfer Media' for BLAKE3 verified offload."
+        ]
+      },
+      {
+        "title": "Phase 3: Deduplication & Token Renaming",
+        "content": "Scanning for duplicate frames and applying dynamic token templates or CSV roster mappings.",
+        "steps": [
+          "Open 'Deduplication' tab to scan for byte duplicates and move redundant files to Quarantine Vault.",
+          "Open Settings -> Renaming & Tokens to configure token pattern strings ({Date}, {Model}, {Sequence}) or upload CSV roster.",
+          "Navigate to 'Organize & Rename' tab to preview live collision-free filenames.",
+          "Click Execute Renaming to update atomic shot-groups simultaneously."
+        ]
+      },
+      {
+        "title": "Phase 4: Cinema Proxy Transcoding & Privacy Sanitation",
+        "content": "Batch generating NLE proxies and stripping EXIF metadata prior to client delivery.",
+        "steps": [
+          "Open Settings -> Video Transcoder to select codec (Apple ProRes 422 Proxy / Avid DNxHR LB) and resolution scale.",
+          "Navigate to 'Transcoder & Proxies' tab and click 'Batch Transcode Video Clips'.",
+          "Enable IPTC/EXIF Metadata Privacy Sanitation to strip camera/lens serials and GPS coordinates before exporting client delivery folders."
+        ]
+      }
+    ]
   }
 ]

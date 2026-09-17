@@ -3,6 +3,17 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "September 17, 2026",
+      "version": "v1.1.0 — Blueprnt v1.1.0 Product Launch, Workstage Documentation & Multi-Product Platform Integration",
+      "changes": [
+        "Blueprnt v1.1.0 Product Page: Launched dedicated product showcase page at /products/blueprnt featuring complete specifications for Tauri v2, Rust 2021, SQLite WAL mode, BLAKE3 checksum verification, 3-2-1 backups, token renaming, ProRes/DNxHR proxies, and EXIF privacy scrubbing.",
+        "Studio Lab (/lab) Workstage Guide: Integrated 6.1 Multi-Platform Installation Guide (macOS, Windows 10/11, Linux) and 6.2 Step-by-Step Feature Instructions directly into the /lab page for instant operational access.",
+        "Documentation & Manuals (/docs): Enhanced the /docs page with a multi-product switcher tab allowing visitors to toggle between VibePress Affiliate Link Cloaker and Blueprnt v1.1.0 technical manuals.",
+        "Home Page & Products Showcase: Featured Blueprnt v1.1.0 on the Home page (/), Products Directory (/products), Navbar dropdown, command search menu (⌘K), and Footer links.",
+        "Assets Integration: Deployed official Blueprnt vector icon /blueprnt-icon.svg across all product pages, badges, search dialogs, and navigation headers."
+      ]
+    },
+    {
       "date": "September 13, 2026",
       "version": "v1.0.13 — VibePress Affiliate Link Cloaker Rebranding, Support Ticket Engine & Admin Helpdesk",
       "changes": [

@@ -1,8 +1,8 @@
 {
   "hero": {
-    "title": "VibePress Affiliate Link Cloaker — Complete Documentation & User Manual",
-    "subtitle": "Official comprehensive technical architecture, feature guides, setup manuals, and knowledge base for the VibePress Affiliate Link Cloaker WordPress Plugin.",
-    "searchPlaceholder": "Search across all 24 features, admin menus, use cases, FAQs, or glossary terms..."
+    "title": "VibePress Studio — Complete Documentation & Software Guides",
+    "subtitle": "Official comprehensive technical architecture, feature guides, setup manuals, and knowledge bases for VibePress Affiliate Link Cloaker and Blueprnt v1.1.0.",
+    "searchPlaceholder": "Search across all software features, administration menus, use cases, FAQs, or glossary terms..."
   },
   "search": {
     "resultsFor": "Search results for",
@@ -15,6 +15,7 @@
       "name": "VibePress Affiliate Link Cloaker",
       "type": "WordPress Plugin",
       "version": "v1.0.13 (24 Core Features)",
+      "logoImage": "/Smart-Affiliate-Link-Cloaker-icon.svg",
       "index": [
         {
           "id": "what-is-salc",
@@ -78,6 +79,57 @@
           "summary": "15 in-depth questions and answers across General & Setup, Redirects, SEO, Link Management, and Migration.",
           "badge": "FAQs",
           "content": "General & Setup\n\nQ1: How do I install and activate the plugin?\nA: Download the plugin ZIP file, log in to your WordPress dashboard, navigate to Plugins -> Add New -> Upload Plugin, upload the ZIP, and click Activate. Once active, you will see the new Link Cloaker item in your WordPress admin menu.\n\nQ2: Will cloaking affiliate links slow down my website?\nA: No. VibePress Affiliate Link Cloaker is built for high speed. Redirect lookups use native WordPress post IDs paired with WordPress Transients (cached database lookups), executing redirects in milliseconds with negligible server overhead.\n\nQ3: Where did the plugin menu go? I can't find 'Affiliate Links'.\nA: The menu is named 'Link Cloaker' in your WordPress admin sidebar. All submenus (All Links, Add New Link, Categories, Tags, Statistics, Tools & Migration, Settings, Documentation) are grouped directly beneath it.\n\nRedirects & Performance\n\nQ4: What is the difference between a 301, 302, and 307 redirect?\nA: • 301 (Permanent): Browser caches this redirect aggressively. If you ever change the affiliate destination URL later, visitors' browsers may still take them to the old URL.\n• 302 (Found / Temporary): Bypasses browser cache, checking the server on each click.\n• 307 (Temporary Redirect): The gold standard for affiliate links. It bypasses browser cache, forces a live server lookup on every click, and guarantees complete preservation of HTTP request headers.\n\nQ5: What is iFrame Masking and when should I use it?\nA: iFrame Masking displays the merchant's landing page inside an embedded container on your site, keeping yoursite.com/go/deal in the visitor's address bar. It is ideal for linking to documentation, web calculators, or client onboarding tools where you want to maintain your brand visibility. Note: Some merchants (such as Amazon and financial institutions) prohibit iFraming via X-Frame-Options headers.\n\nSEO & Compliance\n\nQ6: Will cloaking affiliate links hurt my Google search rankings?\nA: No—in fact, it protects them. The plugin automatically adds rel=\"nofollow sponsored\" attributes and X-Robots-Tag: noindex headers, fully complying with Google Search Essentials. This prevents search engines from penalizing your site for thin affiliate content or unnatural outbound links.\n\nQ7: Is cloaking permitted by Amazon Associates?\nA: Amazon Associates Operating Agreement Section 6 prohibits disguising or cloaking affiliate links. However, VibePress Affiliate Link Cloaker features Smart ToS Uncloaking. When enabled in Link Cloaker -> Settings, any link pointing to Amazon is dynamically uncloaked on your public website into an approved, direct Amazon affiliate link, while preserving background click tracking.\n\nQ8: How does the FTC Auto-Disclosure work?\nA: The plugin detects whether a blog post or page contains cloaked affiliate links. If detected, it automatically injects a styled compliance notice (e.g. 'This post contains affiliate links...') at the top or bottom of your post, fulfilling Federal Trade Commission disclosure regulations.\n\nLink Management & Automation\n\nQ9: What happens when an affiliate offer expires?\nA: You can set an Expiration Date or Max Clicks Threshold on any link. Once reached, the plugin will automatically redirect visitors to your specified Fallback URL (such as your homepage or a general deals category) or display a custom 'Deal Expired' notice.\n\nQ10: How does the DOM-Safe Keyword Auto-Linker work?\nA: Under Link Cloaker -> Settings, you can specify keywords (e.g., 'Bluehost') and link them to an affiliate URL. The plugin automatically parses your articles and converts matching text into affiliate links, while strictly respecting your configured limits (e.g., maximum 3 links per post) and never corrupting HTML headings, images, or existing anchors.\n\nQ11: How does A/B traffic rotation work?\nA: On the link edit screen under A/B Split Testing & Traffic Rotation, you can enter multiple merchant URLs and assign percentage weights (e.g. 70% to Vendor A, 30% to Vendor B). Incoming traffic is split dynamically, allowing you to test which vendor yields higher conversions.\n\nMigration & Integrations\n\nQ12: Can I migrate my existing links from Pretty Links or ThirstyAffiliates?\nA: Yes. Navigate to Link Cloaker -> Tools & Migration and click Platform Migration Engine. The plugin automatically scans your database for Pretty Links or ThirstyAffiliates data and imports all titles, slugs, destinations, and historical click counts with a single click.\n\nQ13: Can I import and export links using CSV spreadsheets?\nA: Yes. Under Link Cloaker -> Tools & Migration -> CSV Import & Export, you can upload a CSV spreadsheet to batch-create hundreds of links instantly. You can also export click logs into CSV format directly from the Statistics page.\n\nQ14: How does the Stripe Payment Link feature work?\nA: By entering your Stripe API Secret Key in Link Cloaker -> Settings, you can turn any cloaked link into a direct checkout session. When a visitor clicks the link, they are taken directly to Stripe's hosted 1-click checkout. Once the transaction completes, your dashboard logs conversion count and dollar revenue via Stripe webhooks.\n\nQ15: How does the plugin comply with GDPR privacy laws?\nA: Under Link Cloaker -> Settings -> Privacy & GDPR Compliance, you can enable Anonymize Visitor IP Addresses. This automatically strips the last octet from visitor IPv4 (e.g. 192.168.1.0) and IPv6 addresses prior to database logging, ensuring full compliance with European GDPR and California CCPA guidelines."
+        }
+      ]
+    },
+    {
+      "id": "blueprnt",
+      "name": "Blueprnt v1.1.0",
+      "type": "Desktop Media Workstage",
+      "version": "v1.1.0 (Local-First)",
+      "logoImage": "/blueprnt-icon.svg",
+      "index": [
+        {
+          "id": "blueprnt-overview",
+          "title": "1. What is Blueprnt v1.1.0?",
+          "summary": "Professional, high-performance, local-first desktop media application engineered for photographers, DITs, and video editors.",
+          "badge": "Overview",
+          "content": "Blueprnt v1.1.0 is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers.\n\nBuilt on Tauri v2, Rust (Edition 2021), SQLite (WAL Mode), and React 19 + TypeScript, Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.\n\nCore Pillars of Blueprnt:\n• 100% Offline Local Data Sovereignty: Zero cloud tracking pixels, telemetry, or remote server dependencies.\n• BLAKE3 Cryptographic Verification: Bit-by-bit binary checksum verification during card transfers to guarantee 100% data integrity before clearing memory cards.\n• Atomic Shot-Group Preservation: RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE bound into single logical units. Renaming a RAW updates all sidecars synchronously.\n• Studio Proxy Generator: Batch transcodes Apple ProRes 422 (Proxy, LT, HQ) and Avid DNxHR (LB, SQ) proxies with preserved SMPTE timecode and Reel IDs."
+        },
+        {
+          "id": "blueprnt-why-useful",
+          "title": "2. Why is Blueprnt Useful?",
+          "summary": "Zero bit-rot guarantee, atomic shot-groups, persistent studio defaults, and sub-millisecond catalog queries.",
+          "badge": "Core Value",
+          "content": "1. Zero Bit-Rot & Zero Data Loss Guarantee:\nExecutes real-time BLAKE3 bit-by-bit binary checksum verification during file transfers to guarantee 100% cryptographic data integrity before clearing camera cards.\n\n2. Atomic Shot-Group Preservation:\nBinds paired camera assets (RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE) as unified logical units. Modifying or renaming a RAW file automatically updates all linked sidecars simultaneously.\n\n3. Persistent Studio Defaults:\nConfigure primary editing SSDs, secondary 3-2-1 backup drives, cloud sync folders, IPTC studio creator tags, renaming patterns, and proxy codecs once in Settings to auto-inherit across all modules.\n\n4. Sub-Millisecond Catalog Scalability:\nEmbedded SQLite WAL database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy."
+        },
+        {
+          "id": "blueprnt-usecases",
+          "title": "3. Production Use Cases & Target Audience",
+          "summary": "High-volume wedding photography, DIT cinema offloading, sports burst deduplication, and EXIF privacy sanitation.",
+          "badge": "Use Cases",
+          "content": "All Possible Use Cases:\n• Wedding & High-Volume Event Photography: Ingest thousands of photos across multiple memory cards simultaneously, auto-group paired RAW+JPG files, and apply student/client CSV roster mappings.\n• Cinema & Commercial On-Set DIT Workstage: Offload cinema cards with BLAKE3 validation, mirror to secondary backup SSDs, and generate lightweight Apple ProRes 422 or Avid DNxHR proxies for instant editing.\n• Sports & Burst Action Deduplication: Filter byte-for-byte duplicate captures and high-speed motor drive burst frames using 2-tier BLAKE3 and perceptual hash scanning.\n• Client Delivery & Metadata Privacy Sanitation: Strip camera body serials, lens serials, binary MakerNotes, and GPS location coordinates before exporting client delivery folders.\n\nWho Needs Blueprnt?\n• Digital Imaging Technicians (DITs)\n• Professional Event & Wedding Photographers\n• Commercial Filmmakers & Editors\n• School & Sports Portrait Studios"
+        },
+        {
+          "id": "blueprnt-features",
+          "title": "4. Detailed Feature Breakdown",
+          "summary": "Full specs for Persistent Settings, Token Pattern Builder, Video Transcoder, and Media Indexer.",
+          "badge": "Master Specs",
+          "content": "Feature 5.1: Persistent System Settings & Studio Defaults\nThe full-featured Settings Chapter allows studio managers to define global defaults once for all ingest pipelines, renaming rules, metadata attribution, and proxy presets.\n\nFeature 5.2: Token Pattern Builder & CSV Client Roster Engine\nAllows drag-and-drop construction of dynamic renaming templates ({Date}, {Model}, {Sequence}) and CSV roster range synchronization with real-time bi-directional preview updating.\n\nFeature 5.3: Video Transcoder & Editing Proxies Studio\nGenerates studio-grade Apple ProRes 422 (Proxy/LT/HQ) and Avid DNxHR (LB/SQ) proxies. Includes resolution scaling (1080p, 720p, 50%, 25%), native framerate matching, stereo downmixing, and timecode preservation.\n\nFeature 5.4: Media Indexer & Real-Time Infographics Dashboard\nScans cards and drives recursively, providing visual color breakdowns for stills, RAW negatives, Live Photos, cinema video clips, and formatted payload size."
+        },
+        {
+          "id": "blueprnt-manual",
+          "title": "5. Multi-Platform Installation Guide",
+          "summary": "Installation instructions for macOS, Windows 10/11, and Linux.",
+          "badge": "Install Guide",
+          "content": "macOS: Download Blueprnt_1.1.0_aarch64.dmg or Blueprnt_1.1.0_universal.dmg. Drag Blueprnt into /Applications.\n\nWindows 10/11: Download Blueprnt_1.1.0_x64-setup.exe (NSIS) or Blueprnt_1.1.0_x64_en-US.msi and run installer.\n\nLinux: Download Blueprnt_1.1.0_amd64.AppImage (make executable: chmod +x) or blueprnt_1.1.0_amd64.deb (dpkg -i)."
+        },
+        {
+          "id": "blueprnt-instructions",
+          "title": "6. Step-by-Step Feature Instructions",
+          "summary": "Step-by-step workflow guide from media indexing to proxy transcoding.",
+          "badge": "Workflow",
+          "content": "1. Media Indexing & Transfer: Select source drive -> Click 'Scan & Index Source Media' -> Review Infographics -> Click 'Transfer Media' for BLAKE3 verified ingest.\n\n2. Deduplication & Quarantine: Open 'Deduplication' tab -> Scan for BLAKE3 byte duplicates or near-burst frames -> Move redundant files to Quarantine Vault.\n\n3. Organizing & Token Renaming: Open Settings -> Configure token string or upload CSV roster -> Navigate to 'Organize & Rename' tab -> Review collision-free live preview -> Execute renaming.\n\n4. Video Proxy Transcoding: Open Settings -> Select target proxy codec (Apple ProRes 422 Proxy) -> Open 'Transcoder & Proxies' tab -> Click 'Batch Transcode Video Clips'."
         }
       ]
     }

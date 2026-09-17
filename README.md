@@ -3,41 +3,44 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.0.13` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Flagship Plugin:** `v1.0.13` (100% Feature Complete · 24 Core Features)  
+> **Studio Release:** `v1.1.0` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Software:** `Blueprnt v1.1.0` · **Flagship Plugin:** `v1.0.13`  
 > **Last Updated:** September 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
 ## Overview
 
-VibePress Studio is a software engineering studio dedicated to crafting high-performance digital tools and enterprise-grade WordPress plugins engineered for speed, legal compliance, and 100% data sovereignty.
+VibePress Studio is a software engineering studio dedicated to crafting high-performance digital tools, local-first desktop applications, and enterprise-grade WordPress plugins engineered for speed, legal compliance, and 100% data sovereignty.
 
-We replace sluggish, SaaS-locked systems with rock-solid, production-grade solutions that adhere to WordPress Core Coding Standards (WPCS), PSR-4/PSR-12, WCAG AAA contrast, and zero telemetry privacy requirements. Every tool is built for sub-millisecond execution, 24h transient caching, and local database ownership (`wp_posts` & `wp_postmeta`).
+We replace sluggish, SaaS-locked systems with rock-solid, production-grade solutions that adhere to official coding standards, WCAG AAA contrast, and zero telemetry privacy requirements.
 
-> **Integrated Documentation:** This README is fully synchronized with [`CHANGELOG.md`](./CHANGELOG.md) (canonical history) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json`), plus the 9-chapter Documentation Hub at [`/docs`](https://vibepressstudio.vercel.app/docs) and the 8-tab product showcase at [`/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker).
+> **Integrated Documentation:** This README is fully synchronized with [`CHANGELOG.md`](./CHANGELOG.md) (canonical history) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json`), plus the multi-product Documentation Hub at [`/docs`](https://vibepressstudio.vercel.app/docs), the Blueprnt product showcase at [`/products/blueprnt`](https://vibepressstudio.vercel.app/products/blueprnt), and the VibePress Affiliate Link Cloaker page at [`/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker).
 
 ---
 
-## Latest Release: v1.0.13 — Rebranding, Support Ticket Engine & Admin Helpdesk Center (September 2026)
+## Latest Release: v1.1.0 — Blueprnt v1.1.0 Product Launch & Multi-Product Platform Integration (September 2026)
 
-This release rebrands our flagship WordPress plugin to **VibePress Affiliate Link Cloaker**, upgrades the version to **v1.0.13**, synchronizes all internal product routes to `/products/vibepress-affiliate-link-cloaker` (with permanent 308 redirect), introduces a full-featured Support Ticket database persistence system with instant email delivery to `VibePress.Studio@proton.me`, and upgrades the Admin Dashboard with an interactive Helpdesk Inquiries Directory.
+This release launches **Blueprnt v1.1.0**, a professional local-first desktop media application for camera card offloading, BLAKE3 checksum verification, atomic shot-group preservation, token renaming, ProRes/DNxHR proxies, and EXIF privacy scrubbing.
 
-### What's New at a Glance (v1.0.13)
+### What's New at a Glance (v1.1.0)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
-| **Plugin Rebranding** | Renamed plugin from "Smart Affiliate Link Cloaker" to **"VibePress Affiliate Link Cloaker"** across all UI components, legal documents, and content schemas. | `src/content/products.json`, `src/content/cloaker.json`, `src/content/docs.json` |
-| **Route & URL Migration** | Migrated canonical product URL to [`/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker) with backward-compatible 308 redirect in `next.config.ts`. | `src/app/products/vibepress-affiliate-link-cloaker/page.tsx`, `next.config.ts` |
-| **Support Ticket Persistence** | Built dual-layer database persistence (`prisma.supportTicket` + `memoryStore.ts`) for `/contact` form submissions, capturing requester name, email, product, category, license key, and inquiry message. | `src/lib/db/tickets.ts`, `src/lib/db/memoryStore.ts`, `src/app/api/contact/route.ts`, `prisma/schema.prisma` |
-| **Instant Email Dispatch** | Automated real-time email notifications to `VibePress.Studio@proton.me` with complete ticket metadata, formatted message body, and direct reply link. | `src/lib/email/notifications.ts`, `src/app/api/contact/route.ts` |
-| **Admin Helpdesk Inquiries Desk** | Upgraded `/admin/dashboard` with real-time support ticket tracking, search & status filters, expandable detail modals, status toggle (`OPEN`/`RESOLVED`), and ticket CSV export. | `src/app/admin/dashboard/page.tsx`, `src/app/api/admin/tickets/route.ts` |
-| **Version Alignment (v1.0.13)** | Standardized plugin version to `v1.0.13 (100% Feature Complete · 24 Core Features)` across all landing pages, docs, admin metrics, and metadata. | Entire Project |
+| **Blueprnt Product Page** | Launched dedicated showcase page for **Blueprnt v1.1.0** with 4 feature studios, real-world use cases, target audience specs, installation guides, and FAQs. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/blueprnt.json` |
+| **Studio Lab How-To Guide** | Integrated **6.1 Multi-Platform Installation Guide** (macOS, Windows 10/11, Linux) and **6.2 Step-by-Step Feature Instructions** into `/lab` for instant user manual access. | [`src/app/lab/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/lab/page.tsx), `src/content/pricing.json` |
+| **Documentation Hub Switcher** | Upgraded `/docs` with a multi-product switcher tab allowing visitors to toggle between VibePress Affiliate Link Cloaker and Blueprnt v1.1.0 manuals. | [`src/app/docs/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/docs/page.tsx), `src/content/docs.json` |
+| **Navigation & Search** | Updated Navbar dropdown, mobile drawer, and Command Search Menu (`⌘K`) to include Blueprnt v1.1.0 with official `/blueprnt-icon.svg`. | [`src/components/layout/Navbar.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/components/layout/Navbar.tsx), `src/content/footer.json` |
+| **Products Directory & Home** | Added Blueprnt v1.1.0 to `/products` directory and Home page software showcase cards. | `src/content/products.json`, `src/content/home.json` |
 
 ---
 
-## Flagship Product: VibePress Affiliate Link Cloaker
+## Featured Products
 
-**VibePress Affiliate Link Cloaker** is an enterprise-grade WordPress plugin (**v1.0.13 — 100% Feature Complete · 24 Core Features**) that turns raw merchant referral URLs into clean, branded, trackable links hosted on your own domain (`https://yoursite.com/go/best-vpn`). It is rendered across Home (`src/app/page.tsx`), Products Directory (`src/app/products/page.tsx`), the 8-tab Product Page (`src/app/products/vibepress-affiliate-link-cloaker`), and the 9-chapter Documentation Hub (`src/app/docs/page.tsx`).
+1. **Blueprnt v1.1.0** — Local-First Desktop Media Workstage (**v1.1.0 — 100% Offline**) for camera offloads, BLAKE3 checksum verification, atomic shot-groups, CSV roster mapping, ProRes/DNxHR proxies, and EXIF privacy scrubbing.  
+   - Route: [`/products/blueprnt`](https://vibepressstudio.vercel.app/products/blueprnt)
+
+2. **VibePress Affiliate Link Cloaker** — Enterprise WordPress Plugin (**v1.0.13 — 24 Core Features**) for branded link cloaking, Amazon §6 ToS uncloaking, FTC disclosures, A/B testing, and Stripe payment links.  
+   - Route: [`/products/vibepress-affiliate-link-cloaker`](https://vibepressstudio.vercel.app/products/vibepress-affiliate-link-cloaker)
 
 ---
 
@@ -45,12 +48,13 @@ This release rebrands our flagship WordPress plugin to **VibePress Affiliate Lin
 
 | Route | File | Purpose |
 |-------|------|---------|
-| `/` | `src/app/page.tsx` | Home — 5-section layout with live link transformation demo, feature spotlight, and engineering standards |
-| `/products` | `src/app/products/page.tsx` | Products Directory — filterable 24-feature mini-explorer + 3-col technical specification |
-| `/products/vibepress-affiliate-link-cloaker` | `src/app/products/vibepress-affiliate-link-cloaker/page.tsx` | 8-tab sticky showcase with WP Admin sidebar simulator & interactive use cases |
-| `/docs` | `src/app/docs/page.tsx` | Documentation Hub — 9-chapter searchable manual with Copy Section tool |
+| `/` | `src/app/page.tsx` | Home — 5-section layout showcasing flagship plugins and desktop software |
+| `/products` | `src/app/products/page.tsx` | Products Directory — filterable multi-product explorer + technical specifications |
+| `/products/blueprnt` | `src/app/products/blueprnt/page.tsx` | Blueprnt v1.1.0 Product Showcase — 4 feature studios, installation guides, & FAQs |
+| `/products/vibepress-affiliate-link-cloaker` | `src/app/products/vibepress-affiliate-link-cloaker/page.tsx` | VibePress Affiliate Link Cloaker Page — 8-tab sticky showcase with WP Admin simulator |
+| `/docs` | `src/app/docs/page.tsx` | Documentation Hub — multi-product manual reader with Copy Section tool |
 | `/changelog` | `src/app/changelog/page.tsx` | Release Notes — renders `src/content/changelog.json` timeline |
-| `/lab` | `src/app/lab/page.tsx` | Studio Lab — pre-launch registration portal with real-time subscription engine |
+| `/lab` | `src/app/lab/page.tsx` | Studio Lab — pre-launch registration portal & Blueprnt operational manual |
 | `/about` | `src/app/about/page.tsx` | Studio Vision, Philosophy, and 4 Engineering Pillars |
 | `/contact` | `src/app/contact/page.tsx` | Support Helpdesk & Inquiry Form |
 | `/admin/login` | `src/app/admin/login/page.tsx` | Secret Admin Login (Password Protected, Private Access) |
@@ -58,38 +62,3 @@ This release rebrands our flagship WordPress plugin to **VibePress Affiliate Lin
 | `/legal/terms` | `src/app/legal/terms/page.tsx` | Official 12-Section Terms of Use |
 | `/legal/privacy` | `src/app/legal/privacy/page.tsx` | Official 8-Section Privacy Policy |
 | `/sitemap.xml` | `src/app/sitemap.ts` | Auto-generated sitemap |
-| `/robots.txt` | `src/app/robots.ts` | Robots directives + `Disallow: /go/` |
-
----
-
-## Local Development & Build Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Run local development server (http://localhost:3001)
-npm run dev
-
-# Production build validation (22 static & dynamic routes)
-npm run build
-
-# Type check
-npx tsc --noEmit
-```
-
----
-
-## Deployment & Live Verification
-
-**Platform:** Vercel — auto-deploy on `git push` to `main`.
-
-**Live URL:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
-
----
-
-## License & Copyright
-
-© 2026 VibePress Studio. All rights reserved. Built for performance, security, and data privacy.
-
-**Engineering Accreditation:** Designed & Engineered by Lead Software Architect Abu Saeed Sayem.

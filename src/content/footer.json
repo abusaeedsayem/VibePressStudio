@@ -7,6 +7,7 @@
       "title": "Software Suite",
       "items": [
         { "label": "VibePress Affiliate Link Cloaker", "href": "/products/vibepress-affiliate-link-cloaker" },
+        { "label": "Blueprnt Desktop Workstage", "href": "/products/blueprnt" },
         { "label": "Products Directory", "href": "/products" }
       ]
     },
@@ -14,6 +15,7 @@
       "title": "Documentation & Help",
       "items": [
         { "label": "Knowledgebase & Docs", "href": "/docs" },
+        { "label": "Studio Lab", "href": "/lab" },
         { "label": "Support Helpdesk", "href": "/contact" }
       ]
     },

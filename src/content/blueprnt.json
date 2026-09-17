@@ -1,0 +1,165 @@
+{
+  "id": "blueprnt",
+  "slug": "blueprnt",
+  "name": "Blueprnt",
+  "version": "v1.1.0",
+  "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage",
+  "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Built on Tauri v2, Rust (Edition 2021), SQLite (WAL Mode), and React 19 + TypeScript, Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
+  "logoImage": "/blueprnt-icon.svg",
+  "category": "digital-tool",
+  "categoryLabel": "Local-First Desktop Media Workstage",
+  "techStack": [
+    "Tauri v2",
+    "Rust (Edition 2021)",
+    "SQLite (WAL Mode)",
+    "React 19",
+    "TypeScript",
+    "BLAKE3 Cryptographic Engine",
+    "Apple ProRes 422",
+    "Avid DNxHR"
+  ],
+  "whyUseful": [
+    {
+      "title": "Zero Bit-Rot & Zero Data Loss Guarantee",
+      "description": "Executes real-time BLAKE3 bit-by-bit binary checksum verification during file transfers to guarantee 100% cryptographic data integrity before clearing camera cards.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "title": "Atomic Shot-Group Preservation",
+      "description": "Binds paired camera assets (RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE) as unified logical units. Modifying or renaming a RAW file automatically updates all linked sidecars simultaneously.",
+      "icon": "Layers"
+    },
+    {
+      "title": "Persistent Studio Defaults",
+      "description": "Configure primary editing SSDs, secondary 3-2-1 backup drives, cloud sync folders, IPTC studio creator tags, renaming patterns, and proxy codecs once in Settings to auto-inherit across all modules.",
+      "icon": "Settings"
+    },
+    {
+      "title": "Sub-Millisecond Catalog Scalability",
+      "description": "Embedded SQLite WAL database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy.",
+      "icon": "Zap"
+    }
+  ],
+  "useCases": [
+    {
+      "id": "wedding-event",
+      "title": "Wedding & High-Volume Event Photography",
+      "description": "Ingest thousands of photos across multiple memory cards simultaneously, auto-group paired RAW+JPG files, and apply student/client CSV roster mappings."
+    },
+    {
+      "id": "dit-workstage",
+      "title": "Cinema & Commercial On-Set DIT Workstage",
+      "description": "Offload cinema cards with BLAKE3 validation, mirror to secondary backup SSDs, and generate lightweight Apple ProRes 422 or Avid DNxHR proxies for instant editing."
+    },
+    {
+      "id": "sports-dedup",
+      "title": "Sports & Burst Action Deduplication",
+      "description": "Filter byte-for-byte duplicate captures and high-speed motor drive burst frames using 2-tier BLAKE3 and perceptual hash scanning."
+    },
+    {
+      "id": "metadata-privacy",
+      "title": "Client Delivery & Metadata Privacy Sanitation",
+      "description": "Strip camera body serials, lens serials, binary MakerNotes, and GPS location coordinates before exporting client delivery folders."
+    }
+  ],
+  "targetAudience": [
+    "Digital Imaging Technicians (DITs): Requiring fast, verified card offloading and proxy generation on set.",
+    "Professional Event & Wedding Photographers: Managing massive paired RAW/JPG catalogs and CSV client rosters.",
+    "Commercial Filmmakers & Editors: Needing standardized ProRes/DNxHR proxies with preserved SMPTE timecode.",
+    "School & Sports Portrait Studios: Mapping sequential photo ranges to student names and IDs automatically."
+  ],
+  "detailedFeatures": [
+    {
+      "id": "5.1",
+      "title": "Persistent System Settings & Studio Defaults",
+      "badge": "Settings Engine",
+      "description": "The full-featured Settings Chapter allows studio managers to define global defaults once for all ingest pipelines, renaming rules, metadata attribution, and proxy presets.",
+      "details": "Destination Folders, 3-2-1 Backup Drives, Cloud Sync Folders, Bit-by-Bit BLAKE3 Validation, and IPTC Creator Attribution & Copyright auto-inherit across every operational module."
+    },
+    {
+      "id": "5.2",
+      "title": "Token Pattern Builder & CSV Client Roster Engine",
+      "badge": "Renaming Engine",
+      "description": "Allows drag-and-drop construction of dynamic renaming templates ({Date}, {Model}, {Sequence}) and CSV roster range synchronization with real-time bi-directional preview updating.",
+      "details": "Supports tokens like {Date:YYYY-MM-DD}, {Model}, {Lens}, {Sequence:03}, and maps CSV roster records (MLS#, Student ID, Client Name) to image ranges effortlessly."
+    },
+    {
+      "id": "5.3",
+      "title": "Video Transcoder & Editing Proxies Studio",
+      "badge": "Cinema Proxies",
+      "description": "Generates studio-grade Apple ProRes 422 (Proxy/LT/HQ) and Avid DNxHR (LB/SQ) proxies with resolution scaling, native framerate matching, stereo downmixing, and timecode preservation.",
+      "details": "Supports 1080p Full HD, 720p HD, 50%, and 25% downscaling. Preserves SMPTE timecode and Reel ID across all batch converted cinema footage."
+    },
+    {
+      "id": "5.4",
+      "title": "Media Indexer & Real-Time Infographics Dashboard",
+      "badge": "Analytics Workspace",
+      "description": "Scans cards and drives recursively, providing visual color breakdowns for stills, RAW negatives, Live Photos, cinema video clips, and formatted payload size.",
+      "details": "BLAKE3 verified ingestion workspace displays index breakdowns across 100,000+ items with sub-millisecond SQLite WAL database queries."
+    }
+  ],
+  "installation": {
+    "macOS": "Download Blueprnt_1.1.0_aarch64.dmg or Blueprnt_1.1.0_universal.dmg. Drag Blueprnt into /Applications.",
+    "Windows": "Download Blueprnt_1.1.0_x64-setup.exe (NSIS) or Blueprnt_1.1.0_x64_en-US.msi and run installer.",
+    "Linux": "Download Blueprnt_1.1.0_amd64.AppImage (make executable: chmod +x) or blueprnt_1.1.0_amd64.deb (dpkg -i)."
+  },
+  "userGuide": [
+    {
+      "step": 1,
+      "title": "Media Indexing & Transfer",
+      "action": "Select source drive -> Click 'Scan & Index Source Media' -> Review Infographics -> Click 'Transfer Media' for BLAKE3 verified ingest."
+    },
+    {
+      "step": 2,
+      "title": "Deduplication & Quarantine",
+      "action": "Open 'Deduplication' tab -> Scan for BLAKE3 byte duplicates or near-burst frames -> Move redundant files to Quarantine Vault."
+    },
+    {
+      "step": 3,
+      "title": "Organizing & Token Renaming",
+      "action": "Open Settings -> Configure token string or upload CSV roster -> Navigate to 'Organize & Rename' tab -> Review collision-free live preview -> Execute renaming."
+    },
+    {
+      "step": 4,
+      "title": "Video Proxy Transcoding",
+      "action": "Open Settings -> Select target proxy codec (Apple ProRes 422 Proxy) -> Open 'Transcoder & Proxies' tab -> Click 'Batch Transcode Video Clips'."
+    }
+  ],
+  "faq": [
+    {
+      "category": "Architecture & Speed",
+      "question": "What is Blueprnt v1.1.0 and what makes it local-first?",
+      "answer": "Blueprnt is a desktop media application built on Tauri v2, Rust (Edition 2021), SQLite (WAL mode), and React 19 + TypeScript. It runs 100% offline directly on your workstation without uploading media, telemetry, or metadata to external cloud servers."
+    },
+    {
+      "category": "Data Integrity",
+      "question": "How does BLAKE3 checksum verification prevent bit-rot during transfers?",
+      "answer": "Blueprnt executes real-time bit-by-bit binary checksum verification using the BLAKE3 cryptographic algorithm during file ingestion. Before any memory card is cleared, Blueprnt verifies that every bit on the target drive exactly matches the source."
+    },
+    {
+      "category": "Asset Management",
+      "question": "What is Atomic Shot-Group Preservation?",
+      "answer": "Atomic Shot-Group Preservation binds paired camera captures (RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE) into unified logical units. When you modify or rename a RAW file, Blueprnt automatically renames and updates all linked sidecars simultaneously."
+    },
+    {
+      "category": "Video Editing",
+      "question": "Can Blueprnt transcode video proxies for Premiere Pro, Final Cut Pro, or DaVinci Resolve?",
+      "answer": "Yes. Blueprnt includes a dedicated Video Transcoder Studio capable of generating studio-grade Apple ProRes 422 (Proxy, LT, HQ) and Avid DNxHR (LB, SQ) proxies. It preserves native SMPTE timecode, Reel ID, and 48kHz stereo audio downmixing for seamless NLE editing."
+    },
+    {
+      "category": "Workflow & Roster",
+      "question": "How does CSV Client Roster mapping work for event & school photographers?",
+      "answer": "You can upload a CSV roster (containing student IDs, client names, or MLS listings) inside Settings. Blueprnt synchronizes photo sequence ranges to roster rows with a live bi-directional preview before executing batch renaming."
+    },
+    {
+      "category": "Privacy & Security",
+      "question": "How does Metadata Privacy Sanitation clean exported files?",
+      "answer": "Before delivering client folders, Blueprnt can automatically strip sensitive EXIF/IPTC tags including camera body serial numbers, lens serial numbers, binary MakerNotes, and GPS location coordinates."
+    },
+    {
+      "category": "Installation",
+      "question": "Which operating systems are supported?",
+      "answer": "Blueprnt is available for macOS (Apple Silicon .dmg & Universal .dmg), Windows 10/11 (.exe NSIS installer & .msi), and Linux (.AppImage & .deb)."
+    }
+  ]
+}

@@ -10,7 +10,7 @@
     "benefits": [
       "Instant email notification when official launch opens",
       "Exclusive early access and launch discount eligibility",
-      "Direct plugin download link for VibePress Affiliate Link Cloaker (WordPress Plugin)"
+      "Direct software download links for VibePress Affiliate Link Cloaker and Blueprnt v1.1.0"
     ]
   },
   "upcomingProducts": [
@@ -18,7 +18,17 @@
       "name": "VibePress Affiliate Link Cloaker",
       "type": "WordPress Performance Plugin",
       "status": "100% Feature Complete (v1.0.13) • Rollout Pending Review",
-      "description": "Enterprise-grade referral link routing, automatic FTC legal disclosures, dynamic IP geolocation, DOM-safe keyword auto-linking, Stripe payment links, and broken link monitoring."
+      "description": "Enterprise-grade referral link routing, automatic FTC legal disclosures, dynamic IP geolocation, DOM-safe keyword auto-linking, Stripe payment links, and broken link monitoring.",
+      "logoImage": "/Smart-Affiliate-Link-Cloaker-icon.svg",
+      "link": "/products/vibepress-affiliate-link-cloaker"
+    },
+    {
+      "name": "Blueprnt v1.1.0",
+      "type": "Local-First Desktop Media Workstage",
+      "status": "100% Offline • Ingestion & Proxy Transcoder Engine",
+      "description": "Professional local-first desktop media application for camera card offloading, cryptographic BLAKE3 checksum verification, atomic shot-group preservation, token batch renaming, Apple ProRes/Avid DNxHR proxies, and EXIF/IPTC privacy scrubbing.",
+      "logoImage": "/blueprnt-icon.svg",
+      "link": "/products/blueprnt"
     }
   ]
 }

@@ -19,12 +19,13 @@ interface DocIndexItem {
 }
 
 export default function DocsPage() {
+  const [selectedProductIndex, setSelectedProductIndex] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeSectionId, setActiveSectionId] = useState("what-is-salc");
+  const [activeSectionId, setActiveSectionId] = useState<string>("");
   const [copiedSection, setCopiedSection] = useState<string | null>(null);
 
   const { hero, products: docsProducts } = docsDataJson;
-  const currentProduct = docsProducts[0];
+  const currentProduct = docsProducts[selectedProductIndex] || docsProducts[0];
   const docIndex: DocIndexItem[] = currentProduct.index as DocIndexItem[];
 
   const filteredSections = docIndex.filter((item) =>
@@ -48,18 +49,31 @@ export default function DocsPage() {
       {/* Hero Header */}
       <section className="border-b border-border bg-gradient-to-b from-primary/10 via-background to-background py-14 md:py-20">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <div className="inline-flex items-center gap-2.5 bg-white border border-primary/20 rounded-full px-4 py-1.5 shadow-xs">
-              <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker" className="h-5 w-5 object-contain" />
-              <span className="text-xs font-semibold text-primary">VibePress Affiliate Link Cloaker v1.0.13</span>
-            </div>
-            <span className="text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20">
-              24 Core Features Documentation
-            </span>
+          
+          {/* Product Switcher Tabs */}
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            {docsProducts.map((prod, pIdx) => (
+              <button
+                key={prod.id}
+                onClick={() => {
+                  setSelectedProductIndex(pIdx);
+                  setActiveSectionId(prod.index[0].id);
+                }}
+                className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-xl text-xs md:text-sm font-bold transition-all cursor-pointer border ${
+                  selectedProductIndex === pIdx
+                    ? "bg-primary text-primary-foreground border-primary shadow-sm"
+                    : "bg-card text-muted-foreground border-border hover:bg-muted"
+                }`}
+              >
+                <img src={prod.logoImage} alt={prod.name} className="h-5 w-5 object-contain rounded shrink-0 bg-white p-0.5" />
+                <span>{prod.name}</span>
+                <span className="text-[10px] opacity-80 font-mono">({prod.version})</span>
+              </button>
+            ))}
           </div>
 
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 max-w-4xl">
-            {hero.title}
+            {currentProduct.name} — Technical Manual &amp; Guides
           </h1>
 
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl leading-relaxed mb-8">
@@ -97,147 +111,94 @@ export default function DocsPage() {
                 {docIndex.map((item) => (
                   <button
                     key={item.id}
-                    onClick={() => {
-                      setActiveSectionId(item.id);
-                      setSearchQuery("");
-                      window.scrollTo({ top: 200, behavior: "smooth" });
-                    }}
-                    className={`w-full text-left px-3 py-2.5 text-xs font-semibold rounded-lg transition-colors flex items-center justify-between gap-2 cursor-pointer ${
-                      activeSectionId === item.id && !searchQuery
-                        ? "bg-primary text-primary-foreground shadow-xs"
+                    onClick={() => setActiveSectionId(item.id)}
+                    className={`w-full text-left px-3 py-2.5 rounded-lg text-xs font-medium transition-colors flex items-center justify-between group cursor-pointer ${
+                      activeDoc.id === item.id 
+                        ? "bg-primary text-primary-foreground font-bold shadow-xs" 
                         : "text-muted-foreground hover:bg-muted hover:text-foreground"
                     }`}
                   >
                     <span className="truncate">{item.title}</span>
-                    <ChevronRight className={`h-3.5 w-3.5 shrink-0 opacity-60 ${activeSectionId === item.id ? "opacity-100" : ""}`} />
+                    <ChevronRight className={`h-3.5 w-3.5 shrink-0 transition-transform ${activeDoc.id === item.id ? "rotate-90 text-primary-foreground" : "opacity-0 group-hover:opacity-100"}`} />
                   </button>
                 ))}
               </nav>
 
-              <div className="pt-4 mt-4 border-t border-border">
+              <div className="mt-4 pt-4 border-t border-border space-y-2">
                 <Link
-                  href="/products/vibepress-affiliate-link-cloaker"
-                  className="w-full bg-muted hover:bg-muted/80 text-foreground text-xs font-bold py-2.5 px-3 rounded-lg flex items-center justify-center gap-1.5 transition-colors"
+                  href={`/products/${currentProduct.id === "blueprnt" ? "blueprnt" : "vibepress-affiliate-link-cloaker"}`}
+                  className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground text-xs font-bold py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5"
                 >
-                  <span>Explore Product Overview</span> <ArrowRight className="h-3.5 w-3.5 text-primary" />
+                  <ExternalLink className="h-3.5 w-3.5" /> Product Showcase Page
                 </Link>
               </div>
             </div>
           </aside>
 
-          {/* Main Article Body */}
-          <main className="flex-1 min-w-0">
-            {searchQuery ? (
-              <div className="space-y-6">
-                <div className="flex items-center justify-between border-b border-border pb-3">
-                  <h2 className="text-xl font-bold text-foreground">
-                    Search Results for &quot;{searchQuery}&quot;
-                  </h2>
-                  <span className="text-xs text-muted-foreground font-medium">
-                    Found {filteredSections.length} matching sections
-                  </span>
-                </div>
-
-                {filteredSections.length === 0 ? (
-                  <div className="p-12 border border-border rounded-xl text-center bg-card space-y-3">
-                    <p className="text-sm font-semibold text-foreground">No matching documentation topics found.</p>
-                    <p className="text-xs text-muted-foreground">Try searching with different terms like &quot;Stripe&quot;, &quot;Amazon&quot;, &quot;Redirect&quot;, &quot;24 features&quot;, or &quot;307&quot;.</p>
-                    <button
-                      onClick={() => setSearchQuery("")}
-                      className="text-xs text-primary font-bold hover:underline cursor-pointer"
-                    >
-                      Clear search filter
-                    </button>
+          {/* Main Reading Area */}
+          <main className="flex-1 min-w-0 space-y-8">
+            
+            {/* Active Topic Header Card */}
+            <div className="bg-card border border-border rounded-2xl p-6 md:p-10 shadow-sm space-y-6">
+              
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary px-3 py-0.5 rounded-full border border-primary/20">
+                      {activeDoc.badge || "Guide"}
+                    </span>
+                    <span className="text-xs font-mono text-muted-foreground">
+                      {currentProduct.name} ({currentProduct.version})
+                    </span>
                   </div>
-                ) : (
-                  filteredSections.map((item) => (
-                    <div key={item.id} className="p-6 border border-border rounded-xl bg-card space-y-3 shadow-xs">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold text-base text-primary">{item.title}</h3>
-                        <button
-                          onClick={() => {
-                            setActiveSectionId(item.id);
-                            setSearchQuery("");
-                          }}
-                          className="text-xs text-primary font-semibold hover:underline flex items-center gap-1 cursor-pointer"
-                        >
-                          View Full Section &rarr;
-                        </button>
-                      </div>
-                      <p className="text-xs text-muted-foreground font-medium">{item.summary}</p>
-                      <div className="text-xs text-muted-foreground leading-relaxed pt-3 border-t border-border/60 whitespace-pre-line">
-                        {item.content}
-                      </div>
-                    </div>
-                  ))
-                )}
-              </div>
-            ) : (
-              <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-sm space-y-8">
-                <div className="border-b border-border pb-6">
-                  <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2.5 py-0.5 rounded">
-                        {activeDoc.badge || "Technical Documentation"}
-                      </span>
-                      <span className="text-xs font-mono text-muted-foreground">
-                        {currentProduct.name}
-                      </span>
-                    </div>
-
-                    <button
-                      onClick={() => handleCopySection(activeDoc.content, activeDoc.id)}
-                      className="text-xs font-medium text-muted-foreground hover:text-foreground flex items-center gap-1.5 bg-muted px-3 py-1.5 rounded-lg transition-colors cursor-pointer border"
-                    >
-                      {copiedSection === activeDoc.id ? (
-                        <>
-                          <Check className="h-3.5 w-3.5 text-emerald-500" />
-                          <span className="text-emerald-500 font-bold">Copied Content!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="h-3.5 w-3.5" />
-                          <span>Copy Section</span>
-                        </>
-                      )}
-                    </button>
-                  </div>
-
-                  <h2 className="text-2xl md:text-3xl font-extrabold text-foreground mb-3">
+                  <h2 className="text-2xl md:text-4xl font-extrabold text-foreground">
                     {activeDoc.title}
                   </h2>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-medium">
-                    {activeDoc.summary}
-                  </p>
                 </div>
 
-                <div className="space-y-6 text-sm text-foreground leading-relaxed">
-                  <div className="whitespace-pre-line leading-relaxed text-sm md:text-base text-foreground/90 font-sans">
-                    {activeDoc.content}
-                  </div>
-                </div>
-
-                {/* Footer Verification Bar */}
-                <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0" />
-                    <span>Verified against VibePress Affiliate Link Cloaker v1.0.13 (24 Core Features)</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Link
-                      href="/products/vibepress-affiliate-link-cloaker"
-                      className="text-primary font-bold hover:underline"
-                    >
-                      View Live Product Page &rarr;
-                    </Link>
-                  </div>
-                </div>
+                <button
+                  onClick={() => handleCopySection(activeDoc.content, activeDoc.id)}
+                  className="bg-muted hover:bg-muted/80 text-foreground text-xs font-bold py-2 px-4 rounded-lg transition-colors flex items-center gap-1.5 border border-border cursor-pointer"
+                  title="Copy Section Content"
+                >
+                  {copiedSection === activeDoc.id ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
+                  <span>{copiedSection === activeDoc.id ? "Copied Content" : "Copy Section"}</span>
+                </button>
               </div>
-            )}
+
+              <div className="p-4 bg-muted/40 border border-border rounded-xl text-xs md:text-sm text-foreground font-medium leading-relaxed">
+                <strong>Executive Summary:</strong> {activeDoc.summary}
+              </div>
+
+              {/* Main Markdown Body Content */}
+              <div className="prose dark:prose-invert max-w-none text-sm md:text-base leading-relaxed text-muted-foreground whitespace-pre-wrap font-sans">
+                {activeDoc.content}
+              </div>
+
+            </div>
+
+            {/* Quick Navigation Footer */}
+            <div className="flex items-center justify-between pt-4 border-t border-border">
+              <Link
+                href="/contact"
+                className="text-xs font-bold text-muted-foreground hover:text-foreground flex items-center gap-1.5"
+              >
+                <HelpCircle className="h-4 w-4 text-primary" /> Have technical questions? Contact Support
+              </Link>
+              <Link
+                href="/lab"
+                className="text-xs font-bold text-primary hover:underline flex items-center gap-1"
+              >
+                Pre-Launch Registration <ArrowRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
           </main>
 
         </div>
+
       </div>
+
     </div>
   );
 }

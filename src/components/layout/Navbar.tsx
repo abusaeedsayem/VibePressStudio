@@ -39,14 +39,14 @@ export function Navbar() {
             <CommandInput placeholder={searchDialogPlaceholder} />
             <CommandList className="max-h-80">
               <CommandEmpty>No results found.</CommandEmpty>
-              <CommandGroup heading="Products">
+              <CommandGroup heading="Products Suite">
                 {products.map((p) => (
                   <CommandItem key={p.id} asChild>
                     <Link href={`/products/${p.slug}`} onClick={() => setSearchOpen(false)}>
                       <img 
                         src={p.logoImage || '/Smart-Affiliate-Link-Cloaker-icon.svg'} 
                         alt={p.name} 
-                        className="mr-2.5 h-5 w-5 object-contain rounded shrink-0" 
+                        className="mr-2.5 h-5 w-5 object-contain rounded shrink-0 p-0.5 bg-white border border-border" 
                       />
                       <div>
                         <div className="font-medium text-sm">{p.name}</div>
@@ -59,9 +59,9 @@ export function Navbar() {
               <CommandGroup heading="Pages & Channels">
                 <CommandItem asChild><Link href="/products" onClick={() => setSearchOpen(false)}>Products Directory</Link></CommandItem>
                 <CommandItem asChild><Link href="/lab" onClick={() => setSearchOpen(false)}>Studio Lab</Link></CommandItem>
-                <CommandItem asChild><Link href="/docs" onClick={() => setSearchOpen(false)}>Documentation & User Manuals</Link></CommandItem>
-                <CommandItem asChild><Link href="/about" onClick={() => setSearchOpen(false)}>About & Engineering Standards</Link></CommandItem>
-                <CommandItem asChild><Link href="/contact" onClick={() => setSearchOpen(false)}>Support & Licensing Validation</Link></CommandItem>
+                <CommandItem asChild><Link href="/docs" onClick={() => setSearchOpen(false)}>Documentation &amp; User Manuals</Link></CommandItem>
+                <CommandItem asChild><Link href="/about" onClick={() => setSearchOpen(false)}>About &amp; Engineering Standards</Link></CommandItem>
+                <CommandItem asChild><Link href="/contact" onClick={() => setSearchOpen(false)}>Support &amp; Helpdesk</Link></CommandItem>
               </CommandGroup>
             </CommandList>
           </Command>
@@ -93,29 +93,37 @@ export function Navbar() {
               </button>
 
               {productsOpen && (
-                <div className="absolute top-full left-0 w-80 bg-popover border border-border rounded-xl shadow-xl overflow-hidden p-3 z-50">
+                <div className="absolute top-full left-0 w-84 bg-popover border border-border rounded-xl shadow-xl overflow-hidden p-3 z-50">
                   <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider px-3 py-1 mb-1">
                     Software Suite
                   </div>
-                  <Link 
-                    href="/products/vibepress-affiliate-link-cloaker" 
-                    onClick={() => setProductsOpen(false)}
-                    className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors group"
-                  >
-                    <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker" className="h-6 w-6 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" />
-                    <div>
-                      <div className="font-semibold text-sm group-hover:text-primary transition-colors">
-                        VibePress Affiliate Link Cloaker
+                  
+                  {products.map((p) => (
+                    <Link 
+                      key={p.id}
+                      href={`/products/${p.slug}`} 
+                      onClick={() => setProductsOpen(false)}
+                      className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-muted transition-colors group mb-1"
+                    >
+                      <img 
+                        src={p.logoImage || '/Smart-Affiliate-Link-Cloaker-icon.svg'} 
+                        alt={p.name} 
+                        className="h-7 w-7 object-contain rounded shrink-0 p-0.5 bg-white border border-border/40 shadow-xs" 
+                      />
+                      <div>
+                        <div className="font-semibold text-sm group-hover:text-primary transition-colors">
+                          {p.name}
+                        </div>
+                        <div className="text-[11px] text-muted-foreground">
+                          {p.categoryLabel}
+                        </div>
                       </div>
-                      <div className="text-xs text-muted-foreground">
-                        WordPress Performance Plugin
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  ))}
 
                   <div className="border-t border-border mt-2 pt-2 text-center">
                     <Link href="/products" onClick={() => setProductsOpen(false)} className="text-xs font-semibold text-primary hover:underline">
-                      View All Products Directory →
+                      View All Products Directory &rarr;
                     </Link>
                   </div>
                 </div>
@@ -169,22 +177,29 @@ export function Navbar() {
 
                   <nav className="flex flex-col p-4 gap-1 flex-1 overflow-y-auto">
                     <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest px-3 py-2">
-                      Products
+                      Products Suite
                     </div>
-                    <Link
-                      href="/products/vibepress-affiliate-link-cloaker"
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
-                    >
-                      <img src="/Smart-Affiliate-Link-Cloaker-icon.svg" alt="VibePress Affiliate Link Cloaker" className="h-5 w-5 object-contain rounded shrink-0" />
-                      VibePress Affiliate Link Cloaker
-                    </Link>
+                    {products.map((p) => (
+                      <Link
+                        key={p.id}
+                        href={`/products/${p.slug}`}
+                        onClick={() => setMobileOpen(false)}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted"
+                      >
+                        <img 
+                          src={p.logoImage || '/Smart-Affiliate-Link-Cloaker-icon.svg'} 
+                          alt={p.name} 
+                          className="h-5 w-5 object-contain rounded shrink-0 p-0.5 bg-white border border-border" 
+                        />
+                        <span>{p.name}</span>
+                      </Link>
+                    ))}
                     <Link
                       href="/products"
                       onClick={() => setMobileOpen(false)}
                       className="px-3 py-2 text-xs font-semibold text-primary hover:underline"
                     >
-                      View All Products Directory →
+                      View All Products Directory &rarr;
                     </Link>
 
                     <div className="border-t border-border my-3" />
@@ -195,13 +210,13 @@ export function Navbar() {
                       Studio Lab
                     </Link>
                     <Link href="/docs" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
-                      Documentation & Manuals
+                      Documentation &amp; Manuals
                     </Link>
                     <Link href="/about" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
-                      About & Engineering Standards
+                      About &amp; Engineering Standards
                     </Link>
                     <Link href="/contact" onClick={() => setMobileOpen(false)} className="px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-muted">
-                      Support & Helpdesk
+                      Support &amp; Helpdesk
                     </Link>
                   </nav>
                 </div>

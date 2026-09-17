@@ -1,13 +1,17 @@
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
-  CheckCircle2, Bell, Sparkles, Clock, Package 
+  CheckCircle2, Bell, Sparkles, Clock, BookOpen, ArrowRight,
+  Download, HardDrive, ShieldCheck, Sliders, Layers, Terminal, Check
 } from "lucide-react";
 import pricingData from "@/content/pricing.json";
+import blueprntData from "@/content/blueprnt.json";
 import { SubscriberForm } from "@/components/forms/SubscriberForm";
 
 export default function LabPage() {
   const { hero, notice, upcomingProducts } = pricingData;
+  const { installation, userGuide } = blueprntData;
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -28,7 +32,7 @@ export default function LabPage() {
       </section>
 
       {/* ── 2. Software Pipeline Overview ── */}
-      <section className="pt-8">
+      <section className="py-16 px-4 md:px-6 max-w-[1280px] mx-auto w-full border-b border-border">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">
             Software Pipeline Overview
@@ -37,19 +41,19 @@ export default function LabPage() {
             Products Currently in Development
           </h2>
           <p className="text-sm text-muted-foreground">
-            A preview of our enterprise WordPress performance tools scheduled for upcoming release.
+            A preview of our enterprise WordPress performance tools and local-first desktop applications scheduled for rollout.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {upcomingProducts.map((prod, idx) => (
-            <Card key={idx} className="border-border shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+            <Card key={idx} className="border-border shadow-sm flex flex-col justify-between hover:shadow-lg hover:border-primary/40 transition-all">
               <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
+                <div className="flex items-center gap-3.5 mb-2">
                   <img 
-                    src="/Smart-Affiliate-Link-Cloaker-icon.svg" 
+                    src={prod.logoImage || '/Smart-Affiliate-Link-Cloaker-icon.svg'} 
                     alt={prod.name} 
-                    className="w-10 h-10 rounded-lg p-0.5 bg-white border border-border shrink-0 object-contain shadow-xs" 
+                    className="w-12 h-12 rounded-xl p-1 bg-white border border-border shrink-0 object-contain shadow-xs" 
                   />
                   <div>
                     <CardTitle className="text-xl font-bold">{prod.name}</CardTitle>
@@ -60,15 +64,129 @@ export default function LabPage() {
                   {prod.status}
                 </Badge>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground leading-relaxed">{prod.description}</p>
+                {prod.link && (
+                  <Link
+                    href={prod.link}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:underline pt-2"
+                  >
+                    View Product Page &amp; Documentation <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}
         </div>
       </section>
 
-      {/* ── 3. Pre-Launch Registration Portal ── */}
+      {/* ── 3. How to Use Blueprnt v1.1.0 — Operational Documentation ── */}
+      <section id="blueprnt-guide" className="py-16 px-4 md:px-6 max-w-[1280px] mx-auto w-full border-b border-border bg-muted/20">
+        <div className="max-w-5xl mx-auto space-y-12">
+          
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/30 rounded-full px-3.5 py-1 mb-3">
+              <img src="/blueprnt-icon.svg" alt="Blueprnt Icon" className="w-4 h-4 object-contain" />
+              <span className="text-xs font-bold text-sky-400">Featured Software Manual</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
+              How to Use &apos;Blueprnt&apos; v1.1.0
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground">
+              Official operational manual, multi-platform installation guides, and step-by-step feature walkthroughs for desktop media asset management.
+            </p>
+          </div>
+
+          {/* 6.1 Multi-Platform Installation Guide */}
+          <Card className="border-sky-500/30 shadow-md">
+            <CardHeader className="bg-gradient-to-r from-sky-500/10 to-indigo-500/10 border-b border-border">
+              <CardTitle className="text-xl font-bold flex items-center gap-2">
+                <Download className="h-5 w-5 text-sky-500" /> Multi-Platform Installation Guide
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
+                <div className="p-4 bg-muted/40 rounded-xl border border-border space-y-2">
+                  <div className="font-bold text-foreground flex items-center gap-1.5">
+                     macOS (Apple Silicon / Universal)
+                  </div>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    {installation.macOS}
+                  </p>
+                  <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
+                    Blueprnt_1.1.0_universal.dmg
+                  </div>
+                </div>
+
+                <div className="p-4 bg-muted/40 rounded-xl border border-border space-y-2">
+                  <div className="font-bold text-foreground flex items-center gap-1.5">
+                    ⊞ Windows 10/11 (x64)
+                  </div>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    {installation.Windows}
+                  </p>
+                  <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
+                    Blueprnt_1.1.0_x64-setup.exe
+                  </div>
+                </div>
+
+                <div className="p-4 bg-muted/40 rounded-xl border border-border space-y-2">
+                  <div className="font-bold text-foreground flex items-center gap-1.5">
+                    🐧 Linux (AppImage / Debian)
+                  </div>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    {installation.Linux}
+                  </p>
+                  <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
+                    blueprnt_1.1.0_amd64.AppImage
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* 6.2 Step-by-Step Feature Instructions */}
+          <Card className="border-border shadow-md">
+            <CardHeader className="bg-muted/40 border-b border-border">
+              <CardTitle className="text-xl font-bold flex items-center gap-2">
+                <Sliders className="h-5 w-5 text-sky-500" /> Step-by-Step Feature Instructions
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {userGuide.map((step) => (
+                  <div key={step.step} className="p-5 bg-card border border-border rounded-xl space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="w-6 h-6 rounded-full bg-sky-600 text-white font-bold text-xs flex items-center justify-center shrink-0">
+                        {step.step}
+                      </span>
+                      <h4 className="font-bold text-sm text-foreground">{step.title}</h4>
+                    </div>
+                    <p className="text-xs text-muted-foreground leading-relaxed pl-8 font-mono">
+                      {step.action}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p className="text-xs text-muted-foreground">
+                  Need in-depth technical FAQs or BLAKE3 checksum specifications?
+                </p>
+                <Link
+                  href="/products/blueprnt"
+                  className="bg-sky-600 text-white text-xs font-bold py-2.5 px-5 rounded-lg hover:bg-sky-500 transition-colors flex items-center gap-2"
+                >
+                  Explore Full Blueprnt Product Page <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+
+        </div>
+      </section>
+
+      {/* ── 4. Pre-Launch Registration Portal ── */}
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-16 space-y-16">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">

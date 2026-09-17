@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.0] — Blueprnt v1.1.0 Product Launch & Multi-Product Platform Integration — September 17, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Blueprnt v1.1.0 Dedicated Product Showcase Page**:
+  - Launched [`/products/blueprnt`](https://vibepressstudio.vercel.app/products/blueprnt) (`src/app/products/blueprnt/page.tsx`) with hero branding, 4 core feature studios, real-world use cases, target audience matrix, multi-platform installation guide, step-by-step feature walkthroughs, and 7-category FAQ accordion.
+- **Studio Lab (/lab) Workstage Guide**:
+  - Integrated **6.1 Multi-Platform Installation Guide** (macOS, Windows 10/11, Linux) and **6.2 Step-by-Step Feature Instructions** into [`/lab`](https://vibepressstudio.vercel.app/lab) (`src/app/lab/page.tsx`) for instant operational access.
+- **Documentation Hub Switcher**:
+  - Upgraded [`/docs`](https://vibepressstudio.vercel.app/docs) (`src/app/docs/page.tsx`) with a multi-product tab switcher allowing visitors to toggle between VibePress Affiliate Link Cloaker and Blueprnt v1.1.0 technical manuals.
+- **Icon Asset Deployment**:
+  - Copied official SVG icon `/Users/abusaeedmohammadsayem/Blueprnt/app-icon.svg` into `public/blueprnt-icon.svg` and `public/images/blueprnt-icon.svg`.
+
+### Changed
+- **Global Navigation & Search**:
+  - Updated Navbar dropdown, mobile drawer, and Command Search Menu (`⌘K`) in `src/components/layout/Navbar.tsx` and `src/content/footer.json` to feature Blueprnt v1.1.0 alongside flagship plugins.
+- **Products Directory & Home Page**:
+  - Added Blueprnt v1.1.0 into `src/content/products.json` and `src/content/home.json`, automatically expanding the Products Directory (`/products`) and Home page showcase.
+
 ---
 
 ## [1.0.13] — Plugin Rebranding to VibePress Affiliate Link Cloaker, Support Ticket Engine & Admin Helpdesk — September 13, 2026
