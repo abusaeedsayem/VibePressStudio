@@ -2,11 +2,11 @@
   "hero": {
     "badge": "Studio Engineering Standards",
     "title": "Engineered for Substance, Not Software Bloat",
-    "subtitle": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in high-performance digital tools and modular WordPress infrastructure."
+    "subtitle": "VibePress Studio was created to build local-first desktop software and modular digital tools that respect system resources and user privacy."
   },
   "vision": {
     "headline": "Engineered for Substance, Not Software Bloat",
-    "narrative": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in modular, high-performance WordPress infrastructure and enterprise-grade web tools.",
+    "narrative": "VibePress Studio was created to build software tools that respect system resources and user privacy. We specialize in local-first desktop software applications, high-performance digital tools, and modular WordPress infrastructure.",
     "philosophy": "We avoid bloated architectures, unnecessary database tables, and unneeded cloud dependencies. Operating on enterprise WordPress sites, our tools deliver deterministic, rock-solid performance."
   },
   "pillars": [

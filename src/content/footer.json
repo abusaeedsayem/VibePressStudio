@@ -6,8 +6,8 @@
     {
       "title": "Software Suite",
       "items": [
-        { "label": "VibePress Affiliate Link Cloaker", "href": "/products/vibepress-affiliate-link-cloaker" },
         { "label": "Blueprnt Desktop Utility", "href": "/products/blueprnt" },
+        { "label": "VibePress Affiliate Link Cloaker", "href": "/products/vibepress-affiliate-link-cloaker" },
         { "label": "Products Directory", "href": "/products" }
       ]
     },

@@ -1,188 +1,5 @@
 [
   {
-    "id": "vibepress-affiliate-link-cloaker",
-    "slug": "vibepress-affiliate-link-cloaker",
-    "name": "VibePress Affiliate Link Cloaker",
-    "tagline": "Enterprise-Grade WordPress Affiliate Link Management & Cloaking Suite (24 Core Features)",
-    "description": "An enterprise-grade, performance-optimized WordPress affiliate link management and cloaking suite. Built natively upon WordPress's standard database architecture (wp_posts and wp_postmeta), it transforms ugly, fragile affiliate links into clean, memorable, branded URLs hosted directly on your primary domain—delivering 25% to 40% higher click-through rates, dynamic visitor routing, automated FTC legal disclosures, Amazon ToS compliance uncloaking, automated broken link health monitoring, A/B traffic split testing, and direct 1-click Stripe payment checkouts.",
-    "category": "wordpress-plugin",
-    "categoryLabel": "WordPress Performance Plugin",
-    "icon": "Link",
-    "logoImage": "/Smart-Affiliate-Link-Cloaker-icon.svg",
-    "screenshotGallery": [
-      "/images/products/vibepress-affiliate-link-cloaker-dash.png",
-      "/images/products/vibepress-affiliate-link-cloaker-stats.png",
-      "/images/products/vibepress-affiliate-link-cloaker-settings.png"
-    ],
-    "version": "v1.0.13 (100% Feature Complete · 24 Core Features)",
-    "changelogUrl": "/changelog",
-    "techStack": ["PHP 8.0+", "WordPress 6.0+", "Native wp_posts & wp_postmeta", "Custom Post Type salc_link", "Transient Caching (24h)", "Chart.js Analytics", "Stripe API & Webhooks", "WPCS & PSR-4"],
-    "keyFeatures": [
-      {
-        "title": "Branded Link Cloaking & Custom Slugs",
-        "description": "Transform messy affiliate links into clean URLs on your root domain (yoursite.com/go/deal) lifting CTR by 25% to 40%.",
-        "iconName": "LinkIcon",
-        "isPro": false
-      },
-      {
-        "title": "Configurable URL Prefixes & Category Paths",
-        "description": "Customize global redirect folder (/go/, /recommends/, /deal/) and dynamically inject categories into permalinks.",
-        "iconName": "Folder",
-        "isPro": false
-      },
-      {
-        "title": "Multi-Status HTTP Redirect Engine (301, 302, 307, 200)",
-        "description": "Full control over browser caching with 307 uncached temporary redirects (gold standard) or 200 iFrame mask.",
-        "iconName": "Zap",
-        "isPro": false
-      },
-      {
-        "title": "Search Engine Crawler & Link Controls",
-        "description": "Auto-injects rel=\"nofollow\", rel=\"sponsored\", target=\"_blank\", and X-Robots-Tag: noindex headers to protect SEO rankings.",
-        "iconName": "ShieldCheck",
-        "isPro": false
-      },
-      {
-        "title": "Smart ToS Uncloaking (Amazon & eBay)",
-        "description": "Renders raw direct links on frontend to protect accounts under Amazon §6 while logging background click analytics.",
-        "iconName": "Scale",
-        "isPro": false
-      },
-      {
-        "title": "FTC Auto-Disclosure Injector",
-        "description": "Automatically injects compliant affiliate disclaimers above or below posts with customizable badges and callouts.",
-        "iconName": "Scale",
-        "isPro": false
-      },
-      {
-        "title": "In-Dashboard Click Tracking & Visual Analytics",
-        "description": "Internal bot-filtered logging tracking clicks, unique visitors, referral sources, device types, and CSV export.",
-        "iconName": "BarChart",
-        "isPro": false
-      },
-      {
-        "title": "Client-Side Conditional Redirect Rules",
-        "description": "Dynamically route visitors by Operating System (iOS, Android, Windows, macOS), Device, Browser, or Language.",
-        "iconName": "Globe",
-        "isPro": true
-      },
-      {
-        "title": "DOM-Safe Keyword Auto-Linker",
-        "description": "Scans post content and auto-links target keywords without corrupting HTML headings, images, or existing anchors.",
-        "iconName": "Sparkles",
-        "isPro": true
-      },
-      {
-        "title": "Broken Link Health Scanner & Status Monitor",
-        "description": "Background cron scanner verifying target merchant URLs and displaying HTTP status badges (🟢 200 OK / 🔴 404 Error).",
-        "iconName": "Activity",
-        "isPro": true
-      },
-      {
-        "title": "A/B Split Testing & Traffic Rotation",
-        "description": "Distribute incoming clicks across multiple target merchant URLs by weighted percentage to maximize conversions.",
-        "iconName": "ArrowRightLeft",
-        "isPro": true
-      },
-      {
-        "title": "Seamless Payment Links (Stripe Integration)",
-        "description": "Direct Stripe API checkout links for digital downloads and consultations without heavyweight WooCommerce overhead.",
-        "iconName": "Zap",
-        "isPro": true
-      }
-    ],
-    "targetAudience": [
-      "Multi-Author Content Teams & Agencies",
-      "Media Houses & Enterprise Publishers",
-      "Amazon Associates & Multi-Network Affiliates",
-      "Coupon / Deal Aggregators & Review Sites",
-      "Podcasters, YouTubers & Social Creators",
-      "Solopreneurs Selling Services via Stripe"
-    ],
-    "pricingTiers": [
-      {
-        "planName": "Free Core Edition",
-        "priceMonthly": 0,
-        "priceYearly": 0,
-        "priceLifetime": null,
-        "features": [
-          "24 Core Production Features Architecture",
-          "Branded link cloaking & custom slugs",
-          "Multi-status redirect engine (301, 302, 307, 200)",
-          "Smart ToS Uncloaking (Amazon Associates §6)",
-          "FTC auto-disclosure injector",
-          "In-dashboard visual Chart.js analytics",
-          "1-Click competitor migration & CSV tools"
-        ],
-        "checkoutUrl": "/lab",
-        "isFeatured": false
-      },
-      {
-        "planName": "PRO Lifetime License",
-        "priceMonthly": null,
-        "priceYearly": null,
-        "priceLifetime": null,
-        "features": [
-          "Client-side OS, Device, Browser & Geo routing",
-          "DOM-Safe Keyword Auto-Linker engine",
-          "Automated Broken Link Health Scanner",
-          "A/B Split Testing & Weighted Traffic Rotation",
-          "Stripe 1-Click Payment Links & Webhooks",
-          "Automated Deal Expiration & Fallback Routing",
-          "Dynamic UTM & Query Parameter Forwarding"
-        ],
-        "checkoutUrl": "/lab",
-        "isFeatured": true
-      }
-    ],
-    "distributionChannels": {
-      "preLaunchUrl": "/lab"
-    },
-    "documentationSections": [
-      {
-        "title": "Phase 1: Installation & Setup",
-        "content": "Uploading vibepress-affiliate-link-cloaker.zip in WordPress Admin Dashboard and configuring global rules.",
-        "steps": [
-          "Upload ZIP via WP Admin -> Plugins -> Add New -> Upload Plugin.",
-          "Activate plugin. Activator creates wp_salc_clicks table, seeds global defaults, and configures health scan cron.",
-          "Go to Link Cloaker -> Settings. Confirm Global Prefix (go), Anonymize IP (ON), Smart ToS (ON), and Default HTTP Redirect (307).",
-          "Go to Settings -> Permalinks and click Save Changes to register top-priority rewrite rules."
-        ]
-      },
-      {
-        "title": "Phase 2: Creating Your First Branded Link",
-        "content": "Creating clean, branded referral URLs with custom post type salc_link and metaboxes.",
-        "steps": [
-          "Navigate to Link Cloaker -> Add New Link.",
-          "Enter Title (e.g. 'Web Hosting Deal') and Target Destination Affiliate URL (e.g. https://merchant.com/?aff_id=123).",
-          "Preview Cloaked URL (e.g. https://yoursite.com/go/web-hosting-deal).",
-          "Select Redirect Type (307 Temporary Recommended) and toggle rel=\"nofollow sponsored\" and target=\"_blank\".",
-          "Assign Categories & Tags (aff_category / aff_tag) and click Publish."
-        ]
-      },
-      {
-        "title": "Phase 3: Advanced Conditional Routing & PRO Monetization",
-        "content": "Configuring Conditional Routing, Stripe Checkout Links, Keyword Auto-Linker, and Expiration.",
-        "steps": [
-          "Conditional Routing: Add rules based on OS (macOS -> Mac offer, Android -> Google Play, iOS -> App Store) or Device/Browser.",
-          "Stripe Payment: Enter Stripe Secret Key sk_live_... & Webhook Secret in Settings. Toggle Enable Stripe on link metabox and enter Price ID.",
-          "Keyword Auto-Linker: Go to Settings -> Auto-Linker, set max limits per post, and add keyword-to-link mapping rules.",
-          "Deal Expiration: Set UTC expiration datetime or click cap, fallback URL (302 redirect), or custom expired message."
-        ]
-      },
-      {
-        "title": "Phase 4: Compliance, Uncloaking & Analytics",
-        "content": "Activating FTC Legal Disclosures, Smart ToS Uncloaking, and inspecting local click statistics.",
-        "steps": [
-          "Go to Link Cloaker -> Settings -> FTC Auto-Disclosure. Choose position (Before Post, After Post, Inline) and style (Callout, Badge, Bordered).",
-          "Verify Smart ToS Uncloaking: Test an Amazon URL. Raw link renders on frontend while beacon tracks clicks via navigator.sendBeacon.",
-          "Go to Link Cloaker -> Statistics to inspect real-time click charts, device breakdown, top performing links, and export CSV.",
-          "Monitor Link Cloaker -> All Links for automated broken link health badges (🟢 200 OK / 🔴 404 Error)."
-        ]
-      }
-    ]
-  },
-  {
     "id": "blueprnt",
     "slug": "blueprnt",
     "name": "Blueprnt",
@@ -326,6 +143,189 @@
           "Open Settings -> Video Transcoder to select codec (Apple ProRes 422 Proxy / Avid DNxHR LB) and resolution scale.",
           "Navigate to 'Transcoder & Proxies' tab and click 'Batch Transcode Video Clips'.",
           "Enable IPTC/EXIF Metadata Privacy Sanitation to strip camera/lens serials and GPS coordinates before exporting client delivery folders."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vibepress-affiliate-link-cloaker",
+    "slug": "vibepress-affiliate-link-cloaker",
+    "name": "VibePress Affiliate Link Cloaker",
+    "tagline": "Enterprise-Grade WordPress Affiliate Link Management & Cloaking Suite (24 Core Features)",
+    "description": "An enterprise-grade, performance-optimized WordPress affiliate link management and cloaking suite. Built natively upon WordPress's standard database architecture (wp_posts and wp_postmeta), it transforms ugly, fragile affiliate links into clean, memorable, branded URLs hosted directly on your primary domain—delivering 25% to 40% higher click-through rates, dynamic visitor routing, automated FTC legal disclosures, Amazon ToS compliance uncloaking, automated broken link health monitoring, A/B traffic split testing, and direct 1-click Stripe payment checkouts.",
+    "category": "wordpress-plugin",
+    "categoryLabel": "WordPress Performance Plugin",
+    "icon": "Link",
+    "logoImage": "/Smart-Affiliate-Link-Cloaker-icon.svg",
+    "screenshotGallery": [
+      "/images/products/vibepress-affiliate-link-cloaker-dash.png",
+      "/images/products/vibepress-affiliate-link-cloaker-stats.png",
+      "/images/products/vibepress-affiliate-link-cloaker-settings.png"
+    ],
+    "version": "v1.0.13 (100% Feature Complete · 24 Core Features)",
+    "changelogUrl": "/changelog",
+    "techStack": ["PHP 8.0+", "WordPress 6.0+", "Native wp_posts & wp_postmeta", "Custom Post Type salc_link", "Transient Caching (24h)", "Chart.js Analytics", "Stripe API & Webhooks", "WPCS & PSR-4"],
+    "keyFeatures": [
+      {
+        "title": "Branded Link Cloaking & Custom Slugs",
+        "description": "Transform messy affiliate links into clean URLs on your root domain (yoursite.com/go/deal) lifting CTR by 25% to 40%.",
+        "iconName": "LinkIcon",
+        "isPro": false
+      },
+      {
+        "title": "Configurable URL Prefixes & Category Paths",
+        "description": "Customize global redirect folder (/go/, /recommends/, /deal/) and dynamically inject categories into permalinks.",
+        "iconName": "Folder",
+        "isPro": false
+      },
+      {
+        "title": "Multi-Status HTTP Redirect Engine (301, 302, 307, 200)",
+        "description": "Full control over browser caching with 307 uncached temporary redirects (gold standard) or 200 iFrame mask.",
+        "iconName": "Zap",
+        "isPro": false
+      },
+      {
+        "title": "Search Engine Crawler & Link Controls",
+        "description": "Auto-injects rel=\"nofollow\", rel=\"sponsored\", target=\"_blank\", and X-Robots-Tag: noindex headers to protect SEO rankings.",
+        "iconName": "ShieldCheck",
+        "isPro": false
+      },
+      {
+        "title": "Smart ToS Uncloaking (Amazon & eBay)",
+        "description": "Renders raw direct links on frontend to protect accounts under Amazon §6 while logging background click analytics.",
+        "iconName": "Scale",
+        "isPro": false
+      },
+      {
+        "title": "FTC Auto-Disclosure Injector",
+        "description": "Automatically injects compliant affiliate disclaimers above or below posts with customizable badges and callouts.",
+        "iconName": "Scale",
+        "isPro": false
+      },
+      {
+        "title": "In-Dashboard Click Tracking & Visual Analytics",
+        "description": "Internal bot-filtered logging tracking clicks, unique visitors, referral sources, device types, and CSV export.",
+        "iconName": "BarChart",
+        "isPro": false
+      },
+      {
+        "title": "Client-Side Conditional Redirect Rules",
+        "description": "Dynamically route visitors by Operating System (iOS, Android, Windows, macOS), Device, Browser, or Language.",
+        "iconName": "Globe",
+        "isPro": true
+      },
+      {
+        "title": "DOM-Safe Keyword Auto-Linker",
+        "description": "Scans post content and auto-links target keywords without corrupting HTML headings, images, or existing anchors.",
+        "iconName": "Sparkles",
+        "isPro": true
+      },
+      {
+        "title": "Broken Link Health Scanner & Status Monitor",
+        "description": "Background cron scanner verifying target merchant URLs and displaying HTTP status badges (🟢 200 OK / 🔴 404 Error).",
+        "iconName": "Activity",
+        "isPro": true
+      },
+      {
+        "title": "A/B Split Testing & Traffic Rotation",
+        "description": "Distribute incoming clicks across multiple target merchant URLs by weighted percentage to maximize conversions.",
+        "iconName": "ArrowRightLeft",
+        "isPro": true
+      },
+      {
+        "title": "Seamless Payment Links (Stripe Integration)",
+        "description": "Direct Stripe API checkout links for digital downloads and consultations without heavyweight WooCommerce overhead.",
+        "iconName": "Zap",
+        "isPro": true
+      }
+    ],
+    "targetAudience": [
+      "Multi-Author Content Teams & Agencies",
+      "Media Houses & Enterprise Publishers",
+      "Amazon Associates & Multi-Network Affiliates",
+      "Coupon / Deal Aggregators & Review Sites",
+      "Podcasters, YouTubers & Social Creators",
+      "Solopreneurs Selling Services via Stripe"
+    ],
+    "pricingTiers": [
+      {
+        "planName": "Free Core Edition",
+        "priceMonthly": 0,
+        "priceYearly": 0,
+        "priceLifetime": null,
+        "features": [
+          "24 Core Production Features Architecture",
+          "Branded link cloaking & custom slugs (+25% to 40% CTR)",
+          "Multi-status redirect engine (301, 302, 307, 200 iFrame)",
+          "Smart ToS Uncloaking (Amazon Associates §6 & eBay)",
+          "FTC Auto-Disclosure Injector with 3 styles",
+          "In-dashboard Chart.js analytics & bot filtering",
+          "1-Click competitor migration (Pretty Links & ThirstyAffiliates)"
+        ],
+        "checkoutUrl": "https://wordpress.org/plugins",
+        "isFeatured": false
+      },
+      {
+        "planName": "Pro Developer Edition",
+        "priceMonthly": 49,
+        "priceYearly": 149,
+        "priceLifetime": 299,
+        "features": [
+          "Everything in Free Core Edition",
+          "Client-side OS, Device, Browser & Geo routing rules",
+          "DOM-Safe Keyword Auto-Linker with post cap controls",
+          "Automated Broken Link Health Scanner with HTTP badges",
+          "A/B Split Testing & Weighted Traffic Rotation",
+          "Stripe 1-Click Payment Links (WooCommerce alternative)",
+          "Automated Deal Expiration & Fallback Routing"
+        ],
+        "checkoutUrl": "/contact",
+        "isFeatured": true
+      }
+    ],
+    "distributionChannels": {
+      "wpOrgUrl": "https://wordpress.org/plugins",
+      "directDownloadUrl": "/contact"
+    },
+    "documentationSections": [
+      {
+        "title": "Phase 1: Installation & Core Setup",
+        "content": "Downloading and activating VibePress Affiliate Link Cloaker in WordPress.",
+        "steps": [
+          "Download the plugin ZIP file or search for VibePress Affiliate Link Cloaker in WordPress Admin -> Plugins -> Add New.",
+          "Click Install Now, then click Activate Plugin.",
+          "Verify the new 'Link Cloaker' primary menu appears in your WordPress admin sidebar."
+        ]
+      },
+      {
+        "title": "Phase 2: Creating Your First Branded Link",
+        "content": "Creating clean, branded referral URLs with custom post type salc_link and metaboxes.",
+        "steps": [
+          "Navigate to Link Cloaker -> Add New Link.",
+          "Enter Title (e.g. 'Web Hosting Deal') and Target Destination Affiliate URL (e.g. https://merchant.com/?aff_id=123).",
+          "Preview Cloaked URL (e.g. https://yoursite.com/go/web-hosting-deal).",
+          "Select Redirect Type (307 Temporary Recommended) and toggle rel=\"nofollow sponsored\" and target=\"_blank\".",
+          "Assign Categories & Tags (aff_category / aff_tag) and click Publish."
+        ]
+      },
+      {
+        "title": "Phase 3: Advanced Conditional Routing & PRO Monetization",
+        "content": "Configuring Conditional Routing, Stripe Checkout Links, Keyword Auto-Linker, and Expiration.",
+        "steps": [
+          "Conditional Routing: Add rules based on OS (macOS -> Mac offer, Android -> Google Play, iOS -> App Store) or Device/Browser.",
+          "Stripe Payment: Enter Stripe Secret Key sk_live_... & Webhook Secret in Settings. Toggle Enable Stripe on link metabox and enter Price ID.",
+          "Keyword Auto-Linker: Go to Settings -> Auto-Linker, set max limits per post, and add keyword-to-link mapping rules.",
+          "Deal Expiration: Set UTC expiration datetime or click cap, fallback URL (302 redirect), or custom expired message."
+        ]
+      },
+      {
+        "title": "Phase 4: Compliance, Uncloaking & Analytics",
+        "content": "Activating FTC Legal Disclosures, Smart ToS Uncloaking, and inspecting local click statistics.",
+        "steps": [
+          "Go to Link Cloaker -> Settings -> FTC Auto-Disclosure. Choose position (Before Post, After Post, Inline) and style (Callout, Badge, Bordered).",
+          "Verify Smart ToS Uncloaking: Test an Amazon URL. Raw link renders on frontend while beacon tracks clicks via navigator.sendBeacon.",
+          "Go to Link Cloaker -> Statistics to inspect real-time click charts, device breakdown, top performing links, and export CSV.",
+          "Monitor Link Cloaker -> All Links for automated broken link health badges (🟢 200 OK / 🔴 404 Error)."
         ]
       }
     ]

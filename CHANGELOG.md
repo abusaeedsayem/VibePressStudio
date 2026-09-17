@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.5] — Site-Wide Priority Alignment for Blueprnt Desktop Utility — September 17, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Site-Wide Product Priority Alignment**:
+  - Reordered product and documentation catalogs (`src/content/products.json`, `src/content/docs.json`) to position **Blueprnt Desktop Utility** at index `[0]` ahead of WordPress plugins.
+  - Updated Home page hero and trust bar (`src/content/home.json`), site metadata (`src/content/site.json`), About page (`src/content/about.json`), and Footer navigation (`src/content/footer.json`) to lead with Blueprnt desktop software.
+  - Ensured navigation dropdowns, mobile drawer, search menu (⌘K), Products Directory (`/products`), and Documentation Hub (`/docs`) all lead with Blueprnt.
+
+---
+
 ## [1.1.4] — Footer Menu Label Update for Blueprnt Desktop Utility — September 17, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

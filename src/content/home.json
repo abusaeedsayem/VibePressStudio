@@ -1,16 +1,16 @@
 {
   "hero": {
     "eyebrow": "Engineered for Uncompromising Speed, Security, and Scalability",
-    "title": "High-Performance WordPress Plugins & Local-First Software",
-    "subtitle": "VibePress Studio engineers enterprise-grade WordPress performance plugins and local-first desktop applications built on native database architectures to replace bloated SaaS systems with rock-solid, production-grade solutions.",
+    "title": "Local-First Desktop Software & Enterprise WordPress Plugins",
+    "subtitle": "VibePress Studio engineers local-first desktop applications and enterprise-grade WordPress performance plugins built on high-throughput native engines to replace bloated SaaS systems with rock-solid, production-grade tools.",
     "ctaPrimary": "Explore Software Suite",
     "ctaSecondary": "Register for Launch Updates",
     "trustBar": [
-      "Enterprise WordPress Plugins & Desktop Software",
+      "Blueprnt Local-First Desktop Media Utility",
       "BLAKE3 Cryptographic Checksum Engine",
-      "Native wp_posts & wp_postmeta Architecture",
-      "Amazon §6 Smart Uncloaking & FTC Compliance",
-      "100% Offline Local Data Sovereignty"
+      "100% Offline Local Data Sovereignty",
+      "Enterprise WordPress Plugins & Tools",
+      "Amazon §6 Smart Uncloaking & FTC Compliance"
     ]
   },
   "valueProps": {

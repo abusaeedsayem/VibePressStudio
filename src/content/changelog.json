@@ -4,6 +4,13 @@
   "entries": [
     {
       "date": "September 17, 2026",
+      "version": "v1.1.5 — Site-Wide Priority Alignment for Blueprnt Desktop Utility",
+      "changes": [
+        "Site-Wide Product Priority: Reordered product and documentation catalogs to prioritize Blueprnt Desktop Utility as the primary spotlight product at index [0] across navigation dropdowns, mobile menu, search dialog (⌘K), Products Directory (/products), Documentation Hub (/docs), Home page (/), and Footer links."
+      ]
+    },
+    {
+      "date": "September 17, 2026",
       "version": "v1.1.4 — Footer Menu Label Update for Blueprnt Desktop Utility",
       "changes": [
         "Footer Menu Label Update: Updated Software Suite menu label in footer (src/content/footer.json) from 'Blueprnt Desktop Workstage' to 'Blueprnt Desktop Utility' for precise product naming consistency."
