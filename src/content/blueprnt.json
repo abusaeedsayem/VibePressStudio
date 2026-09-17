@@ -4,19 +4,17 @@
   "name": "Blueprnt",
   "version": "v1.1.0",
   "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage",
-  "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Built on Tauri v2, Rust (Edition 2021), SQLite (WAL Mode), and React 19 + TypeScript, Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
+  "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
   "logoImage": "/blueprnt-icon.svg",
   "category": "digital-tool",
   "categoryLabel": "Local-First Desktop Media Workstage",
   "techStack": [
-    "Tauri v2",
-    "Rust (Edition 2021)",
-    "SQLite (WAL Mode)",
-    "React 19",
-    "TypeScript",
     "BLAKE3 Cryptographic Engine",
     "Apple ProRes 422",
-    "Avid DNxHR"
+    "Avid DNxHR",
+    "3-2-1 Backup Engine",
+    "EXIF/IPTC Sanitizer",
+    "Token Renaming Engine"
   ],
   "whyUseful": [
     {
@@ -36,7 +34,7 @@
     },
     {
       "title": "Sub-Millisecond Catalog Scalability",
-      "description": "Embedded SQLite WAL database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy.",
+      "description": "Embedded local database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy.",
       "icon": "Zap"
     }
   ],
@@ -95,7 +93,7 @@
       "title": "Media Indexer & Real-Time Infographics Dashboard",
       "badge": "Analytics Workspace",
       "description": "Scans cards and drives recursively, providing visual color breakdowns for stills, RAW negatives, Live Photos, cinema video clips, and formatted payload size.",
-      "details": "BLAKE3 verified ingestion workspace displays index breakdowns across 100,000+ items with sub-millisecond SQLite WAL database queries."
+      "details": "BLAKE3 verified ingestion workspace displays index breakdowns across 100,000+ items with sub-millisecond local database queries."
     }
   ],
   "installation": {
@@ -129,7 +127,7 @@
     {
       "category": "Architecture & Speed",
       "question": "What is Blueprnt v1.1.0 and what makes it local-first?",
-      "answer": "Blueprnt is a desktop media application built on Tauri v2, Rust (Edition 2021), SQLite (WAL mode), and React 19 + TypeScript. It runs 100% offline directly on your workstation without uploading media, telemetry, or metadata to external cloud servers."
+      "answer": "Blueprnt is a desktop media application engineered for zero-cloud asset management. It runs 100% offline directly on your workstation without uploading media, telemetry, or metadata to external cloud servers."
     },
     {
       "category": "Data Integrity",

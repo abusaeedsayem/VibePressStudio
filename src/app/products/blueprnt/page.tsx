@@ -70,7 +70,7 @@ export default function BlueprntProductPage() {
           </h1>
 
           <p className="text-base md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-10 font-medium">
-            {tagline}. Engineered on Tauri v2, Rust (Edition 2021), SQLite WAL mode, and React 19 for zero bit-rot camera offloading, BLAKE3 checksum verification, 3-2-1 backup mirroring, token renaming, ProRes/DNxHR proxies, and EXIF privacy scrubbing.
+            {tagline}. Engineered for zero bit-rot camera offloading, BLAKE3 checksum verification, 3-2-1 backup mirroring, token renaming, ProRes/DNxHR proxies, and EXIF privacy scrubbing.
           </p>
           
           {/* Action CTAs */}
@@ -250,7 +250,7 @@ export default function BlueprntProductPage() {
                   <span className="text-xs font-mono font-bold text-sky-400 bg-sky-500/20 px-3 py-1 rounded-full border border-sky-500/30">
                     Feature {activeFeature.id}: {activeFeature.badge}
                   </span>
-                  <span className="text-xs text-muted-foreground font-mono">Tauri v2 + Rust Ingestion Workstage</span>
+                  <span className="text-xs text-muted-foreground font-mono">High-Performance Ingestion Workstage</span>
                 </div>
                 <CardTitle className="text-2xl md:text-3xl font-extrabold text-foreground">
                   {activeFeature.title}

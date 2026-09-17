@@ -18,7 +18,7 @@
     "pillars": [
       {
         "title": "Native Architecture & Zero Query Bloat",
-        "desc": "Built natively upon standard database tables (wp_posts & wp_postmeta / SQLite WAL) with 24h transient caching, preserving sub-millisecond execution speeds.",
+        "desc": "Built natively upon standard database tables (wp_posts & wp_postmeta / local database) with 24h transient caching, preserving sub-millisecond execution speeds.",
         "icon": "Database"
       },
       {
@@ -47,12 +47,12 @@
     "title": "Built to Highest Industry Engineering Standards",
     "items": [
       {
-        "heading": "Native Core Standards & Tauri v2",
-        "body": "Engineered in strict adherence to WordPress Core Coding Standards (WPCS), PSR-4 patterns, Tauri v2 desktop architecture, and Rust (Edition 2021) engines."
+        "heading": "Native Core Standards & Desktop Engine",
+        "body": "Engineered in strict adherence to WordPress Core Coding Standards (WPCS), PSR-4 patterns, desktop architecture, and high-performance ingestion engines."
       },
       {
         "heading": "Enterprise Performance & Verification",
-        "body": "Powered by top-priority rewrite rules, 24h transient caching, SQLite WAL databases, and real-time BLAKE3 bit-by-bit checksum validation."
+        "body": "Powered by top-priority rewrite rules, 24h transient caching, optimized local databases, and real-time BLAKE3 bit-by-bit checksum validation."
       },
       {
         "heading": "Data Privacy & 100% Offline Security",

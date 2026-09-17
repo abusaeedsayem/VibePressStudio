@@ -187,7 +187,7 @@
     "slug": "blueprnt",
     "name": "Blueprnt",
     "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage (v1.1.0)",
-    "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Built on Tauri v2, Rust (Edition 2021), SQLite (WAL Mode), and React 19 + TypeScript, Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
+    "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
     "category": "digital-tool",
     "categoryLabel": "Desktop Media Workstage",
     "icon": "Layers",
@@ -198,14 +198,12 @@
     "version": "v1.1.0 (100% Offline · Local-First)",
     "changelogUrl": "/changelog",
     "techStack": [
-      "Tauri v2",
-      "Rust (Edition 2021)",
-      "SQLite (WAL Mode)",
-      "React 19",
-      "TypeScript",
       "BLAKE3 Cryptography",
       "Apple ProRes 422",
-      "Avid DNxHR"
+      "Avid DNxHR",
+      "3-2-1 Backup Engine",
+      "EXIF/IPTC Sanitizer",
+      "Token Renaming Engine"
     ],
     "keyFeatures": [
       {
@@ -228,7 +226,7 @@
       },
       {
         "title": "Sub-Millisecond Catalog Scalability",
-        "description": "Embedded SQLite WAL database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy.",
+        "description": "Embedded local database indexes 100,000+ digital assets with sub-millisecond query performance and complete offline privacy.",
         "iconName": "Zap",
         "isPro": false
       },
@@ -276,7 +274,7 @@
         "priceYearly": 0,
         "priceLifetime": null,
         "features": [
-          "Complete Tauri v2 & Rust local-first desktop application",
+          "Complete local-first desktop application",
           "BLAKE3 bit-by-bit checksum verification engine",
           "Atomic Shot-Group Preservation for RAW+JPG & XMP sidecars",
           "Persistent 3-2-1 backup drive mirroring",
