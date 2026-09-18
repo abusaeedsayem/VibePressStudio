@@ -3,8 +3,8 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.1.5` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt v1.1.0` · **Flagship Plugin:** `v1.0.13`  
-> **Last Updated:** September 17, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
+> **Studio Release:** `v1.1.6` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt v1.1.0` · **Flagship Plugin:** `v1.0.13`  
+> **Last Updated:** September 18, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
 
@@ -18,14 +18,16 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.1.5 — Site-Wide Priority Alignment for Blueprnt Desktop Utility (September 17, 2026)
+## Latest Release: v1.1.6 — Blueprnt Legal Addenda Integration (Privacy Policy & Terms of Use) (September 18, 2026)
 
-This release prioritizes **Blueprnt Desktop Utility** at index `[0]` across all product and documentation catalogs, navigation dropdowns, search dialogs (⌘K), mobile drawer, Home page hero/trust bar, site metadata, About page, and Footer navigation.
+This release integrates the official **Blueprnt Privacy Policy Addendum** into [`/legal/privacy`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/privacy/page.tsx) and the official **Blueprnt Terms of Operational Use Addendum** into [`/legal/terms`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/terms/page.tsx).
 
-### What's New at a Glance (v1.1.5 / v1.1.4 / v1.1.3)
+### What's New at a Glance (v1.1.6 / v1.1.5 / v1.1.4)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
+| **Blueprnt Privacy Policy Addendum** | Documented 100% offline data isolation, zero content ingestion, strict egress boundaries (Lemon Squeezy activation socket with Ed25519 local verification & 30-day grace, zero content telemetry), local `blueprnt_state.db` database & native keyring (Keychain, Credential Manager, Secret Service), local Scrubber Pro metadata stripping (`_CleanDelivery`), and compliance (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model). | [`src/app/legal/privacy/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/privacy/page.tsx), `src/content/privacy.json` |
+| **Blueprnt Terms of Operational Use Addendum** | Documented professional production workflows, hardware environment responsibilities, BLAKE3 checksum verification, mandatory 3-2-1 backup rules, atomic sidecar bulk renaming, isolated `_Quarantine` vault, Lemon Squeezy merchant of record & tier limits (Creator 2-machine, Studio 5-machine), fraud prevention key revocation, 14-day refund policy for verifiable non-performance, local-first best-effort support, AAA binding arbitration in Schenectady County NY, jury trial & class action waivers, and studio physical mailing address (1275 Gerling St. Apt 8C3, Schenectady, NY 12308). | [`src/app/legal/terms/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/terms/page.tsx), `src/content/terms.json` |
 | **Site-Wide Blueprnt Priority** | Positioned Blueprnt Desktop Utility as the lead product [0] across products/docs data catalogs, navbar dropdowns, search (⌘K), mobile drawer, Home hero/trustBar, and footer links. | `src/content/products.json`, `src/content/docs.json`, `src/content/home.json`, `src/content/footer.json` |
 | **Core Engine Architecture** | Documented universal format handling (CR2/CR3, NEF, ARW, HEIC, JPEG, TIFF, PNG), sub-15ms embedded preview extraction, indivisible shot-group locking, high-throughput parallel processing (`jwalk` & `rayon`), and SIMD BLAKE3 cryptographic hashing. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/blueprnt.json` |
 | **Feature Tier Matrices** | Documented 6 Basic features (Visual Storage Inventory Map, Exact Duplicate Finder, Basic Renamer, Non-Destructive Deletion, EXIF Viewer, Clean Export) and 12 Premium Pro features (Renamer Pro EXIF Tokens, Atomic Sidecars, Collision Detection, Preset Chains, Duplicate Pro, Smart-Keep, Quarantine Vault, Scrubber Pro, Clean IPTC Injection, Before/After Map Proof, Cross-Drive Scanning, CSV Roster Mapping). | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/docs.json` |

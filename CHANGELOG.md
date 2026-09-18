@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.6] — Blueprnt Legal Addenda Integration (Privacy Policy & Terms of Use) — September 18, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Blueprnt Product-Specific Privacy Statement Addendum**:
+  - Integrated complete Privacy Addendum into [`/legal/privacy`](https://vibepressstudio.vercel.app/legal/privacy) (`src/app/legal/privacy/page.tsx`).
+  - Documented 100% offline data isolation, zero content ingestion, strict egress boundaries (Lemon Squeezy activation socket with local Ed25519 verification & 30-day offline grace, zero content telemetry), local `blueprnt_state.db` SQLite database & native keyring integration (Apple Keychain, Windows Credential Manager, Freedesktop Secret Service), local Scrubber Pro privacy sanitization (`_CleanDelivery`), and compliance alignment (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model).
+- **Blueprnt Terms of Operational Use Addendum**:
+  - Integrated complete Terms of Operational Use Addendum into [`/legal/terms`](https://vibepressstudio.vercel.app/legal/terms) (`src/app/legal/terms/page.tsx`).
+  - Documented authorized professional operational scope, workstation hardware responsibilities, BLAKE3 bit-by-bit cryptographic verification, mandatory 3-2-1 backup requirements, atomic sidecar bulk renaming, non-destructive `_Quarantine` vault, Lemon Squeezy merchant of record, Creator (2-machine) and Studio (5-machine) tier limits, fraud prevention key revocation, 14-day verifiable technical non-performance refund policy, local-first best-effort support boundaries, AAA binding individual arbitration in Schenectady County NY, jury trial & class action waivers, and studio physical mailing address (1275 Gerling St. Apt 8C3, Schenectady, NY 12308).
+
+---
+
 ## [1.1.5] — Site-Wide Priority Alignment for Blueprnt Desktop Utility — September 17, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

@@ -3,6 +3,14 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "September 18, 2026",
+      "version": "v1.1.6 — Blueprnt Legal Addenda Integration (Privacy Policy & Terms of Use)",
+      "changes": [
+        "Blueprnt Privacy Policy Addendum: Integrated Product-Specific Privacy Statement for Blueprnt Desktop Application into /legal/privacy covering 100% offline data isolation, zero content ingestion, strict network egress boundaries (Lemon Squeezy activation socket with Ed25519 offline grace verification, zero content telemetry), local state & keyring management (blueprnt_state.db, Apple Keychain, Windows Credential Manager, Freedesktop Secret Service), local Scrubber Pro metadata stripping (_CleanDelivery), and regulatory compliance (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model).",
+        "Blueprnt Terms of Operational Use Addendum: Integrated Terms of Operational Use Addendum into /legal/terms covering professional production workflows, hardware environment responsibilities, BLAKE3 checksums, mandatory 3-2-1 backup practices, atomic sidecar bulk renaming, isolated _Quarantine vault, Lemon Squeezy merchant of record & tier machine limits (Creator 2-machine, Studio 5-machine), fraud prevention key revocation, 14-day verifiable non-performance refund terms, local-first best-effort support, AAA binding arbitration in Schenectady County NY, and official studio contact details."
+      ]
+    },
+    {
       "date": "September 17, 2026",
       "version": "v1.1.5 — Site-Wide Priority Alignment for Blueprnt Desktop Utility",
       "changes": [

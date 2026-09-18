@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ShieldCheck, Mail, Globe, Lock, Server, Cpu, Database, ExternalLink } from "lucide-react";
+import { ShieldCheck, Mail, Globe, Lock, Server, Cpu, Database, ExternalLink, HardDrive } from "lucide-react";
 
 export const metadata = {
   title: "Privacy Policy | VibePress Studio",
-  description: "Official Privacy Policy for VibePress Studio detailing our privacy-first, zero-bloat, and zero-tracking data protection framework.",
+  description: "Official Privacy Policy for VibePress Studio detailing our privacy-first, zero-bloat, zero-tracking framework and Blueprnt Desktop Application privacy statement.",
 };
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <section className="bg-gradient-to-b from-primary/10 via-background to-background py-14 md:py-20 border-b border-border text-center">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
           <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">
-            <ShieldCheck className="w-3.5 h-3.5 mr-1.5 inline" /> Zero-Tracking Framework
+            <ShieldCheck className="w-3.5 h-3.5 mr-1.5 inline" /> Zero-Tracking Framework &amp; Local-First Privacy
           </Badge>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 max-w-4xl mx-auto">
             VibePress Studio: Official Privacy Policy
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
           <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-muted-foreground font-medium">
             <span>Effective Date: September 2026</span>
             <span>•</span>
-            <span>Last Updated: September 2026</span>
+            <span>Last Updated: September 18, 2026</span>
             <span>•</span>
             <a href="https://vibepressstudio.vercel.app" className="text-primary hover:underline flex items-center gap-1">
               <Globe className="w-3.5 h-3.5" /> vibepressstudio.vercel.app
@@ -91,10 +91,96 @@ export default function PrivacyPage() {
             3. Product-Specific Data Handling Practices
           </h2>
 
-          {/* 3 */}
+          {/* 3.1 Blueprnt Desktop Application Addendum */}
+          <div className="space-y-4 bg-muted/30 border border-border rounded-xl p-6 shadow-xs">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 pb-3">
+              <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
+                <HardDrive className="w-5 h-5 text-primary" /> 3.1. Blueprnt Desktop Application (Product-Specific Privacy Statement)
+              </h3>
+              <Badge variant="outline" className="text-xs font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">
+                Addendum Effective: September 18, 2026
+              </Badge>
+            </div>
+            <p className="text-muted-foreground leading-relaxed text-sm">
+              This Product-Specific Privacy Addendum supplements the master VibePress Studio Privacy Policy and describes the technical privacy protections and data governance architecture embedded within the <strong>Blueprnt</strong> desktop media utility (macOS, Windows, and Linux releases), authored by Lead Developer Abu Saeed Sayem under master entity VibePress Studio (Schenectady, New York, United States).
+            </p>
+
+            <div className="space-y-4 text-sm text-muted-foreground pt-1">
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-foreground text-base">3.1.1. Principle of Zero-Knowledge &amp; Local-First Computing</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong className="text-foreground">100% Offline Data Isolation:</strong> Blueprnt is engineered on a local-first paradigm. Your digital media—including RAW negatives (Canon .CR2/.CR3, Nikon .NEF, Sony .ARW), Apple .HEIC photos, JPEGs, TIFFs, cinema video clips (.MOV, .MP4), and audio memos (.WAV)—is processed entirely on your local workstation.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Zero Ingestion of User Content:</strong> VibePress Studio does not maintain, control, operate, or link any cloud servers, remote analytics databases, or remote file scrapers for the operation of Blueprnt. At no point are your images, videos, audio memos, sidecar metadata, or directory structures transmitted, uploaded, copied, read, or intercepted by VibePress Studio.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-foreground text-base">3.1.2. Strict Network Egress Boundaries</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong className="text-foreground">Outbound Network Telemetry Ban:</strong> The software contains zero runtime tracking frameworks, zero usage analytics SDKs, zero user behavior trackers, and zero automated crash-reporting pingers that transmit file systems or personal data.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Exclusionary License Activation Sockets:</strong> Outbound network communication is strictly limited to initial online license validation via direct HTTPS connection to our merchant of record, Lemon Squeezy (<code className="bg-muted px-1.5 py-0.5 rounded font-mono text-xs text-foreground">https://api.lemonsqueezy.com/v1/licenses/activate</code>). The payload transmitted is strictly limited to your alphanumeric Lemon Squeezy license key and a non-identifying, cryptographically hashed hardware instance label.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Offline Grace Verification:</strong> The activation response from Lemon Squeezy contains an Ed25519 cryptographic signature verified locally against our embedded public key. Once verified, the software functions 100% offline with a 30-day verification cache. Under no circumstances does the license validation payload include project names, file names, folder paths, image metadata, or media counts.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-foreground text-base">3.1.3. Local State, Cache &amp; Credential Management</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong className="text-foreground">Embedded Database (<code className="bg-muted px-1.5 py-0.5 rounded font-mono text-xs text-foreground">blueprnt_state.db</code>):</strong> To facilitate instant searches, shot-group pairings, file deduplication, and transactional undo operations, Blueprnt initializes an embedded SQLite database stored within your operating system&apos;s standard local application support path. The database stores relative file paths, size metadata, BLAKE3 checksums, EXIF status flags, and session undo journals. It resides entirely under your local user permissions and is never accessible to, or synchronized with, VibePress Studio.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Secure Keyring Storage:</strong> Cryptographic license signatures and activation tokens are stored securely in your native operating system credential store: Apple Keychain via Security Framework (macOS), Windows Credential Manager (Microsoft Windows), or Freedesktop Secret Service API via DBus (Linux).
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-foreground text-base">3.1.4. Sensitive Metadata Stripping and Privacy Scrubbing (Scrubber Pro)</h4>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    <strong className="text-foreground">Local Privacy Scrubbing:</strong> Blueprnt provides functionality (&quot;Scrubber Pro&quot;) designed to strip sensitive metadata from digital files, including Global Positioning System (GPS) coordinates, altitude, positioning timestamps, geodetic data (EXIF IFD 0x8825), camera body/lens serial numbers, proprietary manufacturer MakerNotes containing hidden device tracking parameters, and embedded thumbnail preview caches.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">Execution Integrity:</strong> Metadata scrubbing occurs via memory-safe local binary container operations (TIFF, JPEG, and ISOBMFF box parsing). Clean files are written to a user-designated local target directory (<code className="bg-muted px-1.5 py-0.5 rounded font-mono text-xs text-foreground">_CleanDelivery</code>). No copy of unscrubbed or scrubbed metadata is retained, mirrored, or exported outside your authorized hardware device.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-1.5">
+                <h4 className="font-bold text-foreground text-base">3.1.5. Regulatory Compliance and Data Privacy Alignment</h4>
+                <p className="leading-relaxed">
+                  Because VibePress Studio does not collect, ingest, store, monetize, or process any personal data, media content, or location data through Blueprnt, your use of the software inherently aligns with major global data protection mandates:
+                </p>
+                <ul className="list-disc pl-6 space-y-2 pt-1">
+                  <li>
+                    <strong className="text-foreground">New York SHIELD Act:</strong> The zero-collection architecture prevents exposure of personal private information on external infrastructure.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">California Consumer Privacy Act (CCPA) / CPRA:</strong> VibePress Studio does not collect, sell, share, or retain personal consumer data from Blueprnt users.
+                  </li>
+                  <li>
+                    <strong className="text-foreground">General Data Protection Regulation (GDPR) (Regulation (EU) 2016/679):</strong> You remain the exclusive Data Controller of any personal data processed within your digital images. VibePress Studio does not act as a Data Processor, maintaining zero access to underlying data subjects.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 3.2 VibePress Affiliate Link Cloaker */}
           <div className="space-y-3 bg-muted/30 border border-border rounded-xl p-6">
             <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-              <Cpu className="w-5 h-5 text-primary" /> VibePress Affiliate Link Cloaker (WordPress Plugin)
+              <Cpu className="w-5 h-5 text-primary" /> 3.2. VibePress Affiliate Link Cloaker (WordPress Plugin)
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               VibePress Affiliate Link Cloaker is an open-source performance plugin authored and architected by Developer &amp; Architect Abu Saeed Sayem. The plugin is currently distributed exclusively free of charge via the official WordPress.org Plugin Directory to support the open-source web publishing community. It contains zero paid modules, zero commercial tracking libraries, and zero external licensing checkpoints.
