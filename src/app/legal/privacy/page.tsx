@@ -13,9 +13,14 @@ export default function PrivacyPage() {
       {/* Header Banner */}
       <section className="bg-gradient-to-b from-primary/10 via-background to-background py-14 md:py-20 border-b border-border text-center">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-          <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">
-            <ShieldCheck className="w-3.5 h-3.5 mr-1.5 inline" /> Zero-Tracking Framework &amp; Local-First Privacy
-          </Badge>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <Badge variant="outline" className="text-xs font-bold px-3 py-1 bg-primary/10 text-primary border-primary/30">
+              Built in Flow. Made for Reality.
+            </Badge>
+            <Badge variant="outline" className="text-xs font-semibold px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 inline" /> Zero-Tracking Framework &amp; Local-First Privacy
+            </Badge>
+          </div>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 max-w-4xl mx-auto">
             VibePress Studio: Official Privacy Policy
           </h1>

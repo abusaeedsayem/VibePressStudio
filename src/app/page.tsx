@@ -30,9 +30,13 @@ export default function HomePage() {
         <div className="max-w-[1280px] mx-auto text-center relative z-10">
           
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-6 shadow-xs">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            <span className="text-xs md:text-sm font-semibold text-primary">
+          <div className="inline-flex items-center gap-2.5 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-6 shadow-xs">
+            <Sparkles className="w-4 h-4 text-primary shrink-0" />
+            <span className="text-xs md:text-sm font-bold text-primary">
+              Built in Flow. Made for Reality.
+            </span>
+            <span className="text-muted-foreground/60">•</span>
+            <span className="text-xs md:text-sm font-medium text-foreground">
               {hero.eyebrow}
             </span>
           </div>

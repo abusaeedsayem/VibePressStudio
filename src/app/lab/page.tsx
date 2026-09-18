@@ -19,9 +19,14 @@ export default function LabPage() {
       {/* ── 1. Hero Announcement Header ── */}
       <section className="bg-gradient-to-b from-primary/10 via-background to-background py-16 md:py-24 border-b border-border text-center">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-          <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30">
-            <Clock className="w-3.5 h-3.5 mr-1.5 inline" /> {hero.badge}
-          </Badge>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <Badge variant="outline" className="text-xs font-bold px-3.5 py-1 bg-primary/10 text-primary border-primary/30">
+              <Sparkles className="w-3.5 h-3.5 mr-1.5 inline" /> Built in Flow. Made for Reality.
+            </Badge>
+            <Badge variant="outline" className="text-xs font-semibold px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30">
+              <Clock className="w-3.5 h-3.5 mr-1.5 inline" /> {hero.badge}
+            </Badge>
+          </div>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground mb-6 max-w-4xl mx-auto">
             {hero.title}
           </h1>

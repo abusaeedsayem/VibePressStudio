@@ -1,9 +1,9 @@
-# VibePress Studio — High-Performance Digital Tools
+# VibePress Studio — Built in Flow. Made for Reality.
 
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
-> **Tagline:** High-Performance Digital Tools  
+> **Tagline:** Built in Flow. Made for Reality.  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.1.7` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt (Local-First)` · **Flagship Plugin:** `v1.0.13`  
+> **Studio Release:** `v1.1.8` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt (Local-First)` · **Flagship Plugin:** `v1.0.13`  
 > **Last Updated:** September 18, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
@@ -18,14 +18,15 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.1.7 — Blueprnt Version Tag Removal & Nomenclature Clean-Up (September 18, 2026)
+## Latest Release: v1.1.8 — Studio Tagline Standardization ("Built in Flow. Made for Reality.") (September 18, 2026)
 
-This release purges all explicit `v1.1.0` version tags and labels associated with the **Blueprnt** desktop application across all site headers, product showcases, documentation hubs, pricing structures, and metadata cards.
+This release integrates and standardizes the official VibePress Studio tagline **"Built in Flow. Made for Reality."** across all site layers, including global metadata, Navbar header badges, Footer brand statements, Home hero badges, Products directory, Documentation Hub, Studio Lab portal, Legal pages, and data schemas.
 
-### What's New at a Glance (v1.1.7 / v1.1.6 / v1.1.5)
+### What's New at a Glance (v1.1.8 / v1.1.7 / v1.1.6)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
+| **Studio Tagline Standardization** | Standardized studio tagline to `"Built in Flow. Made for Reality."` across global site metadata, Navbar brand header, Footer copyright bar, Home page hero badge, Products directory, Docs hub, Studio Lab, and Legal pages. | `src/content/site.json`, `src/content/navigation.json`, `src/content/footer.json`, [`src/app/layout.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/layout.tsx), [`src/components/layout/Navbar.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/components/layout/Navbar.tsx), [`src/components/layout/Footer.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/components/layout/Footer.tsx) |
 | **Blueprnt Version Tag Removal** | Removed `v1.1.0` and `Version 1.1.0` labels site-wide from Blueprnt product page, Home card badges, Products directory, Documentation Hub, Studio Lab manual, Pricing tables, and data schemas. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/blueprnt.json`, `src/content/products.json`, `src/content/docs.json` |
 | **Blueprnt Privacy Policy Addendum** | Documented 100% offline data isolation, zero content ingestion, strict egress boundaries (Lemon Squeezy activation socket with Ed25519 local verification & 30-day grace, zero content telemetry), local `blueprnt_state.db` database & native keyring (Keychain, Credential Manager, Secret Service), local Scrubber Pro metadata stripping (`_CleanDelivery`), and compliance (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model). | [`src/app/legal/privacy/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/privacy/page.tsx), `src/content/privacy.json` |
 | **Blueprnt Terms of Operational Use Addendum** | Documented professional production workflows, hardware environment responsibilities, BLAKE3 checksum verification, mandatory 3-2-1 backup rules, atomic sidecar bulk renaming, isolated `_Quarantine` vault, Lemon Squeezy merchant of record & tier limits (Creator 2-machine, Studio 5-machine), fraud prevention key revocation, 14-day refund policy for verifiable non-performance, local-first best-effort support, AAA binding arbitration in Schenectady County NY, jury trial & class action waivers, and studio physical mailing address (1275 Gerling St. Apt 8C3, Schenectady, NY 12308). | [`src/app/legal/terms/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/terms/page.tsx), `src/content/terms.json` |

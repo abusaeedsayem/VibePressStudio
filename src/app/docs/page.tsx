@@ -50,6 +50,11 @@ export default function DocsPage() {
       <section className="border-b border-border bg-gradient-to-b from-primary/10 via-background to-background py-14 md:py-20">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
           
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-3.5 py-1 mb-5 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-primary shrink-0" />
+            <span className="text-xs font-bold text-primary">Built in Flow. Made for Reality.</span>
+          </div>
+
           {/* Product Switcher Tabs */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
             {docsProducts.map((prod, pIdx) => (

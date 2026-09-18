@@ -73,8 +73,11 @@ export function Navbar() {
         <div className="max-w-[1280px] mx-auto px-4 md:px-6 h-20 flex items-center justify-between gap-4">
           
           {/* Brand Element */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center gap-3 group">
             <img src="/logo-dark.svg" alt="VibePress Studio" className="h-8 md:h-10 w-auto group-hover:opacity-90 transition-opacity" />
+            <span className="hidden sm:inline-block px-2.5 py-0.5 text-[11px] font-semibold tracking-tight text-muted-foreground border border-border/60 rounded-full bg-muted/40 group-hover:border-primary/40 transition-colors">
+              Built in Flow. Made for Reality.
+            </span>
           </Link>
 
           {/* Navigation Links */}

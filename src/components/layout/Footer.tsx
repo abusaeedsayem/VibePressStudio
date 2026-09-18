@@ -47,6 +47,9 @@ export function Footer() {
           <p className="text-xs text-muted-foreground">
             {copyright}
           </p>
+          <div className="text-xs font-bold text-primary tracking-wide">
+            Built in Flow. Made for Reality.
+          </div>
         </div>
       </div>
     </footer>

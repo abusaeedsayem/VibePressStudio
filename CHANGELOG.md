@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.8] — Studio Tagline Integration ("Built in Flow. Made for Reality.") — September 18, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Studio Tagline Standardization ("Built in Flow. Made for Reality.")**:
+  - Integrated and enforced the official tagline **"Built in Flow. Made for Reality."** across all site layers.
+  - Updated global metadata title, description, OpenGraph, and Twitter tags in `src/app/layout.tsx` and `src/content/site.json`.
+  - Added brand tagline badge next to logo in primary navigation header (`src/components/layout/Navbar.tsx`).
+  - Added tagline display in global footer copyright bar (`src/components/layout/Footer.tsx`, `src/content/footer.json`).
+  - Integrated tagline badges into Home hero section (`src/app/page.tsx`), Products Directory (`src/app/products/page.tsx`), Documentation Hub (`src/app/docs/page.tsx`), Studio Lab portal (`src/app/lab/page.tsx`), About page (`src/app/about/page.tsx`, `src/content/about.json`), and Legal pages (`src/app/legal/privacy/page.tsx`, `src/app/legal/terms/page.tsx`).
+
+---
+
 ## [1.1.7] — Blueprnt Version Tag Removal & Nomenclature Clean-Up — September 18, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

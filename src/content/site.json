@@ -1,16 +1,16 @@
 {
   "name": "VibePress Studio",
-  "title": "VibePress Studio | High-Performance Digital Tools",
+  "title": "VibePress Studio | Built in Flow. Made for Reality.",
   "titleTemplate": "%s | VibePress Studio",
-  "description": "Local-first desktop software and high-performance WordPress plugins engineered for speed, security, and complete data privacy.",
-  "keywords": ["WordPress plugins", "Next.js", "software studio", "affiliate link cloaker", "digital tools"],
+  "description": "Built in Flow. Made for Reality. Local-first desktop software and high-performance WordPress plugins engineered for speed, security, and complete data privacy.",
+  "keywords": ["WordPress plugins", "Next.js", "software studio", "affiliate link cloaker", "desktop software", "digital tools"],
   "author": {
     "name": "VibePress Studio",
     "url": "https://vibepressstudio.vercel.app"
   },
   "url": "https://vibepressstudio.vercel.app",
   "ogImage": "/images/og-image.jpg",
-  "tagline": "High-Performance Digital Tools",
-  "footerTagline": "High-performance software engineering studio crafting bloat-free WordPress plugins and digital tools.",
-  "copyright": "© 2026 VibePress Studio. All rights reserved. Built for performance and data privacy."
+  "tagline": "Built in Flow. Made for Reality.",
+  "footerTagline": "Built in Flow. Made for Reality. High-performance software engineering studio crafting bloat-free WordPress plugins and digital tools.",
+  "copyright": "© 2026 VibePress Studio. All rights reserved. Built in Flow. Made for Reality."
 }

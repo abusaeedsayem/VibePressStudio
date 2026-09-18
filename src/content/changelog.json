@@ -4,6 +4,13 @@
   "entries": [
     {
       "date": "September 18, 2026",
+      "version": "v1.1.8 — Studio Tagline Integration (\"Built in Flow. Made for Reality.\")",
+      "changes": [
+        "Studio Tagline Standardization: Standardized and integrated official studio tagline 'Built in Flow. Made for Reality.' across global site metadata, Navbar brand header badge, Footer copyright bar, Home hero badge, Products Directory (/products), Documentation Hub (/docs), Studio Lab portal (/lab), Legal pages (/legal/privacy, /legal/terms), About page (/about), and site configuration schemas."
+      ]
+    },
+    {
+      "date": "September 18, 2026",
       "version": "v1.1.7 — Blueprnt Version Tag Removal & Clean-Up",
       "changes": [
         "Blueprnt Version Tag Removal: Purged all explicit 'v1.1.0' and 'Version 1.1.0' version tags and labels associated with Blueprnt across site headers, product showcases (/products/blueprnt), Home cards, Products Directory (/products), Documentation Hub (/docs), Studio Lab manual (/lab), Pricing tables, and data schemas."

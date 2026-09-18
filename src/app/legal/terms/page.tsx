@@ -12,9 +12,14 @@ export default function TermsPage() {
       {/* Header Banner */}
       <section className="bg-gradient-to-b from-primary/10 via-background to-background py-14 md:py-20 border-b border-border text-center">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
-          <Badge variant="outline" className="mb-4 text-xs font-semibold px-3 py-1 bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30">
-            <Scale className="w-3.5 h-3.5 mr-1.5 inline" /> Legal Agreement &amp; Operational Terms
-          </Badge>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <Badge variant="outline" className="text-xs font-bold px-3 py-1 bg-primary/10 text-primary border-primary/30">
+              Built in Flow. Made for Reality.
+            </Badge>
+            <Badge variant="outline" className="text-xs font-semibold px-3 py-1 bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30">
+              <Scale className="w-3.5 h-3.5 mr-1.5 inline" /> Legal Agreement &amp; Operational Terms
+            </Badge>
+          </div>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 max-w-4xl mx-auto">
             VibePress Studio: Official Terms of Use
           </h1>
