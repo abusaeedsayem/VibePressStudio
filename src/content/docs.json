@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "VibePress Studio — Complete Documentation & Software Guides",
-    "subtitle": "Official comprehensive technical architecture, feature guides, setup manuals, and knowledge bases for Blueprnt v1.1.0 and VibePress Affiliate Link Cloaker.",
+    "subtitle": "Official comprehensive technical architecture, feature guides, setup manuals, and knowledge bases for Blueprnt and VibePress Affiliate Link Cloaker.",
     "searchPlaceholder": "Search across all software features, administration menus, use cases, FAQs, or glossary terms..."
   },
   "search": {
@@ -12,17 +12,17 @@
   "products": [
     {
       "id": "blueprnt",
-      "name": "Blueprnt v1.1.0",
+      "name": "Blueprnt",
       "type": "Desktop Media Workstage",
-      "version": "v1.1.0 (Local-First)",
+      "version": "100% Offline · Local-First",
       "logoImage": "/blueprnt-icon.svg",
       "index": [
         {
           "id": "blueprnt-overview",
-          "title": "1. What is Blueprnt v1.1.0?",
+          "title": "1. What is Blueprnt?",
           "summary": "Professional, high-performance, local-first desktop media application engineered for photographers, DITs, and video editors.",
           "badge": "Overview",
-          "content": "Blueprnt v1.1.0 is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers.\n\nBlueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.\n\nCore Pillars of Blueprnt:\n• 100% Offline Local Data Sovereignty: Zero cloud tracking pixels, telemetry, or remote server dependencies.\n• BLAKE3 Cryptographic Verification: Bit-by-bit binary checksum verification during card transfers to guarantee 100% data integrity before clearing memory cards.\n• Atomic Shot-Group Preservation: RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE bound into single logical units. Renaming a RAW updates all sidecars synchronously.\n• Studio Proxy Generator: Batch transcodes Apple ProRes 422 (Proxy, LT, HQ) and Avid DNxHR (LB, SQ) proxies with preserved SMPTE timecode and Reel IDs."
+          "content": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers.\n\nBlueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.\n\nCore Pillars of Blueprnt:\n• 100% Offline Local Data Sovereignty: Zero cloud tracking pixels, telemetry, or remote server dependencies.\n• BLAKE3 Cryptographic Verification: Bit-by-bit binary checksum verification during card transfers to guarantee 100% data integrity before clearing memory cards.\n• Atomic Shot-Group Preservation: RAW + JPEG + HEIC + MOV + sidecar XMP + WAV + AAE bound into single logical units. Renaming a RAW updates all sidecars synchronously.\n• Studio Proxy Generator: Batch transcodes Apple ProRes 422 (Proxy, LT, HQ) and Avid DNxHR (LB, SQ) proxies with preserved SMPTE timecode and Reel IDs."
         },
         {
           "id": "blueprnt-why-useful",

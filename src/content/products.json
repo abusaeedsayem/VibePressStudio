@@ -3,7 +3,7 @@
     "id": "blueprnt",
     "slug": "blueprnt",
     "name": "Blueprnt",
-    "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage (v1.1.0)",
+    "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage",
     "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, token-based batch renaming, cinema proxy transcoding, and EXIF/IPTC privacy scrubbing.",
     "category": "digital-tool",
     "categoryLabel": "Desktop Media Workstage",
@@ -12,7 +12,7 @@
     "screenshotGallery": [
       "/blueprnt-icon.svg"
     ],
-    "version": "v1.1.0 (100% Offline · Local-First)",
+    "version": "100% Offline · Local-First",
     "changelogUrl": "/changelog",
     "techStack": [
       "BLAKE3 Cryptography",
@@ -109,11 +109,11 @@
     "documentationSections": [
       {
         "title": "Phase 1: Multi-Platform Installation",
-        "content": "Downloading and launching Blueprnt v1.1.0 on macOS, Windows 10/11, or Linux.",
+        "content": "Downloading and launching Blueprnt on macOS, Windows 10/11, or Linux.",
         "steps": [
-          "macOS: Download Blueprnt_1.1.0_aarch64.dmg or Blueprnt_1.1.0_universal.dmg. Drag Blueprnt into /Applications.",
-          "Windows 10/11: Download Blueprnt_1.1.0_x64-setup.exe (NSIS) or Blueprnt_1.1.0_x64_en-US.msi and run installer.",
-          "Linux: Download Blueprnt_1.1.0_amd64.AppImage (chmod +x) or blueprnt_1.1.0_amd64.deb (dpkg -i)."
+          "macOS: Download Blueprnt_universal.dmg. Drag Blueprnt into /Applications.",
+          "Windows 10/11: Download Blueprnt_x64-setup.exe (NSIS) or Blueprnt_x64_en-US.msi and run installer.",
+          "Linux: Download blueprnt_amd64.AppImage (chmod +x) or blueprnt_amd64.deb (dpkg -i)."
         ]
       },
       {

@@ -3,7 +3,7 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** High-Performance Digital Tools  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.1.6` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt v1.1.0` · **Flagship Plugin:** `v1.0.13`  
+> **Studio Release:** `v1.1.7` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt (Local-First)` · **Flagship Plugin:** `v1.0.13`  
 > **Last Updated:** September 18, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
@@ -18,14 +18,15 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.1.6 — Blueprnt Legal Addenda Integration (Privacy Policy & Terms of Use) (September 18, 2026)
+## Latest Release: v1.1.7 — Blueprnt Version Tag Removal & Nomenclature Clean-Up (September 18, 2026)
 
-This release integrates the official **Blueprnt Privacy Policy Addendum** into [`/legal/privacy`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/privacy/page.tsx) and the official **Blueprnt Terms of Operational Use Addendum** into [`/legal/terms`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/terms/page.tsx).
+This release purges all explicit `v1.1.0` version tags and labels associated with the **Blueprnt** desktop application across all site headers, product showcases, documentation hubs, pricing structures, and metadata cards.
 
-### What's New at a Glance (v1.1.6 / v1.1.5 / v1.1.4)
+### What's New at a Glance (v1.1.7 / v1.1.6 / v1.1.5)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
+| **Blueprnt Version Tag Removal** | Removed `v1.1.0` and `Version 1.1.0` labels site-wide from Blueprnt product page, Home card badges, Products directory, Documentation Hub, Studio Lab manual, Pricing tables, and data schemas. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), `src/content/blueprnt.json`, `src/content/products.json`, `src/content/docs.json` |
 | **Blueprnt Privacy Policy Addendum** | Documented 100% offline data isolation, zero content ingestion, strict egress boundaries (Lemon Squeezy activation socket with Ed25519 local verification & 30-day grace, zero content telemetry), local `blueprnt_state.db` database & native keyring (Keychain, Credential Manager, Secret Service), local Scrubber Pro metadata stripping (`_CleanDelivery`), and compliance (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model). | [`src/app/legal/privacy/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/privacy/page.tsx), `src/content/privacy.json` |
 | **Blueprnt Terms of Operational Use Addendum** | Documented professional production workflows, hardware environment responsibilities, BLAKE3 checksum verification, mandatory 3-2-1 backup rules, atomic sidecar bulk renaming, isolated `_Quarantine` vault, Lemon Squeezy merchant of record & tier limits (Creator 2-machine, Studio 5-machine), fraud prevention key revocation, 14-day refund policy for verifiable non-performance, local-first best-effort support, AAA binding arbitration in Schenectady County NY, jury trial & class action waivers, and studio physical mailing address (1275 Gerling St. Apt 8C3, Schenectady, NY 12308). | [`src/app/legal/terms/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/legal/terms/page.tsx), `src/content/terms.json` |
 | **Site-Wide Blueprnt Priority** | Positioned Blueprnt Desktop Utility as the lead product [0] across products/docs data catalogs, navbar dropdowns, search (⌘K), mobile drawer, Home hero/trustBar, and footer links. | `src/content/products.json`, `src/content/docs.json`, `src/content/home.json`, `src/content/footer.json` |
@@ -38,7 +39,7 @@ This release integrates the official **Blueprnt Privacy Policy Addendum** into [
 
 ## Featured Products
 
-1. **Blueprnt v1.1.0** — Local-First Desktop Media Workstage (**v1.1.0 — 100% Offline**) for camera offloads, BLAKE3 checksum verification, atomic shot-groups, CSV roster mapping, ProRes/DNxHR proxies, and EXIF privacy scrubbing.  
+1. **Blueprnt** — Local-First Desktop Media Workstage (**100% Offline**) for camera offloads, BLAKE3 checksum verification, atomic shot-groups, CSV roster mapping, ProRes/DNxHR proxies, and EXIF privacy scrubbing.  
    - Route: [`/products/blueprnt`](https://vibepressstudio.vercel.app/products/blueprnt)
 
 2. **VibePress Affiliate Link Cloaker** — Enterprise WordPress Plugin (**v1.0.13 — 24 Core Features**) for branded link cloaking, Amazon §6 ToS uncloaking, FTC disclosures, A/B testing, and Stripe payment links.  
@@ -52,7 +53,7 @@ This release integrates the official **Blueprnt Privacy Policy Addendum** into [
 |-------|------|---------|
 | `/` | `src/app/page.tsx` | Home — 5-section layout showcasing flagship plugins and desktop software |
 | `/products` | `src/app/products/page.tsx` | Products Directory — filterable multi-product explorer + technical specifications |
-| `/products/blueprnt` | `src/app/products/blueprnt/page.tsx` | Blueprnt v1.1.0 Product Showcase — 4 feature studios, installation guides, & FAQs |
+| `/products/blueprnt` | `src/app/products/blueprnt/page.tsx` | Blueprnt Product Showcase — 4 feature studios, installation guides, & FAQs |
 | `/products/vibepress-affiliate-link-cloaker` | `src/app/products/vibepress-affiliate-link-cloaker/page.tsx` | VibePress Affiliate Link Cloaker Page — 8-tab sticky showcase with WP Admin simulator |
 | `/docs` | `src/app/docs/page.tsx` | Documentation Hub — multi-product manual reader with Copy Section tool |
 | `/changelog` | `src/app/changelog/page.tsx` | Release Notes — renders `src/content/changelog.json` timeline |

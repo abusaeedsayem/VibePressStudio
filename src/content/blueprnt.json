@@ -2,7 +2,7 @@
   "id": "blueprnt",
   "slug": "blueprnt",
   "name": "Blueprnt",
-  "version": "v1.1.0",
+  "version": "100% Offline · Local-First",
   "tagline": "Local-First Desktop Media Application & High-Throughput Asset Ingestion Workstage",
   "description": "Blueprnt is a professional, high-performance, local-first desktop media application engineered for photographers, Digital Imaging Technicians (DITs), video editors, and media catalog managers. Blueprnt provides a zero-cloud, 100% offline desktop toolkit for high-throughput digital asset ingestion, cryptographic BLAKE3 checksum verification, multi-drive 3-2-1 backups, EXIF token batch renaming, temporal burst deduplication, cinema proxy transcoding, and deep EXIF/IPTC privacy scrubbing.",
   "logoImage": "/blueprnt-icon.svg",
@@ -259,7 +259,7 @@
   "faq": [
     {
       "category": "Architecture & Speed",
-      "question": "What is Blueprnt v1.1.0 and what makes it local-first?",
+      "question": "What is Blueprnt and what makes it local-first?",
       "answer": "Blueprnt is a desktop media application engineered for zero-cloud asset management. It runs 100% offline directly on your workstation without uploading media, telemetry, or metadata to external cloud servers."
     },
     {

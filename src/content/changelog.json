@@ -4,6 +4,13 @@
   "entries": [
     {
       "date": "September 18, 2026",
+      "version": "v1.1.7 — Blueprnt Version Tag Removal & Clean-Up",
+      "changes": [
+        "Blueprnt Version Tag Removal: Purged all explicit 'v1.1.0' and 'Version 1.1.0' version tags and labels associated with Blueprnt across site headers, product showcases (/products/blueprnt), Home cards, Products Directory (/products), Documentation Hub (/docs), Studio Lab manual (/lab), Pricing tables, and data schemas."
+      ]
+    },
+    {
+      "date": "September 18, 2026",
       "version": "v1.1.6 — Blueprnt Legal Addenda Integration (Privacy Policy & Terms of Use)",
       "changes": [
         "Blueprnt Privacy Policy Addendum: Integrated Product-Specific Privacy Statement for Blueprnt Desktop Application into /legal/privacy covering 100% offline data isolation, zero content ingestion, strict network egress boundaries (Lemon Squeezy activation socket with Ed25519 offline grace verification, zero content telemetry), local state & keyring management (blueprnt_state.db, Apple Keychain, Windows Credential Manager, Freedesktop Secret Service), local Scrubber Pro metadata stripping (_CleanDelivery), and regulatory compliance (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model).",

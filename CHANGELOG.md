@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.7] — Blueprnt Version Tag Removal & Nomenclature Clean-Up — September 18, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Blueprnt Version Tag Removal**:
+  - Removed all explicit `v1.1.0` and `Version 1.1.0` version tags and labels associated with Blueprnt across site headers, product showcase (`/products/blueprnt`), Home cards, Products Directory (`/products`), Documentation Hub (`/docs`), Studio Lab manual (`/lab`), Pricing tables, and data schemas (`blueprnt.json`, `products.json`, `docs.json`, `pricing.json`, `home.json`).
+
+---
+
 ## [1.1.6] — Blueprnt Legal Addenda Integration (Privacy Policy & Terms of Use) — September 18, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

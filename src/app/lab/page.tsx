@@ -80,7 +80,7 @@ export default function LabPage() {
         </div>
       </section>
 
-      {/* ── 3. How to Use Blueprnt v1.1.0 — Operational Documentation ── */}
+      {/* ── 3. How to Use Blueprnt — Operational Documentation ── */}
       <section id="blueprnt-guide" className="py-16 px-4 md:px-6 max-w-[1280px] mx-auto w-full border-b border-border bg-muted/20">
         <div className="max-w-5xl mx-auto space-y-12">
           
@@ -90,7 +90,7 @@ export default function LabPage() {
               <span className="text-xs font-bold text-sky-400">Featured Software Manual</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-3">
-              How to Use &apos;Blueprnt&apos; v1.1.0
+              How to Use &apos;Blueprnt&apos;
             </h2>
             <p className="text-sm md:text-base text-muted-foreground">
               Official operational manual, multi-platform installation guides, and step-by-step feature walkthroughs for desktop media asset management.

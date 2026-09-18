@@ -59,15 +59,15 @@ export default function BlueprntProductPage() {
               {categoryLabel}
             </span>
             <Badge variant="outline" className="text-xs font-mono font-bold px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30">
-              <CheckCircle2 className="w-3.5 h-3.5 mr-1 inline" /> {version}
+              <CheckCircle2 className="w-3.5 h-3.5 mr-1 inline" /> 100% Offline • Local-First
             </Badge>
             <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary border border-primary/20 rounded-full">
-              100% Offline • Zero-Cloud Privacy
+              Zero-Cloud Privacy
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight max-w-5xl mx-auto leading-tight text-foreground mb-6">
-            {name} <span className="text-sky-500 font-mono text-3xl md:text-5xl">{version}</span>
+            {name}
           </h1>
 
           <p className="text-base md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-10 font-medium">
@@ -507,7 +507,7 @@ export default function BlueprntProductPage() {
                 <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
                   <Download className="h-5 w-5 text-sky-500" /> 6.1 Multi-Platform Installation Guide
                 </h3>
-                <span className="text-xs font-mono text-muted-foreground">Version 1.1.0 Binaries</span>
+                <span className="text-xs font-mono text-muted-foreground">Standalone Desktop Binaries</span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
@@ -519,7 +519,7 @@ export default function BlueprntProductPage() {
                     {installation.macOS}
                   </p>
                   <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
-                    Blueprnt_1.1.0_universal.dmg
+                    Blueprnt_universal.dmg
                   </div>
                 </div>
 
@@ -531,7 +531,7 @@ export default function BlueprntProductPage() {
                     {installation.Windows}
                   </p>
                   <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
-                    Blueprnt_1.1.0_x64-setup.exe
+                    Blueprnt_x64-setup.exe
                   </div>
                 </div>
 
@@ -543,7 +543,7 @@ export default function BlueprntProductPage() {
                     {installation.Linux}
                   </p>
                   <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
-                    blueprnt_1.1.0_amd64.AppImage
+                    blueprnt_amd64.AppImage
                   </div>
                 </div>
               </div>
@@ -644,7 +644,7 @@ export default function BlueprntProductPage() {
             High-Performance Desktop Toolkit
           </Badge>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Ready to Protect Your Digital Assets with Blueprnt v1.1.0?
+            Ready to Protect Your Digital Assets with Blueprnt?
           </h2>
           <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Register your studio to receive pre-launch download links, early access licenses, and release updates.

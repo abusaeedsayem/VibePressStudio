@@ -10,7 +10,7 @@
     "benefits": [
       "Instant email notification when official launch opens",
       "Exclusive early access and launch discount eligibility",
-      "Direct software download links for VibePress Affiliate Link Cloaker and Blueprnt v1.1.0"
+      "Direct software download links for VibePress Affiliate Link Cloaker and Blueprnt"
     ]
   },
   "upcomingProducts": [
@@ -23,7 +23,7 @@
       "link": "/products/vibepress-affiliate-link-cloaker"
     },
     {
-      "name": "Blueprnt v1.1.0",
+      "name": "Blueprnt",
       "type": "Local-First Desktop Media Workstage",
       "status": "100% Offline • Ingestion & Proxy Transcoder Engine",
       "description": "Professional local-first desktop media application for camera card offloading, cryptographic BLAKE3 checksum verification, atomic shot-group preservation, token batch renaming, Apple ProRes/Avid DNxHR proxies, and EXIF/IPTC privacy scrubbing.",
