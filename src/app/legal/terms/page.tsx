@@ -368,14 +368,6 @@ export default function TermsPage() {
               </div>
 
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-1">Physical Mailing Address</span>
-                <span className="font-medium text-foreground block">
-                  1275 Gerling St. Apt 8C3<br />
-                  Schenectady, NY 12308, United States
-                </span>
-              </div>
-
-              <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground block mb-1">Electronic Mail &amp; Support</span>
                 <a href="mailto:vibepress.studio@proton.me" className="font-semibold text-primary hover:underline text-base block">
                   vibepress.studio@proton.me

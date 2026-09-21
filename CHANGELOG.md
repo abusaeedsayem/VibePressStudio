@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.2.4] — Privacy Hardening: Physical Mailing Address Removed Site-Wide — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Removed
+- **Physical Mailing Address Purged (Privacy Protection)**:
+  - Removed sensitive physical mailing address `1275 Gerling St. Apt 8C3, Schenectady, NY 12308, United States` from all public surfaces.
+  - Purged `Physical Mailing Address` block (label + street/city/ZIP) from `src/app/legal/terms/page.tsx:370-376` Section 12 Contact Information card — contact card now displays only `Commercial Entity`, `Founder & Owner`, and `Electronic Mail & Support` (no street address).
+  - Sanitized historical documentation references containing the address in `README.md:46` and `CHANGELOG.md:118` (v1.1.6 Blueprnt Terms of Operational Use Addendum rows) — truncated to end at `jury trial & class action waivers.` with zero address residue.
+  - Verified site-wide `grep` for `1275` / `Gerling` / `12308` / `Apt 8C3` / `Physical Mailing Address` returns 0 matches across source tree; legal venue `Schenectady County, NY` arbitration clause intentionally preserved (`src/app/legal/terms/page.tsx:88`, `src/app/legal/terms/page.tsx:341`).
+
+### Changed
+- **Documentation Synchronization (v1.2.4)**:
+  - Synchronized `README.md`, `CHANGELOG.md`, and `src/content/changelog.json` with this privacy release. Bumped `Studio Release` to `v1.2.4` and maintained `Site Build v0.4.0` / `Blueprnt v1.5.0` / `VibePress Affiliate Link Cloaker v1.0.13`.
+
+---
+
 ## [1.2.3] — Blueprnt v1.5.0 User Manual Fully Integrated into /docs Page — September 21, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
@@ -115,7 +132,7 @@ This changelog is the **canonical history** for the studio website and is fully 
   - Documented 100% offline data isolation, zero content ingestion, strict egress boundaries (Lemon Squeezy activation socket with local Ed25519 verification & 30-day offline grace, zero content telemetry), local `blueprnt_state.db` SQLite database & native keyring integration (Apple Keychain, Windows Credential Manager, Freedesktop Secret Service), local Scrubber Pro privacy sanitization (`_CleanDelivery`), and compliance alignment (NY SHIELD Act, CCPA/CPRA, EU GDPR Data Controller model).
 - **Blueprnt Terms of Operational Use Addendum**:
   - Integrated complete Terms of Operational Use Addendum into [`/legal/terms`](https://vibepressstudio.vercel.app/legal/terms) (`src/app/legal/terms/page.tsx`).
-  - Documented authorized professional operational scope, workstation hardware responsibilities, BLAKE3 bit-by-bit cryptographic verification, mandatory 3-2-1 backup requirements, atomic sidecar bulk renaming, non-destructive `_Quarantine` vault, Lemon Squeezy merchant of record, Creator (2-machine) and Studio (5-machine) tier limits, fraud prevention key revocation, 14-day verifiable technical non-performance refund policy, local-first best-effort support boundaries, AAA binding individual arbitration in Schenectady County NY, jury trial & class action waivers, and studio physical mailing address (1275 Gerling St. Apt 8C3, Schenectady, NY 12308).
+  - Documented authorized professional operational scope, workstation hardware responsibilities, BLAKE3 bit-by-bit cryptographic verification, mandatory 3-2-1 backup requirements, atomic sidecar bulk renaming, non-destructive `_Quarantine` vault, Lemon Squeezy merchant of record, Creator (2-machine) and Studio (5-machine) tier limits, fraud prevention key revocation, 14-day verifiable technical non-performance refund policy, local-first best-effort support boundaries, AAA binding individual arbitration in Schenectady County NY, jury trial & class action waivers.
 
 ---
 
