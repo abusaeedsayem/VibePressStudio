@@ -4,6 +4,16 @@
   "entries": [
     {
       "date": "September 21, 2026",
+      "version": "v1.2.3 — Blueprnt v1.5.0 User Manual Fully Integrated into /docs Page",
+      "changes": [
+        "Blueprnt Docs Expansion: Expanded src/content/docs.json Blueprnt section from 6 topics to 12 comprehensive manual-accurate topics sourced directly from the official Blueprnt_User_Manual_v1.5.0.pdf — including Media Indexer & Analytics Dashboard, Persistent Settings & Studio Defaults, Token Pattern Builder & CSV Roster Engine, Organize & Rename Tab, Video Transcoder & Codec Profiles (ProRes/DNxHR/H.264/H.265), Deduplication Tab, Deep Metadata Editor, Licensing & 15-Day Free Trial, and expanded Operational FAQ.",
+        "Version Tag Corrected: Updated Blueprnt product version display in docs switcher to 'v1.5.0 · 100% Offline · Local-First' and fixed installer filenames from old v1.1.0 references to accurate v1.5.0 production binaries.",
+        "Download User Manual PDF Button: Added an emerald-styled 'Download Full User Manual PDF' button with Download icon to the Blueprnt docs sidebar, conditionally rendered only for Blueprnt, linking to /downloads/Blueprnt_User_Manual_v1.5.0.pdf."
+      ]
+    },
+    {
+
+      "date": "September 21, 2026",
       "version": "v1.2.2 — Studio Deployment & Full Download Suite Verification",
       "changes": [
         "Vercel Deployment Verification: Executed full production build and deployment verification across all 26 static & dynamic routes, confirming HTTP 200 OK on https://vibepressstudio.vercel.app and HTTP 307 temporary redirect on the cloaked checkout endpoint (/api/checkout).",

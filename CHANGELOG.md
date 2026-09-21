@@ -7,7 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.2.3] — Blueprnt v1.5.0 User Manual Fully Integrated into /docs Page — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Blueprnt v1.5.0 User Manual Content Fully Integrated into `/docs` Page**:
+  - Expanded `src/content/docs.json` Blueprnt section from 6 topics to 12 comprehensive, manual-accurate topics sourced directly from `Blueprnt_User_Manual_v1.5.0.pdf`.
+  - New sections: Media Indexer & Analytics Dashboard, Persistent Settings & Studio Defaults, Token Pattern Builder & CSV Roster Engine, Organize & Rename Tab, Video Transcoder & Codec Profiles, Deduplication Tab & Delete Confirmation, Deep Metadata Editor, Licensing & 15-Day Free Trial, and expanded Operational FAQ.
+  - Corrected installer filenames from old v1.1.0 references to accurate v1.5.0 production binaries.
+  - Updated Blueprnt version display in docs product switcher to `"v1.5.0 · 100% Offline · Local-First"`.
+- **Download User Manual PDF Button Added to Docs Sidebar**:
+  - Added a "Download Full User Manual PDF" button with emerald styling in the Blueprnt docs sidebar, conditionally rendered only when Blueprnt is selected, linking directly to `/downloads/Blueprnt_User_Manual_v1.5.0.pdf`.
+
+---
+
 ## [1.2.2] — Studio Deployment & Full Download Suite Verification — September 21, 2026
+
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
 

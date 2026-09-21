@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { 
   Search, BookOpen, Package, CheckCircle2, ChevronRight, 
   Copy, Check, ArrowRight, Layers, ShieldCheck, Zap, 
-  ExternalLink, Sparkles, Terminal, FileText, HelpCircle
+  ExternalLink, Sparkles, Terminal, FileText, HelpCircle, Download
 } from "lucide-react";
 import docsDataJson from "@/content/docs.json";
 
@@ -136,9 +136,19 @@ export default function DocsPage() {
                 >
                   <ExternalLink className="h-3.5 w-3.5" /> Product Showcase Page
                 </Link>
+                {currentProduct.id === "blueprnt" && (
+                  <a
+                    href="/downloads/Blueprnt_User_Manual_v1.5.0.pdf"
+                    download
+                    className="w-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white text-xs font-bold py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5 border border-emerald-500/20"
+                  >
+                    <Download className="h-3.5 w-3.5" /> Download Full User Manual PDF
+                  </a>
+                )}
               </div>
             </div>
           </aside>
+
 
           {/* Main Reading Area */}
           <main className="flex-1 min-w-0 space-y-8">
