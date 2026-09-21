@@ -20,7 +20,7 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ## Latest Release: v1.2.3 — Blueprnt v1.5.0 User Manual Fully Integrated into /docs Page (September 21, 2026)
 
-This release integrates all Blueprnt v1.5.0 User Manual content directly into the live `/docs` page, expanding coverage from 6 to 12 comprehensive topics extracted from the official PDF, plus adds a sidebar PDF download button.
+This release integrates all Blueprnt v1.5.0 User Manual content directly into the live `/docs` page, expanding coverage from 6 to 19 comprehensive topics extracted from the official PDF, plus adds a sidebar PDF download button.
 
 ### What's New at a Glance (v1.2.3 / v1.2.2 / v1.2.1)
 

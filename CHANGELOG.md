@@ -452,3 +452,20 @@ Initial architecture and subsequent hardening prior to 0.2.0. Aggregated from `g
 [0.2.1]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/abusaeedsayem/VibePressStudio/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/abusaeedsayem/VibePressStudio/releases/tag/v0.1.0
+
+## [1.2.3] — Blueprnt v1.5.0 User Manual Fully Integrated into /docs Page — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Blueprnt v1.5.0 User Manual Content Fully Integrated into `/docs` Page**:
+  - Expanded `src/content/docs.json` Blueprnt section from 6 to 19 comprehensive topics sourced directly from `Blueprnt_User_Manual_v1.5.0.pdf`.
+  - New sections: Media Indexer & Analytics Dashboard, Persistent Settings & Studio Defaults, Token Pattern Builder & CSV Client Roster Engine, Organize & Rename Tab, Video Transcoder & Codec Profiles, Deduplication Tab & Delete Confirmation, Deep Metadata Editor, Licensing & 15-Day Free Trial, and expanded Operational FAQ.
+  - Additional topics: Media Ingestion Protocols, Shot-Group Clustering Logic, Cryptographic Verification Deep Dive, Hardware Acceleration & Performance Tuning, Backup Rotation Strategies, Advanced Workflow Interface, and comprehensive feature documentation.
+  - Corrected installer filenames from old v1.1.0 references to accurate v1.5.0 production binaries.
+  - Updated Blueprnt version display in docs product switcher to `"v1.5.0 · 100% Offline · Local-First"`.
+- **Download User Manual PDF Button Added to Docs Sidebar**:
+  - Added a "Download Full User Manual PDF" button with emerald styling in the Blueprnt docs sidebar, conditionally rendered only when Blueprnt is selected, linking directly to `/downloads/Blueprnt_User_Manual_v1.5.0.pdf`.
+
+---
+
