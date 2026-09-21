@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.2.0] — Official v1.5.0 Blueprnt Desktop Installers & User Manual Integration — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Official v1.5.0 Production Binaries**:
+  - Integrated official installer binaries in `public/downloads/`: macOS Apple Silicon (`Blueprnt_1.5.0_aarch64.dmg`), Windows x64 (`Blueprnt_1.5.0_x64-setup.exe`), Linux Debian/Ubuntu (`Blueprnt_1.5.0_amd64.deb`), and Linux Fedora/RedHat (`Blueprnt-1.5.0-1.x86_64.rpm`).
+- **Official User Manual v1.5.0 PDF**:
+  - Integrated `Blueprnt_User_Manual_v1.5.0.pdf` into the dynamic `DownloadModal.tsx` suggestion component and manual download sections across `/products/blueprnt` and `/lab`.
+- **Multi-Platform Installer Switcher**:
+  - Updated `DownloadModal.tsx` and section 6.1 installation guides to support `.deb` and `.rpm` Linux package download triggers.
+
+---
+
 ## [1.1.9] — Free Installer Downloads, User Manual Suggestion Modal & Cloaked Checkout — September 21, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

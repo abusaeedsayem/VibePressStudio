@@ -4,6 +4,15 @@
   "entries": [
     {
       "date": "September 21, 2026",
+      "version": "v1.2.0 — Official v1.5.0 Blueprnt Desktop Installers & User Manual Integration",
+      "changes": [
+        "Official v1.5.0 Binaries: Integrated official production binaries in /downloads/ for macOS Apple Silicon (Blueprnt_1.5.0_aarch64.dmg), Windows x64 setup (Blueprnt_1.5.0_x64-setup.exe), Linux Debian/Ubuntu (Blueprnt_1.5.0_amd64.deb), and Linux Fedora/RedHat (Blueprnt-1.5.0-1.x86_64.rpm).",
+        "Official User Manual v1.5.0: Integrated the official Blueprnt_User_Manual_v1.5.0.pdf into the site's dynamic download modal and manual download sections across /products/blueprnt and /lab.",
+        "Multi-Platform Installer Switcher: Expanded DownloadModal.tsx and section 6.1 installation guides to provide dedicated .deb and .rpm Linux package download triggers."
+      ]
+    },
+    {
+      "date": "September 21, 2026",
       "version": "v1.1.9 — Free Installer Downloads, User Manual Suggestion Modal & Cloaked Checkout",
       "changes": [
         "Free Desktop Installers: Hosted direct static download packages for all supported desktop platforms (macOS .dmg, Windows .exe, Linux .AppImage) in /downloads/.",

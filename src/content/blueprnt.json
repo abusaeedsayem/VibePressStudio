@@ -231,15 +231,16 @@
   ],
   "checkoutUrl": "/api/checkout",
   "downloads": {
-    "macOS": "/downloads/Blueprnt_1.0.0_universal.dmg",
-    "Windows": "/downloads/Blueprnt_1.0.0_x64-setup.exe",
-    "Linux": "/downloads/blueprnt_1.0.0_amd64.AppImage",
-    "userManual": "/downloads/Blueprnt_Operational_User_Manual.pdf"
+    "macOS": "/downloads/Blueprnt_1.5.0_aarch64.dmg",
+    "Windows": "/downloads/Blueprnt_1.5.0_x64-setup.exe",
+    "LinuxDeb": "/downloads/Blueprnt_1.5.0_amd64.deb",
+    "LinuxRpm": "/downloads/Blueprnt-1.5.0-1.x86_64.rpm",
+    "userManual": "/downloads/Blueprnt_User_Manual_v1.5.0.pdf"
   },
   "installation": {
-    "macOS": "Download Blueprnt_1.0.0_universal.dmg. Drag Blueprnt into /Applications folder.",
-    "Windows": "Download Blueprnt_1.0.0_x64-setup.exe and double-click to install.",
-    "Linux": "Download blueprnt_1.0.0_amd64.AppImage (chmod +x blueprnt_1.0.0_amd64.AppImage) and run."
+    "macOS": "Download Blueprnt_1.5.0_aarch64.dmg. Drag Blueprnt into /Applications folder.",
+    "Windows": "Download Blueprnt_1.5.0_x64-setup.exe and run installer.",
+    "Linux": "Download Blueprnt_1.5.0_amd64.deb (dpkg -i) or Blueprnt-1.5.0-1.x86_64.rpm (rpm -i)."
   },
   "userGuide": [
     {

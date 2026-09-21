@@ -11,32 +11,38 @@ import { Button } from "@/components/ui/button";
 interface DownloadModalProps {
   isOpen: boolean;
   onClose: () => void;
-  defaultOs?: "macOS" | "Windows" | "Linux";
+  defaultOs?: "macOS" | "Windows" | "LinuxDeb" | "LinuxRpm";
 }
 
 const OS_INSTALLERS = {
   macOS: {
-    label: " macOS (Apple Silicon / Universal)",
-    fileName: "Blueprnt_1.0.0_universal.dmg",
-    url: "/downloads/Blueprnt_1.0.0_universal.dmg",
+    label: " macOS (Apple Silicon aarch64)",
+    fileName: "Blueprnt_1.5.0_aarch64.dmg",
+    url: "/downloads/Blueprnt_1.5.0_aarch64.dmg",
     type: ".dmg installer"
   },
   Windows: {
     label: "⊞ Windows 10/11 (x64 Setup)",
-    fileName: "Blueprnt_1.0.0_x64-setup.exe",
-    url: "/downloads/Blueprnt_1.0.0_x64-setup.exe",
+    fileName: "Blueprnt_1.5.0_x64-setup.exe",
+    url: "/downloads/Blueprnt_1.5.0_x64-setup.exe",
     type: ".exe setup"
   },
-  Linux: {
-    label: "🐧 Linux (AppImage Executable)",
-    fileName: "blueprnt_1.0.0_amd64.AppImage",
-    url: "/downloads/blueprnt_1.0.0_amd64.AppImage",
-    type: ".AppImage package"
+  LinuxDeb: {
+    label: "🐧 Linux Debian / Ubuntu (.deb)",
+    fileName: "Blueprnt_1.5.0_amd64.deb",
+    url: "/downloads/Blueprnt_1.5.0_amd64.deb",
+    type: ".deb package"
+  },
+  LinuxRpm: {
+    label: "🐧 Linux Fedora / RedHat (.rpm)",
+    fileName: "Blueprnt-1.5.0-1.x86_64.rpm",
+    url: "/downloads/Blueprnt-1.5.0-1.x86_64.rpm",
+    type: ".rpm package"
   }
 };
 
 export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: DownloadModalProps) {
-  const [selectedOs, setSelectedOs] = useState<"macOS" | "Windows" | "Linux">(defaultOs);
+  const [selectedOs, setSelectedOs] = useState<"macOS" | "Windows" | "LinuxDeb" | "LinuxRpm">(defaultOs);
   const [downloadTriggered, setDownloadTriggered] = useState(false);
 
   useEffect(() => {
@@ -56,7 +62,7 @@ export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: Download
     }
   }, [isOpen, selectedOs]);
 
-  const triggerDownload = (os: "macOS" | "Windows" | "Linux") => {
+  const triggerDownload = (os: "macOS" | "Windows" | "LinuxDeb" | "LinuxRpm") => {
     const installer = OS_INSTALLERS[os];
     const link = document.createElement("a");
     link.href = installer.url;
@@ -115,7 +121,7 @@ export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: Download
                 onClick={() => triggerDownload(selectedOs)}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-sky-500 hover:underline pt-1"
               >
-                <Download className="w-3.5 h-3.5" /> Re-trigger {selectedOs} Download
+                <Download className="w-3.5 h-3.5" /> Re-trigger Download ({currentInstaller.fileName})
               </button>
             </div>
           </div>
@@ -125,20 +131,23 @@ export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: Download
             <div className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
               Select Operating System Installer
             </div>
-            <div className="grid grid-cols-3 gap-2">
-              {(["macOS", "Windows", "Linux"] as const).map((os) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {[
+                { id: "macOS", label: " macOS (aarch64)" },
+                { id: "Windows", label: "⊞ Windows (.exe)" },
+                { id: "LinuxDeb", label: "🐧 Linux (.deb)" },
+                { id: "LinuxRpm", label: "🐧 Linux (.rpm)" }
+              ].map((osItem) => (
                 <button
-                  key={os}
-                  onClick={() => setSelectedOs(os)}
-                  className={`p-3 text-xs font-bold rounded-xl border transition-all flex items-center justify-center gap-1.5 ${
-                    selectedOs === os
+                  key={osItem.id}
+                  onClick={() => setSelectedOs(osItem.id as any)}
+                  className={`p-3 text-xs font-bold rounded-xl border transition-all flex items-center justify-center text-center ${
+                    selectedOs === osItem.id
                       ? "bg-sky-600 text-white border-sky-500 shadow-sm"
                       : "bg-muted/40 border-border text-muted-foreground hover:text-foreground hover:bg-muted"
                   }`}
                 >
-                  {os === "macOS" && " macOS"}
-                  {os === "Windows" && "⊞ Windows"}
-                  {os === "Linux" && "🐧 Linux"}
+                  {osItem.label}
                 </button>
               ))}
             </div>
@@ -162,8 +171,8 @@ export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: Download
             </p>
             
             <a
-              href="/downloads/Blueprnt_Operational_User_Manual.pdf"
-              download="Blueprnt_Operational_User_Manual.pdf"
+              href="/downloads/Blueprnt_User_Manual_v1.5.0.pdf"
+              download="Blueprnt_User_Manual_v1.5.0.pdf"
               className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md flex items-center justify-center gap-2 text-xs md:text-sm"
             >
               <Download className="w-4 h-4" /> Download FREE User Manual (PDF) <ArrowRight className="w-4 h-4" />

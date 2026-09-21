@@ -19,9 +19,9 @@ export default function LabPage() {
   const { installation, userGuide } = blueprntData;
 
   const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
-  const [selectedDownloadOs, setSelectedDownloadOs] = useState<"macOS" | "Windows" | "Linux">("macOS");
+  const [selectedDownloadOs, setSelectedDownloadOs] = useState<"macOS" | "Windows" | "LinuxDeb" | "LinuxRpm">("macOS");
 
-  const openDownloadModal = (os: "macOS" | "Windows" | "Linux" = "macOS") => {
+  const openDownloadModal = (os: "macOS" | "Windows" | "LinuxDeb" | "LinuxRpm" = "macOS") => {
     setSelectedDownloadOs(os);
     setIsDownloadModalOpen(true);
   };
@@ -169,18 +169,26 @@ export default function LabPage() {
                 <div className="p-5 bg-muted/40 rounded-xl border border-border space-y-3 flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="font-bold text-foreground flex items-center gap-1.5 font-sans">
-                      🐧 Linux (AppImage Executable)
+                      🐧 Linux (Debian / Fedora Packages)
                     </div>
                     <p className="text-muted-foreground text-[11px] leading-relaxed font-sans">
                       {installation.Linux}
                     </p>
                   </div>
-                  <button
-                    onClick={() => openDownloadModal("Linux")}
-                    className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-xs font-sans cursor-pointer"
-                  >
-                    <Download className="w-3.5 h-3.5" /> Download Linux (.AppImage)
-                  </button>
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <button
+                      onClick={() => openDownloadModal("LinuxDeb")}
+                      className="flex-1 bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5 text-xs font-sans cursor-pointer"
+                    >
+                      <Download className="w-3.5 h-3.5" /> .deb
+                    </button>
+                    <button
+                      onClick={() => openDownloadModal("LinuxRpm")}
+                      className="flex-1 bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5 text-xs font-sans cursor-pointer"
+                    >
+                      <Download className="w-3.5 h-3.5" /> .rpm
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -191,13 +199,13 @@ export default function LabPage() {
                     <BookOpen className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-foreground">FREE Blueprnt Operational User Manual</h4>
-                    <p className="text-xs text-muted-foreground">Comprehensive PDF guide covering BLAKE3 transfers, token renamer patterns, and proxy codecs.</p>
+                    <h4 className="font-bold text-sm text-foreground">FREE Blueprnt Operational User Manual v1.5.0</h4>
+                    <p className="text-xs text-muted-foreground font-sans">Comprehensive PDF guide covering BLAKE3 transfers, token renamer patterns, and proxy codecs.</p>
                   </div>
                 </div>
                 <a
-                  href="/downloads/Blueprnt_Operational_User_Manual.pdf"
-                  download="Blueprnt_Operational_User_Manual.pdf"
+                  href="/downloads/Blueprnt_User_Manual_v1.5.0.pdf"
+                  download="Blueprnt_User_Manual_v1.5.0.pdf"
                   className="w-full sm:w-auto shrink-0 bg-slate-900 dark:bg-slate-800 border border-sky-500/40 text-sky-400 font-bold py-2.5 px-5 rounded-lg hover:bg-sky-500/10 transition-colors flex items-center justify-center gap-2 text-xs"
                 >
                   <Download className="w-4 h-4" /> Download FREE User Manual (PDF)
