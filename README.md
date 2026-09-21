@@ -20,13 +20,13 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ## Latest Release: v1.2.4 — Privacy Hardening: Physical Mailing Address Removed Site-Wide (September 21, 2026)
 
-This release purges the sensitive physical mailing address `1275 Gerling St. Apt 8C3, Schenectady, NY 12308` from all public surfaces for privacy protection, while documenting the change across canonical history and live changelog. Previous release v1.2.3 integrated Blueprnt v1.5.0 User Manual (6 → 19 topics) into `/docs`.
+This release purges the sensitive physical mailing address `[REDACTED — privacy protected]` from all public surfaces for privacy protection, while documenting the change across canonical history and live changelog. Previous release v1.2.3 integrated Blueprnt v1.5.0 User Manual (6 → 19 topics) into `/docs`.
 
 ### What's New at a Glance (v1.2.4 / v1.2.3 / v1.2.2)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
-| **Privacy Hardening: Address Purged** | Removed `1275 Gerling St. Apt 8C3, Schenectady, NY 12308` from `src/app/legal/terms/page.tsx` Section 12 and sanitized historical mentions in `README.md`/`CHANGELOG.md` (v1.1.6). Verified zero `grep` matches. | `src/app/legal/terms/page.tsx:370`, `README.md:46`, `CHANGELOG.md:118` |
+| **Privacy Hardening: Address Purged** | Removed sensitive physical mailing address `[REDACTED]` from `src/app/legal/terms/page.tsx` Section 12 and sanitized historical mentions in `README.md`/`CHANGELOG.md` (v1.1.6). Verified zero `grep` matches for former street address. | `src/app/legal/terms/page.tsx:370`, `README.md:46`, `CHANGELOG.md:118` |
 | **Documentation Sync v1.2.4** | Bumped `Studio Release` to `v1.2.4` and synchronized `CHANGELOG.md` + `src/content/changelog.json` with privacy release. | `CHANGELOG.md:10`, `src/content/changelog.json:5`, `README.md:6` |
 | **Blueprnt Docs Expansion** | Expanded Blueprnt docs section from 6 to 12 topics: Media Indexer, Settings, Token Builder, Organizer, Transcoder, Dedup, Metadata Editor, Licensing/Trial, FAQ. | [`src/content/docs.json`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/content/docs.json) |
 | **User Manual PDF Download Button** | Added emerald "Download Full User Manual PDF" button to Blueprnt docs sidebar, conditional on Blueprnt product selection. | [`src/app/docs/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/docs/page.tsx) |

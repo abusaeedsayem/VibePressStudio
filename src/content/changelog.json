@@ -6,7 +6,7 @@
       "date": "September 21, 2026",
       "version": "v1.2.4 — Privacy Hardening: Physical Mailing Address Removed Site-Wide",
       "changes": [
-        "Privacy Hardening: Purged physical mailing address 1275 Gerling St. Apt 8C3, Schenectady, NY 12308 from all public surfaces — removed Physical Mailing Address block from src/app/legal/terms/page.tsx Section 12 and sanitized historical mentions in README.md and CHANGELOG.md (v1.1.6); verified zero grep matches for 1275/Gerling/12308 across source tree while preserving Schenectady County NY arbitration clause.",
+        "Privacy Hardening: Purged sensitive physical mailing address [REDACTED — privacy protected] from all public surfaces — removed Physical Mailing Address block from src/app/legal/terms/page.tsx Section 12 and sanitized historical mentions in README.md and CHANGELOG.md (v1.1.6); verified zero grep matches for former street address across source tree while preserving Schenectady County NY arbitration clause.",
         "Documentation Sync v1.2.4: Synchronized README.md, CHANGELOG.md, and src/content/changelog.json with privacy release and bumped Studio Release to v1.2.4 (Site Build v0.4.0 / Blueprnt v1.5.0 / VibePress Affiliate Link Cloaker v1.0.13)."
       ]
     },

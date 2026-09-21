@@ -13,10 +13,10 @@ This changelog is the **canonical history** for the studio website and is fully 
 
 ### Removed
 - **Physical Mailing Address Purged (Privacy Protection)**:
-  - Removed sensitive physical mailing address `1275 Gerling St. Apt 8C3, Schenectady, NY 12308, United States` from all public surfaces.
+  - Removed sensitive physical mailing address `[REDACTED — privacy protected]` from all public surfaces.
   - Purged `Physical Mailing Address` block (label + street/city/ZIP) from `src/app/legal/terms/page.tsx:370-376` Section 12 Contact Information card — contact card now displays only `Commercial Entity`, `Founder & Owner`, and `Electronic Mail & Support` (no street address).
   - Sanitized historical documentation references containing the address in `README.md:46` and `CHANGELOG.md:118` (v1.1.6 Blueprnt Terms of Operational Use Addendum rows) — truncated to end at `jury trial & class action waivers.` with zero address residue.
-  - Verified site-wide `grep` for `1275` / `Gerling` / `12308` / `Apt 8C3` / `Physical Mailing Address` returns 0 matches across source tree; legal venue `Schenectady County, NY` arbitration clause intentionally preserved (`src/app/legal/terms/page.tsx:88`, `src/app/legal/terms/page.tsx:341`).
+  - Verified site-wide `grep` for the former street address and `Physical Mailing Address` returns 0 matches across source tree; legal venue `Schenectady County, NY` arbitration clause intentionally preserved (`src/app/legal/terms/page.tsx:88`, `src/app/legal/terms/page.tsx:341`).
 
 ### Changed
 - **Documentation Synchronization (v1.2.4)**:
