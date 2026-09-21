@@ -10,10 +10,22 @@ import {
   Layers, ExternalLink, Copy, Check, HardDrive, Sliders, Laptop
 } from "lucide-react";
 import homeData from "@/content/home.json";
+import { DownloadModal } from "@/components/blueprnt/DownloadModal";
+import { Download } from "lucide-react";
 
 export default function HomePage() {
   const [activeFeatureTab, setActiveFeatureTab] = useState<"architecture" | "highlights" | "scenarios">("highlights");
   const [copied, setCopied] = useState(false);
+  
+  // Download Modal State
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+  const [selectedDownloadOs, setSelectedDownloadOs] = useState<"macOS" | "Windows" | "Linux">("macOS");
+
+  const openDownloadModal = (os: "macOS" | "Windows" | "Linux" = "macOS") => {
+    setSelectedDownloadOs(os);
+    setIsDownloadModalOpen(true);
+  };
+
   const { hero, valueProps, flagship, standards, globalCta } = homeData;
 
   const handleCopyDemo = () => {
@@ -443,19 +455,46 @@ export default function HomePage() {
                   </div>
 
                   {/* Action Links */}
-                  <div className="mt-auto flex flex-col sm:flex-row gap-3">
-                    <Link
-                      href={`/products/${p.slug}`}
-                      className="flex-1 bg-primary text-primary-foreground text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-primary/90 transition-all text-center flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
-                    >
-                      Explore {p.name} Product Page <ArrowRight className="h-4 w-4" />
-                    </Link>
-                    <Link
-                      href="/docs"
-                      className="flex-1 bg-background text-foreground border border-input text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-muted transition-colors text-center flex items-center justify-center gap-2"
-                    >
-                      Read Technical Documentation
-                    </Link>
+                  <div className="mt-auto flex flex-col sm:flex-row flex-wrap gap-3">
+                    {isBlueprnt ? (
+                      <>
+                        <button
+                          onClick={() => openDownloadModal("macOS")}
+                          className="flex-1 bg-sky-600 hover:bg-sky-500 text-white text-sm font-bold py-3.5 px-6 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                        >
+                          <Download className="h-4 w-4" /> Download FREE Installer
+                        </button>
+                        <a
+                          href="/api/checkout"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold py-3.5 px-6 rounded-xl transition-all text-center flex items-center justify-center gap-2 shadow-md"
+                        >
+                          Buy Pro License <ExternalLink className="h-4 w-4" />
+                        </a>
+                        <Link
+                          href={`/products/${p.slug}`}
+                          className="w-full sm:w-auto bg-card border border-border text-foreground text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-muted transition-colors text-center flex items-center justify-center gap-2"
+                        >
+                          Details <ArrowRight className="h-4 w-4" />
+                        </Link>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          href={`/products/${p.slug}`}
+                          className="flex-1 bg-primary text-primary-foreground text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-primary/90 transition-all text-center flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+                        >
+                          Explore {p.name} Product Page <ArrowRight className="h-4 w-4" />
+                        </Link>
+                        <Link
+                          href="/docs"
+                          className="flex-1 bg-background text-foreground border border-input text-sm font-bold py-3.5 px-6 rounded-xl hover:bg-muted transition-colors text-center flex items-center justify-center gap-2"
+                        >
+                          Read Technical Documentation
+                        </Link>
+                      </>
+                    )}
                   </div>
 
                 </div>
@@ -542,6 +581,13 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Download Intercept & User Manual Suggestion Modal */}
+      <DownloadModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+        defaultOs={selectedDownloadOs}
+      />
 
     </div>
   );

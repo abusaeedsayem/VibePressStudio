@@ -3,6 +3,16 @@
   "subtitle": "Track the latest updates, feature releases, and bug fixes across all VibePress Studio products.",
   "entries": [
     {
+      "date": "September 21, 2026",
+      "version": "v1.1.9 — Free Installer Downloads, User Manual Suggestion Modal & Cloaked Checkout",
+      "changes": [
+        "Free Desktop Installers: Hosted direct static download packages for all supported desktop platforms (macOS .dmg, Windows .exe, Linux .AppImage) in /downloads/.",
+        "Interactive Download Modal: Built reusable DownloadModal component auto-triggering installer downloads with platform selection pills, FREE Operational User Manual (PDF) download CTA, and instant Lemon Squeezy checkout triggers.",
+        "Secure URL Cloaking: Implemented server-side cloaked route handlers (/api/checkout and /checkout/blueprnt) providing HTTP 307 temporary redirects to Lemon Squeezy checkout while keeping the target URL completely hidden from client HTML, link inspection, and crawlers.",
+        "User Manual Integration: Added direct PDF download links and modal suggestions for the Blueprnt Operational User Manual across /products/blueprnt, /lab, and Home page (/)."
+      ]
+    },
+    {
       "date": "September 18, 2026",
       "version": "v1.1.8 — Studio Tagline Integration (\"Built in Flow. Made for Reality.\")",
       "changes": [

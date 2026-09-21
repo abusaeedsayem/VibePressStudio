@@ -229,10 +229,17 @@
       "details": "BLAKE3 verified ingestion workspace displays index breakdowns across 100,000+ items with sub-millisecond local database queries."
     }
   ],
+  "checkoutUrl": "/api/checkout",
+  "downloads": {
+    "macOS": "/downloads/Blueprnt_1.0.0_universal.dmg",
+    "Windows": "/downloads/Blueprnt_1.0.0_x64-setup.exe",
+    "Linux": "/downloads/blueprnt_1.0.0_amd64.AppImage",
+    "userManual": "/downloads/Blueprnt_Operational_User_Manual.pdf"
+  },
   "installation": {
-    "macOS": "Download Blueprnt_1.1.0_aarch64.dmg or Blueprnt_1.1.0_universal.dmg. Drag Blueprnt into /Applications.",
-    "Windows": "Download Blueprnt_1.1.0_x64-setup.exe (NSIS) or Blueprnt_1.1.0_x64_en-US.msi and run installer.",
-    "Linux": "Download Blueprnt_1.1.0_amd64.AppImage (make executable: chmod +x) or blueprnt_1.1.0_amd64.deb (dpkg -i)."
+    "macOS": "Download Blueprnt_1.0.0_universal.dmg. Drag Blueprnt into /Applications folder.",
+    "Windows": "Download Blueprnt_1.0.0_x64-setup.exe and double-click to install.",
+    "Linux": "Download blueprnt_1.0.0_amd64.AppImage (chmod +x blueprnt_1.0.0_amd64.AppImage) and run."
   },
   "userGuide": [
     {

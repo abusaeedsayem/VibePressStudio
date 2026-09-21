@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.1.9] — Free Installer Downloads, User Manual Suggestion Modal & Cloaked Checkout — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Free Desktop Installer Downloads**:
+  - Hosted static installer packages for all supported operating systems in `public/downloads/`: macOS Universal (`Blueprnt_1.0.0_universal.dmg`), Windows x64 (`Blueprnt_1.0.0_x64-setup.exe`), and Linux AppImage (`blueprnt_1.0.0_amd64.AppImage`).
+- **Interactive Download Intercept & User Manual Modal (`DownloadModal.tsx`)**:
+  - Auto-triggers installer downloads upon user click with platform selection pills (`macOS`, `Windows`, `Linux`).
+  - Displays a prominent suggestion card offering the **FREE Blueprnt Operational User Manual (PDF)** download (`/downloads/Blueprnt_Operational_User_Manual.pdf`).
+  - Includes instant Pro License Key purchase triggers.
+- **Secure Server-Side Lemon Squeezy URL Cloaking**:
+  - Created dynamic route handlers at `/api/checkout` and `/checkout/blueprnt` performing secure server-side `307 Temporary Redirects` to `https://vibepressstudio.lemonsqueezy.com/checkout`.
+  - Hides the raw Lemon Squeezy URL completely from client HTML, browser hover states, status bars, and web crawlers (`X-Robots-Tag: noindex`).
+- **Site-Wide Download & Checkout Integration**:
+  - Integrated FREE installer download buttons, User Manual PDF links, and cloaked purchase buttons across `/products/blueprnt`, `/lab`, and Home page (`/`).
+
+---
+
 ## [1.1.8] — Studio Tagline Integration ("Built in Flow. Made for Reality.") — September 18, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

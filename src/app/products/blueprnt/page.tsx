@@ -13,6 +13,7 @@ import {
   FolderCheck, Sliders, Film
 } from "lucide-react";
 import blueprntData from "@/content/blueprnt.json";
+import { DownloadModal } from "@/components/blueprnt/DownloadModal";
 
 export default function BlueprntProductPage() {
   const [activeTab, setActiveTab] = useState<"overview" | "features" | "usecases" | "guide" | "faq">("overview");
@@ -21,6 +22,15 @@ export default function BlueprntProductPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [faqCategory, setFaqCategory] = useState("All");
   const [copiedCmd, setCopiedCmd] = useState(false);
+  
+  // Download Modal State
+  const [isDownloadModalOpen, setIsDownloadModalOpen] = useState(false);
+  const [selectedDownloadOs, setSelectedDownloadOs] = useState<"macOS" | "Windows" | "Linux">("macOS");
+
+  const openDownloadModal = (os: "macOS" | "Windows" | "Linux" = "macOS") => {
+    setSelectedDownloadOs(os);
+    setIsDownloadModalOpen(true);
+  };
 
   const { 
     name, version, tagline, description, logoImage,
@@ -76,18 +86,26 @@ export default function BlueprntProductPage() {
           
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 max-w-4xl mx-auto mb-12">
-            <Link
-              href="/lab"
-              className="w-full sm:w-auto bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-sky-500/20"
+            <button
+              onClick={() => openDownloadModal("macOS")}
+              className="w-full sm:w-auto bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-sky-500/20 cursor-pointer"
             >
-              <Download className="h-4 w-4" /> Download Studio Build / Pre-Launch <ArrowRight className="h-4 w-4" />
-            </Link>
+              <Download className="h-5 w-5" /> Download FREE Installer <ArrowRight className="h-4 w-4" />
+            </button>
+            <a
+              href="/api/checkout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-emerald-500/20"
+            >
+              <Sparkles className="h-4 w-4" /> Buy Instant Pro License <ExternalLink className="h-4 w-4" />
+            </a>
             <Link
               href="#guide"
               onClick={() => setActiveTab("guide")}
               className="w-full sm:w-auto bg-card text-foreground border border-border font-bold py-4 px-8 rounded-xl hover:bg-muted transition-colors flex items-center justify-center gap-2"
             >
-              <BookOpen className="h-4 w-4 text-sky-500" /> Operational Manual &amp; Setup Guide
+              <BookOpen className="h-4 w-4 text-sky-500" /> Operational User Manual
             </Link>
           </div>
 
@@ -134,15 +152,20 @@ export default function BlueprntProductPage() {
           </div>
 
           <div className="hidden lg:flex items-center gap-3">
-            <span className="text-xs font-mono font-semibold text-emerald-500 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
-              100% Offline
-            </span>
-            <Link
-              href="/lab"
-              className="text-xs font-bold bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+            <button
+              onClick={() => openDownloadModal("macOS")}
+              className="text-xs font-bold bg-sky-600 text-white px-3.5 py-2 rounded-lg hover:bg-sky-500 transition-colors cursor-pointer flex items-center gap-1.5"
             >
-              Get Studio License
-            </Link>
+              <Download className="w-3.5 h-3.5" /> FREE Download
+            </button>
+            <a
+              href="/api/checkout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-bold bg-emerald-600 text-white px-3.5 py-2 rounded-lg hover:bg-emerald-500 transition-colors flex items-center gap-1.5"
+            >
+              Buy Pro License
+            </a>
           </div>
         </div>
       </div>
@@ -511,41 +534,76 @@ export default function BlueprntProductPage() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-                <div className="p-4 bg-muted/40 rounded-xl border border-border space-y-2">
-                  <div className="font-bold text-foreground flex items-center gap-1.5">
-                     macOS (Apple Silicon / Universal)
+                <div className="p-5 bg-muted/40 rounded-xl border border-border space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="font-bold text-foreground flex items-center gap-1.5">
+                       macOS (Apple Silicon / Universal)
+                    </div>
+                    <p className="text-muted-foreground text-[11px] leading-relaxed">
+                      {installation.macOS}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    {installation.macOS}
-                  </p>
-                  <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
-                    Blueprnt_universal.dmg
-                  </div>
+                  <button
+                    onClick={() => openDownloadModal("macOS")}
+                    className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-xs font-sans cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Download macOS (.dmg)
+                  </button>
                 </div>
 
-                <div className="p-4 bg-muted/40 rounded-xl border border-border space-y-2">
-                  <div className="font-bold text-foreground flex items-center gap-1.5">
-                    ⊞ Windows 10/11 (x64)
+                <div className="p-5 bg-muted/40 rounded-xl border border-border space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="font-bold text-foreground flex items-center gap-1.5">
+                      ⊞ Windows 10/11 (x64)
+                    </div>
+                    <p className="text-muted-foreground text-[11px] leading-relaxed">
+                      {installation.Windows}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    {installation.Windows}
-                  </p>
-                  <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
-                    Blueprnt_x64-setup.exe
-                  </div>
+                  <button
+                    onClick={() => openDownloadModal("Windows")}
+                    className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-xs font-sans cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Download Windows (.exe)
+                  </button>
                 </div>
 
-                <div className="p-4 bg-muted/40 rounded-xl border border-border space-y-2">
-                  <div className="font-bold text-foreground flex items-center gap-1.5">
-                    🐧 Linux (AppImage / Debian)
+                <div className="p-5 bg-muted/40 rounded-xl border border-border space-y-3 flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <div className="font-bold text-foreground flex items-center gap-1.5">
+                      🐧 Linux (AppImage / Debian)
+                    </div>
+                    <p className="text-muted-foreground text-[11px] leading-relaxed">
+                      {installation.Linux}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground text-[11px] leading-relaxed">
-                    {installation.Linux}
-                  </p>
-                  <div className="bg-background p-2 rounded border border-border text-[10px] text-sky-400 truncate">
-                    blueprnt_amd64.AppImage
+                  <button
+                    onClick={() => openDownloadModal("Linux")}
+                    className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-xs font-sans cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" /> Download Linux (.AppImage)
+                  </button>
+                </div>
+              </div>
+
+              {/* PDF Manual Download Banner */}
+              <div className="pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-sky-500/10 text-sky-500 rounded-lg">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm text-foreground">Blueprnt Operational User Manual</h4>
+                    <p className="text-xs text-muted-foreground">Complete offline documentation covering setup, BLAKE3 transfers, and renamer workflows.</p>
                   </div>
                 </div>
+                <a
+                  href="/downloads/Blueprnt_Operational_User_Manual.pdf"
+                  download="Blueprnt_Operational_User_Manual.pdf"
+                  className="w-full sm:w-auto shrink-0 bg-slate-900 dark:bg-slate-800 border border-sky-500/40 text-sky-400 font-bold py-2.5 px-5 rounded-lg hover:bg-sky-500/10 transition-colors flex items-center justify-center gap-2 text-xs"
+                >
+                  <Download className="w-4 h-4" /> Download FREE User Manual (PDF)
+                </a>
               </div>
             </div>
 
@@ -650,21 +708,30 @@ export default function BlueprntProductPage() {
             Register your studio to receive pre-launch download links, early access licenses, and release updates.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link
-              href="/lab"
-              className="w-full sm:w-auto bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2"
+            <button
+              onClick={() => openDownloadModal("macOS")}
+              className="w-full sm:w-auto bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
-              Register for Pre-Launch Release <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/docs"
-              className="w-full sm:w-auto bg-slate-900 border border-slate-700 text-slate-200 font-bold py-4 px-8 rounded-xl hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+              <Download className="h-5 w-5" /> Download FREE Installer <ArrowRight className="h-4 w-4" />
+            </button>
+            <a
+              href="/api/checkout"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-xl transition-colors flex items-center justify-center gap-2"
             >
-              Browse Technical Knowledgebase
-            </Link>
+              <Sparkles className="h-4 w-4" /> Buy Instant Pro License <ExternalLink className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
+
+      {/* Download Intercept & User Manual Suggestion Modal */}
+      <DownloadModal
+        isOpen={isDownloadModalOpen}
+        onClose={() => setIsDownloadModalOpen(false)}
+        defaultOs={selectedDownloadOs}
+      />
 
     </div>
   );
