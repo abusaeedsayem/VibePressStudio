@@ -4,6 +4,14 @@
   "entries": [
     {
       "date": "September 21, 2026",
+      "version": "v1.2.2 — Studio Deployment & Full Download Suite Verification",
+      "changes": [
+        "Vercel Deployment Verification: Executed full production build and deployment verification across all 26 static & dynamic routes, confirming HTTP 200 OK on https://vibepressstudio.vercel.app and HTTP 307 temporary redirect on the cloaked checkout endpoint (/api/checkout).",
+        "Unified Documentation Sync: Synchronized CHANGELOG.md, README.md, and src/content/changelog.json with complete release notes for free installer downloads, v1.5.0 production binaries, user manual PDF integration, CTA messaging updates, and server-side URL cloaking."
+      ]
+    },
+    {
+      "date": "September 21, 2026",
       "version": "v1.2.1 — Download Modal CTA Messaging Optimization",
       "changes": [
         "Stronger License CTA: Updated DownloadModal.tsx purchase card copy from 'Need Renamer Pro & ProRes Proxies?' to high-converting headline 'Need to Get a License Key?' paired with 'Unlock full studio features & lifetime offline activation for your workstation.' and CTA button 'Get Pro License Key'."

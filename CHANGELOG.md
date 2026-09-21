@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.2.2] — Studio Deployment & Full Download Suite Verification — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Added
+- **Vercel Production Deployment & Live Route Verification**:
+  - Executed clean static page compilation and route verification across all 26 application routes.
+  - Verified `HTTP 200 OK` on primary domain `https://vibepressstudio.vercel.app`.
+  - Verified `HTTP 307 Temporary Redirect` on server-side cloaked checkout route `/api/checkout` pointing to Lemon Squeezy with `X-Robots-Tag: noindex, nofollow` header.
+- **Unified Documentation Synchronization**:
+  - Synchronized `CHANGELOG.md`, `README.md`, and `src/content/changelog.json` with complete release notes covering free installer downloads, v1.5.0 production binaries, PDF user manual integration, optimized CTA messaging, and secure URL cloaking.
+
+---
+
 ## [1.2.1] — Download Modal CTA Messaging Optimization — September 21, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
