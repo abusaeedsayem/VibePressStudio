@@ -3,7 +3,7 @@
 > **Live Website:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)  
 > **Tagline:** Built in Flow. Made for Reality.  
 > **Lead Software Architect:** Abu Saeed Sayem  
-> **Studio Release:** `v1.2.0` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt (Local-First)` · **Flagship Plugin:** `v1.0.13`  
+> **Studio Release:** `v1.2.1` (September 2026) · **Site Build:** `v0.4.0` (Next.js 16.3.2) · **Desktop Utility:** `Blueprnt (Local-First)` · **Flagship Plugin:** `v1.0.13`  
 > **Last Updated:** September 21, 2026 — See [CHANGELOG.md](./CHANGELOG.md) for full release history
 
 ---
@@ -18,14 +18,15 @@ We replace sluggish, SaaS-locked systems with rock-solid, production-grade solut
 
 ---
 
-## Latest Release: v1.2.0 — Official v1.5.0 Blueprnt Desktop Installers & User Manual Integration (September 21, 2026)
+## Latest Release: v1.2.1 — Download Modal CTA Messaging Optimization (September 21, 2026)
 
-This release integrates the official production installer packages (**v1.5.0**) and official **`Blueprnt_User_Manual_v1.5.0.pdf`** across the site's dynamic download system, `DownloadModal.tsx` component, and installation guides.
+This release optimizes the purchase CTA messaging inside the `DownloadModal.tsx` download window, replacing feature-specific copy with a strong, high-converting headline **"Need to Get a License Key?"** and clear workstation value proposition.
 
-### What's New at a Glance (v1.2.0 / v1.1.9 / v1.1.8)
+### What's New at a Glance (v1.2.1 / v1.2.0 / v1.1.9)
 
 | Area | Update | Files / Routes |
 |------|--------|----------------|
+| **Strong License CTA Copy** | Updated purchase card headline to `"Need to Get a License Key?"`, supporting text to `"Unlock full studio features & lifetime offline activation for your workstation."`, and button text to `"Get Pro License Key"`. | [`src/components/blueprnt/DownloadModal.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/components/blueprnt/DownloadModal.tsx) |
 | **Official v1.5.0 Binaries** | Integrated official production binaries in `/downloads/`: macOS Apple Silicon (`Blueprnt_1.5.0_aarch64.dmg`), Windows x64 setup (`Blueprnt_1.5.0_x64-setup.exe`), Linux Debian/Ubuntu (`Blueprnt_1.5.0_amd64.deb`), and Linux Fedora/RedHat (`Blueprnt-1.5.0-1.x86_64.rpm`). | `public/downloads/` |
 | **Official User Manual v1.5.0 PDF** | Integrated `Blueprnt_User_Manual_v1.5.0.pdf` into `DownloadModal.tsx` and manual download sections across `/products/blueprnt` and `/lab`. | `public/downloads/Blueprnt_User_Manual_v1.5.0.pdf`, [`src/components/blueprnt/DownloadModal.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/components/blueprnt/DownloadModal.tsx) |
 | **Multi-Platform Installer Switcher** | Updated `DownloadModal.tsx` and section 6.1 installation guides to support `.deb` and `.rpm` Linux package download triggers. | [`src/app/products/blueprnt/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/products/blueprnt/page.tsx), [`src/app/lab/page.tsx`](file:///Users/abusaeedmohammadsayem/VibePressStudio/src/app/lab/page.tsx) |

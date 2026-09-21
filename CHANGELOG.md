@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This changelog is the **canonical history** for the studio website and is fully synchronized with [`README.md`](./README.md) and the live timeline at [`/changelog`](https://vibepressstudio.vercel.app/changelog) (`src/content/changelog.json:1`). See README § [Changelog & Release History](./README.md#changelog--release-history) for the cross-linked summary.
 
+## [1.2.1] — Download Modal CTA Messaging Optimization — September 21, 2026
+
+**Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)
+
+### Changed
+- **Download Modal CTA Messaging**:
+  - Updated `DownloadModal.tsx` purchase card copy from `"Need Renamer Pro & ProRes Proxies?"` to clear, high-converting headline `"Need to Get a License Key?"`.
+  - Updated supporting copy to `"Unlock full studio features & lifetime offline activation for your workstation."` and button text to `"Get Pro License Key"`.
+
+---
+
 ## [1.2.0] — Official v1.5.0 Blueprnt Desktop Installers & User Manual Integration — September 21, 2026
 
 **Live:** [https://vibepressstudio.vercel.app](https://vibepressstudio.vercel.app)

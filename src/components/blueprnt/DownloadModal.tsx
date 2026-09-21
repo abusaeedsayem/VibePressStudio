@@ -180,14 +180,14 @@ export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: Download
           </div>
 
           {/* 💳 INSTANT PRO LICENSE PURCHASE CARD (CLOAKED REDIRECT) */}
-          <div className="p-5 rounded-2xl bg-muted/40 border border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-5 rounded-2xl bg-muted/40 border border-sky-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="space-y-1 text-center sm:text-left">
               <div className="flex items-center justify-center sm:justify-start gap-2">
                 <Sparkles className="w-4 h-4 text-amber-500" />
-                <span className="font-bold text-sm text-foreground">Need Renamer Pro &amp; ProRes Proxies?</span>
+                <span className="font-extrabold text-sm text-foreground">Need to Get a License Key?</span>
               </div>
               <p className="text-xs text-muted-foreground">
-                Unlock lifetime Pro license keys instantly via Lemon Squeezy checkout.
+                Unlock full studio features &amp; lifetime offline activation for your workstation.
               </p>
             </div>
             
@@ -195,9 +195,9 @@ export function DownloadModal({ isOpen, onClose, defaultOs = "macOS" }: Download
               href="/api/checkout"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto shrink-0 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-5 rounded-xl transition-colors flex items-center justify-center gap-2 text-xs"
+              className="w-full sm:w-auto shrink-0 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md hover:shadow-emerald-500/20 flex items-center justify-center gap-2 text-xs"
             >
-              Buy Pro License Key <ExternalLink className="w-3.5 h-3.5" />
+              Get Pro License Key <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
 
